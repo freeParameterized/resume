@@ -1,8 +1,29 @@
 const DEFAULT_HOST = "http://127.0.0.1:11434";
-const DEFAULT_MODEL = "gemma4:26b";
+/**
+ * Measured on this machine (scripts/bench-models.mjs), warm time-to-first-token:
+ * llama3.1:8b 117ms, llama3.2:3b 108ms, qwen3:8b 2237ms, gemma4:26b far worse (17 GB).
+ * 8b gives the best answer quality that still starts streaming well under a second.
+ */
+const DEFAULT_MODEL = "llama3.1:8b";
+/** Fallback when the default is not installed; smallest good model here. */
+export const FAST_FALLBACK_MODEL = "llama3.2:3b";
+const KEEP_ALIVE = process.env.OLLAMA_KEEP_ALIVE || "30m";
+/** Answers are conversational, not essays. A cap also bounds worst-case latency. */
+const NUM_PREDICT = Number(process.env.OLLAMA_NUM_PREDICT || 320);
+/** Prefill cost scales with context, so keep it just big enough for the retrieved chunks. */
+const NUM_CTX = Number(process.env.OLLAMA_NUM_CTX || 2048);
 
+/**
+ * Pinned to loopback. The API is reachable from the public tunnel, so an inference host
+ * pointing anywhere else would turn this process into a request forwarder.
+ */
 export function ollamaHost(): string {
-  return (process.env.OLLAMA_HOST || DEFAULT_HOST).replace(/\/$/, "");
+  const configured = (process.env.OLLAMA_HOST || DEFAULT_HOST).replace(/\/$/, "");
+  if (!/^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])(:\d+)?$/i.test(configured)) {
+    console.warn(`[ollama] ignoring non-loopback OLLAMA_HOST (${configured}); using ${DEFAULT_HOST}`);
+    return DEFAULT_HOST;
+  }
+  return configured;
 }
 
 export function ollamaModel(): string {
@@ -96,11 +117,52 @@ export async function generateOllama(
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         model,
-        prompt,
+        // Qwen3-family models emit <think> blocks that look like a hang; this suppresses them.
+        prompt: /^qwen3/i.test(model) ? `${prompt}\n/no_think` : prompt,
         stream,
-        options: { temperature: 0.35, num_ctx: 4096 },
+        // Without keep_alive Ollama evicts the weights after ~5 idle minutes and the next
+        // visitor pays the full load again.
+        keep_alive: KEEP_ALIVE,
+        options: { temperature: 0.35, num_ctx: NUM_CTX, num_predict: NUM_PREDICT },
       }),
     },
     stream ? 180_000 : 120_000,
   );
+}
+
+/** Removes reasoning traces some models emit, so they never reach the visitor. */
+export function stripThinking(text: string): string {
+  return text
+    .replace(/<think>[\s\S]*?<\/think>/gi, "")
+    .replace(/<\/?think>/gi, "")
+    .trimStart();
+}
+
+/**
+ * Loads the weights before the first visitor arrives. Cold start measured at 2.8-4.5s,
+ * which is exactly the delay that makes the demo look broken.
+ */
+export async function warmModel(modelName?: string | null): Promise<{ ok: boolean; ms: number; model: string }> {
+  const model = modelName || ollamaModel();
+  const started = Date.now();
+  try {
+    const res = await fetchWithTimeout(
+      `${ollamaHost()}/api/generate`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model,
+          prompt: "hi",
+          stream: false,
+          keep_alive: KEEP_ALIVE,
+          options: { num_predict: 1, num_ctx: NUM_CTX },
+        }),
+      },
+      120_000,
+    );
+    return { ok: res.ok, ms: Date.now() - started, model };
+  } catch {
+    return { ok: false, ms: Date.now() - started, model };
+  }
 }

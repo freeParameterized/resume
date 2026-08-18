@@ -9,8 +9,9 @@ import { loadCorpus, repoRoot } from "./corpus.js";
 import { fetchGithub } from "./github.js";
 import { detectIntents } from "./intents.js";
 import { modelCatalog, pickLocalModel } from "./models.js";
-import { buildPrompt, generateOllama, ollamaHost, pingOllama } from "./ollama.js";
+import { buildPrompt, generateOllama, ollamaHost, pingOllama, stripThinking, warmModel } from "./ollama.js";
 import { formatPapersPolicy, loadPapers, paperChunks, papersForSite } from "./papers.js";
+import { quickAnswer } from "./quick.js";
 import { extractiveAnswer, retrieve } from "./retrieve.js";
 import { synthesizeWav, transcribeAudio, voiceStatus } from "./voice.js";
 
@@ -26,6 +27,26 @@ const started = Date.now();
 
 const app = express();
 app.disable("x-powered-by");
+
+/**
+ * Error text from child processes (whisper, ffmpeg, PowerShell) can contain absolute
+ * paths and the local username, so only known-safe messages reach the client.
+ */
+function safeMessage(err: unknown, fallback: string): string {
+  const raw = err instanceof Error ? err.message : "";
+  if (!raw) return fallback;
+  const leaksPath = /[A-Za-z]:\\|\\\\|\/Users\/|\/home\/|node_modules/.test(raw);
+  return leaksPath || raw.length > 200 ? fallback : raw;
+}
+
+// Nothing here should take a minute; a stuck request otherwise pins a connection open.
+app.use((req, res, next) => {
+  res.setTimeout(120_000, () => {
+    if (!res.headersSent) res.status(504).json({ error: "Request timed out." });
+    else res.end();
+  });
+  next();
+});
 if (process.env.TRUST_PROXY === "1") app.set("trust proxy", 1);
 
 app.use(
@@ -87,7 +108,7 @@ app.post("/api/stt", voiceLimit, express.raw({ type: () => true, limit: "8mb" })
     const text = await transcribeAudio(buf);
     res.json({ text, speaker: voiceStatus().speaker });
   } catch (err) {
-    const message = err instanceof Error ? err.message : "stt failed";
+    const message = safeMessage(err, "Speech-to-text failed.");
     const code = (err as { code?: string }).code === "STT_UNAVAILABLE" ? 503 : 500;
     res.status(code).json({ error: message, voice: voiceStatus() });
   }
@@ -107,7 +128,7 @@ app.get("/api/health", async (_req, res) => {
     papersAvailable: loadPapers().available,
     ollama: {
       reachable: catalog.reachable,
-      host: ollama.host || ollamaHost(),
+      host: /127\.0\.0\.1|localhost/.test(ollama.host || ollamaHost()) ? "loopback" : "remote",
       model: catalog.selected,
       defaultPresent: Boolean(catalog.selected),
       installedCount: catalog.installed.filter((m) => !m.cloud).length,
@@ -176,8 +197,12 @@ app.post(["/api/ask", "/api/chat"], chatLimit, async (req: Request, res: Respons
 
   const corpus = loadCorpus();
   const papersFile = loadPapers();
-  const hits = retrieve([...corpus.chunks, ...paperChunks(papersFile.papers)], question, 5);
-  const context = hits.map((h) => `[${h.chunk.title}]\n${h.chunk.text}`).join("\n\n");
+  // Three chunks, each trimmed: prefill cost is what pushed time-to-first-token past 2.5s,
+  // and the extra chunks were rarely what the answer used.
+  const hits = retrieve([...corpus.chunks, ...paperChunks(papersFile.papers)], question, 3);
+  const context = hits
+    .map((h) => `[${h.chunk.title}]\n${h.chunk.text.slice(0, 1200)}`)
+    .join("\n\n");
   const prompt = buildPrompt(question, context, formatPapersPolicy(papersFile.papers));
   const stream = wantStream(req);
   const catalog = await modelCatalog(String(req.body?.model || ""));
@@ -194,6 +219,23 @@ app.post(["/api/ask", "/api/chat"], chatLimit, async (req: Request, res: Respons
     contextBlocks,
     offline: !ollamaUp,
   };
+
+  // Answered from a fixed script: instant, and identical every time for the sensitive ones.
+  const quick = quickAnswer(question);
+  if (quick) {
+    const quickMeta = { ...meta, mode: "instant", model: null, offline: false };
+    if (stream) {
+      res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
+      res.setHeader("Cache-Control", "no-cache");
+      res.write(`data: ${JSON.stringify({ type: "meta", ...quickMeta })}\n\n`);
+      res.write(`data: ${JSON.stringify({ type: "token", text: quick.answer })}\n\n`);
+      res.write(`data: ${JSON.stringify({ type: "done" })}\n\n`);
+      res.end();
+      return;
+    }
+    res.json({ ...quickMeta, answer: quick.answer });
+    return;
+  }
 
   if (!ollamaUp || !model) {
     const answer = extractiveAnswer(question, hits);
@@ -227,7 +269,7 @@ app.post(["/api/ask", "/api/chat"], chatLimit, async (req: Request, res: Respons
       const body = (await upstream.json()) as { response?: string };
       res.json({
         ...meta,
-        answer: (body.response || "").trim(),
+        answer: stripThinking(body.response || "").trim(),
       });
       return;
     }
@@ -241,6 +283,7 @@ app.post(["/api/ask", "/api/chat"], chatLimit, async (req: Request, res: Respons
     const decoder = new TextDecoder();
     let buf = "";
     let acc = "";
+    let sent = "";
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
@@ -253,7 +296,13 @@ app.post(["/api/ask", "/api/chat"], chatLimit, async (req: Request, res: Respons
           const evt = JSON.parse(line) as { response?: string; done?: boolean };
           if (evt.response) {
             acc += evt.response;
-            res.write(`data: ${JSON.stringify({ type: "token", text: evt.response })}\n\n`);
+            // Reasoning traces are dropped rather than streamed; they read as a stall.
+            const visible = stripThinking(acc);
+            if (visible.length > sent.length) {
+              const delta = visible.slice(sent.length);
+              sent = visible;
+              res.write(`data: ${JSON.stringify({ type: "token", text: delta })}\n\n`);
+            }
           }
         } catch {
           /* ignore partial JSON */
@@ -286,6 +335,12 @@ app.post(["/api/ask", "/api/chat"], chatLimit, async (req: Request, res: Respons
   }
 });
 
+// The client calls this when the page loads so the weights are hot before anyone types.
+app.post("/api/warm", async (_req, res) => {
+  const result = await warmModel();
+  res.json(result);
+});
+
 app.post("/api/tts", voiceLimit, async (req, res) => {
   const text = String(req.body?.text || "").trim();
   if (!text) {
@@ -298,7 +353,7 @@ app.post("/api/tts", voiceLimit, async (req, res) => {
     res.setHeader("Cache-Control", "no-store");
     res.send(wav);
   } catch (err) {
-    const message = err instanceof Error ? err.message : "tts failed";
+    const message = safeMessage(err, "Text-to-speech failed.");
     res.status(500).json({ error: message, voice: voiceStatus() });
   }
 });
@@ -307,6 +362,30 @@ app.use((_req, res) => {
   res.status(404).json({ error: "not found" });
 });
 
+// Last line of defence: a visitor should never see a stack trace, a local path, or an
+// environment detail, no matter which handler threw.
+app.use((err: unknown, _req: Request, res: Response, _next: express.NextFunction) => {
+  console.error("[api] unhandled", err);
+  if (res.headersSent) {
+    res.end();
+    return;
+  }
+  res.status(500).json({ error: "Something went wrong on the server." });
+});
+
+process.on("unhandledRejection", (reason) => {
+  console.error("[api] unhandled rejection", reason);
+});
+
 app.listen(PORT, HOST, () => {
   console.log(`living-resume api http://${HOST}:${PORT}`);
+  if (process.env.NO_PREWARM !== "1") {
+    void warmModel().then((r) => {
+      console.log(
+        r.ok
+          ? `[warm] ${r.model} resident in ${r.ms}ms; first visitor skips the cold load`
+          : `[warm] could not preload ${r.model} (${r.ms}ms); first answer may fall back to corpus text`,
+      );
+    });
+  }
 });

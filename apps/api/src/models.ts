@@ -2,8 +2,11 @@ import os from "node:os";
 import fs from "node:fs";
 import path from "node:path";
 
+const LOOPBACK_OLLAMA = "http://127.0.0.1:11434";
+
 function ollamaHost(): string {
-  return (process.env.OLLAMA_HOST || "http://127.0.0.1:11434").replace(/\/$/, "");
+  const configured = (process.env.OLLAMA_HOST || LOOPBACK_OLLAMA).replace(/\/$/, "");
+  return /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])(:\d+)?$/i.test(configured) ? configured : LOOPBACK_OLLAMA;
 }
 
 export type InstalledModel = {
@@ -17,36 +20,41 @@ export type InstalledModel = {
 };
 
 /** Preference order for resume chat. Cloud tags are never auto-selected. */
+/**
+ * Order matters: the first installed entry becomes the default. Chosen from measured
+ * warm time-to-first-token on this machine (scripts/bench-models.mjs), because a slow
+ * first answer reads as a broken demo. The large models stay selectable in the UI.
+ */
 export const MODEL_CHAIN = [
   {
-    id: "gemma4:26b",
+    id: "llama3.1:8b",
     role: "default",
-    why: "Strongest local general chat on this machine (25.8B, Q4_K_M, ~16.8 GB). Best GPT-like answers for a living-resume conversation.",
+    why: "8B general chat (~4.9 GB). Measured 117 ms to first token warm, ~90 tok/s: good answers that start instantly.",
   },
   {
-    id: "qwen3-coder:30b",
-    role: "coder",
-    why: "Strongest local coder (30.5B MoE, Q4_K_M, ~17.3 GB). Prefer when the visitor asks about implementation detail.",
+    id: "llama3.2:3b",
+    role: "fast",
+    why: "3.2B (~2 GB). Measured 108 ms to first token, ~175 tok/s. Pick this on a busy or low-memory machine.",
   },
   {
     id: "gemma4:latest",
     role: "mid",
-    why: "8B general (Q4_K_M, ~9 GB). Quality fallback if 26B is busy or missing.",
+    why: "8B general (~9 GB). Quality alternative when there is memory headroom.",
   },
   {
     id: "qwen3:8b",
     role: "mid",
-    why: "8.2B Qwen3 (Q4_K_M, ~4.9 GB).",
+    why: "8.2B Qwen3 (~5.2 GB). Emits reasoning traces, so it is suppressed and stripped; measured 2.2 s to first token.",
   },
   {
-    id: "qwen2.5-coder:7b",
-    role: "fast",
-    why: "7.6B coder (Q4_K_M, ~4.4 GB). Snappy demo fallback.",
+    id: "qwen3-coder:30b",
+    role: "coder",
+    why: "30.5B MoE coder (~18 GB). Optional pick for deep implementation questions; slow to start.",
   },
   {
-    id: "llama3.2:3b",
-    role: "small",
-    why: "3.2B (Q4_K_M, ~1.9 GB). Last-resort local generate.",
+    id: "gemma4:26b",
+    role: "showcase",
+    why: "25.8B (~17 GB). The biggest model here; selectable to show local capability, too slow as a default.",
   },
 ] as const;
 
@@ -100,7 +108,9 @@ export function pickLocalModel(installed: InstalledModel[], requested?: string |
   const names = local.map((m) => m.name);
   const has = (id: string) => names.some((n) => n === id || n.startsWith(`${id}:`) || n === `${id}`);
   if (requested && has(requested) && !isCloud(requested)) {
-    return names.find((n) => n === requested || n.startsWith(`${requested}:`)) || requested;
+    // Only ever return a name we actually have installed. Echoing the request back would
+    // let a visitor push arbitrary model strings through to the inference server.
+    return names.find((n) => n === requested || n.startsWith(`${requested}:`)) || null;
   }
   const env = process.env.OLLAMA_MODEL;
   if (env && has(env) && !isCloud(env)) {
@@ -109,7 +119,8 @@ export function pickLocalModel(installed: InstalledModel[], requested?: string |
   for (const row of MODEL_CHAIN) {
     if (has(row.id)) return row.id;
   }
-  return local.sort((a, b) => b.sizeBytes - a.sizeBytes)[0]?.name || null;
+  // Smallest, not largest: an unknown machine should still answer quickly.
+  return local.sort((a, b) => a.sizeBytes - b.sizeBytes)[0]?.name || null;
 }
 
 function walkGguf(dir: string, acc: string[], depth: number) {

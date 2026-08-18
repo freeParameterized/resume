@@ -50,8 +50,11 @@ export function voiceStatus() {
     stt: {
       available: Boolean(bin && modelOk),
       engine: bin ? "whisper.cpp" : "none",
-      binary: bin,
-      model: modelOk ? model : null,
+      // Deliberately not the absolute paths: this object is returned to every visitor
+      // by /api/health, and the real paths would expose the local directory layout.
+      binary: bin ? "configured" : null,
+      model: modelOk ? path.basename(model) : null,
+      converter: ffmpegBinary() ? "ffmpeg" : null,
     },
     clone: {
       configured: Boolean(voiceConfig.clonePath),
@@ -69,15 +72,33 @@ const FFMPEG_CANDIDATES = [
   "C:\\Users\\peter\\scoop\\shims\\ffmpeg.exe",
 ].filter(Boolean) as string[];
 
+let ffmpegCache: string | null | undefined;
+
 export function ffmpegBinary(): string | null {
+  if (ffmpegCache !== undefined) return ffmpegCache;
   for (const candidate of FFMPEG_CANDIDATES) {
     if (candidate.includes("\\") || candidate.includes("/")) {
-      if (fs.existsSync(candidate)) return candidate;
+      if (fs.existsSync(candidate)) {
+        ffmpegCache = candidate;
+        return ffmpegCache;
+      }
       continue;
     }
-    return candidate; // bare name: rely on PATH, verified lazily by execFile
+    // A bare name only counts if it is genuinely resolvable, otherwise /api/health would
+    // advertise a converter that does not exist.
+    const dirs = (process.env.PATH || "").split(path.delimiter).filter(Boolean);
+    const exts = process.platform === "win32" ? [".exe", ".cmd", ".bat", ""] : [""];
+    for (const dir of dirs) {
+      for (const ext of exts) {
+        if (fs.existsSync(path.join(dir, candidate + ext))) {
+          ffmpegCache = path.join(dir, candidate + ext);
+          return ffmpegCache;
+        }
+      }
+    }
   }
-  return null;
+  ffmpegCache = null;
+  return ffmpegCache;
 }
 
 /**

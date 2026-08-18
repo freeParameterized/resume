@@ -20,13 +20,6 @@ export function micSupported(): { ok: boolean; reason?: string } {
   return { ok: true };
 }
 
-type AudioCtor = typeof AudioContext;
-
-function audioContextCtor(): AudioCtor | null {
-  const w = window as unknown as { AudioContext?: AudioCtor; webkitAudioContext?: AudioCtor };
-  return w.AudioContext || w.webkitAudioContext || null;
-}
-
 let unlocked: HTMLAudioElement | null = null;
 
 /**
@@ -52,90 +45,83 @@ export function unlockAudioPlayback(): void {
   );
 }
 
+/**
+ * Containers in preference order. Chrome and Firefox take the first, Safari only offers mp4.
+ * The server decodes whichever one arrives, so the browser never has to resample.
+ */
+const CANDIDATE_TYPES = [
+  "audio/webm;codecs=opus",
+  "audio/webm",
+  "audio/ogg;codecs=opus",
+  "audio/mp4;codecs=mp4a.40.2",
+  "audio/mp4",
+];
+
+export function pickRecordingType(): string {
+  if (typeof MediaRecorder === "undefined") return "";
+  for (const type of CANDIDATE_TYPES) {
+    if (MediaRecorder.isTypeSupported?.(type)) return type;
+  }
+  return ""; // let the browser choose its own default
+}
+
+let lastNegotiatedType = "";
+
+/** What the browser actually recorded with, for diagnostics in the UI and logs. */
+export function negotiatedRecordingType(): string {
+  return lastNegotiatedType;
+}
+
 export function createLiveRecorder(): LiveRecorder {
-  let ctx: AudioContext | null = null;
-  let source: MediaStreamAudioSourceNode | null = null;
-  let processor: ScriptProcessorNode | null = null;
+  let recorder: MediaRecorder | null = null;
   let stream: MediaStream | null = null;
-  const chunks: Float32Array[] = [];
-  let sampleRate = 16000;
+  let chunks: Blob[] = [];
 
   return {
     async start() {
-      chunks.length = 0;
+      chunks = [];
       const support = micSupported();
       if (!support.ok) throw new Error(support.reason);
-      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const Ctor = audioContextCtor();
-      if (!Ctor) throw new Error("This browser cannot capture audio.");
-      // Safari ignores (and older versions throw on) a forced sample rate, so fall back to
-      // the hardware rate and let the server resample for whisper.
-      try {
-        ctx = new Ctor({ sampleRate: 16000 });
-      } catch {
-        ctx = new Ctor();
+      if (typeof MediaRecorder === "undefined") {
+        throw new Error("This browser cannot record audio.");
       }
-      if (ctx.state === "suspended") await ctx.resume();
-      sampleRate = ctx.sampleRate;
-      source = ctx.createMediaStreamSource(stream);
-      processor = ctx.createScriptProcessor(4096, 1, 1);
-      processor.onaudioprocess = (e) => {
-        chunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mimeType = pickRecordingType();
+      // Deliberately no forced sample rate anywhere: Firefox and Safari refuse to bridge a
+      // 16 kHz context to a 48 kHz microphone, so conversion happens server-side instead.
+      recorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+      lastNegotiatedType = recorder.mimeType || mimeType || "browser default";
+      recorder.ondataavailable = (e) => {
+        if (e.data && e.data.size) chunks.push(e.data);
       };
-      source.connect(processor);
-      processor.connect(ctx.destination);
+      recorder.start();
     },
     async stop() {
-      processor?.disconnect();
-      source?.disconnect();
+      const active = recorder;
+      recorder = null;
+      const type = lastNegotiatedType;
+      const finished = new Promise<void>((resolve) => {
+        if (!active || active.state === "inactive") {
+          resolve();
+          return;
+        }
+        active.onstop = () => resolve();
+        active.stop();
+      });
+      await finished;
       stream?.getTracks().forEach((t) => t.stop());
-      const rate = sampleRate;
-      await ctx?.close();
-      ctx = null;
-      const length = chunks.reduce((n, c) => n + c.length, 0);
-      const pcm = new Float32Array(length);
-      let o = 0;
-      for (const c of chunks) {
-        pcm.set(c, o);
-        o += c.length;
-      }
-      chunks.length = 0;
-      return encodeWav(pcm, rate);
+      stream = null;
+      const blob = new Blob(chunks, { type: type.split(";")[0] || "application/octet-stream" });
+      chunks = [];
+      return blob;
     },
   };
-}
-
-function encodeWav(samples: Float32Array, sampleRate: number): Blob {
-  const buf = new ArrayBuffer(44 + samples.length * 2);
-  const view = new DataView(buf);
-  const writeStr = (off: number, s: string) => {
-    for (let i = 0; i < s.length; i += 1) view.setUint8(off + i, s.charCodeAt(i));
-  };
-  writeStr(0, "RIFF");
-  view.setUint32(4, 36 + samples.length * 2, true);
-  writeStr(8, "WAVE");
-  writeStr(12, "fmt ");
-  view.setUint32(16, 16, true);
-  view.setUint16(20, 1, true);
-  view.setUint32(24, sampleRate, true);
-  view.setUint32(28, sampleRate * 2, true);
-  view.setUint16(32, 2, true);
-  view.setUint16(34, 16, true);
-  writeStr(36, "data");
-  view.setUint32(40, samples.length * 2, true);
-  let off = 44;
-  for (let i = 0; i < samples.length; i += 1) {
-    const s = Math.max(-1, Math.min(1, samples[i]));
-    view.setInt16(off, s < 0 ? s * 0x8000 : s * 0x7fff, true);
-    off += 2;
-  }
-  return new Blob([buf], { type: "audio/wav" });
 }
 
 export async function transcribeWav(blob: Blob): Promise<string> {
   const res = await fetch(`${API_BASE}/api/stt`, {
     method: "POST",
-    headers: { "Content-Type": "audio/wav" },
+    headers: { "Content-Type": blob.type || "application/octet-stream" },
     body: blob,
   });
   const data = (await res.json()) as { text?: string; error?: string };

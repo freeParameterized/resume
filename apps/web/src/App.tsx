@@ -107,7 +107,7 @@ export default function App() {
   if (!corpus) {
     return (
       <div className="scene-fallback" style={{ minHeight: "100svh" }}>
-        Initializing spatial graphâ€¦
+        Initializing spatial graph...
       </div>
     );
   }
@@ -131,7 +131,7 @@ export default function App() {
         health={health}
       />
       <div className="hero">
-        <Suspense fallback={<div className="scene-fallback">Loading work graphâ€¦</div>}>
+        <Suspense fallback={<div className="scene-fallback">Loading work graph...</div>}>
           <WorkGraph
             projects={projects}
             selectedId={selectedId}
@@ -141,14 +141,14 @@ export default function App() {
           />
         </Suspense>
         <HeroCopy
-          kicker="Software & machine-learning engineer Â· St. Louis"
+          kicker="Software & machine-learning engineer | St. Louis"
           title={profile.name}
-          subtitle="Builds production systems people depend on daily. Natural language in, 3D geometry out â€” with locally hosted LLM inference and deterministic validation."
+          subtitle="Builds production systems people depend on daily. Natural language in, 3D geometry out, with locally hosted LLM inference and deterministic validation."
           metrics={[
-            "Natural language â†’ 3D model generation",
-            "Local, offline LLM inference â€” nothing rented",
+            "Natural language -> 3D model generation",
+            "Local, offline LLM inference - nothing rented",
             "Shipped Digital Twin Pro solo, start to store",
-            "8â€“12 hours â†’ ~30 seconds per cycle",
+            "8-12 hours to ~30 seconds per cycle",
           ]}
         />
       </div>
@@ -176,7 +176,7 @@ export default function App() {
         </Section>
         <Section id="projects" index="06" title="Projects">
           <p className="lede" style={{ marginTop: 0 }}>
-            Digital Twin Pro and DMA automation â€” the work that should lead a programming conversation.
+            Digital Twin Pro and DMA automation - the work that should lead a programming conversation.
           </p>
           <ProjectList projects={heroProjects} selectedId={selectedId} onSelect={onSelect} />
           <div style={{ marginTop: 22 }}>

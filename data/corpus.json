@@ -241,7 +241,7 @@
       "visibility": "Public GitHub · released to a Google Play beta",
       "version": "v1.0.5+5",
       "url": "https://github.com/freeParameterized/digital-twin-pro",
-      "sourcePath": "D:\\FlutterApps\\DigitalTwinPro",
+      "sourcePath": "local repository (path withheld)",
       "remote": "https://github.com/freeParameterized/digital-twin-pro.git",
       "stack": [
         "Flutter",
@@ -278,7 +278,7 @@
       "visibility": "Local repository — no remote",
       "version": "1.3",
       "url": null,
-      "sourcePath": "D:\\CADNAT\\cadnat_imgui_bridge",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "C++17",
@@ -309,7 +309,7 @@
       "featured": false,
       "visibility": "Professional work at David Mason & Associates — method described, client data withheld",
       "url": null,
-      "sourcePath": "Client workbooks stay on DMA systems; nothing is copied into this repo.",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "Civil 3D",
@@ -337,7 +337,7 @@
       "featured": false,
       "visibility": "Professional work (David Mason & Associates) — method described",
       "url": null,
-      "sourcePath": "Local working files; not copied into this repo.",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "Spreadsheet schema",
@@ -362,7 +362,7 @@
       "visibility": "Local repository — no remote",
       "version": "v1.2.4",
       "url": null,
-      "sourcePath": "C:\\Users\\peter\\source\\repos\\BackupDeduper",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "C++17",
@@ -391,7 +391,7 @@
       "featured": false,
       "visibility": "Local — experimental, no remote",
       "url": null,
-      "sourcePath": "D:\\OfflineLLMGui and C:\\Users\\peter\\source\\repos\\freeParameterized\\WORKING_CAD_GUI",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "C++",
@@ -419,7 +419,7 @@
       "featured": false,
       "visibility": "Local — no repository",
       "url": null,
-      "sourcePath": "C:\\Users\\peter\\CircleVisualizer",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "C++",
@@ -445,7 +445,7 @@
       "featured": false,
       "visibility": "GitHub — freeParameterized/maintenance",
       "url": "https://github.com/freeParameterized/maintenance",
-      "sourcePath": "D:\\maintenance (mirror at C:\\Users\\peter\\source\\repos\\freeParameterized\\maintenance)",
+      "sourcePath": "local repository (path withheld)",
       "remote": "https://github.com/freeParameterized/maintenance.git",
       "stack": [
         "React",
@@ -471,7 +471,7 @@
       "featured": false,
       "visibility": "GitHub — freeParameterized/Template",
       "url": "https://github.com/freeParameterized/Template",
-      "sourcePath": "C:\\Users\\peter\\source\\githubRepos\\Template",
+      "sourcePath": "local repository (path withheld)",
       "remote": "https://github.com/freeParameterized/Template.git",
       "stack": [
         "C#",
@@ -494,7 +494,7 @@
       "featured": false,
       "visibility": "Local — no remote",
       "url": null,
-      "sourcePath": "C:\\Users\\peter\\source\\repos\\{PDFCBP, CBPprocessing, CBPtextscan, PrintProcessCBP, PDFtexter}",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "C#",
@@ -519,7 +519,7 @@
       "featured": false,
       "visibility": "Local — no repository",
       "url": null,
-      "sourcePath": "C:\\Users\\peter\\source\\repos\\PropertySetUpdater",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "C#",
@@ -540,7 +540,7 @@
       "featured": false,
       "visibility": "Local — no remote",
       "url": null,
-      "sourcePath": "C:\\Users\\peter\\source\\repos\\freeParameterized\\grok-tensor-v2",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "Python",
@@ -563,7 +563,7 @@
       "featured": false,
       "visibility": "This workstation",
       "url": null,
-      "sourcePath": "This machine (Ollama at 127.0.0.1:11434; whisper.cpp under D:\\OfflineLLMGui)",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "Ollama",
@@ -590,7 +590,7 @@
       "featured": false,
       "visibility": "On-machine fluency",
       "url": null,
-      "sourcePath": "This machine — third-party tools, no original code",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "COLMAP",
@@ -612,7 +612,7 @@
       "featured": false,
       "visibility": "This repository",
       "url": null,
-      "sourcePath": "C:\\Users\\peter\\source\\repos\\living-resume",
+      "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
         "Vite",
@@ -634,7 +634,7 @@
   ],
   "excludedFromProjects": [
     "whisper.cpp, Dear ImGui, miniaudio, Vosk, glad, GLFW — vendored third-party dependencies inside his repos, not his code.",
-    "Ollama, Open WebUI, LM Studio — third-party runtimes he deploys and configures; no Ollama or Open WebUI source of his was found on this machine, only model stores under D:\\ollama-models and a vcpkg port.",
+    "Ollama, Open WebUI, LM Studio — third-party runtimes he deploys and configures; no Ollama or Open WebUI source of his was found on this machine, only local model stores and a vcpkg port.",
     "arcore_flutter_plugin — third-party Flutter plugin vendored into Digital Twin Pro.",
     "PDFsharp.Samples-master — a cloned third-party sample repository.",
     "tensor-demo — almost entirely a Python .venv (site-packages); no meaningful original code.",

@@ -23,7 +23,19 @@ export default defineConfig({
     // Cloudflare quick tunnels hand out a random *.trycloudflare.com host; without this
     // Vite answers "Blocked request" and the public demo URL shows a blank page.
     allowedHosts: [".trycloudflare.com"],
-    fs: { allow: [root] },
+    // The dev server can read anything under `allow`, and it is what the public tunnel
+    // hits, so keep source, env, git and scratch data out of reach.
+    fs: {
+      allow: [root],
+      deny: [
+        "**/.env",
+        "**/.env.*",
+        "**/.git/**",
+        "**/node_modules/.cache/**",
+        "**/*.{pem,crt,key,pfx}",
+        "**/scripts/**",
+      ],
+    },
     proxy: {
       "/api": {
         target: "http://127.0.0.1:8787",
@@ -35,5 +47,13 @@ export default defineConfig({
     host: "127.0.0.1",
     port: 4173,
     strictPort: true,
+    allowedHosts: [".trycloudflare.com"],
+    // Preview serves only the built dist/, which is the safer thing to expose publicly.
+    proxy: {
+      "/api": {
+        target: "http://127.0.0.1:8787",
+        changeOrigin: true,
+      },
+    },
   },
 });
