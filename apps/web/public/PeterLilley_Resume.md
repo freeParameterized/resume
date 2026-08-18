@@ -1,0 +1,76 @@
+# Peter A. Lilley
+
+**Software Engineer — Local LLM Inference, Language-to-Geometry Systems, Production Tooling**
+
+Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request · github.com/freeParameterized · freeparameter.com · Free Parameter LLC
+
+## Summary
+
+Software engineer who ships production systems other professionals depend on daily. Built a natural-language-to-geometry pipeline — a plain-language interface that generates 3D models and sets up engineering deliverables — with locally hosted LLM inference handling intent and deterministic C#/.NET code owning geometry construction and validation; introduced that capability at an established St. Louis engineering firm across a roughly two-year engagement, employer references available. Also built OCR ingestion tooling that parses existing plan sets to auto-check and auto-populate them, and automation that cut repetitive drafting from 8–12 hours to about 30 seconds per cycle with roughly 25% fewer errors before licensed-engineer review. Works in C#, Python, C++17, TypeScript, and Dart inside multi-disciplinary teams and formal quality processes. Designed, funded, built, and shipped Digital Twin Pro end to end — a Flutter 3D inventory app with a hand-written renderer — to a Google Play beta.
+
+## Skills
+
+- **Languages:** C#/.NET, Python, C++17, Dart/Flutter, TypeScript/JavaScript, SQL, LISP, VBA
+- **AI and local inference:** Ollama, LM Studio, Open WebUI, retrieval over curated corpora, Google Gemini API pipelines, Tesseract OCR, whisper.cpp speech-to-text, prompt engineering, Levenshtein matching
+- **Engineering and data:** Linear algebra and matrix transforms, 3D projection and depth sorting, graph and dependency processing, SQLite, Firebase, Supabase, Postgres, Express, React, Three.js, Git, CMake
+- **Domain systems and quality:** Civil 3D and AutoCAD API plugins, Revit/Dynamo automation, structured entity metadata, ARCore; geometric dimensioning and tolerancing (GD&T), coordinate measuring machines, ISO 9001, PPAP
+
+## Experience
+
+### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
+*St. Louis, MO · Jul 2024 – Present*
+
+- Built CAD bridges and automators that generate 3D models from natural-language input and perform construction drawing setup — a language-to-geometry pipeline in a production environment, using locally hosted LLM inference for intent and deterministic C#/.NET code for geometry construction, parameter defaulting, and validation before anything is committed. Introduced this capability at the firm; references available.
+- Built ingestion tooling that parses existing PDF plan sets with OCR and auto-checks and auto-populates them, replacing a manual mark-up loop.
+- Automated repetitive drafting with Python and Dynamo, cutting cycles from 8–12 hours to roughly 30 seconds and reducing errors reaching licensed-engineer review by about 25%.
+- Designed structured metadata schemas attached to model entities so each object carries persistent typed data alongside its geometry, and built a template-driven stormwater runoff calculator with consistency assertions that fail loudly on transcription errors.
+- Lead standards automation and coordinate across civil, mechanical, plumbing, and architectural disciplines on capital projects, including automated standards diffing and clash detection.
+
+### Quality Engineer — Manufacturing / Precision Machining — Component Bar Products
+*O'Fallon, MO · Apr 2023 – Jun 2024*
+
+- Programmed and operated coordinate measuring machines for multi-axis geometric validation, verifying precision-machined parts to ±0.001 inch or tighter against geometric dimensioning and tolerancing (GD&T) specifications.
+- Validated dimensional tolerances against company CAD models and customer prints so machining problems surfaced as geometry mismatches rather than downstream scrap.
+- Enforced ISO 9001 requirements across production lines, integrated Production Part Approval Process documentation, drove corrective actions on non-conforming material, and managed calibration and traceability of all metrology assets.
+
+### Assistant Department Manager, Building Materials — and Pro Sales — Menard, Inc.
+*Manchester-Ballwin, MO · Jun 2020 – Mar 2023*
+
+- Produced quantity takeoffs (computing material quantities directly from construction plans) and commercial and residential material estimates under deadline, and handled contractor-facing pro sales translating vague requirements into exact material lists.
+- Supervised and coordinated department staff in a high-volume Building Materials department, and ran inventory, pricing data, and freight quality control.
+
+### Revit/CAD Technician — Mechanical/Plumbing — Heideman & Associates, Inc.
+*Fenton, MO · May 2018 – Apr 2019*
+
+- Produced mechanical and plumbing construction documents and as-built models in Revit and AutoCAD, and audited standards for cross-discipline consistency.
+- Built automated data libraries for building-system objects and standardized hundreds of outdated details.
+
+## Projects
+
+### Digital Twin Pro
+*Personal product, Free Parameter LLC · Flutter/Dart 3, SQLite, Firebase, Google Gemini API, ARCore · github.com/freeParameterized/digital-twin-pro*
+
+- Designed, funded, and shipped a cross-platform 3D inventory application to a successful beta release on the Google Play Store (Android AAB with R8, plus a Windows desktop build).
+- Wrote the 3D renderer by hand instead of using a game engine: a painter's-algorithm scene renderer with a Z-sorted draw queue and custom 3D projection, driving drag-and-drop tote placement on configurable rack grids.
+- Integrated a paid Google Gemini API for photo-based item and quantity detection and voice-driven entry, plus an AI Organizer that generates and animates consolidation plans before changes are committed.
+- SQLite persistence with a move audit log, QR codes with generated PDF booklets, spreadsheet/CSV/JSON export, ARCore placement, and Provider state management across 64+ modules.
+
+### CAD integration bridge
+*C++17, Dear ImGui, Windows COM · local repository*
+
+- Built a C++17 Dear ImGui host that COM-bridges BricsCAD, AutoCAD, and Civil 3D, discovers installed CAD SDKs at runtime, and compiles and hot-loads LISP, C#, and BRX plugins in place (~14k lines across 82 files).
+
+### Living resume (this site)
+*React, TypeScript, Three.js, Express, Ollama*
+
+- Built a spatial React Three Fiber portfolio over an Express API that retrieves from a curated corpus and answers through a local model, with on-device speech in and out, and degrades to extractive answers when no model is running.
+
+## Education
+
+### Coursework toward Latin American Studies with Technical Applications — Missouri University of Science and Technology
+*Rolla, MO · 2019 – 2020*
+
+Object-oriented C++ and linear algebra coursework. Technical fluency in Spanish (placed into Level 4 conversational).
+
+### A.A.S., Building Systems Engineering Technology — Ranken Technical College
+*Wentzville, MO · 2019*

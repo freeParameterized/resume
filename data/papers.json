@@ -1,0 +1,132 @@
+{
+  "papers": [
+    {
+      "id": "zenodo-17444765",
+      "title": "A Geometric Tensor Model for Gravity: Spatial Sheets and Wave Function Collapse v3 (Updated Model, Visualization)",
+      "authors": [
+        "Peter A. Lilley (deposited under Free Parameter LLC)"
+      ],
+      "authorshipVerified": true,
+      "authorshipNote": "Peter A. Lilley wrote this and registered himself as the author. It is deposited under his own company, Free Parameter LLC. The in-document byline on earlier versions reads 'Anonymous Innovator / Self-Studied Theoretical Physicist'.",
+      "doi": "10.5281/zenodo.17444765",
+      "conceptDoi": "10.5281/zenodo.17443950",
+      "url": "https://zenodo.org/records/17444765",
+      "date": "2025-10-25",
+      "createdDate": "2025-10-20",
+      "license": "CC0 1.0 Universal (Public Domain Dedication)",
+      "version": "v3",
+      "resourceType": "Publication / Proposal",
+      "venue": "Zenodo (self-deposit archive, not refereed)",
+      "year": 2025,
+      "keywords": [
+        "Quantum Gravity"
+      ],
+      "files": [
+        "2025.10.20QGv3.pdf",
+        "2025.10.20QGv3.tex",
+        "references.bib"
+      ],
+      "label": "Personal curiosity · speculative · self-deposited · not refereed",
+      "abstract": "We propose a novel model of gravity as a spatial tensor field, eliminating temporal dynamics in favor of a force-space geometry, updated to version 3 on October 25, 2025. Gravitational interactions emerge from observer-dependent reference planes, described by a second-order spatial and first-order force derivative equation. Fast Fourier transforms (FFT) of these planes yield discrete shapes, yet the field remains continuous until measurement. Wave function collapse produces measurable gravitational acceleration, reconciling quantized and continuous interpretations via duality.",
+      "subjectMatter": "Speculative theoretical physics: a proposed reformulation of gravity as a tensor field on a 'space-force' manifold with no time coordinate, in which measurement (wave function collapse) produces observable gravitational acceleration.",
+      "mathTopics": [
+        "Tensor index notation (as notation; no transformation law or metric is defined)",
+        "Partial differential equations (a postulated second-order spatial / first-order 'force' derivative equation)",
+        "Fourier analysis (continuous Fourier integral, labeled as FFT)",
+        "Linear algebra / inner-product spaces (normalized inner product as a cosine-similarity alignment measure)",
+        "Dirac bra-ket notation and the Born rule form |<T|psi>|^2",
+        "Dimensional analysis (attempted, and executed incorrectly)",
+        "Black hole thermodynamics: Bekenstein-Hawking entropy S = A c^3 / (4 G hbar), Hawking temperature scaling T_H ~ hbar c / (k_B r_s)",
+        "General-relativistic gravitational time dilation (weak-field approximation)"
+      ],
+      "mathLevelDemonstrated": "Advanced-undergraduate physics vocabulary and correctly-recalled standard formulas, but not correctly-executed mathematics. No graduate-level derivation, no differential geometry, no group theory, no measure theory.",
+      "mathLevelAssessment": "Honest read: this document demonstrates FAMILIARITY with the notation of general relativity and quantum mechanics, not COMMAND of it. On the positive side, it correctly reaches for and correctly writes down real objects: the Bekenstein-Hawking entropy S = A c^3 / (4 G hbar), the Hawking temperature scaling T_H proportional to hbar c / (k_B r_s), a normalized inner product as a similarity measure (cos theta_ij = <T_i|T_j> / sqrt(<T_i|T_i><T_j|T_j>)), a Fourier mode decomposition, and a Born-rule-shaped expectation integral. That is genuine self-taught exposure to the mathematical language of theoretical physics, which most people never acquire. On the negative side, the mathematics does not hold up on inspection, and the specific things that break are the things a trained reviewer checks first. (1) The central field equation, d^2 T_ij,k / dx_i dx_j + d T_ij,k / df_k = S, is not well-formed index notation: the indices i, j, k appear simultaneously as free indices on the tensor and as differentiation labels, so the expression has no consistent rank and no summation convention; T_ij,k is never given a transformation law, a metric, or a rank, so it is not established as a tensor at all. (2) The paper's headline v3 'fix' is a dimensional-consistency claim that is itself dimensionally wrong: k = G M / (c^2 r) is the dimensionless Schwarzschild compactness ratio (approximately 7.0e-10 at Earth's surface), so it cannot 'ensure unit consistency (m/s^2)' for g as claimed. (3) The quoted numbers are internally inconsistent. The stated per-meter fractional clock rate of 2.3e-13 is off by roughly three orders of magnitude from the correct weak-field value g/c^2 = 1.09e-16 per meter, and 2.3e-13 per meter over 8,878 m would give about 64,000 microseconds per year, not the 24.6 microseconds per year quoted two lines later. The 24.6 microseconds/year figure itself is in the right ballpark (the correct GR value is about 30 microseconds/year), which means the answer was known in advance rather than derived. (4) The horizon area is stated as A approximately 1.13e10 m^2 for a solar-mass black hole; the correct value is 4 pi r_s^2 approximately 1.1e8 m^2, a factor-of-100 error. The entropy that follows, 1.2e77 k_B, is right to within 15 percent of the true 1.05e77 k_B, but does not follow from the paper's own stated area. (5) The reduction to the Newtonian limit, F approximately G m_1 m_2 / r^2, is asserted, not derived. (6) The claimed empirical hooks are not supported: 'matches observed timing variations (10^-5)' for PSR J0737-3039 has no accompanying derivation, and an entropy deviation Delta S approximately 1.2e74 k_B (0.1 percent of a black hole's total entropy, from an epsilon chosen by hand) is described as 'detectable with future graviton observatories', which is not a measurable quantity under any known or proposed experiment. Bottom line for an ML industry reader: this is evidence of curiosity, self-study, and comfort writing LaTeX and manipulating symbolic expressions. It is NOT evidence that the author can carry a rigorous derivation.",
+      "technicalHighlights": [
+        "Postulated governing equation: d^2 T_ij,k / (dx_i dx_j) + d T_ij,k / df_k = S(x_i, f_k), a second-order spatial plus first-order 'force-coordinate' PDE with the time derivative deliberately removed. Note: the index structure is not well-formed, since i, j, k are used both as tensor indices and as differentiation labels.",
+        "Fourier mode decomposition of the field into 'spatial sheets', with sheet alignment quantified by the normalized inner product cos theta_ij = <T_i|T_j> / sqrt(<T_i|T_i><T_j|T_j>). This inner-product / cosine-similarity construction is the one piece of mathematics in the paper that is written correctly.",
+        "Born-rule-shaped collapse postulate producing observable acceleration: g = k * integral of |<T_ij,k | psi>|^2 df_k, with k = G M / (c^2 r) claimed to 'ensure unit consistency (m/s^2)'. That claim is false: G M / (c^2 r) is dimensionless (approximately 7.0e-10 for Earth).",
+        "Weak-field clock dilation prediction quoted as 24.6 microseconds/year over 8,878 m. The final figure is in the correct range (true value approximately 30 microseconds/year), but the stated per-meter coefficient of 2.3e-13 is wrong by roughly 2,000x (correct: g/c^2 = 1.09e-16 per meter) and does not reproduce the quoted result.",
+        "Black hole entropy deviation as the paper's novel falsifiable claim, using S = A c^3 / (4 G hbar) and a hand-chosen granularity parameter epsilon approximately 0.001. The stated horizon area (1.13e10 m^2) is 100x too large, and no observational technique exists that could measure a black hole's absolute entropy to 0.1 percent."
+      ],
+      "recruiterBlurb": "A self-directed exploration of general relativity and quantum mechanics formalism, written in LaTeX and archived on Zenodo with a DOI. Peter wrote it on his own time and deposited it under his own company, Free Parameter LLC. It shows him reading and writing real mathematical physics for fun -- tensor notation, Fourier decomposition, inner-product geometry, black hole thermodynamics -- and caring enough about an idea to formalize and version it. It is a speculative self-deposited proposal on an unrefereed archive, it was drafted with LLM assistance, and it contains numerical and dimensional errors he is upfront about. It is a curiosity artifact, not a research credential, and it is presented here as exactly that.",
+      "honestFraming": "The framing Peter uses: 'I taught myself enough GR and QM notation to write this down, I used an LLM to help typeset it, and I know it is speculative and has errors in it.' Self-awareness about its limits is the point, not the physics.",
+      "resumeBullet": "Personal interest: self-studied general relativity and quantum mechanics formalism; authored and DOI-archived a speculative tensor-gravity proposal in LaTeX (Zenodo, CC0), iterating through three versions with AI-assisted drafting.",
+      "resumeBulletWarning": "Do NOT phrase this as 'published research', 'published paper', 'peer reviewed', 'quantum gravity researcher', or 'physicist'. Zenodo is an unrefereed self-deposit archive and the record type is literally 'Proposal'. Acceptable phrasing: 'authored a speculative preprint', 'self-deposited proposal', 'DOI-archived personal write-up'. Overclaiming here is the fastest way to lose credibility with a technical hiring manager.",
+      "optional": true,
+      "recommendedPlacement": "LLM corpus, plus one clearly-labeled 'personal curiosity' item inside the collapsed deep-dive section. NOT the hero. NOT the resume experience or projects sections. NOT the printed/downloadable resume. Never given a project card beside real code repositories.",
+      "volunteerPolicy": "Do not bring this up when someone asks about machine learning ability, programming ability, or engineering experience. Only discuss it if the visitor asks about the paper, the DOI, Zenodo, physics, or gravity specifically.",
+      "notes": "AUTHORSHIP: Peter A. Lilley wrote this and has registered himself as the author; Free Parameter LLC is his own company and is the depositing entity of record. All three versions share Zenodo owner ID 1443305. AI PROVENANCE: the record's own metadata is candid about machine assistance -- the created-date description reads 'Generated Latex via Grok, xAI', and the only two references in the entire bibliography are 'Grok 4 Fast Beta, xAI' and 'Gemini Flash 2.5, Google LLC'. There are zero citations to the physics literature (no Einstein, no Bekenstein, no Hawking, despite using their results). CONTENT: verified by independent recalculation -- horizon area off by 100x, per-meter clock-dilation coefficient off by ~2000x and inconsistent with the paper's own quoted result, and the advertised 'unit consistency' fix uses a dimensionless quantity. FULL TEXT: the LaTeX source (2025.10.20QGv3.tex, 11 KB) was downloaded and read in full, so this assessment is based on the actual document. VERSION HISTORY: three versions exist under concept DOI 10.5281/zenodo.17443950 -- v1 (17443951), v2 (17444729), v3 (17444765, this one) -- all uploaded 20-25 Oct 2025. STATS at time of research: 455 views, 266 downloads across all versions."
+    },
+    {
+      "id": "zenodo-17443953",
+      "title": "ГОТОВНОСТЬ УЧИТЕЛЯ ХУДОЖЕСТВЕННОГО ТРУДА И ЧЕРЧЕНИЯ К ПРОФЕССИОНАЛЬНОЙ ДЕЯТЕЛЬНОСТИ В УСЛОВИЯХ ЦИФРОВИЗАЦИИ ОБРАЗОВАНИЯ",
+      "titleTranslated": "Readiness of the Teacher of Artistic Labor and Technical Drawing for Professional Activity Under the Conditions of the Digitalization of Education",
+      "authors": [
+        "Байзахова Сапаркуль Шадиевна (Baizakhova Saparkul Shadievna)",
+        "Жолдасбекова Сауле Абдразаховна (Zholdasbekova Saule Abdrazakhovna)"
+      ],
+      "authorshipVerified": false,
+      "notPeters": true,
+      "doi": "10.5281/zenodo.17443953",
+      "conceptDoi": "10.5281/zenodo.17443952",
+      "url": "https://zenodo.org/records/17443953",
+      "date": "2025-10-25",
+      "license": "CC BY 4.0",
+      "version": "v1",
+      "resourceType": "Publication / Conference paper",
+      "keywords": [],
+      "files": [
+        "4.34.pdf"
+      ],
+      "abstractTranslatedSummary": "A Russian-language education-studies conference paper on preparing future teachers of artistic labor and technical drawing for professional practice amid the digital transformation of education. It discusses levels of digital competence, infrastructure modernization, internet-based learning technologies, updated digital teaching materials, and interactive pedagogical methods.",
+      "subjectMatter": "Pedagogy / teacher education / digital competence in education. Almost certainly Kazakhstani or Central Asian in origin, based on the author names and subject.",
+      "mathTopics": [],
+      "mathLevelDemonstrated": "None. This is a qualitative education-studies paper with no mathematical content.",
+      "mathLevelAssessment": "Not applicable. This record contains no mathematics and has nothing to do with Peter, software engineering, or machine learning.",
+      "technicalHighlights": [],
+      "recruiterBlurb": "",
+      "resumeBullet": "",
+      "optional": true,
+      "recommendedPlacement": "Exclude entirely from the site. Do not surface this record in any section. Retained only so the chat layer can correct a visitor who pastes this DOI or URL.",
+      "correction": "That record (zenodo.org/records/17443953, DOI 10.5281/zenodo.17443953) is not Peter's work. It is a Russian-language pedagogy conference paper by Baizakhova Saparkul Shadievna and Zholdasbekova Saule Abdrazakhovna, uploaded by a different Zenodo account under a different concept DOI. Peter's Zenodo record is 17444765 (concept DOI 10.5281/zenodo.17443950). The mix-up is almost certainly a mistyped ID: 17443953 differs by two digits from 17443951, which is v1 of Peter's gravity proposal.",
+      "notes": "NOT PETER'S PAPER. Unambiguous. Russian-language pedagogy conference paper, CC BY 4.0, uploaded by Zenodo owner ID 421332 -- a different account from the gravity paper's owner (1443305). Its concept DOI (10.5281/zenodo.17443952) is unrelated to the gravity paper's concept DOI (10.5281/zenodo.17443950). Peter A. Lilley and Free Parameter LLC appear nowhere in it. Most likely a transcription slip: 17443953 differs from 17443951 (the gravity paper's v1) by two digits and both were deposited within hours of each other. Retained in this file ONLY so the site's chat layer can answer correctly and refuse to claim it. Under no circumstances should it be presented as Peter's work."
+    }
+  ],
+  "meta": {
+    "generated": "2026-08-18",
+    "authorshipStatus": "Confirmed by Peter A. Lilley: he wrote record 17444765 and registered himself as its author; Free Parameter LLC is his own company. Record 17443953 is a different authors' paper and is not his.",
+    "researchMethod": "Zenodo landing pages and REST API metadata fetched for both records; full LaTeX source (2025.10.20QGv3.tex) and references.bib for the gravity paper downloaded and read in full; all version history under the concept DOI enumerated; every numerical claim in the gravity paper independently recomputed.",
+    "bannedPhrasing": [
+      "published research",
+      "published paper",
+      "peer reviewed",
+      "quantum gravity researcher",
+      "physicist"
+    ],
+    "acceptablePhrasing": [
+      "authored a speculative preprint",
+      "self-deposited Zenodo proposal",
+      "DOI-archived personal write-up",
+      "self-studied GR/QM notation"
+    ],
+    "caveats": [
+      "Record 17444765 is Peter's own work, deposited under his company Free Parameter LLC. Authorship is settled; the caveats below are about the CONTENT and the VENUE, not about who wrote it.",
+      "Zenodo is an unrefereed self-deposit repository. A Zenodo DOI confers permanence and citability, NOT peer review. Record 17444765 is typed as 'Proposal', not 'Journal article'. Never describe it as peer-reviewed or as a publication in the academic sense.",
+      "The gravity paper's own metadata discloses machine assistance: the created-date note reads 'Generated Latex via Grok, xAI', and its complete bibliography consists of two entries, both LLMs (Grok 4 Fast Beta and Gemini Flash 2.5). It cites zero physics literature despite invoking Bekenstein-Hawking entropy and Hawking temperature. A technically literate reader will notice this immediately.",
+      "Four specific errors in the gravity paper were confirmed by independent recalculation: (1) k = GM/(c^2 r) is dimensionless (approximately 7.0e-10 at Earth's surface) and therefore cannot supply the m/s^2 units the paper claims it supplies, which undermines the stated purpose of the v3 revision; (2) the per-meter fractional clock rate is given as 2.3e-13 versus the correct 1.09e-16, an error of roughly 2000x; (3) that stated coefficient does not reproduce the paper's own quoted 24.6 microseconds/year over 8,878 m (it would give roughly 64,000); (4) the solar-mass horizon area is given as 1.13e10 m^2 versus the correct 1.1e8 m^2, an error of 100x.",
+      "The central field equation is not well-formed index notation: i, j, k serve simultaneously as tensor indices and as differentiation labels, no summation convention is established, and T_ij,k is never given a rank, metric, or transformation law.",
+      "The two empirical claims are unsupported. The PSR J0737-3039 agreement is asserted with no derivation. The predicted black hole entropy deviation derives from a granularity parameter chosen by hand and is called 'detectable with future graviton observatories', but no existing or proposed instrument can measure a black hole's absolute entropy at all.",
+      "OVERALL RECOMMENDATION for a software/ML job search: net-neutral if framed as personal curiosity, clearly NEGATIVE if framed as a research credential. Keep it in the deep dive and the chat corpus, framed as self-directed study. Keep it off the hero, out of the resume experience and projects sections, and off the printed resume.",
+      "If the goal is specifically to demonstrate mathematical ability to an ML audience, this paper is the wrong instrument. Stronger signals for the same goal: a from-scratch backpropagation or transformer-attention implementation with the gradients derived by hand, a numerical-methods or convex-optimization writeup, a probability/information-theory exercise set, or documented linear algebra and multivariable calculus coursework."
+    ],
+    "sources": [
+      "https://zenodo.org/records/17444765",
+      "https://zenodo.org/api/records/17444765",
+      "https://zenodo.org/api/records/17444765/versions",
+      "https://zenodo.org/records/17444765/files/2025.10.20QGv3.tex",
+      "https://zenodo.org/records/17444765/files/references.bib",
+      "https://zenodo.org/records/17443953",
+      "https://zenodo.org/api/records/17443953"
+    ]
+  }
+}

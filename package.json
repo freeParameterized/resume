@@ -1,0 +1,26 @@
+{
+  "name": "living-resume",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Peter A. Lilley — living resume (Vite + React Three Fiber + Express + local Ollama)",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "start": "concurrently -k -n api,web -c cyan,magenta \"npm run dev -w @living-resume/api\" \"npm run dev -w @living-resume/web\"",
+    "dev": "npm start",
+    "build": "npm run build -w @living-resume/web && npm run build -w @living-resume/api",
+    "build:pages": "npm run resume:pdf && npm run build -w @living-resume/web",
+    "preview": "npm run preview -w @living-resume/web",
+    "resume:pdf": "node scripts/make-resume-pdf.mjs",
+    "tunnel": "cloudflared tunnel --url http://127.0.0.1:5173",
+    "demo": "concurrently -k -n api,web,tunnel -c cyan,magenta,yellow \"npm run dev -w @living-resume/api\" \"npm run dev -w @living-resume/web\" \"node scripts/start-tunnel.mjs\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

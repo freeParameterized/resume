@@ -1,0 +1,24 @@
+# Render Web Service — API only. Do not attach this machine's Ollama.
+# Local inference stays on the workstation (or a tunnel with auth). A hosted
+# API without Ollama still serves extractive corpus answers.
+
+services:
+  - type: web
+    name: living-resume-api
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build -w @living-resume/api
+    startCommand: npm run start -w @living-resume/api
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: CORS_ORIGINS
+        sync: false
+      - key: OLLAMA_HOST
+        sync: false
+      - key: OLLAMA_MODEL
+        value: gemma4:26b

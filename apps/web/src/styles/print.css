@@ -1,0 +1,176 @@
+/* Classic ATS-friendly resume sheet. Black on white, single column, real text. */
+
+html.print-route,
+html.print-route body {
+  background: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.sheet {
+  --ink: #000;
+  background: #fff;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.32;
+  max-width: 7.5in;
+  margin: 0 auto;
+  padding: 0.5in;
+  box-sizing: border-box;
+}
+
+.sheet * {
+  color: var(--ink);
+  background: transparent;
+}
+
+.sheet-head {
+  border-bottom: 1.5pt solid var(--ink);
+  padding-bottom: 6pt;
+  margin-bottom: 9pt;
+}
+
+.sheet h1 {
+  font-size: 19pt;
+  letter-spacing: 0.02em;
+  margin: 0 0 2pt;
+  font-weight: 700;
+}
+
+.sheet-headline {
+  margin: 0 0 3pt;
+  font-size: 10.5pt;
+  font-weight: 700;
+}
+
+.sheet-contact {
+  margin: 0;
+  font-size: 9pt;
+}
+
+.sheet section {
+  margin-bottom: 9pt;
+}
+
+.sheet h2 {
+  font-size: 11pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 0.5pt solid var(--ink);
+  margin: 0 0 5pt;
+  padding-bottom: 1.5pt;
+  font-weight: 700;
+}
+
+.sheet h3 {
+  font-size: 10.5pt;
+  margin: 0;
+  font-weight: 700;
+}
+
+.sheet p {
+  margin: 0 0 4pt;
+  orphans: 2;
+  widows: 2;
+}
+
+.sheet-meta {
+  font-size: 9pt;
+  font-style: italic;
+  margin: 0 0 3pt;
+}
+
+.sheet ul {
+  margin: 0 0 4pt;
+  padding-left: 16pt;
+}
+
+.sheet li {
+  margin-bottom: 2pt;
+}
+
+.sheet-entry {
+  margin-bottom: 7pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.sheet-skills {
+  margin: 0;
+}
+
+.sheet-skill {
+  margin-bottom: 3pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.sheet-skill dt {
+  display: inline;
+  font-weight: 700;
+}
+
+.sheet-skill dt::after {
+  content: ": ";
+}
+
+.sheet-skill dd {
+  display: inline;
+  margin: 0;
+}
+
+.sheet-actions {
+  margin-top: 18pt;
+  padding-top: 9pt;
+  border-top: 0.5pt solid #999;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-family: system-ui, sans-serif;
+  font-size: 10pt;
+}
+
+.sheet-actions button {
+  font: inherit;
+  cursor: pointer;
+  padding: 6px 12px;
+  border: 1px solid #333;
+  background: #f2f2f2;
+  border-radius: 4px;
+}
+
+@page {
+  size: letter;
+  margin: 0.5in;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sheet {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .sheet h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+}
