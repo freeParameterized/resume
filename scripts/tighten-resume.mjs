@@ -60,7 +60,7 @@ for (const project of doc.projects) {
 
 for (const school of doc.education) {
   if (school.note) {
-    school.note = "Object-oriented C++ and linear algebra coursework. Technical fluency in Spanish.";
+    school.note = "General education and freshman-level coursework. Technical fluency in Spanish.";
   }
 }
 

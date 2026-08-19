@@ -59,7 +59,7 @@ const PREMISE: Rule[] = [
       "i",
     ),
     answer:
-      "That is not part of his record. Peter has not worked at any of the large technology companies, and the employers on his resume are Heideman & Associates as a Revit/CAD technician, Menard, Inc. in building materials and contractor-facing pro sales, Component Bar Products as a quality engineer in precision machining, and David Mason & Associates, where he is a Staff Technician on CAD automation and Civil 3D tooling now. Separately, on his own time, he runs Free Parameter LLC, which is how Digital Twin Pro is published. Whatever you heard about another employer, do not attach it to him.",
+      "That is not part of his record. Peter has not worked at any of the large technology companies, and the employers on his resume are Heideman & Associates as a Revit/CAD technician, Component Bar Products as a quality engineer in precision machining, and David Mason & Associates, where he is a Staff Technician on CAD automation and Civil 3D tooling now. Separately, on his own time, he runs Free Parameter LLC, which is how Digital Twin Pro is published. Whatever you heard about another employer, do not attach it to him.",
   },
   {
     id: "premise-venture",
@@ -122,7 +122,7 @@ const GUARDED: Rule[] = [
     test: /\b(attention|self.attention|multi.head|transformers?|back.?propagat\w*|backprop\w*|autograd\w*|gradient descent|gradients?|derive|derivation|chain rule|neural net\w*|\bcnn\b|\brnn\b|\blstm\b|activation function|softmax|layer ?norm\w*|positional encoding|tokeniz\w* internals|\bkv cache\b)/i,
     not: /pay attention to detail/i,
     answer:
-      "That is self-taught background rather than something he has implemented, and the notes do not record him writing an attention layer, an autograd pass, or a training loop, so I will not claim he has. The math he has actually written is different math: linear algebra and matrix transforms, a 3D projection with painter's-algorithm depth sorting he hand-implemented in Digital Twin Pro, complex numbers and roots of unity in a visualizer, graph and dependency-tree processors, Levenshtein distance for fuzzy matching, and hydrologic calculators. His coursework covered object-oriented C++ and linear algebra at Missouri S&T. If you want to know how deep the transformer understanding actually goes, ask him to work through it on a whiteboard - that is a fair test, and not one I can pass on his behalf.",
+      "That is self-taught background rather than something he has implemented, and the notes do not record him writing an attention layer, an autograd pass, or a training loop, so I will not claim he has. The math he has actually written is different math: matrix transforms, a 3D projection with painter's-algorithm depth sorting he hand-implemented in Digital Twin Pro, complex numbers and roots of unity in a visualizer, graph and dependency-tree processors, Levenshtein distance for fuzzy matching, and hydrologic calculators. His coursework covered general education and freshman-level topics at Missouri S&T. If you want to know how deep the transformer understanding actually goes, ask him to work through it on a whiteboard - that is a fair test, and not one I can pass on his behalf.",
   },
   {
     id: "ml-infra",
@@ -273,7 +273,7 @@ const GUARDED: Rule[] = [
     id: "headcount",
     test: /how many (people|staff|employees|reports|direct reports|engineers|technicians)|headcount|team size|how big (was|is) (the|your|his) team|span of control|exact number of (people|reports)/i,
     answer:
-      "No headcount number is published, and I will not estimate one. What is documented is the role: Assistant Department Manager for Building Materials at Menard, Inc. from June 2020 to March 2023, supervising department staff and handling contractor-facing pro sales. His engineering work since then has been as an individual contributor building tooling that other professionals use daily, not as a people manager. Ask him for the specifics at " +
+      "His engineering work has been as an individual contributor building tooling that other professionals use daily, not as a people manager. Ask him for the specifics at " +
       `${EMAIL}.`,
   },
   {
@@ -290,7 +290,7 @@ const GUARDED: Rule[] = [
     test: /\b(gpa\b|bachelor'?s?|masters?'?|\bmba\b|ph\.?d|doctorate|doctoral|dissertation|alma mater|transcript|associate'?s? degree|\baas\b|ranken|missouri s&t|\bs&t\b|rolla)\b|(what|which|where|did|do|does|have|has|any|highest)\b.{0,40}\b(degree|degrees|graduate|graduated|college|university|education|majored?|study|studied|coursework)\b/i,
     not: /campus|finney|expansion project|graduate (of|from) the school of hard/i,
     answer:
-      "His completed credential is an AAS in Building Systems Engineering Technology from Ranken Technical College in Wentzville, Class of 2019. He also took coursework at Missouri S&T in Rolla in 2019-2020 toward Latin American Studies with Technical Applications, including object-oriented C++ and linear algebra, and placed into Advanced Conversational Spanish at Level 4. To be direct about it: he did not complete a bachelor's degree, and there is no master's, no PhD, and no GPA published here. The software ability is largely self-taught - it started as a kid in Adventure Game Studio and ran through C++, CAD APIs, and local LLM work.",
+      "His completed credential is an AAS in Building Systems Engineering Technology from Ranken Technical College in Wentzville, Class of 2019. He also took coursework at Missouri S&T in Rolla in 2019-2020 toward Latin American Studies with Technical Applications, including general education and freshman-level coursework, and placed into Advanced Conversational Spanish at Level 4. To be direct about it: he did not complete a bachelor's degree, and there is no master's, no PhD, and no GPA published here. The software ability is largely self-taught - it started as a kid in Adventure Game Studio and ran through C++, CAD APIs, and local LLM work.",
   },
   {
     id: "certifications",

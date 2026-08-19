@@ -19,19 +19,19 @@
   "skills": [
     {
       "label": "Languages",
-      "items": "C#/.NET, Python, C++17, Dart/Flutter, TypeScript/JavaScript, SQL, LISP, VBA"
+      "items": "C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA"
     },
     {
-      "label": "AI and local inference",
-      "items": "Ollama, LM Studio, Open WebUI, retrieval over curated corpora, Google Gemini API pipelines, Tesseract OCR, whisper.cpp speech-to-text, prompt engineering, Levenshtein matching"
+      "label": "AI and local models",
+      "items": "Ollama, LM Studio, Open WebUI, Google APIs, OCR, speech-to-text, prompt engineering, text matching"
     },
     {
       "label": "Engineering and data",
-      "items": "Linear algebra and matrix transforms, 3D projection and depth sorting, graph and dependency processing, SQLite, Firebase, Supabase, Postgres, Express, React, Three.js, Git, CMake"
+      "items": "Matrix math, 3D graphics, databases, SQLite, Firebase, Postgres, Express, React, Git, CMake"
     },
     {
       "label": "Domain systems and quality",
-      "items": "Civil 3D and AutoCAD API plugins, Revit/Dynamo automation, structured entity metadata, ARCore; geometric dimensioning and tolerancing (GD&T), coordinate measuring machines, ISO 9001, PPAP"
+      "items": "CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001"
     }
   ],
   "experience": [
@@ -56,16 +56,6 @@
         "Programmed and operated coordinate measuring machines, verifying precision-machined parts to +/-0.001 inch or tighter against GD&T specifications.",
         "Validated dimensional tolerances against CAD models and customer prints so machining problems surfaced as geometry mismatches, not downstream scrap.",
         "Enforced ISO 9001 across production lines, integrated Production Part Approval Process documentation, and managed calibration and traceability of metrology assets."
-      ]
-    },
-    {
-      "org": "Menard, Inc.",
-      "location": "Manchester-Ballwin, MO",
-      "title": "Assistant Department Manager, Building Materials - and Pro Sales",
-      "dates": "Jun 2020 - Mar 2023",
-      "bullets": [
-        "Produced quantity takeoffs and commercial and residential material estimates under deadline, and handled contractor-facing pro sales that turned vague requirements into exact material lists.",
-        "Supervised department staff in a high-volume Building Materials department, and ran inventory, pricing data, and freight quality control."
       ]
     },
     {
@@ -110,7 +100,7 @@
       "location": "Rolla, MO",
       "credential": "Coursework toward Latin American Studies with Technical Applications",
       "dates": "2019 - 2020",
-      "note": "Object-oriented C++ and linear algebra coursework. Technical fluency in Spanish."
+      "note": "General education and freshman-level coursework. Technical fluency in Spanish."
     },
     {
       "org": "Ranken Technical College",

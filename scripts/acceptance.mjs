@@ -195,7 +195,7 @@ const CASES = [
   {
     tag: "ml",
     q: "What's your math background? Can you derive gradients by hand?",
-    must: [/linear algebra/i],
+    must: [/matrix transforms/i],
     // It claimed a strong foundation in mathematical physics, tensor notation, and
     // differential geometry, and that he can derive gradients by hand.
     mustNot: [/mathematical physics|tensor notation|differential geometry|can derive gradients/i],

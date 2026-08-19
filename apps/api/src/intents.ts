@@ -1,16 +1,12 @@
 import { isExcludedFromSite, loadPapers, paperId } from "./papers.js";
 
 export type ChatIntents = {
-  about: boolean;
   projectIds: string[];
   jobIds: string[];
   skillIds: string[];
   paperIds: string[];
   metrics: string[];
 };
-
-const ABOUT_RE =
-  /\b(about (me|you|peter)|who are you|your story|origin|got (you|him) into|interested in program|why (do you )?code|why program|how did you (start|get into)|what got you)\b/i;
 
 export const PROJECT_ALIASES: Record<string, string[]> = {
   "digital-twin-pro": [
@@ -66,7 +62,6 @@ const JOB_ALIASES: Record<string, string[]> = {
     "metrology",
     "tolerance",
   ],
-  menard: ["menard", "menards", "takeoff", "estimating", "estimates", "pro sales", "building materials"],
   heideman: ["heideman", "revit", "mep"],
 };
 
@@ -74,7 +69,7 @@ const SKILL_ALIASES: Record<string, string[]> = {
   llm: ["ollama", "llm", "ocr", "tesseract", "machine learning", " ml ", "whisper"],
   languages: ["c++", "c#", "csharp", "python", "lisp", "javascript", "typescript", "dart"],
   cad: ["civil 3d", "autocad", "revit", "dynamo", "xdata"],
-  math: ["linear algebra", "graph theory", "matrix", "math"],
+  math: ["matrix transforms", "graph theory", "matrix", "math"],
   manufacturing: ["gd&t", "cmm", "iso 9001", "ppap", "inspection", "metrology"],
   estimating: ["takeoff", "takeoffs", "estimating", "estimate"],
 };
@@ -87,9 +82,6 @@ const METRIC_ALIASES: Record<string, string[]> = {
 
 export function detectIntents(question: string, answer = ""): ChatIntents {
   const hay = `${question}\n${answer}`.toLowerCase();
-  const about =
-    ABOUT_RE.test(question) ||
-    (/\b(adventure game studio|ags)\b/.test(hay) && /\b(program|code|start|origin)\b/.test(hay));
 
   const projectIds: string[] = [];
   for (const [id, keys] of Object.entries(PROJECT_ALIASES)) {
@@ -125,7 +117,6 @@ export function detectIntents(question: string, answer = ""): ChatIntents {
   }
 
   return {
-    about,
     projectIds: [...new Set(projectIds)].slice(0, 4),
     jobIds: [...new Set(jobIds)].slice(0, 2),
     skillIds: [...new Set(skillIds)].slice(0, 2),

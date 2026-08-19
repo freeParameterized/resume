@@ -10,10 +10,10 @@ Software engineer who ships production systems other professionals use daily. Bu
 
 ## Skills
 
-- **Languages:** C#/.NET, Python, C++17, Dart/Flutter, TypeScript/JavaScript, SQL, LISP, VBA
-- **AI and local inference:** Ollama, LM Studio, Open WebUI, retrieval over curated corpora, Google Gemini API pipelines, Tesseract OCR, whisper.cpp speech-to-text, prompt engineering, Levenshtein matching
-- **Engineering and data:** Linear algebra and matrix transforms, 3D projection and depth sorting, graph and dependency processing, SQLite, Firebase, Supabase, Postgres, Express, React, Three.js, Git, CMake
-- **Domain systems and quality:** Civil 3D and AutoCAD API plugins, Revit/Dynamo automation, structured entity metadata, ARCore; geometric dimensioning and tolerancing (GD&T), coordinate measuring machines, ISO 9001, PPAP
+- **Languages:** C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
+- **AI and local models:** Ollama, LM Studio, Open WebUI, Google APIs, OCR, speech-to-text, prompt engineering, text matching
+- **Engineering and data:** Matrix math, 3D graphics, databases, SQLite, Firebase, Postgres, Express, React, Git, CMake
+- **Domain systems and quality:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001
 
 ## Experience
 
@@ -31,12 +31,6 @@ Software engineer who ships production systems other professionals use daily. Bu
 - Programmed and operated coordinate measuring machines, verifying precision-machined parts to +/-0.001 inch or tighter against GD&T specifications.
 - Validated dimensional tolerances against CAD models and customer prints so machining problems surfaced as geometry mismatches, not downstream scrap.
 - Enforced ISO 9001 across production lines, integrated Production Part Approval Process documentation, and managed calibration and traceability of metrology assets.
-
-### Assistant Department Manager, Building Materials - and Pro Sales — Menard, Inc.
-*Manchester-Ballwin, MO · Jun 2020 - Mar 2023*
-
-- Produced quantity takeoffs and commercial and residential material estimates under deadline, and handled contractor-facing pro sales that turned vague requirements into exact material lists.
-- Supervised department staff in a high-volume Building Materials department, and ran inventory, pricing data, and freight quality control.
 
 ### Revit/CAD Technician - Mechanical/Plumbing — Heideman & Associates, Inc.
 *Fenton, MO · May 2018 - Apr 2019*
@@ -68,7 +62,7 @@ Software engineer who ships production systems other professionals use daily. Bu
 ### Coursework toward Latin American Studies with Technical Applications — Missouri University of Science and Technology
 *Rolla, MO · 2019 - 2020*
 
-Object-oriented C++ and linear algebra coursework. Technical fluency in Spanish.
+General education and freshman-level coursework. Technical fluency in Spanish.
 
 ### A.A.S., Building Systems Engineering Technology — Ranken Technical College
 *Wentzville, MO · 2019*

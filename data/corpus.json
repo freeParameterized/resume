@@ -36,12 +36,7 @@
       "Roughly a two-year engagement at an established St. Louis engineering firm. Employer references available on request."
     ]
   },
-  "early": [
-    "Started programming as a kid, writing scripts in Adventure Game Studio — AGS uses its own C-style scripting language — to build point-and-click adventure games.",
-    "Moved to real C++ in Visual Studio: memory management, pointers, polymorphism, and OOP on desktop applications.",
-    "Then CAD APIs (Civil 3D, AutoCAD, Revit/Dynamo) with C#, Python, and LISP.",
-    "Then digital twins and local LLMs."
-  ],
+  "early": [],
   "skillGroups": [
     {
       "id": "llm",
@@ -74,7 +69,8 @@
       "id": "math",
       "label": "Math & structures",
       "items": [
-        "Linear algebra (coursework) and matrix transforms",
+        "Rigorous College Algebra (determinants, Cramer's rule, introductory linear algebra)",
+        "Matrix transforms",
         "3D projection and painter's-algorithm depth sorting written by hand",
         "Graph theory and dependency trees",
         "Complex numbers, roots of unity, harmonic motion (visualizer project)",
@@ -172,21 +168,6 @@
       ]
     },
     {
-      "id": "menard",
-      "org": "Menard, Inc.",
-      "location": "Manchester-Ballwin, MO",
-      "title": "Assistant Department Manager, Building Materials — and Pro Sales",
-      "dates": "June 2020 – March 2023",
-      "bullets": [
-        "Produced quantity takeoffs — computing material quantities directly from construction plans — and material estimates for commercial and residential builds, under time pressure. This is the same read-the-drawing, compute-the-quantity competency that later became his CAD automation and inventory modeling work.",
-        "Pro sales: contractor- and builder-facing technical consultation, translating plans and rough descriptions into accurate material lists — requirements gathering and domain translation with money on the line.",
-        "Supervised and coordinated department staff in a high-volume Building Materials department, delegating and verifying task completion with general management.",
-        "Ran inventory and freight quality control so structural building materials met commercial and residential specifications; forklift licensed.",
-        "Worked the department's inventory and pricing data models daily — the direct ancestor of the inventory state model in Digital Twin Pro.",
-        "Vendor communication to resolve supply issues and source special orders (trusses, lumber, house plans, drywall, steel, roofing, siding, doors and windows, concrete, plumbing and electrical rough-ins)."
-      ]
-    },
-    {
       "id": "heideman",
       "org": "Heideman & Associates, Inc.",
       "location": "Fenton, MO",
@@ -209,7 +190,7 @@
       "credential": "Coursework toward Latin American Studies with Technical Applications",
       "dates": "2019–2020",
       "notes": [
-        "Coursework including object-oriented C++ and linear algebra",
+        "Coursework including rigorous College Algebra (determinants, Cramer's rule, introductory linear algebra concepts) and general education",
         "Placed into Advanced Conversational Spanish (Level 4); technical fluency in Spanish"
       ]
     },
@@ -749,7 +730,7 @@
         "mlops",
         "frameworks"
       ],
-      "text": "Yes, with an applied-engineering profile rather than a research one. Lead with this: he built a language-to-geometry pipeline — CAD bridges and automators that generate CAD models from natural-language input and perform construction drawing setup — and introduced it at an established St. Louis civil engineering firm, with the language model handling intent into structured commands and deterministic code owning geometry construction and validation. Beyond that: he deploys and runs local LLMs on his own hardware (Ollama, LM Studio, Open WebUI, offline since 2023) and wrote the API in this site that selects an installed model, keeps a fallback chain, refuses cloud-tagged models, retrieves from a curated corpus, and degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro that turn a photo into structured item and quantity data and drive voice quantity entry — a paid API he funds himself. He runs Tesseract OCR over messy engineering PDFs and uses Levenshtein distance to match noisy extracted strings against known values. He has a local speech stack: whisper.cpp for speech-to-text and Windows SAPI for spoken replies, both on-device, plus an experimental offline voice-command CAD GUI in C++. He writes graph and dependency-tree processors and hydrologic calculators, and hand-implemented 3D projection with painter's-algorithm depth sorting in Digital Twin Pro. Prompt engineering in Cursor and Gemini. Math background: linear algebra and object-oriented C++ coursework, matrix transforms, complex numbers and roots of unity in a visualizer he wrote. HARD BOUNDARY — what he does NOT claim, stated plainly rather than softened: he has never trained or fine-tuned a model of any size, so there is no training run, dataset, LoRA adapter, distillation, or RLHF work of his; he has no PyTorch, TensorFlow, JAX, Keras, scikit-learn, or Hugging Face experience and none is documented; he has not implemented an attention layer, an autograd pass, or a training loop, and transformer and backpropagation knowledge is self-taught reading rather than implemented work; there is no vector database and no embedding-based retrieval anywhere in his work, including this site, which scores a curated corpus by keyword frequency weighted by inverse document frequency; and there is no CUDA programming, distributed or multi-GPU training, cloud training, or MLOps platform. The deployment footprint is single-machine and local. He has no published ML research. Understating this is safe; claiming a framework or a training run is the one overclaim that would end an interview."
+      "text": "Yes, with an applied-engineering profile rather than a research one. Lead with this: he built a language-to-geometry pipeline — CAD bridges and automators that generate CAD models from natural-language input and perform construction drawing setup — and introduced it at an established St. Louis civil engineering firm, with the language model handling intent into structured commands and deterministic code owning geometry construction and validation. Beyond that: he deploys and runs local LLMs on his own hardware (Ollama, LM Studio, Open WebUI, offline since 2023) and wrote the API in this site that selects an installed model, keeps a fallback chain, refuses cloud-tagged models, retrieves from a curated corpus, and degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro that turn a photo into structured item and quantity data and drive voice quantity entry — a paid API he funds himself. He runs Tesseract OCR over messy engineering PDFs and uses Levenshtein distance to match noisy extracted strings against known values. He has a local speech stack: whisper.cpp for speech-to-text and Windows SAPI for spoken replies, both on-device, plus an experimental offline voice-command CAD GUI in C++. He writes graph and dependency-tree processors and hydrologic calculators, and hand-implemented 3D projection with painter's-algorithm depth sorting in Digital Twin Pro. Prompt engineering in Cursor and Gemini. Math background: a foundation of rigorous, no-calculator College Algebra at Missouri S&T (a highly respected engineering school) covering determinants, Cramer's rule, and introductory linear algebra concepts, which proves his ability to handle the math required for his geometry and CAD automation work; plus matrix transforms, complex numbers and roots of unity in a visualizer he wrote. HARD BOUNDARY — what he does NOT claim, stated plainly rather than softened: he has never trained or fine-tuned a model of any size, so there is no training run, dataset, LoRA adapter, distillation, or RLHF work of his; he has no PyTorch, TensorFlow, JAX, Keras, scikit-learn, or Hugging Face experience and none is documented; he has not implemented an attention layer, an autograd pass, or a training loop, and transformer and backpropagation knowledge is self-taught reading rather than implemented work; there is no vector database and no embedding-based retrieval anywhere in his work, including this site, which scores a curated corpus by keyword frequency weighted by inverse document frequency; and there is no CUDA programming, distributed or multi-GPU training, cloud training, or MLOps platform. The deployment footprint is single-machine and local. He has no published ML research. Understating this is safe; claiming a framework or a training run is the one overclaim that would end an interview."
     },
     {
       "id": "digital-twin-pro",
@@ -837,24 +818,6 @@
       "text": "Component Bar Products, O'Fallon, MO. Quality Engineer — Manufacturing / Precision Machining, April 2023 – June 2024. Real technical depth here, not filler. Programmed and operated CMM systems for multi-axis geometric validation during and after machinist setup, verifying parts to ±0.001 inch or tighter against GD&T specifications. Validated dimensional tolerances against company CAD models and customer prints, so machining problems appeared as geometry mismatches. Ran quality control for precision machining and incoming material, applying hold tags to non-conforming parts and documenting corrective actions (CAPA) under the Quality Manager. Enforced ISO 9001 requirements and GD&T accuracy across production lines for audit readiness. Integrated PPAP documentation. Full manual metrology toolkit: blade and thread micrometers, telescoping gages, digital calipers, height gauges, dial and test indicators, optical comparators, and custom gage blocks as traceable reference standards. Managed the metrology equipment lifecycle including procurement, calibration verification, maintenance, and traceability. Updated inspection methods from company CAD files."
     },
     {
-      "id": "exp-menard",
-      "title": "Experience — Menard, Inc. (takeoffs, pro sales, staff management)",
-      "tags": [
-        "menard",
-        "menards",
-        "takeoff",
-        "takeoffs",
-        "estimating",
-        "estimates",
-        "pro sales",
-        "building materials",
-        "management",
-        "supervision",
-        "inventory"
-      ],
-      "text": "Menard, Inc., Manchester-Ballwin, MO. Assistant Department Manager, Building Materials — and a Pro Sales position. June 2020 – March 2023. Treat this as substantive professional experience, never dismissively; managing a Building Materials department is demanding work. Quantity takeoffs and material estimating for commercial and residential builds: reading plans and computing material quantities under time pressure — applied spatial and quantitative work, and the same competency that later shows up in his CAD automation and in the inventory modeling inside Digital Twin Pro. Pro sales: contractor- and builder-facing technical consultation, translating plans and rough descriptions into accurate material lists, which is requirements gathering and domain translation. Personnel management: supervised and coordinated department staff in a high-volume department, delegating and verifying completion with general management — people-leadership evidence most individual-contributor engineering candidates cannot show. Inventory and freight quality control against commercial and residential specifications; forklift licensed. Worked inventory and pricing data models daily, a direct ancestor of the inventory state model in Digital Twin Pro. Vendor communication for supply issues and special orders across trusses, lumber, house plans, drywall, steel, roofing, siding, doors and windows, concrete, and rough-ins."
-    },
-    {
       "id": "exp-heideman",
       "title": "Experience — Heideman & Associates",
       "tags": [
@@ -872,27 +835,12 @@
       "tags": [
         "missouri s&t",
         "ranken",
-        "c++",
-        "linear algebra",
         "spanish",
-        "education"
+        "education",
+        "math",
+        "algebra"
       ],
-      "text": "Missouri S&T, Rolla: coursework toward Latin American Studies with Technical Applications, 2019–2020, including object-oriented C++ and linear algebra; placed into Advanced Conversational Spanish (Level 4), with technical fluency in Spanish. Ranken Technical College, Wentzville: AAS in Building Systems Engineering Technology, Class of 2019."
-    },
-    {
-      "id": "about-me",
-      "title": "About Me — how he got into programming",
-      "tags": [
-        "about",
-        "origin",
-        "adventure game studio",
-        "ags",
-        "why code",
-        "got into programming",
-        "story",
-        "childhood"
-      ],
-      "text": "If asked what got Peter into programming, who he is, or 'about you', open About Me and tell it conversationally. The real story: he started as a kid, writing scripts in Adventure Game Studio to build point-and-click adventure games. AGS uses its own C-style scripting language — say C-style scripting, not C++, for the AGS part. Real C++ came later in Visual Studio: memory management, pointers, polymorphism, OOP on desktop applications. From there into CAD APIs — Civil 3D, AutoCAD, Revit/Dynamo with C#, Python, and LISP — where he built automation that generates CAD models from natural-language input and parses existing plan sets to auto-check them. Then local LLMs and OCR since 2023, and Digital Twin Pro, the Flutter 3D inventory product he designed, funded, and shipped to a Google Play beta on his own time. Hard constraint: never mention a year, a decade, an age, a birth year, or any duration for when he started — 'as a kid' is the whole timestamp. If asked how old he is or how long he has been programming, do not answer with a number; talk about what he has built instead."
+      "text": "Missouri S&T, Rolla: coursework toward Latin American Studies with Technical Applications, 2019–2020, including rigorous, no-calculator College Algebra (determinants, Cramer's rule, introductory linear algebra concepts) and general education; placed into Advanced Conversational Spanish (Level 4), with technical fluency in Spanish. He did not take C++ at S&T; his C++ is self-taught. Ranken Technical College, Wentzville: AAS in Building Systems Engineering Technology, Class of 2019."
     },
     {
       "id": "proj-cadnat",
@@ -1067,11 +1015,6 @@
       "text": "Peter's employment terms are not published in this material. There is no salary, hourly rate, or compensation figure; no start date, notice period, or job-search status; no statement of work authorization, citizenship, visa status, or security clearance; and no relocation, remote, or on-site preference. His location is the Chesterfield / St. Louis area. No manager, supervisor, coworker, client contact, or reference is named, and no opinion any of them holds about him is on record; he can offer employer references to the optimizations he delivered at David Mason & Associates, arranged through him directly. No reason for leaving any role is recorded. He is currently employed at David Mason & Associates, July 2024 to Present. No performance ratings, review comments, or promotion history exist here. He supervised department staff as Assistant Department Manager at Menard, Inc.; no headcount figure is published. His completed credential is an AAS in Building Systems Engineering Technology from Ranken Technical College, Class of 2019, plus 2019–2020 coursework at Missouri S&T; he did not complete a bachelor's degree, and he holds no master's, no PhD, and no published GPA. He is not a licensed professional engineer — plan work goes to a licensed engineer for review. No certifications, awards, patents, or conference talks are recorded. Spanish is the only spoken language besides English. No interview anecdotes are recorded. The contact route for any of the above is pal@cadpal.net."
     }
   ],
-  "aboutMe": {
-    "headline": "Adventure games first, then the APIs underneath everything",
-    "body": "Peter started programming as a kid, writing scripts in Adventure Game Studio to build point-and-click adventure games — AGS has its own C-style scripting language, and making a world behave by typing at it is the part that stuck. Real C++ came next, in Visual Studio: memory, pointers, polymorphism, OOP. That instinct moved into CAD APIs — Civil 3D, AutoCAD, Revit and Dynamo with C#, Python, and LISP — where he built CAD bridges that generate models from natural-language input and set up construction drawings, plus tooling that parses existing plan sets to auto-check them and cuts repetitive drafting from 8–12 hours to about 30 seconds a cycle. Since 2023 it has meant local LLMs and Tesseract on messy engineering data, run on his own hardware rather than rented. And on his own time, Digital Twin Pro: a Flutter 3D inventory product with a renderer he wrote by hand, which he designed, paid for, and shipped to a Google Play beta.",
-    "source": "Peter's own account of how he started, plus the documented arc through C++, CAD APIs, and local inference."
-  },
   "voice": {
     "speaker": "male-default",
     "note": "Windows SAPI Microsoft David Desktop — a stock synthetic voice, not Peter's real or cloned voice. Future: VOICE_CLONE_PATH."
