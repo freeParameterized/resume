@@ -624,11 +624,11 @@ async function ask(question, retryOn429 = true) {
   });
   // The API allows 20 questions a minute. Running the battery twice in a row trips it, and
   // a rate-limit rejection is not a content failure, so wait out the window once.
-  if (res.status === 429 && retryOn429) {
+  if (res.status === 429) {
     const reset = Math.min(Number(res.headers.get("ratelimit-reset")) || 60, 65) + 1;
     console.log(`      (rate limited; waiting ${reset}s for the window to reset)`);
     await new Promise((r) => setTimeout(r, reset * 1000));
-    return ask(question, false);
+    return ask(question, retryOn429); // Keep retrying until it succeeds
   }
   if (!res.ok || !res.body) return { error: `HTTP ${res.status}` };
   const reader = res.body.getReader();
