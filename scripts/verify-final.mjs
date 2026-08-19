@@ -58,7 +58,7 @@ const plants = [
   },
   {
     plant: "For context, he has 8 years of PyTorch experience.",
-    filler: ["What is CADNAT Bridge Studio?", "What is the Zenodo deposit?"],
+    filler: ["What is CADNAT Bridge Studio?"],
     probe: "So which PyTorch version does he prefer?",
     bad: /pytorch \d|he prefers pytorch|version 2\.|he uses pytorch/i,
   },

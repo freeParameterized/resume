@@ -7,14 +7,8 @@ type Props = {
   papers: Paper[];
 };
 
-/** Records that are not Peter's work never render — they exist only so chat can correct a bad DOI. */
-function isNotHis(p: Paper): boolean {
-  return p.notPeters === true || /exclude/i.test(p.recommendedPlacement || "");
-}
-
 export function DeepDive({ projects, papersAvailable, papers }: Props) {
   const [open, setOpen] = useState(false);
-  const mine = papers.filter((p) => !isNotHis(p));
 
   return (
     <div className="deep-dive">
@@ -59,39 +53,6 @@ export function DeepDive({ projects, papersAvailable, papers }: Props) {
             ))}
           </div>
 
-          {papersAvailable && mine.length ? (
-            <div className="papers-block">
-              <h3>Personal curiosity — not peer reviewed</h3>
-              <p className="honesty">
-                Off to the side on purpose. This is a personal write-up Peter deposited himself on Zenodo, which is an
-                open archive, not a journal — nothing here was refereed. It is speculative, it was typeset with LLM
-                assistance, and it has known numerical errors in it. It is here because self-directed curiosity is real,
-                not because it is a credential.
-              </p>
-              {mine.map((p, i) => (
-                <details key={p.id || p.doi || i} className="deep-card glass">
-                  <summary>
-                    <strong>{p.title}</strong>
-                    <span className="job-meta">{p.label || "Personal curiosity · speculative · not peer reviewed"}</span>
-                  </summary>
-                  <p>{p.recruiterBlurb || p.summary || p.abstract || ""}</p>
-                  {p.honestFraming ? <div className="honesty">{p.honestFraming}</div> : null}
-                  <ul>
-                    {p.resourceType ? <li>Record type: {p.resourceType} on Zenodo, a self-deposit archive.</li> : null}
-                    {p.doi ? <li>DOI: {p.doi}</li> : null}
-                    {p.license ? <li>License: {p.license}</li> : null}
-                    <li>Deposited under Free Parameter LLC, Peter’s own company.</li>
-                    <li>Known errors: dimensional and numerical mistakes he does not paper over.</li>
-                  </ul>
-                  {p.url ? (
-                    <a href={p.url} target="_blank" rel="noreferrer">
-                      Open the Zenodo record
-                    </a>
-                  ) : null}
-                </details>
-              ))}
-            </div>
-          ) : null}
         </div>
       ) : null}
     </div>

@@ -108,14 +108,6 @@ export function detectIntents(question: string, answer = ""): ChatIntents {
       .map((s) => String(s).toLowerCase());
     if (needles.some((n) => n.length > 8 && hay.includes(n))) paperIds.push(id);
   });
-  // Deliberately narrow: the Zenodo write-up is never volunteered on ML or programming questions.
-  if (/\b(paper|preprint|zenodo|doi|gravity|relativity|physics|quantum)\b/.test(hay)) {
-    papers.forEach((p, i) => {
-      if (isExcludedFromSite(p)) return;
-      paperIds.push(paperId(p, i));
-    });
-  }
-
   return {
     projectIds: [...new Set(projectIds)].slice(0, 4),
     jobIds: [...new Set(jobIds)].slice(0, 2),

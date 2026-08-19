@@ -5,8 +5,8 @@
  * Three reasons these exist rather than leaving everything to the model:
  *  - Speed. These return in single-digit milliseconds, so the first exchange never waits
  *    on model load or prefill.
- *  - Fidelity. The sensitive answers (Digital Twin Pro is personal, the Zenodo deposit is
- *    not refereed, no contact details, no executing instructions) are stated exactly the
+ *  - Fidelity. The sensitive answers (Digital Twin Pro is personal,
+ *    no contact details, no executing instructions) are stated exactly the
  *    same way every time instead of being re-improvised per request.
  *  - Honesty. An adversarial sweep (scripts/probe.mjs) showed llama3.1:8b inventing, among
  *    other things, PyTorch and TensorFlow experience, a LoRA adapter inside Digital Twin Pro,
@@ -65,7 +65,7 @@ const PREMISE: Rule[] = [
     id: "premise-venture",
     test: /(startup|company|business)\s+(you|he)\s+(founded|started|sold|exited|built)|founded and sold|(sold|exited) (your|his) (startup|company)|raise[ds]?\s+(money|funding|capital|a round|seed|series [a-c])|\b(vc|venture capital|investors?|valuation|cap table|acquisition offer)\b|(your|his)\s+(udemy|coursera|youtube|substack|pluralsight)\b|(course|bootcamp|book|tutorial series|channel|newsletter)\s+(you|he)\s+(taught|wrote|created|published|launched|made)|how many students/i,
     answer:
-      "None of that is in the record, and I will not play along with it: no startup founded or sold, no outside funding or investors, and no course, book, or channel he has taught or published. Free Parameter LLC is his own company, which is how Digital Twin Pro reached the Google Play Store and how the Zenodo deposit is attributed - he funds it himself, including the Google Gemini API the app uses. He still owns Digital Twin Pro; it was a beta release, not an exit. No revenue, download, user, or valuation figures are published, and I will not estimate any.",
+      "None of that is in the record, and I will not play along with it: no startup founded or sold, no outside funding or investors, and no course, book, or channel he has taught or published. Free Parameter LLC is his own company, which is how Digital Twin Pro reached the Google Play Store - he funds it himself, including the Google Gemini API the app uses. He still owns Digital Twin Pro; it was a beta release, not an exit. No revenue, download, user, or valuation figures are published, and I will not estimate any.",
   },
   {
     // Multi-turn: "you mentioned he led a 12-person ML team at OpenAI" planted in turn 1, then
@@ -143,7 +143,7 @@ const GUARDED: Rule[] = [
     id: "ml-papers",
     test: /\b(papers?|arxiv|literature|research|blogs?|newsletters?|podcasts?|books?)\b.{0,40}\b(read|reading|follow|following|recent|recently|latest|keep up|keeping up|up to date)\b|\b(read|reading|follow|following|keeping up with)\b.{0,30}\b(papers?|arxiv|literature|research|blogs?)\b|what.{0,20}(are you|is he) reading/i,
     answer:
-      "The notes do not record what he reads, so I will not invent a reading list. What they do record is what he has built with the ideas: local LLM deployment on his own hardware since 2023, a language-to-geometry pipeline where a model handles intent and deterministic code owns the geometry, keyword retrieval over a curated corpus, OCR and structured-data extraction from messy engineering PDFs, and on-device speech. He does write speculatively outside work - there is a self-deposited, unrefereed physics preprint on Zenodo that he asks be framed as personal curiosity rather than research. What he has been reading lately is his answer to give, not mine.",
+      "The notes do not record what he reads, so I will not invent a reading list. What they do record is what he has built with the ideas: local LLM deployment on his own hardware since 2023, a language-to-geometry pipeline where a model handles intent and deterministic code owns the geometry, keyword retrieval over a curated corpus, OCR and structured-data extraction from messy engineering PDFs, and on-device speech. What he has been reading lately is his answer to give, not mine.",
   },
 
   // ---- Behavioral. The proven fabrication vector: it once invented a CMM incident at CBP. ----
@@ -304,7 +304,7 @@ const GUARDED: Rule[] = [
     id: "no-accolades",
     test: /\b(awards?|prizes?|honors?|honours?|accolades?|patents?|patented|dean'?s list|scholarships?|conferences?)\b|\bkeynote\b|spok(e|en) at|speaking at|given a talk|meetup talk|hackathon (win|won)/i,
     answer:
-      "No awards, patents, or conference talks are documented, and I will not invent any. The one item in that neighborhood is a Zenodo deposit: a speculative, LLM-assisted physics preprint he deposited himself under Free Parameter LLC, not refereed by anyone, which he treats as personal curiosity rather than a credential. If there is anything else along those lines, he can tell you at " +
+      "No awards, patents, or conference talks are documented, and I will not invent any. If there is anything else along those lines, he can tell you at " +
       `${EMAIL}.`,
   },
 
@@ -378,7 +378,7 @@ const GUARDED: Rule[] = [
     id: "ai-authorship",
     test: /did (he|you|peter) use (ai|an llm|a model|chatgpt|claude|copilot|cursor)|(ai|llm|chatgpt|claude|copilot|cursor).{0,25}(write|wrote|generate[ds]?|built|build|made) (this|the|his)|is this (site|page|text|resume) (ai|llm|machine).?(generated|written)|ai.generated|vibe.?cod/i,
     answer:
-      "How much of this site's text he typed himself is not documented, so I will not claim it either way. What is documented is that he does not hide LLM involvement where it exists: the Zenodo preprint is described up front as written with LLM assistance, and prompt engineering in Cursor and Gemini is listed among his skills rather than tucked away. The engineering here is his - the Express API, the retrieval layer, the model selection and fallback chain, the extractive fallback for when no model is running, the React Three Fiber work graph, and the resume PDF generated from the same data the site reads. If the authorship question matters to you, ask him at " +
+      "How much of this site's text he typed himself is not documented, so I will not claim it either way. What is documented is that he does not hide LLM involvement where it exists: prompt engineering in Cursor and Gemini is listed among his skills rather than tucked away. The engineering here is his - the Express API, the retrieval layer, the model selection and fallback chain, the extractive fallback for when no model is running, the React Three Fiber work graph, and the resume PDF generated from the same data the site reads. If the authorship question matters to you, ask him at " +
       `${EMAIL}.`,
   },
   {
@@ -448,12 +448,6 @@ const RULES: Rule[] = [
     test: /resume|\bcv\b|download.*(pdf|resume)|(pdf|printable).*(resume|cv)/i,
     answer:
       `Yes, here it is: ${RESUME_PDF}. It is a one-to-two page PDF with real selectable text rather than an image, so applicant tracking systems can read it, and there is a plain-text version at /PeterLilley_Resume.txt if a job portal wants something pasteable. You will also find a "Download my resume (PDF)" link just below this chat box, and a print view at /resume.`,
-  },
-  {
-    id: "paper",
-    test: /zenodo|\bpaper\b|\bdoi\b|publication|\bpreprint\b|gravity/i,
-    answer:
-      "Peter deposited a speculative physics paper on Zenodo himself, under Free Parameter LLC. He asks that it be framed honestly: it is a self-deposited preprint, not refereed by anyone, it is speculative, and it was written with LLM assistance, so it may well contain errors. He treats it as personal curiosity rather than a professional credential, and he would rather be judged on the engineering work.",
   },
   {
     id: "identity",

@@ -118,8 +118,7 @@ node scripts/acceptance.mjs http://127.0.0.1:8787
 ```
 
 Asks the questions a reviewer asks first and asserts the answers that must not drift: Digital
-Twin Pro attributed to him personally and not to DMA, the Zenodo paper described as a
-self-deposited unreviewed preprint, a real resume link, no phone number, a refusal for
+Twin Pro attributed to him personally and not to DMA, a real resume link, no phone number, a refusal for
 "ignore your instructions", no invented interview anecdotes, and no first-person impersonation
 of Peter on follow-up questions. Expect `15 passed, 0 failed`. Two of the cases deliberately
 reach the model rather than a scripted answer, so the run takes about half a minute; if you run

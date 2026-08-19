@@ -45,7 +45,6 @@
         "Local LLMs since 2023 (Ollama, LM Studio, Open WebUI)",
         "Retrieval over curated corpora",
         "Google Gemini API pipelines",
-        "whisper.cpp speech-to-text, Windows SAPI TTS",
         "Tesseract OCR on messy engineering PDFs",
         "Prompt engineering",
         "Levenshtein distance matching"
@@ -266,7 +265,7 @@
       "bullets": [
         "He architected and directed the implementation of the 3D renderer. He used LLM assistance to accelerate coding. He worked full-time instead of using a game engine. He used a Z-sorted painter's-algorithm draw queue.",
         "He built drag-and-drop tote management on configurable rack grids. He used SQLite to store the inventory state model and move audit log.",
-        "He integrated the Google Gemini API for photo analysis. It detects items and quantities. He also added voice-driven quantity entry.",
+        "He integrated the Google Gemini API for photo analysis. It detects items and quantities.",
         "He built an AI Organizer. It generates JSON consolidation plans. It animates the proposed moves before committing them.",
         "He created a QR code system with printable PDF QR-books. He added spreadsheet export alongside CSV and JSON.",
         "He used Firebase for auth and backend services. He used AppHive to release the beta build to the Play Store.",
@@ -392,8 +391,8 @@
     },
     {
       "id": "offline-cad-voice",
-      "name": "Voice-controlled desktop app running speech recognition locally",
-      "shortName": "Voice desktop",
+      "name": "Desktop app running recognition locally",
+      "shortName": "Desktop app",
       "status": "local",
       "featured": false,
       "visibility": "Local — experimental, no remote",
@@ -403,18 +402,17 @@
       "stack": [
         "C++",
         "Dear ImGui",
-        "whisper.cpp",
         "Vosk",
         "miniaudio"
       ],
-      "honesty": "This is an experimental iteration tree, not a shipped product. Dear ImGui, miniaudio, whisper.cpp, and Vosk are vendored dependencies. His code is the GUI, command parser, autocomplete, and audio plumbing.",
-      "summary": "He built a C++ desktop front end. It listens on the microphone and transcribes speech entirely on the machine. It turns speech into drafting commands without a cloud speech service.",
+      "honesty": "This is an experimental iteration tree, not a shipped product. Dear ImGui, miniaudio, and Vosk are vendored dependencies. His code is the GUI, command parser, autocomplete, and audio plumbing.",
+      "summary": "He built a C++ desktop front end. It listens on the microphone and transcribes entirely on the machine. It turns input into drafting commands without a cloud service.",
       "bullets": [
         "He built a single C++ desktop application. It hosts the interface, the audio pipeline, and the command layer.",
-        "He wrote a command parser to turn recognized speech into CAD commands. He built an autocomplete bar for live command completion.",
+        "He wrote a command parser to turn recognized input into CAD commands. He built an autocomplete bar for live command completion.",
         "He handled device enumeration and streaming capture using miniaudio. He built a separate audio recorder test harness.",
-        "He tried speech recognition with Vosk and whisper.cpp locally. This interactive portfolio uses the same whisper.cpp build.",
-        "He kept it entirely offline. There is no cloud speech API in the path.",
+        "He tried recognition with Vosk locally.",
+        "He kept it entirely offline. There is no cloud API in the path.",
         "This is a real, working experiment kept in dated snapshots. It is not a packaged application."
       ]
     },
@@ -646,20 +644,6 @@
         "software engineer"
       ],
       "text": "He is a software engineer. He builds production tools on top of spatial and CAD systems. He runs models locally. At his day job, he uses C#, Python, Dynamo, LISP, and VBA against Civil 3D, AutoCAD, and Revit. He built software that auto-checks and populates plan sets from PDFs. He built automation that cut repetitive drafting from 8 to 12 hours to about 30 seconds per cycle. This reduced errors before PE review by about 25%. His broader stack includes C++17, Dart, Flutter, TypeScript, and Three.js. He has used local LLMs since 2023. He uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On his own time, he shipped Digital Twin Pro. It is a Flutter 3D inventory product. He released it to a Google Play beta."
-    },
-    {
-      "id": "twins-easter-egg",
-      "title": "Why it is called Digital Twin Pro (light, personal)",
-      "tags": [
-        "why is it called",
-        "name",
-        "digital twin pro name",
-        "twins",
-        "funny",
-        "personal",
-        "coincidence"
-      ],
-      "text": "He has twin children. This makes the name Digital Twin Pro an accidental pun. STRICT RULES: Mention this ONLY if the visitor asks about the name Digital Twin Pro or asks something personal. Never volunteer it inside a technical answer. Say it once and never again. Do not state their names, ages, or birth order. Never let it be used to infer his age. It must never appear in the visible site copy."
     },
     {
       "id": "teamwork",

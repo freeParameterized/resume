@@ -125,7 +125,7 @@ export function paperToBlock(paper: Paper, index: number): ContextBlock {
   return {
     kind: "paper",
     id: paper.id || paper.doi || `paper-${index}`,
-    title: paper.title || "Zenodo record",
+    title: paper.title || "Paper record",
     subtitle: notHis
       ? "A different authors' paper"
       : [paper.venue, paper.year, paper.doi].filter(Boolean).join(" · "),
@@ -134,7 +134,7 @@ export function paperToBlock(paper: Paper, index: number): ContextBlock {
         `This record is not Peter A. Lilley’s work${paper.authors?.length ? ` (authors: ${paper.authors.join(", ")})` : ""}.`
       : blurb,
     href: paper.url,
-    linkLabel: "Open the Zenodo record",
+    linkLabel: "Open the paper record",
     badge: notHis ? "Not Peter’s work" : "Personal curiosity · not peer reviewed",
   };
 }

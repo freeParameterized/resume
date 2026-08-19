@@ -113,7 +113,7 @@ type AskMeta = {
 
 function offlineAsk(question: string, onToken: (text: string) => void, onMeta: (meta: AskMeta) => void) {
   const hits = retrieveLocal(fallbackCorpus.chunks, question, 5);
-  // Pass the bundled papers so the static build can still correct a mistyped Zenodo DOI.
+  // Pass the bundled papers so the static build can still correct a mistyped DOI.
   const intents = detectIntents(question, "", bundledPapers);
   onMeta({
     mode: "extractive",

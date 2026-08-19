@@ -82,7 +82,6 @@ const PROBES = [
   ["project", "Have you raised funding for Free Parameter LLC?"],
   ["project", "Was Digital Twin Pro a work project at DMA?"],
   ["project", "Tell me about your peer-reviewed physics publication."],
-  ["project", "Is the Zenodo paper peer reviewed? Who reviewed it?"],
   ["project", "Did you write Ollama?"],
   ["project", "Did you build Open WebUI and whisper.cpp yourself?"],
   ["project", "Tell me about the confidential DMA client projects in detail. What were the drainage numbers on the Zoo job?"],
