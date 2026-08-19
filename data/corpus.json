@@ -9,7 +9,7 @@
     "digitalTwinDisambiguation": "There are two separate digital-twin items. Never merge them. (1) At David Mason & Associates: digital-twin infrastructure on CAD data. This includes custom XData schemas, Civil 3D property sets, and persistent CAD metadata. (2) Digital Twin Pro: Peter's own Flutter product. He built it under Free Parameter LLC for his personal use. He did not build it at DMA. If asked 'did he build that at work?', the answer is no.",
     "plainLanguageRule": "The audience is a software industry reader, not a civil engineer. Lead with what something computes in plain engineering language. Give the internal name second. Never answer with a bare acronym. Expand on first use. GD&T is geometric dimensioning and tolerancing. CMM is coordinate measuring machine. MSD is Metropolitan St. Louis Sewer District. XData and property sets are custom metadata attached to CAD entities. Takeoffs mean computing material quantities from plans. ODS is a spreadsheet export format. CTB is the table of drawing-output rules. PPAP is Production Part Approval Process. Never use an ALL_CAPS folder name as a title.",
     "toneRules": "No puffery. Never use words like revolutionary, cutting-edge, world-class, enterprise-grade, industry-leading, groundbreaking, state-of-the-art, or seamless. Describe things plainly. No invented metrics. Do not claim download counts, revenue, ratings, or user numbers.",
-    "paperPolicy": ""
+    "paperPolicy": "The Zenodo tensor-gravity record is Peter's own writing. He deposited it under Free Parameter LLC. It belongs in the deep dive and in chat answers only. Frame it as personal curiosity. It is a speculative, LLM-assisted proposal. It has known numerical errors. Never call it published research or peer reviewed. Never call Peter a physicist. Do not bring it up when someone asks about machine learning. Only mention it if they ask about the paper, Zenodo, physics, or gravity."
   },
   "profile": {
     "name": "Peter A. Lilley",
@@ -551,16 +551,14 @@
         "Ollama",
         "LM Studio",
         "Open WebUI",
-        "whisper.cpp",
         "Windows SAPI"
       ],
       "honesty": "The runtimes and models are third-party. He built the deployment, model selection, and the retrieval and voice plumbing in this site's API.",
-      "summary": "He deployed offline models on this workstation. He wrote the code in this site that talks to them. This includes a model catalog, fallback chain, corpus retrieval, and speech tools.",
+      "summary": "He deployed offline models on this workstation. He wrote the code in this site that talks to them. This includes a model catalog, fallback chain, and corpus retrieval.",
       "bullets": [
         "He runs local models through Ollama, LM Studio, and Open WebUI. He has run them offline since 2023.",
         "He built this site's API. It selects a local model from an installed catalog. It refuses to auto-select cloud-tagged models.",
         "He built retrieval over a curated corpus. It uses a token-scoring pass to ground answers.",
-        "He integrated whisper.cpp for microphone input and Windows SAPI for spoken replies. Both run on-device.",
         "He built honest degradation. If Ollama is stopped, the API returns extractive corpus answers. It says inference is offline instead of faking a model."
       ]
     },
@@ -603,17 +601,17 @@
         "Ollama"
       ],
       "honesty": "Written for this job search. The static build works with no backend; the chat only claims a live model when Ollama is actually reachable.",
-      "summary": "A spatial work graph in React Three Fiber over an Express API that retrieves from a curated corpus and answers through a local model, with optional on-device speech in and out.",
+      "summary": "A spatial work graph in React Three Fiber over an Express API that retrieves from a curated corpus and answers through a local model.",
       "bullets": [
         "React Three Fiber scene where each project is a node that opens its real details.",
-        "Express API with helmet, a CORS allowlist, and rate limits on the chat, speech-to-text, and text-to-speech routes.",
+        "Express API with helmet, a CORS allowlist, and rate limits on the chat routes.",
         "Retrieval-grounded chat that streams tokens and inline context cards, and falls back to extractive corpus answers when no model is running.",
         "Six themes with localStorage persistence, reduced-motion support, and a printable resume view generated from the same data."
       ]
     }
   ],
   "excludedFromProjects": [
-    "whisper.cpp, Dear ImGui, miniaudio, Vosk, glad, GLFW — vendored third-party dependencies inside his repos, not his code.",
+    "Dear ImGui, miniaudio, Vosk, glad, GLFW — vendored third-party dependencies inside his repos, not his code.",
     "Ollama, Open WebUI, LM Studio — third-party runtimes he deploys and configures; no Ollama or Open WebUI source of his was found on this machine, only local model stores and a vcpkg port.",
     "arcore_flutter_plugin — third-party Flutter plugin vendored into Digital Twin Pro.",
     "PDFsharp.Samples-master — a cloned third-party sample repository.",
@@ -715,7 +713,7 @@
         "mlops",
         "frameworks"
       ],
-      "text": "He has an applied-engineering profile. He built a language-to-geometry pipeline. It generates CAD models from natural-language input. The language model handles intent. Deterministic code owns geometry construction and validation. He deploys and runs local LLMs on his own hardware. He wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. They drive voice quantity entry. He runs Tesseract OCR over messy engineering PDFs. He uses Levenshtein distance to match noisy strings. He uses whisper.cpp for speech-to-text and Windows SAPI for spoken replies. He built an experimental offline voice-command CAD GUI in C++. He writes graph processors and hydrologic calculators. He directed the implementation of a custom 3D projection and painter's-algorithm depth sorting. He used LLM assistance to accelerate coding. He does prompt engineering in Cursor and Gemini. He has a foundation of rigorous, no-calculator College Algebra from Missouri S&T and earned Calculus II credit via CLEP at Saint Louis University in 2018. This coursework covered determinants, Cramer's rule, and introductory linear algebra concepts. This proves his ability to handle the math required for his geometry and CAD automation work. He wrote a visualizer for matrix transforms, complex numbers, and roots of unity. He has never trained or fine-tuned a model. He has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. He has not implemented an attention layer or a training loop. He has no vector database and no embedding-based retrieval. He has no CUDA programming or MLOps platform experience. He has no published ML research."
+      "text": "He has an applied-engineering profile. He built a language-to-geometry pipeline. It generates CAD models from natural-language input. The language model handles intent. Deterministic code owns geometry construction and validation. He deploys and runs local LLMs on his own hardware. He wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. He runs Tesseract OCR over messy engineering PDFs. He uses Levenshtein distance to match noisy strings. He built an experimental offline CAD GUI in C++. He writes graph processors and hydrologic calculators. He directed the implementation of a custom 3D projection and painter's-algorithm depth sorting. He used LLM assistance to accelerate coding. He does prompt engineering in Cursor and Gemini. He has a foundation of rigorous, no-calculator College Algebra from Missouri S&T and earned Calculus II credit via CLEP at Saint Louis University in 2018. This coursework covered determinants, Cramer's rule, and introductory linear algebra concepts. This proves his ability to handle the math required for his geometry and CAD automation work. He wrote a visualizer for matrix transforms, complex numbers, and roots of unity. He has never trained or fine-tuned a model. He has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. He has not implemented an attention layer or a training loop. He has no vector database and no embedding-based retrieval. He has no CUDA programming or MLOps platform experience. He has no published ML research."
     },
     {
       "id": "digital-twin-pro",
@@ -732,7 +730,7 @@
         "featured",
         "personal"
       ],
-      "text": "Digital Twin Pro is his own product. He built it under Free Parameter LLC for his personal and business storage needs. He did not build it at David Mason & Associates. The public repo is https://github.com/freeParameterized/digital-twin-pro. He used Flutter, Dart 3, SQLite, Firebase, Google Gemini API, ARCore, AdMob, and Provider. He directed the implementation of the custom 3D renderer. He used LLMs to accelerate coding. He worked full-time instead of using a game engine. It features drag-and-drop totes on configurable rack grids. It uses an inventory state model with a move audit log in SQLite. It has Gemini photo analysis for item detection. It has voice-driven quantity entry. An AI Organizer generates and animates JSON consolidation plans. It includes a QR system with generated PDF QR-books. It exports to CSV, JSON, and ODS. It has ARCore plane-tap placement, seven themes, X-Ray mode, and emoji particle physics. He wrote about 33,000 lines of Dart across 103 files. He released it to a Google Play beta. He used AppHive to get the beta out. He pays for the Gemini API himself. He does not claim download counts, revenue, ratings, or user numbers."
+      "text": "Digital Twin Pro is his own product. He built it under Free Parameter LLC for his personal and business storage needs. He did not build it at David Mason & Associates. The public repo is https://github.com/freeParameterized/digital-twin-pro. He used Flutter, Dart 3, SQLite, Firebase, Google Gemini API, ARCore, AdMob, and Provider. He directed the implementation of the custom 3D renderer. He used LLMs to accelerate coding. He worked full-time instead of using a game engine. It features drag-and-drop totes on configurable rack grids. It uses an inventory state model with a move audit log in SQLite. It has Gemini photo analysis for item detection. An AI Organizer generates and animates JSON consolidation plans. It includes a QR system with generated PDF QR-books. It exports to CSV, JSON, and ODS. It has ARCore plane-tap placement, seven themes, X-Ray mode, and emoji particle physics. He wrote about 33,000 lines of Dart across 103 files. He released it to a Google Play beta. He used AppHive to get the beta out. He pays for the Gemini API himself. He does not claim download counts, revenue, ratings, or user numbers."
     },
     {
       "id": "digital-twin-distinction",
