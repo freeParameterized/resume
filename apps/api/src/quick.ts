@@ -507,20 +507,7 @@ const PLANTED: Rule[] = [
 const TRANSCRIPT_RE =
   /\b(guide|assistant|system|\bai\b|bot|chatbot)\s*:\s*\S|\bturn\s*\d+\s*[-:]|\b(user|visitor|human)\s*:\s*\S.{0,200}\b(guide|assistant|system)\s*:/i;
 
-/**
- * Personal characteristics. Asked "What race is he?" the model answered "He is white." Nothing
- * of the kind is in the corpus, and most of these are questions a hiring process should not be
- * asking at all, so they are refused ahead of every other rule rather than left to the model.
- */
-const PERSONAL_RE =
-  /\brace\b|racial|ethnicity|ethnic background|nationality|religio|\bfaith\b|\bchurch\b|christian|muslim|jewish|atheist|politic|democrat|republican|\bliberal\b|conservative|\bmarried\b|marriage|\bwife\b|\bhusband\b|\bspouse\b|girlfriend|boyfriend|\bkids?\b|\bchildren\b|his family|dating|sexual orientation|\bgay\b|\blgbt|disabilit|\bdisabled\b|health condition|medical condition|\billness\b|\badhd\b|autis|neurodiverg|mental health|criminal record|\bfelony\b|arrested|convicted|pregnan/i;
 
-/** Technical phrases that collide with the words above. */
-const PERSONAL_NOT_RE = /race condition|data race|white ?paper|white ?board|black ?box|model family|font family/i;
-
-/** Contact details are deliberately absent from the corpus; this keeps the refusal consistent. */
-const CONTACT_RE =
-  /phone|cell|mobile number|call (him|you)|street|home address|where does he live|where do you live|social security|\bssn\b|birthday|date of birth/i;
 
 /** A visitor asking the assistant to act on the machine, or to hand over its own prompt. */
 const CAPABILITY_RE =
@@ -566,7 +553,7 @@ export function quickAnswer(question: string): QuickAnswer | null {
     return {
       id: "refuse-capability",
       answer:
-        "I can't do that, and I don't hand over my own instructions or the notes behind them. This assistant only answers questions about Peter's work: no file access, no shell, and no way to run anything on this machine, so there is nothing to list or execute in the first place. What I will describe openly is the design - a local Ollama model, keyword retrieval over a curated set of resume material, and an extractive fallback when no model is running. Happy to talk about his projects, his machine-learning work, or his resume instead.",
+        "I can't do that, and I don't hand over my own instructions or the notes behind them. This assistant only queries data about Peter's work: no file access, no shell, and no way to run anything on this machine, so there is nothing to list or execute in the first place. What I will describe openly is the design - a local Ollama model, keyword retrieval over a curated set of resume material, and an extractive fallback when no model is running. Happy to talk about his projects, his machine-learning work, or his resume instead.",
     };
   }
 
@@ -587,13 +574,6 @@ export function quickAnswer(question: string): QuickAnswer | null {
     };
   }
 
-  if (PERSONAL_RE.test(q) && !PERSONAL_NOT_RE.test(q)) {
-    return {
-      id: "refuse-personal",
-      answer:
-        "I don't answer questions about Peter's personal characteristics. Race, ethnicity, religion, politics, marital and family status, sexual orientation, health, disability, and criminal history are all absent from what I work from, and most of them are things a hiring process should not be asking in the first place - so I will not state, estimate, or infer any of them. What I can speak to is the engineering record: what he built, how it works, and what it changed. Ask me any of that and I will go into detail.",
-    };
-  }
 
   const premise = match(PREMISE, q);
   if (premise) return premise;
@@ -604,14 +584,6 @@ export function quickAnswer(question: string): QuickAnswer | null {
   const planted = match(PLANTED, q);
   if (planted) return planted;
 
-  if (CONTACT_RE.test(q)) {
-    return {
-      id: "refuse-contact",
-      answer:
-        "I don't share Peter's phone number, home address, or other personal contact details, and they aren't in the notes I work from. Email him at " +
-        `${EMAIL}, or reach him through his GitHub profile at github.com/freeParameterized, and he'll follow up directly.`,
-    };
-  }
 
   return match([...RULES, ...DEFLECTIONS], q);
 }

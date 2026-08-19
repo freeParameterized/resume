@@ -61,7 +61,7 @@ I am a software engineer. I build production systems that other professionals us
 *React, TypeScript, Three.js, Express, Ollama, Docker*
 
 - I built a React Three Fiber portfolio over an Express API.
-- It retrieves data from a curated corpus and answers questions through a local model, degrading gracefully when offline.
+- It uses a local LLM to query structured resume data. The interface functions as a static site when the model server is offline.
 - I containerize inference models and deploy them to Linux, macOS, and Windows edge devices.
 
 ## Education

@@ -578,7 +578,7 @@
         "He writes Bash scripts for data pipelines.",
         "He built this site's API. It selects a local model from an installed catalog. It refuses to auto-select cloud-tagged models.",
         "He built retrieval over a curated corpus. It uses a token-scoring pass to ground answers.",
-        "He built honest degradation. If Ollama is stopped, the API returns extractive corpus answers. It says inference is offline instead of faking a model."
+        "He implemented a static fallback. If Ollama is offline, the API returns JSON directly from the corpus."
       ]
     },
     {
@@ -621,11 +621,11 @@
         "Docker"
       ],
       "honesty": "Written for this job search. The static build works with no backend; the chat only claims a live model when Ollama is actually reachable.",
-      "summary": "A spatial work graph in React Three Fiber over an Express API that retrieves from a curated corpus and answers through a local model.",
+      "summary": "React Three Fiber frontend over an Express API. It queries a local LLM.",
       "bullets": [
         "React Three Fiber scene where each project is a node that opens its real details.",
         "Express API with helmet, a CORS allowlist, and rate limits on the chat routes.",
-        "Retrieval-grounded chat that streams tokens and inline context cards, and falls back to extractive corpus answers when no model is running.",
+        "It streams LLM tokens and inline context cards. It falls back to static JSON when the model is offline.",
         "Six themes with localStorage persistence, reduced-motion support, and a printable resume view generated from the same data.",
         "He containerizes inference models. He deploys them to Linux, macOS, and Windows edge devices.",
         "He writes Bash scripts for data pipelines."
@@ -987,7 +987,7 @@
         "site",
         "how does this work"
       ],
-      "text": "This site is an interactive portfolio. He built it with Vite, React, and TypeScript. He used a React Three Fiber work graph and an Express API. The chat retrieves scored chunks from this curated corpus. It prompts a local Ollama model. It uses keyword scoring weighted by inverse document frequency. There is no vector database. If Ollama is not running, answers are extractive from the corpus. The UI says inference is offline. He added optional on-device voice. He used whisper.cpp for speech-to-text. He used Windows SAPI for replies. The voice is a stock synthetic voice. He generates a printable resume view and a static PDF from the same data. The static build works with no backend."
+      "text": "This site is an interactive portfolio. He built it with Vite, React, and TypeScript. He used a React Three Fiber work graph and an Express API. The chat retrieves scored chunks from this curated corpus. It prompts a local Ollama model. It uses keyword scoring weighted by inverse document frequency. There is no vector database. If Ollama is not running, it falls back to static JSON. He added optional on-device voice. He used whisper.cpp for speech-to-text. He used Windows SAPI for replies. The voice is a stock synthetic voice. He generates a printable resume view and a static PDF from the same data. The static build works with no backend."
     },
     {
       "id": "privacy",

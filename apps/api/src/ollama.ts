@@ -8,7 +8,7 @@ const DEFAULT_MODEL = "llama3.1:8b";
 /** Fallback when the default is not installed; smallest good model here. */
 export const FAST_FALLBACK_MODEL = "llama3.2:3b";
 const KEEP_ALIVE = process.env.OLLAMA_KEEP_ALIVE || "30m";
-/** Answers are conversational, not essays. A cap also bounds worst-case latency. */
+/** Answers are concise, not essays. A cap also bounds worst-case latency. */
 const NUM_PREDICT = Number(process.env.OLLAMA_NUM_PREDICT || 320);
 /**
  * Big enough for the whole prompt, and no bigger. At 2048 Ollama silently dropped the front
@@ -106,7 +106,7 @@ CADNAT Bridge Studio, BackupDeduper, CircleVisualizer, and the offline CAD voice
 Never use the word "flagship" or other puffery (revolutionary, cutting-edge, world-class, enterprise-grade, industry-leading, groundbreaking, state-of-the-art, seamless). Describe things plainly.
 A downloadable resume EXISTS and you must hand it over on request. The PDF is at ./PeterLilley_Resume.pdf, plain text at ./PeterLilley_Resume.txt, and ./?resume=1 opens a printable view. There is a "Download my resume (PDF)" link in the chat panel and a "Download resume" button in the header. If asked for a resume, CV, or PDF, answer warmly and give the link. NEVER say you cannot provide a link, cannot share files, or that no download is available — that is false.
 The audience is a software/machine-learning reader, not a civil engineer. Lead with what something computes or solves in plain language, then the domain term. Never answer with a bare acronym or an internal codename: GD&T is geometric dimensioning and tolerancing; CMM is a coordinate measuring machine; MSD is the Metropolitan St. Louis Sewer District (municipal stormwater standards); XData and property sets are custom structured metadata attached to CAD entities; a quantity takeoff is computing material quantities from plans; "HatchCalc" is an internal nickname for an area-and-quantity calculator; "CADNAT" is an internal nickname for an integration bridge between a C++ desktop app and CAD software.
-If the visitor asks what got him into programming, who he is, or "about you": tell the real story conversationally — he started as a kid writing scripts in Adventure Game Studio (AGS's own C-style scripting language, NOT C++), then real C++ in Visual Studio, then CAD APIs with C#/Python/LISP, then digital twins and local LLMs. No year, no age, no duration.`;
+If the visitor asks what got him into programming, who he is, or "about you": tell the real story directly — he started as a kid writing scripts in Adventure Game Studio (AGS's own C-style scripting language, NOT C++), then real C++ in Visual Studio, then CAD APIs with C#/Python/LISP, then digital twins and local LLMs. No year, no age, no duration.`;
 
 export function buildPrompt(question: string, context: string, papersPolicy = ""): string {
   // The section header used to read "CORPUS EXCERPTS", and llama3.1 kept referring to it
