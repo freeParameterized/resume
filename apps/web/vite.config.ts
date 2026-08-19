@@ -34,6 +34,10 @@ export default defineConfig({
         "**/node_modules/.cache/**",
         "**/*.{pem,crt,key,pfx}",
         "**/scripts/**",
+        // The visitor log lives at logs/visits.log, inside the repo the dev server can
+        // read. A visitor must never be able to fetch it back out.
+        "**/logs/**",
+        "**/*.log",
       ],
     },
     proxy: {

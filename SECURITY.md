@@ -23,9 +23,27 @@ It does **not**:
 - The website itself: the 3D page, the About and project text, the themes
 - The resume files: `PeterLilley_Resume.pdf`, `.txt`, `.md`
 - These API endpoints: health, profile, projects, papers, models, chat, warm, speech-to-text,
-  text-to-speech
+  text-to-speech, and a write-only visit counter (`POST /api/visit`) that records a page view or
+  a resume download and returns nothing readable
 
 Nothing else is served. There is no endpoint that reads an arbitrary file or path.
+
+## The visitor log
+
+While the site runs it appends a line to `logs/visits.log` when someone opens the page, asks a
+question, uses voice, or downloads the resume. Each line holds a UTC timestamp, the event type,
+a coarse browser and OS family such as `Safari/iOS`, and a random id that groups one tab's
+events together.
+
+It does **not** record IP addresses, geolocation, screen size, language, or the full user-agent
+string, and by default it does not record what anyone typed — only how many characters it was.
+`VISIT_LOG_MESSAGES=1` in `.env` turns question text on; `VISIT_LOG=0` turns the whole thing off.
+
+The file lives outside the served directory, is gitignored, and the dev server explicitly denies
+`**/logs/**` and `**/*.log`. Verified against both the local port and the live tunnel: every
+attempt to fetch it — `/logs/visits.log`, `/@fs/<absolute path>`, `?raw`, URL-encoded and
+traversal variants — returns 403 or the site's own HTML, never a line of the log. It also rotates
+at 1 MB and keeps one old copy, so it cannot fill the disk.
 
 ## Why the chat cannot be talked into doing damage
 

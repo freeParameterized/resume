@@ -1,4 +1,5 @@
 import { API_BASE } from "./config";
+import { visitHeaders } from "./visits";
 
 export type LiveRecorder = {
   start: () => Promise<void>;
@@ -121,7 +122,7 @@ export function createLiveRecorder(): LiveRecorder {
 export async function transcribeWav(blob: Blob): Promise<string> {
   const res = await fetch(`${API_BASE}/api/stt`, {
     method: "POST",
-    headers: { "Content-Type": blob.type || "application/octet-stream" },
+    headers: { "Content-Type": blob.type || "application/octet-stream", ...visitHeaders() },
     body: blob,
   });
   const data = (await res.json()) as { text?: string; error?: string };
@@ -143,7 +144,7 @@ export async function speakText(text: string): Promise<HTMLAudioElement> {
   stopSpeech();
   const res = await fetch(`${API_BASE}/api/tts`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...visitHeaders() },
     body: JSON.stringify({ text }),
   });
   if (!res.ok) {

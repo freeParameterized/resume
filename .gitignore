@@ -6,6 +6,7 @@ build
 .DS_Store
 Thumbs.db
 *.log
+logs/
 .vite
 coverage
 .idea

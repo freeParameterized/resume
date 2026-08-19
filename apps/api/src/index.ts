@@ -13,6 +13,7 @@ import { buildPrompt, generateOllama, ollamaHost, pingOllama, stripThinking, war
 import { formatPapersPolicy, loadPapers, paperChunks, papersForSite } from "./papers.js";
 import { quickAnswer } from "./quick.js";
 import { extractiveAnswer, retrieve } from "./retrieve.js";
+import { logVisit, visitLogEnabled, type VisitEvent } from "./visits.js";
 import { synthesizeWav, transcribeAudio, voiceStatus } from "./voice.js";
 
 dotenv.config({ path: path.join(repoRoot, ".env") });
@@ -83,11 +84,20 @@ app.use(
   }),
 );
 
+/**
+ * Requests through the Cloudflare tunnel arrive on loopback carrying X-Forwarded-For, and
+ * `trust proxy` stays false on purpose: a visitor could otherwise forge that header and
+ * mint a fresh rate-limit bucket per request. Counting every tunnel visitor in one bucket
+ * is the stricter choice, so the library's warning about it is silenced rather than fixed.
+ */
+const limiterValidation = { xForwardedForHeader: false as const };
+
 const chatLimit = rateLimit({
   windowMs: 60_000,
   limit: 20,
   standardHeaders: true,
   legacyHeaders: false,
+  validate: limiterValidation,
   message: { error: "Too many questions; wait a minute." },
 });
 const voiceLimit = rateLimit({
@@ -95,8 +105,26 @@ const voiceLimit = rateLimit({
   limit: 10,
   standardHeaders: true,
   legacyHeaders: false,
+  validate: limiterValidation,
   message: { error: "Voice rate limit; wait a minute." },
 });
+const visitLimit = rateLimit({
+  windowMs: 60_000,
+  limit: 60,
+  standardHeaders: false,
+  legacyHeaders: false,
+  validate: limiterValidation,
+  message: { error: "Too many events." },
+});
+
+/** The client sends its own random session id; it is never derived from the request. */
+function visitSession(req: Request): string {
+  return String(req.headers["x-visit-session"] || "");
+}
+
+function visitClient(req: Request): string {
+  return String(req.headers["user-agent"] || "");
+}
 
 app.post("/api/stt", voiceLimit, express.raw({ type: () => true, limit: "8mb" }), async (req, res) => {
   try {
@@ -106,6 +134,13 @@ app.post("/api/stt", voiceLimit, express.raw({ type: () => true, limit: "8mb" })
       return;
     }
     const text = await transcribeAudio(buf);
+    logVisit({
+      event: "voice",
+      session: visitSession(req),
+      userAgent: visitClient(req),
+      detail: "mic",
+      once: true,
+    });
     res.json({ text, speaker: voiceStatus().speaker });
   } catch (err) {
     const message = safeMessage(err, "Speech-to-text failed.");
@@ -139,6 +174,28 @@ app.get("/api/health", async (_req, res) => {
 
 app.get("/api/models", async (_req, res) => {
   res.json(await modelCatalog());
+});
+
+/**
+ * Page views and resume downloads: the server cannot see either (the page is served by
+ * Vite, the PDF is a static file), so the client reports them here. Nothing about the
+ * request other than the coarse client family is kept — see visits.ts.
+ */
+const CLIENT_EVENTS = new Set<VisitEvent>(["page", "resume"]);
+
+app.post("/api/visit", visitLimit, (req, res) => {
+  const event = String(req.body?.event || "") as VisitEvent;
+  if (!CLIENT_EVENTS.has(event)) {
+    res.status(204).end();
+    return;
+  }
+  logVisit({
+    event,
+    session: req.headers["x-visit-session"] || req.body?.session,
+    userAgent: visitClient(req),
+    detail: req.body?.detail,
+  });
+  res.status(204).end();
 });
 
 app.get(["/api/profile", "/api/resume"], (_req, res) => {
@@ -194,6 +251,15 @@ app.post(["/api/ask", "/api/chat"], chatLimit, async (req: Request, res: Respons
     res.status(400).json({ error: "question is required" });
     return;
   }
+
+  // Length only. The text itself is written only with VISIT_LOG_MESSAGES=1 in .env.
+  logVisit({
+    event: "chat",
+    session: visitSession(req) || req.body?.session,
+    userAgent: visitClient(req),
+    chars: question.length,
+    text: question,
+  });
 
   const corpus = loadCorpus();
   const papersFile = loadPapers();
@@ -349,6 +415,13 @@ app.post("/api/tts", voiceLimit, async (req, res) => {
   }
   try {
     const wav = await synthesizeWav(text);
+    logVisit({
+      event: "voice",
+      session: visitSession(req),
+      userAgent: visitClient(req),
+      detail: "spoken",
+      once: true,
+    });
     res.setHeader("Content-Type", "audio/wav");
     res.setHeader("Cache-Control", "no-store");
     res.send(wav);
@@ -379,6 +452,11 @@ process.on("unhandledRejection", (reason) => {
 
 app.listen(PORT, HOST, () => {
   console.log(`living-resume api http://${HOST}:${PORT}`);
+  console.log(
+    visitLogEnabled()
+      ? `[visits] logging to logs/visits.log (npm run visits to read it)`
+      : `[visits] disabled (VISIT_LOG=0)`,
+  );
   if (process.env.NO_PREWARM !== "1") {
     void warmModel().then((r) => {
       console.log(

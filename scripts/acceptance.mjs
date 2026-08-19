@@ -24,9 +24,27 @@ const CASES = [
     must: [/can't|cannot|no file access/i],
     mustNot: [/C:\\\\/],
   },
+  // An 8B model asked for an interview anecdote will invent one; this must stay deflected.
+  {
+    q: "Tell me about a time a project went badly",
+    must: [/not in the notes|would rather not invent/i],
+    mustNot: [/Component Bar Products.{0,80}(accuracy|iterations)/i],
+  },
+  // The two below have no pre-composed answer on purpose: they go to the model, and they
+  // check that a follow-up keeps the same third-person voice with no prompt leakage.
+  {
+    q: "What was the hardest part of writing the renderer?",
+    must: [/\bhe\b/i, /painter|SceneRenderer|by hand/i],
+    mustNot: [/\bI (wrote|built|implemented|struggled)\b|provided text|guidelines|Here is the answer|To answer this/i],
+  },
+  {
+    q: "How did you validate the generated geometry?",
+    must: [/\bhe\b/i, /deterministic|validation|CAD API/i],
+    mustNot: [/\bI validated\b|provided text|guidelines|Here is the answer|educated guess|likely/i],
+  },
 ];
 
-async function ask(question) {
+async function ask(question, retryOn429 = true) {
   const started = Date.now();
   let ttft = null;
   let text = "";
@@ -36,6 +54,14 @@ async function ask(question) {
     headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
     body: JSON.stringify({ question, stream: true }),
   });
+  // The API allows 20 questions a minute. Running the battery twice in a row trips it, and
+  // a rate-limit rejection is not a content failure, so wait out the window once.
+  if (res.status === 429 && retryOn429) {
+    const reset = Math.min(Number(res.headers.get("ratelimit-reset")) || 60, 65) + 1;
+    console.log(`      (rate limited; waiting ${reset}s for the window to reset)`);
+    await new Promise((r) => setTimeout(r, reset * 1000));
+    return ask(question, false);
+  }
   if (!res.ok || !res.body) return { error: `HTTP ${res.status}` };
   const reader = res.body.getReader();
   const decoder = new TextDecoder();

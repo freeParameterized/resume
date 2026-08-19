@@ -1,5 +1,6 @@
 import resume from "@resume";
 import "../styles/print.css";
+import { logVisit } from "../visits";
 
 type SkillGroup = { label: string; items: string };
 type Job = { org: string; location: string; title: string; dates: string; bullets: string[] };
@@ -113,10 +114,10 @@ export function ResumeSheet() {
         <button type="button" onClick={() => window.print()}>
           Print / Save as PDF
         </button>
-        <a href="./PeterLilley_Resume.pdf" download>
+        <a href="./PeterLilley_Resume.pdf" download onClick={() => logVisit("resume", "pdf")}>
           Download PDF
         </a>
-        <a href="./PeterLilley_Resume.txt" download>
+        <a href="./PeterLilley_Resume.txt" download onClick={() => logVisit("resume", "txt")}>
           Download plain text
         </a>
         <a href="./">Back to the site</a>

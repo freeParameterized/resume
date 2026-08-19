@@ -19,8 +19,12 @@ import { Summary } from "./components/Summary";
 import { loadSettings, saveSettings, type Settings } from "./settings";
 import { THEMES } from "./theme";
 import type { Corpus, GithubInfo, Health, ModelCatalog, Paper, Project } from "./types";
+import { logVisit } from "./visits";
 
 const WorkGraph = lazy(() => import("./scene/WorkGraph").then((m) => ({ default: m.WorkGraph })));
+
+/** StrictMode runs mount effects twice in dev; one page view per load is the truth. */
+let pageViewSent = false;
 
 export default function App() {
   const [corpus, setCorpus] = useState<Corpus | null>(null);
@@ -38,6 +42,12 @@ export default function App() {
   useEffect(() => {
     saveSettings(settings);
   }, [settings]);
+
+  useEffect(() => {
+    if (pageViewSent) return;
+    pageViewSent = true;
+    logVisit("page");
+  }, []);
 
   useEffect(() => {
     let alive = true;

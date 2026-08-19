@@ -1,4 +1,5 @@
 import type { Health } from "../types";
+import { logVisit } from "../visits";
 
 type Props = {
   name: string;
@@ -25,7 +26,12 @@ export function Header({ name, onAsk, onAbout, onSettings, health }: Props) {
         <button type="button" className="ask-launch" onClick={onAbout}>
           About Me
         </button>
-        <a className="ask-launch" href={`${import.meta.env.BASE_URL}PeterLilley_Resume.pdf`} download>
+        <a
+          className="ask-launch"
+          href={`${import.meta.env.BASE_URL}PeterLilley_Resume.pdf`}
+          download
+          onClick={() => logVisit("resume", "pdf")}
+        >
           Download resume
         </a>
         <a className="hide-sm" href={`${import.meta.env.BASE_URL}?resume=1`}>

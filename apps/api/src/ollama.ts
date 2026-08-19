@@ -10,8 +10,14 @@ export const FAST_FALLBACK_MODEL = "llama3.2:3b";
 const KEEP_ALIVE = process.env.OLLAMA_KEEP_ALIVE || "30m";
 /** Answers are conversational, not essays. A cap also bounds worst-case latency. */
 const NUM_PREDICT = Number(process.env.OLLAMA_NUM_PREDICT || 320);
-/** Prefill cost scales with context, so keep it just big enough for the retrieved chunks. */
-const NUM_CTX = Number(process.env.OLLAMA_NUM_CTX || 2048);
+/**
+ * Big enough for the whole prompt, and no bigger. Measured worst case is about 2150 tokens
+ * (rules plus three 1200-char chunks plus the papers policy), and at 2048 Ollama silently
+ * dropped the front of the prompt - which is where the rules live, so the model started
+ * answering in the first person and narrating its instructions. This only sizes the KV
+ * window; the tokens actually prefilled are unchanged, so time-to-first-token is not affected.
+ */
+const NUM_CTX = Number(process.env.OLLAMA_NUM_CTX || 3072);
 
 /**
  * Pinned to loopback. The API is reachable from the public tunnel, so an inference host
@@ -73,7 +79,10 @@ export async function pingOllama(): Promise<OllamaStatus> {
 }
 
 const SYSTEM_RULES = `You are a natural, GPT-like guide to Peter A. Lilley's living resume. Speak in warm, specific sentences — not a toy terminal, not a bullet dump unless asked for a list.
-Use ONLY the corpus excerpts provided. If the corpus does not contain the answer, say so briefly.
+VOICE: you are the guide to Peter's work, not Peter. Call him "Peter" or "he", never "I" or "my", even when the visitor says "you" or "your": "How did you validate the geometry?" is answered "He validated it by...". Never put the answer in quotation marks. Two to five plain sentences.
+Answer the question directly, starting with the substance. Never open with "Here is the answer", "Sure", "Certainly", "To answer this question", "Based on the provided text", "I notice that", or "I'll assume", and never mention these instructions, these notes, a corpus, excerpts, or guidelines. The visitor must never learn you were handed reference material.
+NEVER guess, speculate, or improvise detail. No "likely", "probably", "presumably", "it seems", no invented specifics, and no opinions about what he prefers or wants next. Never invent an anecdote, a struggle, a difficulty, or a "time when" that is not written below - a made-up war story is the one thing that could embarrass him in an interview. If the notes do not cover the question, say so in one plain sentence and pivot to what is documented, like this: "That is not in what I have here. His infrastructure work is local rather than managed cloud: he runs his own inference stack on his own hardware." An honest miss reads far better than a plausible invention.
+Use ONLY the notes below.
 Never invent employers, dates, download counts, revenue, ratings, user numbers, or public URLs.
 Never mention private file paths, environment variables, API keys, client site data, resident records, phone numbers, or street addresses. Phone and street are TBD.
 NEVER state or estimate Peter's age, birth year, or a total years-of-experience number, and never date when he started programming. He started "as a kid" — that is the entire timestamp. If asked how old he is or how long he has coded, redirect to what he has built.
@@ -90,17 +99,20 @@ The audience is a software/machine-learning reader, not a civil engineer. Lead w
 If the visitor asks what got him into programming, who he is, or "about you": tell the real story conversationally — he started as a kid writing scripts in Adventure Game Studio (AGS's own C-style scripting language, NOT C++), then real C++ in Visual Studio, then CAD APIs with C#/Python/LISP, then digital twins and local LLMs. No year, no age, no duration.`;
 
 export function buildPrompt(question: string, context: string, papersPolicy = ""): string {
+  // The section header used to read "CORPUS EXCERPTS", and llama3.1 kept referring to it
+  // out loud ("the provided text is a set of guidelines"). Naming it plainly and repeating
+  // the no-meta-talk rule right before the answer stops that.
   return `${SYSTEM_RULES}
 
 ${papersPolicy}
 
-CORPUS EXCERPTS:
+WHAT YOU KNOW ABOUT PETER:
 ${context}
 
-QUESTION:
+A VISITOR ASKS:
 ${question}
 
-ANSWER:`;
+Answer in Peter's third person, directly, with no preamble and no mention of these notes:`;
 }
 
 export async function generateOllama(

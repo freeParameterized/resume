@@ -4,6 +4,7 @@ import { createLiveRecorder, micSupported, speakText, stopSpeech, transcribeWav,
 import { detectIntents } from "../intents";
 import type { Settings } from "../settings";
 import type { AboutMe, Health, Paper, Project } from "../types";
+import { logVisit } from "../visits";
 import {
   InlineContext,
   RESUME_PDF_URL,
@@ -286,7 +287,12 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, ab
             <span className="job-meta">Mic disabled in settings</span>
           )}
         </div>
-        <a className="download-link chat-resume" href={RESUME_PDF_URL} download="PeterLilley_Resume.pdf">
+        <a
+          className="download-link chat-resume"
+          href={RESUME_PDF_URL}
+          download="PeterLilley_Resume.pdf"
+          onClick={() => logVisit("resume", "pdf")}
+        >
           Download my resume (PDF)
         </a>
       </form>

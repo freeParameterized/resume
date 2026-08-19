@@ -53,22 +53,37 @@ export function tokenize(text: string): string[] {
 
 export function retrieve(chunks: Chunk[], question: string, k = 5): ScoredChunk[] {
   const qTokens = tokenize(question);
-  const scored = chunks.map((chunk) => {
-    const hay = `${chunk.title} ${chunk.text} ${chunk.tags.join(" ")}`;
-    const tokens = tokenize(hay);
+  const docs = chunks.map((chunk) => {
+    const tokens = tokenize(`${chunk.title} ${chunk.text} ${chunk.tags.join(" ")}`);
     const tf = new Map<string, number>();
     for (const t of tokens) tf.set(t, (tf.get(t) || 0) + 1);
+    return { chunk, tf };
+  });
 
+  /**
+   * Rare words decide the match. Without this, "What was the hardest part of writing the
+   * renderer?" lost to chunks that merely repeated "part" and "written", and the model was
+   * handed the wrong excerpts and improvised. "renderer" appears in one chunk, so it should
+   * dominate a question that contains it.
+   */
+  const idf = new Map<string, number>();
+  for (const q of new Set(qTokens)) {
+    const df = docs.reduce((n, d) => n + (d.tf.has(q) ? 1 : 0), 0);
+    idf.set(q, Math.log(1 + docs.length / (1 + df)));
+  }
+
+  const scored = docs.map(({ chunk, tf }) => {
     let score = 0;
     if (qTokens.length === 0) {
       return { chunk, score: 0 };
     }
     for (const q of qTokens) {
+      const weight = idf.get(q) || 0;
       const f = tf.get(q) || 0;
-      if (f > 0) score += 1 + Math.log(1 + f);
-      if (chunk.title.toLowerCase().includes(q)) score += 2.4;
-      if (chunk.tags.some((tag) => tag.toLowerCase().includes(q))) score += 1.4;
-      if (chunk.text.toLowerCase().includes(q)) score += 0.15;
+      if (f > 0) score += (1 + Math.log(1 + f)) * weight;
+      if (chunk.title.toLowerCase().includes(q)) score += 2.4 * weight;
+      if (chunk.tags.some((tag) => tag.toLowerCase().includes(q))) score += 1.4 * weight;
+      if (chunk.text.toLowerCase().includes(q)) score += 0.15 * weight;
     }
     return { chunk, score };
   });

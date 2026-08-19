@@ -1,13 +1,23 @@
 /**
  * End-to-end chat latency through the real API (SSE), not against Ollama directly.
- * Usage: node scripts/bench-chat.mjs [baseUrl]
+ * Usage: node scripts/bench-chat.mjs [baseUrl] ["a question" ...]
+ *
+ * The default list mixes the pre-composed openers (mode=instant) with the follow-ups a
+ * reviewer asks next, which have no canned answer and must go to the model. Watch the
+ * second group: that is the real worst case a visitor feels.
  */
-const BASE = process.argv[2] || "http://127.0.0.1:8787";
-const QUESTIONS = [
-  "Who is Peter",
-  "What is your ML experience",
-  "Tell me about Digital Twin Pro",
-];
+const args = process.argv.slice(2);
+const BASE = args[0]?.startsWith("http") ? args[0] : "http://127.0.0.1:8787";
+const extra = args.filter((a) => !a.startsWith("http"));
+const QUESTIONS = extra.length
+  ? extra
+  : [
+      "Who is Peter",
+      "Tell me about Digital Twin Pro",
+      "How did you validate the generated geometry?",
+      "What was the hardest part of writing the renderer?",
+      "How do you handle a plan set that does not follow the standard layer names?",
+    ];
 
 async function ask(question) {
   const started = Date.now();

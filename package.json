@@ -14,7 +14,8 @@
     "build:pages": "npm run resume:pdf && npm run build -w @living-resume/web",
     "preview": "npm run preview -w @living-resume/web",
     "resume:pdf": "node scripts/make-resume-pdf.mjs",
-    "tunnel": "cloudflared tunnel --url http://127.0.0.1:5173",
+    "visits": "node scripts/visits.mjs",
+    "tunnel": "node scripts/start-tunnel.mjs",
     "demo": "concurrently -k -n api,web,tunnel -c cyan,magenta,yellow \"npm run dev -w @living-resume/api\" \"npm run dev -w @living-resume/web\" \"node scripts/start-tunnel.mjs\""
   },
   "engines": {

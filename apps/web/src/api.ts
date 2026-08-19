@@ -5,6 +5,7 @@ import { API_BASE } from "./config";
 import { detectIntents } from "./intents";
 import { extractiveLocal, retrieveLocal } from "./retrieve";
 import type { Corpus, GithubInfo, Health, ModelCatalog, Paper, Project } from "./types";
+import { visitHeaders } from "./visits";
 
 const apiBase = API_BASE;
 
@@ -138,6 +139,7 @@ export async function askQuestion(
       headers: {
         "Content-Type": "application/json",
         Accept: "text/event-stream",
+        ...visitHeaders(),
       },
       body: JSON.stringify({ question, model: model || undefined }),
     });

@@ -18,17 +18,28 @@ function tokenize(text: string): string[] {
 
 export function retrieveLocal(chunks: Chunk[], question: string, k = 5): { title: string; text: string; id: string; score: number }[] {
   const qTokens = tokenize(question);
-  const scored = chunks.map((chunk) => {
-    const hay = `${chunk.title} ${chunk.text} ${chunk.tags.join(" ")}`;
-    const tokens = tokenize(hay);
+  const docs = chunks.map((chunk) => {
+    const tokens = tokenize(`${chunk.title} ${chunk.text} ${chunk.tags.join(" ")}`);
     const tf = new Map<string, number>();
     for (const t of tokens) tf.set(t, (tf.get(t) || 0) + 1);
+    return { chunk, tf };
+  });
+
+  // Rare words decide the match; mirrors the server scorer in apps/api/src/retrieve.ts.
+  const idf = new Map<string, number>();
+  for (const q of new Set(qTokens)) {
+    const df = docs.reduce((n, d) => n + (d.tf.has(q) ? 1 : 0), 0);
+    idf.set(q, Math.log(1 + docs.length / (1 + df)));
+  }
+
+  const scored = docs.map(({ chunk, tf }) => {
     let score = 0;
     for (const q of qTokens) {
+      const weight = idf.get(q) || 0;
       const f = tf.get(q) || 0;
-      if (f > 0) score += 1 + Math.log(1 + f);
-      if (chunk.title.toLowerCase().includes(q)) score += 2.4;
-      if (chunk.tags.some((tag) => tag.toLowerCase().includes(q))) score += 1.4;
+      if (f > 0) score += (1 + Math.log(1 + f)) * weight;
+      if (chunk.title.toLowerCase().includes(q)) score += 2.4 * weight;
+      if (chunk.tags.some((tag) => tag.toLowerCase().includes(q))) score += 1.4 * weight;
     }
     return { id: chunk.id, title: chunk.title, text: chunk.text, score };
   });

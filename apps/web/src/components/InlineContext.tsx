@@ -1,4 +1,5 @@
 import type { AboutMe, Experience, Paper, Project } from "../types";
+import { logVisit } from "../visits";
 
 export type ContextBlock = {
   kind: "project" | "job" | "about" | "metric" | "skill" | "paper" | "resume";
@@ -63,7 +64,12 @@ export function InlineContext({ block }: { block: ContextBlock }) {
       ) : null}
       {href ? (
         block.download ? (
-          <a className="download-link" href={href} download={block.download}>
+          <a
+            className="download-link"
+            href={href}
+            download={block.download}
+            onClick={() => logVisit("resume", "pdf")}
+          >
             {block.linkLabel || "Download"}
           </a>
         ) : (

@@ -4,6 +4,10 @@ A **living** frontend + backend exhibit: spatial tote / work graph (Three.js), r
 
 Identity: Chesterfield / St. Louis, MO · **Free Parameter LLC**. Public GitHub: [github.com/freeParameterized](https://github.com/freeParameterized). Title published: **Staff Technician (CAD automation / Civil 3D tools)**. Phone and street stay TBD (not on the site).
 
+**Showing it to someone?** Read [DEPLOY.md](DEPLOY.md) instead of this file. It is the runbook:
+the one command that starts everything with a public link, why that link expires, how to stop
+it, and how to see who visited.
+
 ## Quick start
 
 Requires **Node 20+**. Ollama and voice tools are optional; text UI still runs if they are down.
@@ -31,9 +35,9 @@ npm start
 
 ## Ollama (local models)
 
-API talks only to `http://127.0.0.1:11434`. Default pick: **`gemma4:26b`** (25.8B Q4_K_M, ~16.8 GB) — strongest local general chat on this disk. Cloud tags (`*-cloud`) are never auto-selected.
+API talks only to `http://127.0.0.1:11434`. Default pick: **`llama3.1:8b`** (~4.9 GB) — measured 117 ms to first token warm on this machine, which is the difference between a live demo and one that looks broken. Cloud tags (`*-cloud`) are never auto-selected.
 
-Fallback chain if the default is missing: `gemma4:26b` → `qwen3-coder:30b` → `gemma4:latest` → `qwen3:8b` → `qwen2.5-coder:7b` → `llama3.2:3b`.
+Preference order when the default is missing (`apps/api/src/models.ts`): `llama3.1:8b` → `llama3.2:3b` → `gemma4:latest` → `qwen3:8b` → `qwen3-coder:30b` → `gemma4:26b`. The large models stay installed and selectable in Settings; they are simply too slow to lead with.
 
 `GET /api/models` lists what is installed. `POST /api/ask` `{ "question", "model" }` can override. If Ollama is down, the UI says **inference is offline** and answers are extractive from `data/corpus.json` — not a fake live model.
 
@@ -47,23 +51,24 @@ Whisper.cpp (`D:\OfflineLLMGui\whisper.cpp`) + Windows SAPI **Microsoft David De
 
 ### GitHub Pages (static client)
 
-1. Enable Pages in the GitHub repo (or wait).
-2. Run the workflow **Pages client** manually (`workflow_dispatch` in `.github/workflows/pages.yml` — it does **not** run on push).
-3. Set `VITE_BASE=/living-resume/` for a project site. Leave `VITE_API_URL` empty so the static build uses bundled corpus (chat Q&A needs a local/hosted API).
+1. Enable Pages in the GitHub repo (Settings → Pages → Source: GitHub Actions).
+2. `.github/workflows/pages.yml` deploys on every push to `main`, and can also be run by hand from the Actions tab.
+3. The workflow already sets `VITE_BASE=/living-resume/` for the project site and leaves `VITE_API_URL` empty, so the static build answers from the bundled corpus (live chat needs a local/hosted API).
 4. Custom domain **freeparameter.com**: in the Pages settings add the domain; at the DNS host create a `CNAME` (or A records per GitHub docs) from `www` or apex to `freeParameterized.github.io`. Add a `CNAME` file in `apps/web/public` if you want it in the artifact.
 
 ### Render (API)
 
 `render.yaml` is ready: Node web service, `HOST=0.0.0.0`, `TRUST_PROXY=1`, `CORS_ORIGINS` set to the Pages origin. A Render box **will not** see this PC’s Ollama unless you point `OLLAMA_HOST` at a reachable private endpoint. Without Ollama, the hosted API is extractive-only.
 
-### Secure tunnel for a live local-inference demo (do not run now)
+### Tunnel for a live local-inference demo
 
-Keep the API on loopback. Put **auth in front**, then tunnel:
+`npm run demo` starts the API, the site, and a **Cloudflare quick tunnel**, then prints the one
+https URL to share. The API stays on loopback; only the web port (5173) is tunnelled. The URL is
+random and dies with the process — see [DEPLOY.md](DEPLOY.md) and [SECURITY.md](SECURITY.md).
 
-- **Cloudflare Tunnel** (`cloudflared tunnel`) with Access (email OTP / SSO) in front of `http://127.0.0.1:8787`.
-- **Tailscale Funnel** only on a tailnet you control, still behind Tailscale ACLs.
-
-Set the static client `VITE_API_URL` to that HTTPS origin and add it to `CORS_ORIGINS`. Do **not** open a tunnel from this repo’s scripts.
+For anything longer than a live demo, put **auth in front**: a named Cloudflare tunnel with
+Access (email OTP / SSO), or Tailscale Funnel on a tailnet you control. In that case set the
+static client `VITE_API_URL` to that HTTPS origin and add it to `CORS_ORIGINS`.
 
 ### Separate partition / remote viewing
 
@@ -72,13 +77,22 @@ Stub only: `server/remote.stub.js`. Not RDP, not VNC, not implemented.
 ## Privacy
 
 - Knowledge is `data/corpus.json` (plus optional `data/papers.json` when present).
-- Phone and street are TBD.
+- Phone and street are TBD: `data/resume.json` → `contact.phone` / `contact.address`.
 - Do not say he is seeking Project Management.
+- Visitors are logged coarsely to `logs/visits.log` (gitignored, never served): timestamp, event
+  type, browser/OS family, random session id. No IPs, no locations, no raw user-agent strings.
+  Question text needs `VISIT_LOG_MESSAGES=1`. Read it with `npm run visits`.
 
 ## Scripts
 
 | Script | What |
 | --- | --- |
-| `npm start` / `npm run dev` | API watch + Vite |
+| `npm start` / `npm run dev` | API watch + Vite on 127.0.0.1:5173 |
+| `npm run demo` | API + Vite + Cloudflare tunnel, prints the public link |
+| `npm run tunnel` | Tunnel only, against an already-running site |
+| `npm run visits` | Recent-visitor summary from `logs/visits.log` |
+| `npm run resume:pdf` | Regenerate the resume PDF/TXT/MD, with validation |
 | `npm run build:pages` | Static frontend |
 | `npm run start -w @living-resume/api` | Compiled API |
+| `node scripts/acceptance.mjs <url>` | Answer-quality and honesty battery |
+| `node scripts/bench-chat.mjs [url]` | End-to-end chat latency, instant vs model |
