@@ -27,11 +27,11 @@
     "summary": "He is a software engineer. He builds production tooling that engineering teams use daily. He writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. He applies matrix math, coordinate transforms, and graph structures to spatial data. He wrote C++ desktop applications and engine scripting before LLM tools existed. He constrains model output to a typed command schema, so deterministic code owns anything that has to be correct. He builds OCR and structured-data pipelines over messy engineering input. He designed, funded, and shipped Digital Twin Pro to a Google Play beta on his own time. He works inside multi-disciplinary engineering teams under formal review. He has supervised staff. His focus is applied ML systems and inference integration, not model training."
   },
   "howIWork": {
-    "headline": "How I work with people",
+    "headline": "Working with people",
     "points": [
       "He ships tools that colleagues actually adopt. Other professionals use the automation and generation tooling daily.",
       "He works inside multi-disciplinary teams. He coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects. He ensures one discipline's change does not break another's.",
-      "He builds for review. His quality pass cut drafting errors by about 25% before licensed-engineer review. The tooling makes someone else's review faster.",
+      "He builds for review. His quality pass cut an estimated 25% of drafting errors before licensed-engineer review. The tooling makes someone else's review faster.",
       "He has managed people. He supervised and coordinated department staff as an Assistant Department Manager. He handled contractor-facing sales. He translated vague requirements into exact deliverables on a deadline.",
       "He is comfortable under formal process. He worked to ISO 9001 quality-system and Production Part Approval Process requirements. Documentation and traceability are the job.",
       "He has a roughly two-year engagement at an established St. Louis engineering firm. Employer references are available on request."
@@ -157,27 +157,14 @@
       "title": "Staff Technician (CAD automation / Civil 3D tools)",
       "dates": "July 2024 - Present",
       "bullets": [
-        "He cut hydraulic grade line updates from 4 to 8 hours of clicking each elevation and layer on hundreds of profile pipes to minutes. The hydraulic grade line is the water-level profile through a pipe network. The tool plots that profile from a Hydraflow report and edits pipe properties in bulk.",
-        "Staff compared manhours billed to engineers who use the tool versus those who do not. The difference is a direct cost saving on repeated production work.",
-        "The hydraulic grade line tool ships as a single DLL. It has a C++ core wrapped in C#, and a WinForms interface that loads inside Civil 3D.",
-        "He built layout-wide edit commands. They delete matching objects across every layout in a drawing. They move similar objects across every layout. They freeze layers by drawing scale, which normally needs one viewport override at a time.",
-        "A local phrase-to-command lookup picks the target layouts for those commands. Peers confirmed the manhour savings in a formal civil workload review.",
-        "He introduced a typed-command CAD pipeline at the firm. It maps a written request onto a typed command schema. Deterministic C# and .NET code then constructs the geometry and validates it before commit.",
-        "That pipeline runs on the hosted OpenAI API. He wrote the API integration. It serves three paths: a chat for users, scheduled batch jobs, and a prepared store of company drawing data that conditions each request.",
-        "The model returns command strings only. The pipeline turns those strings into real drawing geometry and text through deterministic code. A local Ollama model serves those commands when the API is unreachable.",
-        "The same pipeline locates outdated sheet text and compares design options.",
-        "He built a generator for standard details and grading. It infers its output from a large body of existing company drawing data. Company data conditions the request; he did not train or fine-tune a model.",
-        "He applied that generator to build the existing utilities model for an airport project. It covers hundreds of thousands of surveyed entities. Hand modeling would have taken months. Logged project hours confirmed the work took days.",
-        "He uses deterministic C# and .NET for geometry and validation. He uses structured metadata schemas on drawing entities.",
-        "He built OCR ingestion software. It parses existing PDF plan sets. It checks and populates them automatically. This software replaced a manual mark-up loop.",
-        "He automates repetitive Civil 3D drafting with Python and Dynamo. This automation cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before engineer review by about 25%.",
-        "He designs typed metadata schemas. These schemas attach to model entities. Each object carries persistent spatial and historical data alongside its geometry.",
-        "He computes watershed data, drainage areas, and differential stormwater runoff. He models pipe networks to Metropolitan St. Louis Sewer District standards.",
-        "He audits AutoCAD standards and revises templates. He introduced Navisworks clash detection alongside Revit coordination.",
-        "He creates parameterized 3D parts. These parts conform to municipal stormwater standards and company design processes.",
-        "He built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They parse hundreds of text entities, audit drawings, and export traceability logs.",
-        "These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout.",
-        "He used C# to parse messy survey text and compass bearings into XData. He built graph lookup tables to map 3D structures to exact flow lines."
+        "He built a generator for standard details and grading that conditions its output on existing company drawing data. He applied it to build the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Logged project hours confirmed the work fell from months of hand modeling to days.",
+        "He cut hydraulic grade line updates from 4 to 8 hours of clicking each elevation and layer on hundreds of profile pipes to minutes. The tool plots the water-level profile from a Hydraflow report. Staff compared manhours billed to engineers who use the tool versus those who do not. Shipped as one DLL with a C++ core wrapped in C# and a WinForms interface inside Civil 3D.",
+        "He built layout-wide edit commands that delete or move matching objects across every layout in a drawing, and freeze layers by drawing scale. A local phrase-to-command lookup picks the target layouts. Peers confirmed the manhour savings in a formal civil workload review.",
+        "He builds C# plugins against the Civil 3D .NET API to automate layout, audit drawings, and batch-rename title blocks. Typed metadata schemas attach to model entities and carry company standards across disciplines.",
+        "He built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.",
+        "He automates repetitive drafting with Python and Dynamo. In self-timed runs, one plan-production cycle dropped from 8 to 12 hours to about 30 seconds.",
+        "He built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and a prepared store of company drawing data that conditions each request. The model returns command strings only. Deterministic C# code then constructs and validates the geometry and text, so a bad request fails validation instead of shipping a plausible wrong number. A local Ollama model serves those commands when the API is unreachable.",
+        "He extended that pipeline to locate outdated sheet text and to compare design options."
       ],
       "projects": [
         "Airport Consolidation",
@@ -623,20 +610,18 @@
         "Vite",
         "React",
         "TypeScript",
-        "Three.js / R3F",
         "Express",
         "Ollama",
         "Docker"
       ],
-      "honesty": "Written for this job search. The static build works with no backend; the chat only claims a live model when Ollama is actually reachable.",
-      "summary": "React Three Fiber frontend over an Express API. It queries a local LLM.",
+      "honesty": "Written for this job search. The static build works with no backend. Chat and voice demos exist in the API but are disabled on the public site.",
+      "summary": "React and TypeScript resume site over an Express API. It builds to static files and generates a PDF from the same data.",
       "bullets": [
-        "React Three Fiber scene where each project is a node that opens its real details.",
-        "Express API with helmet, a CORS allowlist, and rate limits on the chat routes.",
-        "It streams LLM tokens and inline context cards. It falls back to static JSON when the model is offline.",
-        "Six themes with localStorage persistence, reduced-motion support, and a printable resume view generated from the same data.",
-        "He containerizes inference models. He deploys them to Linux, macOS, and Windows edge devices.",
-        "He writes Bash scripts for data pipelines."
+        "React and TypeScript front end. The site builds to static files and needs no server to read.",
+        "Express API with optional local Ollama chat when the backend is running.",
+        "Printable resume view and PDF generated from data/resume.json.",
+        "Light and dark themes with localStorage persistence and reduced-motion support.",
+        "Docker packaging for the optional inference stack on Linux, macOS, and Windows."
       ]
     }
   ],
@@ -996,7 +981,7 @@
         "site",
         "how does this work"
       ],
-      "text": "This site is an interactive portfolio. He built it with Vite, React, and TypeScript. He used a React Three Fiber work graph and an Express API. The chat retrieves scored chunks from this curated corpus. It prompts a local Ollama model. It uses keyword scoring weighted by inverse document frequency. There is no vector database. If Ollama is not running, it falls back to static JSON. He added optional on-device voice. He used whisper.cpp for speech-to-text. He used Windows SAPI for replies. The voice is a stock synthetic voice. He generates a printable resume view and a static PDF from the same data. The static build works with no backend."
+      "text": "This site is a resume portfolio. He built it with Vite, React, and TypeScript over an Express API. The public build is static and needs no backend. It generates a printable resume view and PDF from the same JSON data. An optional Express API can answer questions with a local Ollama model when it is running. The chat UI is currently disabled on the public site. Voice features are suspended. He containerized the optional inference stack with Docker for Linux, macOS, and Windows."
     },
     {
       "id": "privacy",

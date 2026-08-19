@@ -79,7 +79,7 @@ export default function App() {
   if (!corpus) {
     return (
       <div className="scene-fallback" style={{ minHeight: "100svh" }}>
-        Initializing spatial graph...
+        Initializing resume...
       </div>
     );
   }
