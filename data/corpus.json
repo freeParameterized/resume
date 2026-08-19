@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Peter A. Lilley — living resume corpus",
+    "title": "Peter A. Lilley — interactive portfolio corpus",
     "sanitized": true,
     "privacy": "This corpus is public-resume material only. Private CAD trees, client drainage/site data, resident records, PDFs, API keys, and local filesystem paths are not included and must not be sent to any model.",
     "githubAccount": "https://github.com/freeParameterized",
@@ -387,7 +387,7 @@
         "A single C++ desktop application (~84 KB in its main file) hosting the interface, the audio pipeline, and the command layer.",
         "command_parser.cpp turns recognized speech into CAD commands; autocomplete_bar.cpp offers live command completion while speaking or typing.",
         "audio_streaming_module.cpp plus miniaudio handles device enumeration and streaming capture, with a separate audio recorder test harness.",
-        "Speech recognition tried both Vosk and whisper.cpp locally — the same whisper.cpp build this living resume uses for its own microphone input.",
+        "Speech recognition tried both Vosk and whisper.cpp locally — the same whisper.cpp build this interactive portfolio uses for its own microphone input.",
         "Entirely offline: no cloud speech API in the path.",
         "This is the honest status — a real, working experiment kept in dated snapshots, not a packaged application."
       ]
@@ -587,7 +587,7 @@
     },
     {
       "id": "living-resume",
-      "name": "This living resume",
+      "name": "This interactive portfolio",
       "shortName": "This site",
       "status": "local",
       "featured": false,
@@ -886,7 +886,7 @@
         "offline",
         "imgui"
       ],
-      "text": "An experimental local voice-driven CAD command GUI in C++ with Dear ImGui: autocad_ultimate_gui.cpp (~84 KB) as the application, a command parser turning recognized speech into CAD commands, a live autocomplete bar, and an audio streaming module over miniaudio with a separate recorder test harness. Speech recognition was tried with both Vosk and whisper.cpp locally — the same whisper.cpp build this living resume uses for microphone input. Entirely offline, no cloud speech API. Honest status: a real working experiment kept in dated snapshot directories, not a packaged product, and not a git repo with a remote. Vendored ImGui, miniaudio, whisper.cpp, and Vosk are third-party."
+      "text": "An experimental local voice-driven CAD command GUI in C++ with Dear ImGui: autocad_ultimate_gui.cpp (~84 KB) as the application, a command parser turning recognized speech into CAD commands, a live autocomplete bar, and an audio streaming module over miniaudio with a separate recorder test harness. Speech recognition was tried with both Vosk and whisper.cpp locally — the same whisper.cpp build this interactive portfolio uses for microphone input. Entirely offline, no cloud speech API. Honest status: a real working experiment kept in dated snapshot directories, not a packaged product, and not a git repo with a remote. Vendored ImGui, miniaudio, whisper.cpp, and Vosk are third-party."
     },
     {
       "id": "proj-circles",
@@ -967,7 +967,7 @@
     },
     {
       "id": "this-site",
-      "title": "This living resume site",
+      "title": "This interactive portfolio site",
       "tags": [
         "vite",
         "three.js",
@@ -977,7 +977,7 @@
         "site",
         "how does this work"
       ],
-      "text": "This site is a living resume: Vite + React + TypeScript with a React Three Fiber work graph, and an Express API. POST /api/chat (also /api/ask) retrieves scored chunks from this curated corpus and prompts a local Ollama model — default llama3.1:8b with a fallback chain down to llama3.2:3b, and larger models (qwen3:8b, gemma4:26b) are selectable in the settings panel but never auto-selected, as cloud-tagged models never are either. Retrieval is keyword scoring weighted by inverse document frequency, not embeddings, and there is no vector database. If Ollama is not running, answers are extractive from the corpus and the UI says inference is offline rather than pretending. Optional on-device voice: whisper.cpp for speech-to-text and Windows SAPI (Microsoft David) for replies — that is a stock synthetic voice, not Peter's real or cloned voice. A printable resume view and a static PDF are generated from the same data. The static build works with no backend at all. Private CAD trees and client data are not served."
+      "text": "This site is a interactive portfolio: Vite + React + TypeScript with a React Three Fiber work graph, and an Express API. POST /api/chat (also /api/ask) retrieves scored chunks from this curated corpus and prompts a local Ollama model — default llama3.1:8b with a fallback chain down to llama3.2:3b, and larger models (qwen3:8b, gemma4:26b) are selectable in the settings panel but never auto-selected, as cloud-tagged models never are either. Retrieval is keyword scoring weighted by inverse document frequency, not embeddings, and there is no vector database. If Ollama is not running, answers are extractive from the corpus and the UI says inference is offline rather than pretending. Optional on-device voice: whisper.cpp for speech-to-text and Windows SAPI (Microsoft David) for replies — that is a stock synthetic voice, not Peter's real or cloned voice. A printable resume view and a static PDF are generated from the same data. The static build works with no backend at all. Private CAD trees and client data are not served."
     },
     {
       "id": "privacy",
