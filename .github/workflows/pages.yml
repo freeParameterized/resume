@@ -2,7 +2,7 @@ name: Pages client
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -28,7 +28,7 @@ jobs:
         env:
           VITE_BASE: /living-resume/
           VITE_API_URL: ""
-        run: npm run build -w @living-resume/web
+        run: npm run build:pages
       - uses: actions/upload-pages-artifact@v3
         with:
           path: apps/web/dist
