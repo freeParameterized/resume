@@ -45,12 +45,14 @@
       "title": "Staff Technician (CAD automation / Civil 3D tools)",
       "dates": "Jul 2024 - Present",
       "bullets": [
+        "Built a generator for standard details and grading that infers its output from a large body of existing company drawing data. Applied it to build the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Logged project hours confirmed the work fell from months of hand modeling to days.",
         "Built a hydraulic grade line tool for Civil 3D, shipped as one DLL with a C++ core wrapped in C# and a WinForms interface. It draws pipe network water levels from an Excel source and edits pipe properties in bulk. Staff engineers documented the manual method at 4 to 8 hours per run and confirmed the tool does the same work in a few clicks.",
         "Built layout-wide edit commands that delete or move matching objects across every layout in a drawing, and freeze layers by drawing scale. A local phrase-to-command lookup picks the target layouts. Peers confirmed the manhour savings in a formal civil workload review.",
         "Write C# plugins against the Civil 3D .NET API to automate layout, audit drawings, and batch-rename title blocks. Typed metadata schemas attach to model entities and carry company standards across disciplines.",
         "Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.",
         "Automate repetitive drafting with Python and Dynamo. In self-timed runs, one plan-production cycle dropped from 8 to 12 hours to about 30 seconds.",
-        "Constrain model output to a typed command schema. Deterministic C# code then constructs and validates all geometry, so a bad request fails validation instead of shipping a plausible wrong number."
+        "Built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and a prepared store of company drawing data that conditions each request. The model returns command strings only. Deterministic C# code then constructs and validates the geometry and text, so a bad request fails validation instead of shipping a plausible wrong number. A local fallback serves the common commands when the API is unreachable.",
+        "Extended that pipeline to locate outdated sheet text and to compare design options."
       ]
     },
     {
@@ -91,26 +93,23 @@
       "bullets": [
         "Designed and shipped a cross-platform 3D inventory application to a Google Play beta.",
         "Architected a custom 3D renderer with a Z-sorted draw queue and a custom projection instead of a game engine. Used LLM assistance to write most of the code.",
-        "Added photo-based item detection through a paid Gemini API.",
-        "Stored inventory in SQLite with a move audit log, QR booklets, and CSV/JSON export."
+        "Added photo-based item detection through a paid Gemini API. Stored inventory in SQLite with a move audit log and CSV/JSON export."
       ]
     },
     {
       "name": "CAD integration bridge",
       "meta": "C++17, Dear ImGui, Windows COM | private repository, walkthrough on request",
       "bullets": [
-        "Built a C++17 Dear ImGui host. It bridges BricsCAD, AutoCAD, and Civil 3D through Windows COM.",
-        "It discovers installed SDKs at runtime and hot-loads LISP, C#, and BRX plugins.",
+        "Built a C++17 Dear ImGui host. It bridges BricsCAD, AutoCAD, and Civil 3D through Windows COM. It discovers installed SDKs at runtime and hot-loads LISP, C#, and BRX plugins.",
         "This personal project proved the architecture before a similar commercial deployment."
       ]
     },
     {
       "name": "Interactive Portfolio (this site)",
-      "meta": "React, TypeScript, Three.js, Express, Ollama, Docker",
+      "meta": "React, TypeScript, Express, Ollama, Docker",
       "bullets": [
-        "Built a React and TypeScript front end over an Express API.",
-        "A local model answers questions from structured resume data. The site works statically when the model server is offline.",
-        "Containerized the inference stack with Docker for Linux, macOS, and Windows hosts."
+        "Built a React and TypeScript front end over an Express API. The site builds to static files and needs no server to read.",
+        "Containerized a local inference stack with Docker and ran it on Linux, macOS, and Windows hosts."
       ]
     }
   ],
