@@ -1,11 +1,9 @@
 ﻿import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { loadGithub, loadHealth, loadModels, loadPapers, loadProfile, loadProjects } from "./api";
 import { DEEP_DIVE_IDS, HERO_PROJECT_IDS } from "./catalog";
-import { ChatDock } from "./components/ChatDock";
 import { DeepDive } from "./components/DeepDive";
 import { EducationList } from "./components/EducationList";
 import { ExperienceList } from "./components/ExperienceList";
-import { Footer } from "./components/Footer";
 import { GithubCard } from "./components/GithubCard";
 import { Header } from "./components/Header";
 import { ProjectList } from "./components/ProjectList";
@@ -32,7 +30,6 @@ export default function App() {
   const [papers, setPapers] = useState<{ available: boolean; papers: Paper[] }>({ available: false, papers: [] });
   const [models, setModels] = useState<ModelCatalog | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [askOpen, setAskOpen] = useState(true);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>(() => loadSettings());
   const [viewVersion, setViewVersion] = useState<"welcome" | "professional" | "interactive">("welcome");
@@ -92,15 +89,6 @@ export default function App() {
     setSelectedId(id || null);
   }, []);
 
-  const onIntents = useCallback((intents: { projectIds: string[]; paperIds?: string[] }) => {
-    if (intents.paperIds?.length) {
-      setSelectedId("grok-tensor");
-    }
-    if (intents.projectIds[0]) {
-      setSelectedId(intents.projectIds[0]);
-    }
-  }, []);
-
   if (!corpus) {
     return (
       <div className="scene-fallback" style={{ minHeight: "100svh" }}>
@@ -155,7 +143,6 @@ export default function App() {
       </a>
       <Header
         name={profile.name}
-        onAsk={() => setAskOpen(true)}
         onSettings={() => setSettingsOpen(true)}
         health={health}
       />
@@ -233,17 +220,7 @@ export default function App() {
           <DeepDive projects={deepProjects} papersAvailable={papers.available} papers={papers.papers} />
         </Section>
       </main>
-      <Footer />
       <ProjectPanel project={selected} onClose={() => setSelectedId(null)} />
-      <ChatDock
-        open={askOpen}
-        onClose={() => setAskOpen(false)}
-        health={health}
-        settings={settings}
-        projects={projects}
-        papers={papers.papers}
-        onIntents={onIntents}
-      />
       <SettingsPanel
         open={settingsOpen}
         onClose={() => setSettingsOpen(false)}

@@ -3,12 +3,11 @@ import { logVisit } from "../visits";
 
 type Props = {
   name: string;
-  onAsk: () => void;
   onSettings: () => void;
   health: Health | null;
 };
 
-export function Header({ name, onAsk, onSettings, health }: Props) {
+export function Header({ name, onSettings, health }: Props) {
   const live = Boolean(health?.ok);
   return (
     <header className="app-header">
@@ -36,10 +35,9 @@ export function Header({ name, onAsk, onSettings, health }: Props) {
         <button type="button" className="ask-launch" onClick={onSettings}>
           Settings
         </button>
-        <button type="button" className="ask-launch" onClick={onAsk}>
-          <span className={`status-dot${health?.ollama.reachable ? " on" : ""}`} />
-          Ask
-        </button>
+        <a className="ask-launch" href="mailto:pal@cadpal.net">
+          Contact
+        </a>
       </nav>
       <span className="visually-hidden">{live ? "API connected" : "Static corpus mode"}</span>
     </header>
