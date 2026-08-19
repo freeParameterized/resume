@@ -867,7 +867,7 @@
         "hotload",
         "local"
       ],
-      "text": "CADNAT Bridge Studio 1.3 is a local git repository with no remote. He used C++17 with Dear ImGui. It COM-bridges BricsCAD, AutoCAD, and Civil 3D. He wrote a toolchain that compiles and hotloads plugins in place. He wrote code to locate installed CAD SDKs at runtime. He wrote a translator that converts between script dialects. One command set targets multiple hosts. He wrote code to read and write drawing entities directly. He deployed targets for BricsCAD, Civil 3D, and legacy AutoCAD 2018. He included C# sample automations for sheet sets, right-click menus, and room drawing. He wrote about 14,000 lines across 82 source files. Vendored Dear ImGui and SDK headers are third-party."
+      "text": "CADNAT Bridge Studio 1.3 is a local git repository with no remote. He built a C++17 Dear ImGui host. It uses COM to bridge BricsCAD, AutoCAD, and Civil 3D. This personal project proved the concept for his later commercial deployments. He wrote a toolchain that compiles and hotloads plugins in place. He wrote code to locate installed CAD SDKs at runtime. He wrote a translator that converts between script dialects. One command set targets multiple hosts. He wrote code to read and write drawing entities directly. He deployed targets for BricsCAD, Civil 3D, and legacy AutoCAD 2018. He included C# sample automations for sheet sets, right-click menus, and room drawing. He wrote about 14,000 lines across 82 source files. Vendored Dear ImGui and SDK headers are third-party."
     },
     {
       "id": "proj-deduper",

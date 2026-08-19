@@ -54,7 +54,7 @@ I am a software engineer. I build production systems that other professionals us
 ### CAD integration bridge
 *C++17, Dear ImGui, Windows COM | local repository*
 
-- I built a C++17 Dear ImGui host that COM-bridges BricsCAD, AutoCAD, and Civil 3D.
+- I built a C++17 Dear ImGui host. It uses COM to bridge BricsCAD, AutoCAD, and Civil 3D. This personal project proved the concept for my later commercial deployments.
 - It discovers installed SDKs at runtime, hot-loads LISP, C#, and BRX plugins, and contains about 14,000 lines of code.
 
 ### Interactive Portfolio (this site)
