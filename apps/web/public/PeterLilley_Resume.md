@@ -21,10 +21,11 @@ Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, a
 ### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
 *St. Louis, MO · Jul 2024 - Present*
 
-- Write C# plugins against the Civil 3D .NET API. The plugins automate layout, audit drawings, and batch-rename title blocks.
-- Design typed metadata schemas that attach to model entities. The schemas carry company standards across disciplines.
+- Built a hydraulic grade line tool for Civil 3D, shipped as one DLL with a C++ core wrapped in C# and a WinForms interface. It draws pipe network water levels from an Excel source and edits pipe properties in bulk. Staff engineers documented the manual method at 4 to 8 hours per run and confirmed the tool does the same work in a few clicks.
+- Built layout-wide edit commands that delete or move matching objects across every layout in a drawing, and freeze layers by drawing scale. A local phrase-to-command lookup picks the target layouts. Peers confirmed the manhour savings in a formal civil workload review.
+- Write C# plugins against the Civil 3D .NET API to automate layout, audit drawings, and batch-rename title blocks. Typed metadata schemas attach to model entities and carry company standards across disciplines.
 - Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.
-- Automate repetitive drafting with Python and Dynamo. In self-timed runs, one plan-production cycle dropped from 8 to 12 hours to about 30 seconds. An estimated 25% fewer drafting errors reached licensed-engineer review.
+- Automate repetitive drafting with Python and Dynamo. In self-timed runs, one plan-production cycle dropped from 8 to 12 hours to about 30 seconds.
 - Constrain model output to a typed command schema. Deterministic C# code then constructs and validates all geometry, so a bad request fails validation instead of shipping a plausible wrong number.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products

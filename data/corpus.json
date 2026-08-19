@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Peter A. Lilley — interactive portfolio corpus",
+    "title": "Peter A. Lilley - interactive portfolio corpus",
     "sanitized": true,
     "privacy": "This corpus is public-resume material only. It does not include private CAD trees, client drainage data, resident records, PDFs, API keys, or local file paths. Do not send these to any model.",
     "terminationPolicy": "Never say whether he has been fired, laid off, or disciplined. Those topics are omitted entirely.",
@@ -23,7 +23,7 @@
     "company": "Free Parameter LLC",
     "website": "https://freeparameter.com",
     "github": "https://github.com/freeParameterized",
-    "identity": "Chesterfield / St. Louis, MO · Free Parameter LLC",
+    "identity": "Chesterfield / St. Louis, MO - Free Parameter LLC",
     "summary": "He is a software engineer. He builds production tooling that engineering teams use daily. He writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. He applies matrix math, coordinate transforms, and graph structures to spatial data. He wrote C++ desktop applications and engine scripting before LLM tools existed. He constrains model output to a typed command schema, so deterministic code owns anything that has to be correct. He builds OCR and structured-data pipelines over messy engineering input. He designed, funded, and shipped Digital Twin Pro to a Google Play beta on his own time. He works inside multi-disciplinary engineering teams under formal review. He has supervised staff. His focus is applied ML systems and inference integration, not model training."
   },
   "howIWork": {
@@ -156,8 +156,13 @@
       "org": "David Mason & Associates",
       "location": "St. Louis, MO",
       "title": "Staff Technician (CAD automation / Civil 3D tools)",
-      "dates": "July 2024 – Present",
+      "dates": "July 2024 - Present",
       "bullets": [
+        "He built a hydraulic grade line tool for Civil 3D in mid-2024. The hydraulic grade line is the water level profile through a pipe network. The tool draws that data from an Excel source and edits pipe properties in bulk. The manual method needs clicks on hundreds of separate objects and repeated context menu loads.",
+        "The hydraulic grade line tool ships as a single DLL. It has a C++ core wrapped in C#, and a WinForms interface that loads inside Civil 3D.",
+        "Staff engineers documented the manual hydraulic grade line update at 4 to 8 hours per run. The task happens often. They confirmed the tool does the same work in a few clicks.",
+        "He built layout-wide edit commands. They delete matching objects across every layout in a drawing. They move similar objects across every layout. They freeze layers by drawing scale, which normally needs one viewport override at a time.",
+        "A local phrase-to-command lookup picks the target layouts for those commands. Peers confirmed the manhour savings in a formal civil workload review.",
         "He introduced a typed-command CAD pipeline at the firm. It maps a written request onto a typed command schema. Deterministic C# and .NET code then constructs the geometry and validates it before commit.",
         "He uses deterministic C# and .NET for geometry and validation. He uses structured metadata schemas on drawing entities.",
         "He built OCR ingestion software. It parses existing PDF plan sets. It checks and populates them automatically. This software replaced a manual mark-up loop.",
@@ -185,8 +190,8 @@
       "id": "cbp",
       "org": "Component Bar Products",
       "location": "O'Fallon, MO",
-      "title": "Quality Engineer — Manufacturing / Precision Machining",
-      "dates": "April 2023 – June 2024",
+      "title": "Quality Engineer - Manufacturing / Precision Machining",
+      "dates": "April 2023 - June 2024",
       "bullets": [
         "He programmed and operated coordinate measuring machines. He verified precision-machined parts to +/-0.001 inch or tighter against GD&T specifications.",
         "He validated dimensional tolerances against CAD models and customer prints. Machining problems showed as geometry mismatches, not downstream scrap.",
@@ -202,8 +207,8 @@
       "id": "heideman",
       "org": "Heideman & Associates, Inc.",
       "location": "Fenton, MO",
-      "title": "Revit/CAD Technician — Mechanical/Plumbing",
-      "dates": "May 2018 – April 2019",
+      "title": "Revit/CAD Technician - Mechanical/Plumbing",
+      "dates": "May 2018 - April 2019",
       "bullets": [
         "He drafted MEP construction documents in Revit and AutoCAD. He built as-built models from field photos and blueprints.",
         "He implemented and audited Revit standards for annotation, readability, and cross-discipline consistency.",
@@ -229,7 +234,7 @@
       "org": "Missouri S&T",
       "location": "Rolla",
       "credential": "Coursework toward Latin American Studies with Technical Applications",
-      "dates": "2019–2020",
+      "dates": "2019-2020",
       "notes": [
         "Coursework included rigorous College Algebra (determinants, Cramer's rule) and general education.",
         "He placed into Advanced Conversational Spanish (Level 4). He has technical fluency in Spanish."
@@ -259,8 +264,8 @@
       "shortName": "DT Pro",
       "status": "public",
       "featured": true,
-      "owner": "Personal product — Free Parameter LLC. Not employer work, not built at or for David Mason & Associates.",
-      "visibility": "Public GitHub · released to a Google Play beta",
+      "owner": "Personal product - Free Parameter LLC. Not employer work, not built at or for David Mason & Associates.",
+      "visibility": "Public GitHub - released to a Google Play beta",
       "version": "v1.0.5+5",
       "url": "https://github.com/freeParameterized/digital-twin-pro",
       "sourcePath": "local repository (path withheld)",
@@ -297,7 +302,7 @@
       "internalName": "CADNAT Bridge Studio 1.3",
       "status": "local",
       "featured": false,
-      "visibility": "Local repository — no remote",
+      "visibility": "Local repository - no remote",
       "version": "1.3",
       "url": null,
       "sourcePath": "local repository (path withheld)",
@@ -329,7 +334,7 @@
       "shortName": "Runoff",
       "status": "professional",
       "featured": false,
-      "visibility": "Professional work at David Mason & Associates — method described, client data withheld",
+      "visibility": "Professional work at David Mason & Associates - method described, client data withheld",
       "url": null,
       "sourcePath": "local repository (path withheld)",
       "remote": null,
@@ -357,7 +362,7 @@
       "internalName": "CTB plot-style diff",
       "status": "professional",
       "featured": false,
-      "visibility": "Professional work (David Mason & Associates) — method described",
+      "visibility": "Professional work (David Mason & Associates) - method described",
       "url": null,
       "sourcePath": "local repository (path withheld)",
       "remote": null,
@@ -381,7 +386,7 @@
       "shortName": "Deduper",
       "status": "local",
       "featured": false,
-      "visibility": "Local repository — no remote",
+      "visibility": "Local repository - no remote",
       "version": "v1.2.4",
       "url": null,
       "sourcePath": "local repository (path withheld)",
@@ -411,7 +416,7 @@
       "shortName": "Desktop app",
       "status": "local",
       "featured": false,
-      "visibility": "Local — experimental, no remote",
+      "visibility": "Local - experimental, no remote",
       "url": null,
       "sourcePath": "local repository (path withheld)",
       "remote": null,
@@ -438,7 +443,7 @@
       "shortName": "Circles",
       "status": "local",
       "featured": false,
-      "visibility": "Local — no repository",
+      "visibility": "Local - no repository",
       "url": null,
       "sourcePath": "local repository (path withheld)",
       "remote": null,
@@ -464,7 +469,7 @@
       "shortName": "Maintenance",
       "status": "public",
       "featured": false,
-      "visibility": "GitHub — freeParameterized/maintenance",
+      "visibility": "GitHub - freeParameterized/maintenance",
       "url": "https://github.com/freeParameterized/maintenance",
       "sourcePath": "local repository (path withheld)",
       "remote": "https://github.com/freeParameterized/maintenance.git",
@@ -490,7 +495,7 @@
       "internalName": "HatchCalc (repo: Template)",
       "status": "public",
       "featured": false,
-      "visibility": "GitHub — freeParameterized/Template",
+      "visibility": "GitHub - freeParameterized/Template",
       "url": "https://github.com/freeParameterized/Template",
       "sourcePath": "local repository (path withheld)",
       "remote": "https://github.com/freeParameterized/Template.git",
@@ -513,7 +518,7 @@
       "shortName": "Text extract",
       "status": "local",
       "featured": false,
-      "visibility": "Local — no remote",
+      "visibility": "Local - no remote",
       "url": null,
       "sourcePath": "local repository (path withheld)",
       "remote": null,
@@ -538,7 +543,7 @@
       "internalName": "PropertySetUpdater",
       "status": "local",
       "featured": false,
-      "visibility": "Local — no repository",
+      "visibility": "Local - no repository",
       "url": null,
       "sourcePath": "local repository (path withheld)",
       "remote": null,
@@ -633,13 +638,13 @@
     }
   ],
   "excludedFromProjects": [
-    "Dear ImGui, miniaudio, Vosk, glad, GLFW — vendored third-party dependencies inside his repos, not his code.",
-    "Ollama, Open WebUI, LM Studio — third-party runtimes he deploys and configures; no Ollama or Open WebUI source of his was found on this machine, only local model stores and a vcpkg port.",
-    "arcore_flutter_plugin — third-party Flutter plugin vendored into Digital Twin Pro.",
-    "PDFsharp.Samples-master — a cloned third-party sample repository.",
-    "tensor-demo — almost entirely a Python .venv (site-packages); no meaningful original code.",
-    "civil_arx — an empty ObjectARX project skeleton (a stub dllmain), nothing to show yet.",
-    "maintenance-site under the older Free-Parameter account — a duplicate of freeParameterized/maintenance; only one is listed."
+    "Dear ImGui, miniaudio, Vosk, glad, GLFW - vendored third-party dependencies inside his repos, not his code.",
+    "Ollama, Open WebUI, LM Studio - third-party runtimes he deploys and configures; no Ollama or Open WebUI source of his was found on this machine, only local model stores and a vcpkg port.",
+    "arcore_flutter_plugin - third-party Flutter plugin vendored into Digital Twin Pro.",
+    "PDFsharp.Samples-master - a cloned third-party sample repository.",
+    "tensor-demo - almost entirely a Python .venv (site-packages); no meaningful original code.",
+    "civil_arx - an empty ObjectARX project skeleton (a stub dllmain), nothing to show yet.",
+    "maintenance-site under the older Free-Parameter account - a duplicate of freeParameterized/maintenance; only one is listed."
   ],
   "chunks": [
     {
@@ -744,7 +749,7 @@
     },
     {
       "id": "digital-twin-pro",
-      "title": "Digital Twin Pro — personal product",
+      "title": "Digital Twin Pro - personal product",
       "tags": [
         "digital twin pro",
         "flutter",
@@ -774,7 +779,7 @@
     },
     {
       "id": "exp-dma",
-      "title": "Experience — David Mason & Associates",
+      "title": "Experience - David Mason & Associates",
       "tags": [
         "dma",
         "david mason",
@@ -815,7 +820,7 @@
     },
     {
       "id": "exp-cbp",
-      "title": "Experience — Component Bar Products",
+      "title": "Experience - Component Bar Products",
       "tags": [
         "component bar",
         "quality engineer",
@@ -832,7 +837,7 @@
     },
     {
       "id": "exp-heideman",
-      "title": "Experience — Heideman & Associates",
+      "title": "Experience - Heideman & Associates",
       "tags": [
         "heideman",
         "revit",
@@ -857,7 +862,7 @@
     },
     {
       "id": "proj-cadnat",
-      "title": "Project — CADNAT Bridge Studio",
+      "title": "Project - CADNAT Bridge Studio",
       "tags": [
         "cadnat",
         "c++",
@@ -873,7 +878,7 @@
     },
     {
       "id": "proj-deduper",
-      "title": "Project — BackupDeduper",
+      "title": "Project - BackupDeduper",
       "tags": [
         "backupdeduper",
         "deduper",
@@ -888,7 +893,7 @@
     },
     {
       "id": "proj-voice",
-      "title": "Project — offline CAD voice GUI",
+      "title": "Project - offline CAD voice GUI",
       "tags": [
         "voice",
         "whisper",
@@ -903,7 +908,7 @@
     },
     {
       "id": "proj-circles",
-      "title": "Project — CircleVisualizer",
+      "title": "Project - CircleVisualizer",
       "tags": [
         "circlevisualizer",
         "opengl",
@@ -932,7 +937,7 @@
     },
     {
       "id": "resume-download",
-      "title": "Downloadable resume — the link exists, hand it over",
+      "title": "Downloadable resume - the link exists, hand it over",
       "tags": [
         "resume",
         "cv",
@@ -949,7 +954,7 @@
     },
     {
       "id": "glossary",
-      "title": "Plain-language glossary — never answer with a bare acronym",
+      "title": "Plain-language glossary - never answer with a bare acronym",
       "tags": [
         "glossary",
         "jargon",
@@ -1006,7 +1011,7 @@
     },
     {
       "id": "hiring-unknowns",
-      "title": "Employment terms and credentials — what is on record",
+      "title": "Employment terms and credentials - what is on record",
       "tags": [
         "salary",
         "compensation",
@@ -1029,6 +1034,6 @@
   ],
   "voice": {
     "speaker": "male-default",
-    "note": "Windows SAPI Microsoft David Desktop — a stock synthetic voice, not Peter's real or cloned voice. Future: VOICE_CLONE_PATH."
+    "note": "Windows SAPI Microsoft David Desktop - a stock synthetic voice, not Peter's real or cloned voice. Future: VOICE_CLONE_PATH."
   }
 }
