@@ -33,15 +33,12 @@ export function Header({ name, onAsk, onSettings, health }: Props) {
         <a className="hide-sm" href={`${import.meta.env.BASE_URL}?resume=1`}>
           Print view
         </a>
-        <a href="https://github.com/freeParameterized" target="_blank" rel="noreferrer">
-          GitHub
-        </a>
         <button type="button" className="ask-launch" onClick={onSettings}>
           Settings
         </button>
         <button type="button" className="ask-launch" onClick={onAsk}>
           <span className={`status-dot${health?.ollama.reachable ? " on" : ""}`} />
-          Ask about my work
+          Ask
         </button>
       </nav>
       <span className="visually-hidden">{live ? "API connected" : "Static corpus mode"}</span>

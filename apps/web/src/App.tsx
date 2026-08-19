@@ -1,7 +1,7 @@
 ﻿import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { loadGithub, loadHealth, loadModels, loadPapers, loadProfile, loadProjects } from "./api";
 import { DEEP_DIVE_IDS, HERO_PROJECT_IDS } from "./catalog";
-// import { ChatDock } from "./components/ChatDock";
+import { ChatDock } from "./components/ChatDock";
 import { DeepDive } from "./components/DeepDive";
 import { EducationList } from "./components/EducationList";
 import { ExperienceList } from "./components/ExperienceList";
@@ -155,7 +155,7 @@ export default function App() {
       </a>
       <Header
         name={profile.name}
-        onAsk={() => {}} // setAskOpen(true)
+        onAsk={() => setAskOpen(true)}
         onSettings={() => setSettingsOpen(true)}
         health={health}
       />

@@ -7,7 +7,7 @@ type Props = {
   papers: Paper[];
 };
 
-export function DeepDive({ projects, papersAvailable, papers }: Props) {
+export function DeepDive({ projects }: Props) {
   const [open, setOpen] = useState(false);
 
   return (

@@ -138,6 +138,16 @@
         "Bash scripting for data pipelines",
         "Audit logging"
       ]
+    },
+    {
+      "id": "networking",
+      "label": "Networking",
+      "items": [
+        "Networking Fundamentals",
+        "IPv4/IPv6",
+        "Subnetting",
+        "Cisco Routing & Switching"
+      ]
     }
   ],
   "experience": [

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { askQuestion } from "../api";
-import { createLiveRecorder, micSupported, speakText, stopSpeech, transcribeWav, unlockAudioPlayback } from "../audio";
+import { unlockAudioPlayback } from "../audio";
 import { detectIntents } from "../intents";
 import type { Settings } from "../settings";
 import type { Health, Paper, Project } from "../types";
@@ -58,8 +58,8 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [turns, setTurns] = useState<Turn[]>([]);
-  const [recording, setRecording] = useState(false);
-  const rec = useRef(createLiveRecorder());
+  // const [recording, setRecording] = useState(false);
+  // const rec = useRef(createLiveRecorder());
   const logRef = useRef<HTMLDivElement>(null);
   // Offer the resume proactively only once, so it never reads as spam.
   const resumeOffered = useRef(false);

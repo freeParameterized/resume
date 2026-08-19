@@ -36,6 +36,10 @@
     {
       "label": "Domain systems and quality",
       "items": "CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001"
+    },
+    {
+      "label": "Networking",
+      "items": "Networking Fundamentals, IPv4/IPv6, Subnetting, Cisco Routing & Switching"
     }
   ],
   "experience": [
@@ -100,10 +104,8 @@
       "meta": "React, TypeScript, Three.js, Express, Ollama, Docker",
       "bullets": [
         "I built a React Three Fiber portfolio over an Express API.",
-        "It retrieves data from a curated corpus. It answers questions through a local model.",
-        "It degrades to extractive answers when no model runs.",
-        "I containerize inference models. I deploy them to Linux, macOS, and Windows edge devices.",
-        "I write Bash scripts for data pipelines."
+        "It retrieves data from a curated corpus and answers questions through a local model, degrading gracefully when offline.",
+        "I containerize inference models and deploy them to Linux, macOS, and Windows edge devices."
       ]
     }
   ],

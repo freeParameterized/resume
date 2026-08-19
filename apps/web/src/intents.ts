@@ -84,9 +84,9 @@ function paperId(paper: Paper, index: number): string {
   return paper.id || paper.doi || `paper-${index}`;
 }
 
-function excluded(paper: Paper): boolean {
-  return paper.notPeters === true || /exclude/i.test(paper.recommendedPlacement || "");
-}
+// function excluded(paper: Paper): boolean {
+//   return paper.notPeters === true || /exclude/i.test(paper.recommendedPlacement || "");
+// }
 
 export function detectIntents(question: string, answer = "", papers: Paper[] = []): ChatIntents {
   const hay = `${question}\n${answer}`.toLowerCase();

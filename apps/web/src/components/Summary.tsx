@@ -12,9 +12,6 @@ export function Summary({ profile }: { profile: Profile }) {
             {profile.company}
           </a>
         ) : null}
-        <a href={profile.github} target="_blank" rel="noreferrer">
-          github.com/freeParameterized
-        </a>
       </div>
     </>
   );
