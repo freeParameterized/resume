@@ -88,17 +88,17 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
     return () => window.clearTimeout(t);
   }, [liveIntents, onIntents, question]);
 
-  useEffect(() => {
-    if (!settings.tts) stopSpeech();
-  }, [settings.tts]);
+  // useEffect(() => {
+  //   if (!settings.tts) stopSpeech();
+  // }, [settings.tts]);
 
   if (!open) return null;
 
   // No API reachable at all (e.g. the static GitHub Pages build): voice is impossible, so hide it.
   const apiUp = Boolean(health?.ok);
-  const mic = micSupported();
-  const sttUp = Boolean(health?.voice?.stt.available) && settings.stt;
-  const ttsUp = Boolean(health?.voice?.tts.available) && settings.tts;
+  // const mic = micSupported();
+  // const sttUp = Boolean(health?.voice?.stt.available) && settings.stt;
+  // const ttsUp = Boolean(health?.voice?.tts.available) && settings.tts;
 
   async function submitText(q: string) {
     const text = q.trim();
@@ -147,13 +147,13 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
         },
         settings.model || undefined,
       );
-      if (settings.tts && ttsUp && turn.a) {
-        try {
-          await speakText(turn.a);
-        } catch (err) {
-          setError(err instanceof Error ? err.message : "Voice playback failed");
-        }
-      }
+      // if (settings.tts && ttsUp && turn.a) {
+      //   try {
+      //     await speakText(turn.a);
+      //   } catch (err) {
+      //     setError(err instanceof Error ? err.message : "Voice playback failed");
+      //   }
+      // }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Ask failed");
     } finally {
@@ -166,33 +166,33 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
     await submitText(question);
   }
 
-  async function toggleMic() {
-    if (!settings.stt) return;
-    if (recording) {
-      setRecording(false);
-      try {
-        const blob = await rec.current.stop();
-        const transcript = await transcribeWav(blob);
-        if (transcript) {
-          setQuestion(transcript);
-          await submitText(transcript);
-        } else setError("Heard silence — try again.");
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Mic failed");
-      }
-      return;
-    }
-    try {
-      await rec.current.start();
-      setRecording(true);
-      setError(null);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Microphone permission denied");
-    }
-  }
+  // async function toggleMic() {
+  //   if (!settings.stt) return;
+  //   if (recording) {
+  //     setRecording(false);
+  //     try {
+  //       const blob = await rec.current.stop();
+  //       const transcript = await transcribeWav(blob);
+  //       if (transcript) {
+  //         setQuestion(transcript);
+  //         await submitText(transcript);
+  //       } else setError("Heard silence — try again.");
+  //     } catch (err) {
+  //       setError(err instanceof Error ? err.message : "Mic failed");
+  //     }
+  //     return;
+  //   }
+  //   try {
+  //     await rec.current.start();
+  //     setRecording(true);
+  //     setError(null);
+  //   } catch (err) {
+  //     setError(err instanceof Error ? err.message : "Microphone permission denied");
+  //   }
+  // }
 
   return (
-    <aside className="chat-dock glass fade-in" role="dialog" aria-labelledby="chat-title">
+    <aside className="chat-dock fade-in" role="dialog" aria-labelledby="chat-title">
       <div className="chat-head">
         <div>
           <div className="hero-kicker">Ask about my code</div>
@@ -208,7 +208,7 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
             ? `Live Ollama · ${settings.model || health.ollama.model || "auto"}`
             : "Inference offline — answers come from the curated corpus, not a live model."
           : "The live AI demo runs on Peter’s workstation — ask him for the live link. Until then this answers straight from the curated corpus."}
-        {apiUp ? ` · Voice ${settings.tts ? "on" : "off"} · Mic ${settings.stt ? "on" : "off"}` : ""}
+        {/* {apiUp ? ` · Voice ${settings.tts ? "on" : "off"} · Mic ${settings.stt ? "on" : "off"}` : ""} */}
       </p>
       <div className="ask-log" ref={logRef} aria-live="polite">
         {turns.length === 0 ? (
@@ -266,7 +266,7 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
           <button type="submit" disabled={busy}>
             {busy ? "Thinking" : "Send"}
           </button>
-          {!apiUp ? null : settings.stt ? (
+          {/* {!apiUp ? null : settings.stt ? (
             <button
               type="button"
               className={recording ? "mic hot" : "mic"}
@@ -281,7 +281,7 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
             </button>
           ) : (
             <span className="job-meta">Mic disabled in settings</span>
-          )}
+          )} */}
         </div>
         <a
           className="download-link chat-resume"

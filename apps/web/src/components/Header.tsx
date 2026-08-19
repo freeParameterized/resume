@@ -11,7 +11,7 @@ type Props = {
 export function Header({ name, onAsk, onSettings, health }: Props) {
   const live = Boolean(health?.ok);
   return (
-    <header className="app-header glass">
+    <header className="app-header">
       <div className="brand">
         <strong>{name}</strong>
         <span>Free Parameter LLC · Chesterfield / St. Louis</span>

@@ -18,7 +18,7 @@ export function SettingsPanel({ open, onClose, settings, onChange, models, ollam
   return (
     <>
       <button type="button" className="drawer-backdrop" aria-label="Close settings" onClick={onClose} />
-      <aside className="settings-panel glass fade-in" role="dialog" aria-labelledby="settings-title">
+      <aside className="settings-panel fade-in" role="dialog" aria-labelledby="settings-title">
         <div className="drawer-head">
           <h2 id="settings-title">Settings</h2>
           <button type="button" className="icon-btn" onClick={onClose} aria-label="Close">

@@ -23,7 +23,7 @@ export function DeepDive({ projects, papersAvailable, papers }: Props) {
           </p>
           <div className="project-grid">
             {projects.map((p) => (
-              <details key={p.id} className="deep-card glass">
+              <details key={p.id} className="deep-card">
                 <summary>
                   <strong>{p.name}</strong>
                   <span className="job-meta">{p.visibility}</span>

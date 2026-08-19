@@ -22,7 +22,7 @@ export function ProjectPanel({ project, onClose }: Props) {
   return (
     <>
       <button type="button" className="drawer-backdrop" aria-label="Close project panel" onClick={onClose} />
-      <aside className="drawer glass fade-in" role="dialog" aria-labelledby="project-title">
+      <aside className="drawer fade-in" role="dialog" aria-labelledby="project-title">
         <div className="drawer-head">
           <div>
             <div className="status" style={{ fontFamily: "var(--mono)", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--brass)" }}>
