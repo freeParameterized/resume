@@ -15,7 +15,7 @@
   "profile": {
     "name": "Peter A. Lilley",
     "headline": "Software Engineer - C#/.NET and C++17 Systems, Geometry and Automation Tooling",
-    "headlineNote": "This is the positioning line. Lead with deterministic engineering: compiled C#, C++17, and Python against real CAD APIs, matrix math, and typed data schemas. Never lead with the language model. Never say 'natural language in, geometry out' or any similar slogan. Do not present local hosting as an achievement, because anyone can host a model. The interesting engineering is the boundary: model output is constrained to a typed command schema, and deterministic code owns construction and validation, so a bad request fails a check instead of shipping a plausible wrong number. Never present local hosting as a work achievement. Critical accuracy rule: the David Mason & Associates pipeline runs on the hosted OpenAI API. It serves a user chat, scheduled batch jobs, and a prepared store of company drawing data that conditions each request. A local fallback serves the common commands when the API is unreachable. Do not describe the firm's pipeline as a self-hosted model, and do not say he trained or fine-tuned a model anywhere. Company data conditions and retrieves; it is not training data in the gradient sense. Never put 'Digital Twins' in the headline.",
+    "headlineNote": "This is the positioning line. Lead with deterministic engineering: compiled C#, C++17, and Python against real CAD APIs, matrix math, and typed data schemas. Never lead with the language model. Never say 'natural language in, geometry out' or any similar slogan. Do not present local hosting as an achievement, because anyone can host a model. The interesting engineering is the boundary: model output is constrained to a typed command schema, and deterministic code owns construction and validation, so a bad request fails a check instead of shipping a plausible wrong number. Never present local hosting as a work achievement. Critical accuracy rule: the David Mason & Associates pipeline runs on the hosted OpenAI API. It serves a user chat, scheduled batch jobs, and a prepared store of company drawing data that conditions each request. A local Ollama model serves those commands when the API is unreachable. Do not describe the firm's pipeline as a self-hosted model, and do not say he trained or fine-tuned a model anywhere. Company data conditions and retrieves; it is not training data in the gradient sense. Never put 'Digital Twins' in the headline.",
     "title": "Staff Technician (CAD automation / Civil 3D tools)",
     "location": "Chesterfield / St. Louis, MO",
     "phone": "TBD",
@@ -50,7 +50,7 @@
         "Keyword search over a fixed set of text files",
         "Packages models in Docker containers",
         "Runs models on Linux, macOS, and Windows computers",
-        "Runs language models offline on his own computer (Ollama, LM Studio)"
+        "Runs quantized local models on office GPUs through Ollama and LM Studio. Installed Ollama tags: Gemma 4 26B Q4_K_M (gemma4:26b) and Gemma 4 8B Q4_K_M (gemma4:latest). Also runs Gemma 4 12B instruct QAT Q4_0."
       ]
     },
     {
@@ -89,8 +89,7 @@
         "Spatial indexing to find nearby objects quickly",
         "Stormwater runoff calculations",
         "Complex numbers and harmonic motion",
-        "Calculus II (CLEP credit at Saint Louis University, 2018)",
-        "College Algebra with determinants and Cramer's rule, no calculator"
+        "Calculus II (CLEP credit at Saint Louis University, 2018)"
       ]
     },
     {
@@ -158,14 +157,14 @@
       "title": "Staff Technician (CAD automation / Civil 3D tools)",
       "dates": "July 2024 - Present",
       "bullets": [
-        "He built a hydraulic grade line tool for Civil 3D in mid-2024. The hydraulic grade line is the water level profile through a pipe network. The tool draws that data from an Excel source and edits pipe properties in bulk. The manual method needs clicks on hundreds of separate objects and repeated context menu loads.",
+        "He cut hydraulic grade line updates from 4 to 8 hours of clicking each elevation and layer on hundreds of profile pipes to minutes. The hydraulic grade line is the water-level profile through a pipe network. The tool plots that profile from a Hydraflow report and edits pipe properties in bulk.",
+        "Staff compared manhours billed to engineers who use the tool versus those who do not. The difference is a direct cost saving on repeated production work.",
         "The hydraulic grade line tool ships as a single DLL. It has a C++ core wrapped in C#, and a WinForms interface that loads inside Civil 3D.",
-        "Staff engineers documented the manual hydraulic grade line update at 4 to 8 hours per run. The task happens often. They confirmed the tool does the same work in a few clicks.",
         "He built layout-wide edit commands. They delete matching objects across every layout in a drawing. They move similar objects across every layout. They freeze layers by drawing scale, which normally needs one viewport override at a time.",
         "A local phrase-to-command lookup picks the target layouts for those commands. Peers confirmed the manhour savings in a formal civil workload review.",
         "He introduced a typed-command CAD pipeline at the firm. It maps a written request onto a typed command schema. Deterministic C# and .NET code then constructs the geometry and validates it before commit.",
         "That pipeline runs on the hosted OpenAI API. He wrote the API integration. It serves three paths: a chat for users, scheduled batch jobs, and a prepared store of company drawing data that conditions each request.",
-        "The model returns command strings only. The pipeline turns those strings into real drawing geometry and text through deterministic code. A local fallback serves the common commands when the API is unreachable.",
+        "The model returns command strings only. The pipeline turns those strings into real drawing geometry and text through deterministic code. A local Ollama model serves those commands when the API is unreachable.",
         "The same pipeline locates outdated sheet text and compares design options.",
         "He built a generator for standard details and grading. It infers its output from a large body of existing company drawing data. Company data conditions the request; he did not train or fine-tune a model.",
         "He applied that generator to build the existing utilities model for an airport project. It covers hundreds of thousands of surveyed entities. Hand modeling would have taken months. Logged project hours confirmed the work took days.",
@@ -241,7 +240,6 @@
       "credential": "Coursework toward Latin American Studies with Technical Applications",
       "dates": "2019-2020",
       "notes": [
-        "Coursework included rigorous College Algebra (determinants, Cramer's rule) and general education.",
         "He placed into Advanced Conversational Spanish (Level 4). He has technical fluency in Spanish."
       ]
     },
@@ -750,7 +748,7 @@
         "linux",
         "macos"
       ],
-      "text": "He has an applied-engineering profile. He built a typed-command CAD pipeline. It maps a written request onto a typed command schema. Deterministic C# and .NET code then constructs the geometry and validates it before commit. Under Free Parameter LLC, he deploys and runs local LLMs on his own hardware. He containerizes inference models. He deploys them to Linux, macOS, and Windows edge devices. He writes Bash scripts for data pipelines. He wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. He runs Tesseract OCR over messy engineering PDFs. He uses Levenshtein distance to match noisy strings. He built an experimental offline CAD GUI in C++. He writes graph processors and hydrologic calculators. He directed the implementation of a custom 3D projection and painter's-algorithm depth sorting. He used LLM assistance to accelerate coding. He does prompt engineering in Cursor and Gemini. He has a foundation of rigorous, no-calculator College Algebra from Missouri S&T and earned Calculus II credit via CLEP at Saint Louis University in 2018. This coursework covered determinants, Cramer's rule, and introductory linear algebra concepts. This proves his ability to handle the math required for his geometry and CAD automation work. He wrote a visualizer for matrix transforms, complex numbers, and roots of unity. He has never trained or fine-tuned a model. He has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. He has not implemented an attention layer or a training loop. He has no vector database and no embedding-based retrieval. He has no CUDA programming or MLOps platform experience. He has no published ML research."
+      "text": "He has an applied-engineering profile. He built a typed-command CAD pipeline. It maps a written request onto a typed command schema. Deterministic C# and .NET code then constructs the geometry and validates it before commit. Under Free Parameter LLC, he deploys and runs local LLMs on his own hardware. He containerizes inference models. He deploys them to Linux, macOS, and Windows edge devices. He writes Bash scripts for data pipelines. He wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. He runs Tesseract OCR over messy engineering PDFs. He uses Levenshtein distance to match noisy strings. He built an experimental offline CAD GUI in C++. He writes graph processors and hydrologic calculators. He directed the implementation of a custom 3D projection and painter's-algorithm depth sorting. He used LLM assistance to accelerate coding. He does prompt engineering in Cursor and Gemini. He earned Calculus II credit via CLEP at Saint Louis University in 2018. This proves his ability to handle the math required for his geometry and CAD automation work. He wrote a visualizer for matrix transforms, complex numbers, and roots of unity. He has never trained or fine-tuned a model. He has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. He has not implemented an attention layer or a training loop. He has no vector database and no embedding-based retrieval. He has no CUDA programming or MLOps platform experience. He has no published ML research."
     },
     {
       "id": "digital-twin-pro",
@@ -860,10 +858,9 @@
         "ranken",
         "spanish",
         "education",
-        "math",
-        "algebra"
+        "math"
       ],
-      "text": "He completed a Calculus II CLEP credit at Saint Louis University (SLU) in 2018. This credit fulfilled the calculus requirements for his Ranken Technical College curriculum. He attended Missouri S&T in Rolla. He took coursework toward Latin American Studies with Technical Applications from 2019 to 2020. This included rigorous College Algebra. This covered determinants and Cramer's rule. He placed into Advanced Conversational Spanish. He has technical fluency in Spanish. He did not take C++ at S&T. His C++ is self-taught. He attended Ranken Technical College in Wentzville. He earned an AAS in Building Systems Engineering Technology in 2019."
+      "text": "He completed a Calculus II CLEP credit at Saint Louis University (SLU) in 2018. This credit fulfilled the calculus requirements for his Ranken Technical College curriculum. He attended Missouri S&T in Rolla. He took coursework toward Latin American Studies with Technical Applications from 2019 to 2020. He placed into Advanced Conversational Spanish. He has technical fluency in Spanish. He did not take C++ at S&T. His C++ is self-taught. He attended Ranken Technical College in Wentzville. He earned an AAS in Building Systems Engineering Technology in 2019."
     },
     {
       "id": "proj-cadnat",
