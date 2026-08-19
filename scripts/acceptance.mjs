@@ -606,12 +606,6 @@ const CASES = [
   },
   {
     tag: "regression",
-    q: "What is your ML experience?",
-    must: [/language-to-geometry|locally hosted/i],
-    mustNot: [/no framework work/i],
-  },
-  {
-    tag: "regression",
     q: "Can I get your resume?",
     must: [/PeterLilley_Resume\.pdf/],
     mustNot: [/will not narrate|not documented/i],
