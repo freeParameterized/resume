@@ -610,6 +610,12 @@ const CASES = [
     must: [/PeterLilley_Resume\.pdf/],
     mustNot: [/will not narrate|not documented/i],
   },
+  {
+    tag: "regression",
+    q: "What is your ML experience?",
+    must: [/typed[- ]command/i, /deterministic/i],
+    mustNot: [/no framework work/i, /natural language in/i],
+  },
 ];
 
 async function ask(question, retryOn429 = true) {
