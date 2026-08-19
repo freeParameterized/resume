@@ -1,22 +1,19 @@
 ﻿import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
-import { loadGithub, loadHealth, loadModels, loadPapers, loadProfile, loadProjects } from "./api";
+import { loadGithub, loadHealth, loadPapers, loadProfile, loadProjects } from "./api";
 import { DEEP_DIVE_IDS, HERO_PROJECT_IDS } from "./catalog";
-import { ChatDock } from "./components/ChatDock";
 import { DeepDive } from "./components/DeepDive";
 import { EducationList } from "./components/EducationList";
 import { ExperienceList } from "./components/ExperienceList";
-import { Footer } from "./components/Footer";
 import { GithubCard } from "./components/GithubCard";
 import { Header } from "./components/Header";
 import { ProjectList } from "./components/ProjectList";
 import { ProjectPanel } from "./components/ProjectPanel";
 import { Section } from "./components/Section";
-import { SettingsPanel } from "./components/SettingsPanel";
 import { Skills } from "./components/Skills";
 import { Summary } from "./components/Summary";
 import { loadSettings, saveSettings, type Settings } from "./settings";
 import { THEMES } from "./theme";
-import type { Corpus, GithubInfo, Health, ModelCatalog, Paper, Project } from "./types";
+import type { Corpus, GithubInfo, Health, Paper, Project } from "./types";
 import { logVisit } from "./visits";
 
 const WorkGraph = lazy(() => import("./scene/WorkGraph").then((m) => ({ default: m.WorkGraph })));
@@ -30,10 +27,7 @@ export default function App() {
   const [health, setHealth] = useState<Health | null>(null);
   const [github, setGithub] = useState<GithubInfo | null>(null);
   const [papers, setPapers] = useState<{ available: boolean; papers: Paper[] }>({ available: false, papers: [] });
-  const [models, setModels] = useState<ModelCatalog | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [askOpen, setAskOpen] = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>(() => loadSettings());
   const [viewVersion, setViewVersion] = useState<"welcome" | "professional" | "interactive">("welcome");
 
@@ -50,13 +44,12 @@ export default function App() {
   useEffect(() => {
     let alive = true;
     (async () => {
-      const [p, proj, h, gh, pap, mods] = await Promise.all([
+      const [p, proj, h, gh, pap] = await Promise.all([
         loadProfile(),
         loadProjects(),
         loadHealth(),
         loadGithub(),
         loadPapers(),
-        loadModels(),
       ]);
       if (!alive) return;
       setCorpus(p);
@@ -64,11 +57,6 @@ export default function App() {
       setHealth(h);
       setGithub(gh);
       setPapers(pap);
-      setModels(mods);
-      setSettings((prev) => ({
-        ...prev,
-        model: prev.model || mods?.selected || "",
-      }));
     })();
     return () => {
       alive = false;
@@ -90,15 +78,6 @@ export default function App() {
 
   const onSelect = useCallback((id: string) => {
     setSelectedId(id || null);
-  }, []);
-
-  const onIntents = useCallback((intents: { projectIds: string[]; paperIds?: string[] }) => {
-    if (intents.paperIds?.length) {
-      setSelectedId("grok-tensor");
-    }
-    if (intents.projectIds[0]) {
-      setSelectedId(intents.projectIds[0]);
-    }
   }, []);
 
   if (!corpus) {
@@ -155,8 +134,10 @@ export default function App() {
       </a>
       <Header
         name={profile.name}
-        onAsk={() => setAskOpen(true)}
-        onSettings={() => setSettingsOpen(true)}
+        theme={settings.theme}
+        onToggleTheme={() =>
+          setSettings((prev) => ({ ...prev, theme: prev.theme === "light" ? "dark" : "light" }))
+        }
         health={health}
       />
       <div style={{ padding: "12px 22px", background: "var(--panel)", borderBottom: "1px solid var(--line)", fontSize: "0.85rem", display: "flex", justifyContent: "center" }}>
@@ -233,25 +214,7 @@ export default function App() {
           <DeepDive projects={deepProjects} papersAvailable={papers.available} papers={papers.papers} />
         </Section>
       </main>
-      <Footer />
       <ProjectPanel project={selected} onClose={() => setSelectedId(null)} />
-      <ChatDock
-        open={askOpen}
-        onClose={() => setAskOpen(false)}
-        health={health}
-        settings={settings}
-        projects={projects}
-        papers={papers.papers}
-        onIntents={onIntents}
-      />
-      <SettingsPanel
-        open={settingsOpen}
-        onClose={() => setSettingsOpen(false)}
-        settings={settings}
-        onChange={setSettings}
-        models={models}
-        ollamaReachable={Boolean(health?.ollama.reachable)}
-      />
     </>
   );
 }

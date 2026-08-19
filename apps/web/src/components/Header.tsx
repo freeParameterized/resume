@@ -1,14 +1,15 @@
 import type { Health } from "../types";
+import type { ThemeId } from "../theme";
 import { logVisit } from "../visits";
 
 type Props = {
   name: string;
-  onAsk: () => void;
-  onSettings: () => void;
+  theme: ThemeId;
+  onToggleTheme: () => void;
   health: Health | null;
 };
 
-export function Header({ name, onAsk, onSettings, health }: Props) {
+export function Header({ name, theme, onToggleTheme, health }: Props) {
   const live = Boolean(health?.ok);
   return (
     <header className="app-header">
@@ -33,12 +34,8 @@ export function Header({ name, onAsk, onSettings, health }: Props) {
         <a className="hide-sm" href={`${import.meta.env.BASE_URL}?resume=1`}>
           Print view
         </a>
-        <button type="button" className="ask-launch" onClick={onSettings}>
-          Settings
-        </button>
-        <button type="button" className="ask-launch" onClick={onAsk}>
-          <span className={`status-dot${health?.ollama.reachable ? " on" : ""}`} />
-          Ask about my work
+        <button type="button" className="ask-launch" onClick={onToggleTheme}>
+          {theme === "light" ? "Dark theme" : "Light theme"}
         </button>
         <a className="ask-launch" href="mailto:pal@cadpal.net">
           Contact

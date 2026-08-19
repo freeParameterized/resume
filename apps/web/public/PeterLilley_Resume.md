@@ -6,16 +6,15 @@ Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request ·
 
 ## Summary
 
-Software engineer. Builds production tooling that engineering teams use daily. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Applies matrix math, coordinate transforms, and graph structures to spatial data. Wrote C++ desktop applications and engine scripting before LLM tools existed. Constrains model output to a typed command schema. Deterministic .NET code then constructs the geometry and validates it before commit. Runs inference in-house, so no client drawing data leaves the office. Automation work cut a repetitive drafting cycle from 8 to 12 hours to about 30 seconds.
+Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Wrote C++ desktop applications and engine scripting before LLM tools existed. Constrains model output to a typed command schema, so deterministic code owns anything that has to be correct. Focus is applied ML systems and inference integration, not model training.
 
 ## Skills
 
 - **Languages:** C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
-- **AI and local models:** Ollama, LM Studio, Open WebUI, Google APIs, OCR, prompt engineering, text matching, containerizing inference models, cross-platform edge deployments
+- **Applied ML and inference:** Structured model output with validation gates, Tesseract OCR, Levenshtein and fuzzy string matching, retrieval over structured corpora, COLMAP and instant-ngp photogrammetry, containerized inference, edge deployment, Ollama, LM Studio
 - **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators
 - **Engineering and math:** Matrix math, 3D graphics, Express, React, Git, CMake, Linux, macOS, Docker, Bash scripting for data pipelines
-- **Domain systems and quality:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001
-- **Networking:** TCP/IP fundamentals, IPv4/IPv6, subnetting, Cisco routing and switching
+- **Domain systems, quality, and networking:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001, TCP/IP, IPv4/IPv6 subnetting, Cisco routing and switching
 
 ## Experience
 
@@ -25,7 +24,7 @@ Software engineer. Builds production tooling that engineering teams use daily. W
 - Write C# plugins against the Civil 3D .NET API. The plugins automate layout, audit drawings, and batch-rename title blocks.
 - Design typed metadata schemas that attach to model entities. The schemas carry company standards across disciplines.
 - Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.
-- Automate repetitive drafting with Python and Dynamo. Cycles dropped from 8 hours to about 30 seconds. Errors before review dropped about 25%.
+- Automate repetitive drafting with Python and Dynamo. One measured plan-production cycle dropped from 8 to 12 hours to about 30 seconds. Drafting errors caught before licensed-engineer review dropped about 25%.
 - Constrain model output to a typed command schema. Deterministic C# code then constructs and validates all geometry, so a bad request fails validation instead of shipping a plausible wrong number.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
@@ -34,6 +33,11 @@ Software engineer. Builds production tooling that engineering teams use daily. W
 - Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.
 - Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.
 - Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets.
+
+### Assistant Department Manager - Building Materials and Millwork — Menard, Inc.
+*Manchester / Ballwin, MO · Jun 2020 - Mar 2023*
+
+- Priced and estimated large commercial material orders. Supervised department staff.
 
 ### Revit/CAD Technician - Mechanical/Plumbing — Heideman & Associates, Inc.
 *Fenton, MO · May 2018 - Apr 2019*
@@ -52,7 +56,7 @@ Software engineer. Builds production tooling that engineering teams use daily. W
 - Stored inventory in SQLite with a move audit log, QR booklets, and CSV/JSON export.
 
 ### CAD integration bridge
-*C++17, Dear ImGui, Windows COM | local repository*
+*C++17, Dear ImGui, Windows COM | private repository, walkthrough on request*
 
 - Built a C++17 Dear ImGui host. It bridges BricsCAD, AutoCAD, and Civil 3D through Windows COM.
 - It discovers installed SDKs at runtime and hot-loads LISP, C#, and BRX plugins.
