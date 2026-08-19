@@ -62,17 +62,27 @@ function buildHtml(doc) {
   ]
     .filter(Boolean)
     .map(esc)
-    .join(" &middot; ");
+    // Separator drawn by CSS rather than a unicode middot, which has broken in this pipeline.
+    .map((part) => `<span>${part}</span>`)
+    .join("");
 
   const skills = doc.skills
     .map((s) => `<p class="skill"><span class="k">${esc(s.label)}:</span> ${esc(s.items)}</p>`)
     .join("\n");
 
-  const entry = (title, meta, bullets, note) => `
+  /**
+   * Dates sit in their own right-aligned column on the same baseline as the role, which is
+   * the convention recruiters scan. Flexbox rather than a table keeps the reading order
+   * linear for applicant tracking systems.
+   */
+  const entry = (title, subtitle, right, bullets, note) => `
     <article class="entry">
-      <h3>${esc(title)}</h3>
-      ${meta ? `<p class="meta">${esc(meta)}</p>` : ""}
-      ${note ? `<p>${esc(note)}</p>` : ""}
+      <div class="row">
+        <h3>${esc(title)}</h3>
+        ${right ? `<span class="when">${esc(right)}</span>` : ""}
+      </div>
+      ${subtitle ? `<p class="where">${esc(subtitle)}</p>` : ""}
+      ${note ? `<p class="note">${esc(note)}</p>` : ""}
       ${
         bullets && bullets.length
           ? `<ul>${bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>`
@@ -81,13 +91,13 @@ function buildHtml(doc) {
     </article>`;
 
   const experience = doc.experience
-    .map((j) => entry(`${j.title} — ${j.org}`, `${j.location} · ${j.dates}`, j.bullets))
+    .map((j) => entry(`${j.org} - ${j.title}`, j.location, j.dates, j.bullets))
     .join("\n");
 
-  const projects = doc.projects.map((p) => entry(p.name, p.meta, p.bullets)).join("\n");
+  const projects = doc.projects.map((p) => entry(p.name, p.meta, null, p.bullets)).join("\n");
 
   const education = doc.education
-    .map((e) => entry(`${e.credential} — ${e.org}`, `${e.location} · ${e.dates}`, null, e.note))
+    .map((e) => entry(`${e.credential} - ${e.org}`, e.location, e.dates, null, e.note))
     .join("\n");
 
   return `<!doctype html>
@@ -96,30 +106,53 @@ function buildHtml(doc) {
 <meta charset="utf-8" />
 <title>${esc(doc.name)} — Resume</title>
 <style>
-  @page { size: letter; margin: 0.5in; }
+  /* One family, real weights. Georgia is present on Windows and macOS and renders well
+     both on screen and in print, so the recipient sees what we rendered here. */
+  @page { size: letter; margin: 0.6in; }
   html, body { background: #fff; color: #000; margin: 0; padding: 0; }
   body {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 10pt;
-    line-height: 1.3;
+    font-family: Georgia, Charter, "Times New Roman", Times, serif;
+    font-size: 10.5pt;
+    line-height: 1.22;
+    -webkit-font-smoothing: antialiased;
   }
-  h1 { font-size: 19pt; margin: 0 0 2pt; letter-spacing: 0.02em; }
-  .headline { font-weight: 700; margin: 0 0 3pt; font-size: 10pt; }
-  .contact { font-size: 8.5pt; margin: 0; }
-  header { border-bottom: 1.5pt solid #000; padding-bottom: 5pt; margin-bottom: 8pt; }
+
+  /* Header: name dominant, one compact contact line beneath. */
+  header { border-bottom: 1pt solid #000; padding-bottom: 6pt; margin-bottom: 11pt; }
+  h1 { font-size: 22pt; line-height: 1.05; margin: 0 0 3pt; letter-spacing: -0.01em; }
+  .headline { font-weight: 700; margin: 0 0 5pt; font-size: 10.5pt; }
+  .contact { font-size: 9pt; margin: 0; color: #1a1a1a; }
+  /* Delimiter comes from CSS so no unicode punctuation is needed in the content. */
+  .contact span + span::before { content: "  |  "; color: #666; }
+
+  /* More space above a heading than below it, so each section reads as one group. */
+  section { margin: 0 0 4pt; }
+  section + section { margin-top: 13pt; }
   h2 {
-    font-size: 10.5pt; text-transform: uppercase; letter-spacing: 0.08em;
-    border-bottom: 0.5pt solid #000; margin: 0 0 4pt; padding-bottom: 1.5pt;
+    font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+    border-bottom: 0.5pt solid #999; margin: 0 0 6pt; padding-bottom: 2pt;
     break-after: avoid; page-break-after: avoid;
   }
-  section { margin-bottom: 8pt; }
-  h3 { font-size: 10pt; margin: 0; }
-  p { margin: 0 0 3pt; orphans: 2; widows: 2; }
-  .meta { font-size: 8.5pt; font-style: italic; margin: 0 0 2pt; }
-  ul { margin: 0 0 3pt; padding-left: 15pt; }
-  li { margin-bottom: 1.5pt; }
-  .entry { margin-bottom: 6pt; break-inside: avoid; page-break-inside: avoid; }
-  .skill { break-inside: avoid; page-break-inside: avoid; }
+
+  .entry { margin-bottom: 9pt; break-inside: avoid; page-break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  h3 { font-size: 10.5pt; font-weight: 700; margin: 0; }
+  .when { font-size: 9pt; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .where { font-size: 9pt; font-style: italic; margin: 0 0 3pt; color: #222; }
+  .note { margin: 0 0 3pt; }
+  p { margin: 0 0 4pt; orphans: 2; widows: 2; }
+
+  /* Hanging indent: wrapped lines align under the text, not under the marker. */
+  ul { margin: 0; padding: 0; list-style: none; }
+  li {
+    position: relative; padding-left: 11pt; margin-bottom: 2.5pt;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  li::before { content: "\\2022"; position: absolute; left: 0; top: 0; }
+  li:last-child { margin-bottom: 0; }
+
+  .skill { break-inside: avoid; page-break-inside: avoid; margin: 0 0 3pt; }
   .skill .k { font-weight: 700; }
 </style>
 </head>
@@ -215,6 +248,12 @@ fs.mkdirSync(publicDir, { recursive: true });
 const html = buildHtml(doc);
 const tmpHtml = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "resume-")), "resume.html");
 fs.writeFileSync(tmpHtml, html, "utf8");
+// Kept out of the published output; RESUME_DEBUG_HTML=1 leaves a copy to screenshot and review.
+if (process.env.RESUME_DEBUG_HTML === "1") {
+  const debugOut = path.join(os.tmpdir(), "resume-preview.html");
+  fs.writeFileSync(debugOut, html, "utf8");
+  console.log(`[resume:pdf] preview html: ${debugOut}`);
+}
 
 const browser = findBrowser();
 if (!browser) {

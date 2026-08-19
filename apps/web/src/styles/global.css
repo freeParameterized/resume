@@ -1107,3 +1107,148 @@ a:hover {
 .how-list li {
   line-height: 1.55;
 }
+
+/* ---------------------------------------------------------------------------
+   Spacing scale and breathing room.
+   Feedback was that the layout felt cramped: the fix is a single spacing scale
+   plus a bounded measure for body text, rather than ad-hoc pixel values.
+   --------------------------------------------------------------------------- */
+:root {
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --measure: 68ch;
+}
+
+.section {
+  margin-bottom: var(--sp-8);
+}
+
+.section-head {
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+  padding-bottom: var(--sp-3);
+}
+
+/* Long paragraphs get a comfortable line length and looser leading. */
+.lede,
+.job p,
+.about-panel p,
+.deep-card p,
+.honesty,
+.bubble p {
+  max-width: var(--measure);
+  line-height: 1.6;
+}
+
+.skill-card,
+.project-card,
+.deep-card,
+.gh-card,
+.about-panel,
+.job {
+  padding: var(--sp-5);
+}
+
+.skill-grid,
+.project-grid,
+.edu-grid {
+  gap: var(--sp-5);
+}
+
+.timeline {
+  gap: var(--sp-6);
+}
+
+.chat-dock {
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  gap: var(--sp-3);
+}
+
+.ask-log {
+  gap: var(--sp-4);
+}
+
+.bubble {
+  padding: var(--sp-4);
+  line-height: 1.6;
+}
+
+.inline-card {
+  padding: var(--sp-4);
+}
+
+/* Mid-size screens: the docked chat is 420px wide and fixed to the right, so the
+   content column needs to stop short of it instead of running underneath. */
+@media (min-width: 901px) and (max-width: 1500px) {
+  .shell {
+    padding-right: 460px;
+  }
+}
+
+@media (min-width: 1501px) {
+  .shell {
+    padding-right: var(--sp-7);
+  }
+}
+
+@media (max-width: 900px) {
+  .shell {
+    padding-right: var(--sp-4);
+  }
+}
+/* ---------------------------------------------------------------------------
+   Small-screen overflow fixes. The header nav is a flex row that could not fit
+   360-430px, which widened the page and pushed the hero and chat dock off-screen.
+   --------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .app-header {
+    gap: var(--sp-3);
+  }
+
+  /* Scroll the links sideways instead of forcing the whole page wider. */
+  .nav {
+    gap: var(--sp-4);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav a {
+    white-space: nowrap;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    max-width: 40%;
+  }
+
+  /* The company line is redundant next to the name on a phone. */
+  .brand span {
+    display: none;
+  }
+
+  .hero-overlay {
+    padding: var(--sp-5) var(--sp-4) var(--sp-6);
+  }
+
+  .hero-kicker {
+    letter-spacing: 0.1em;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-overlay h1 {
+    font-size: clamp(1.6rem, 9vw, 2.2rem);
+  }
+}
