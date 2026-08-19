@@ -38,18 +38,15 @@ export function ProjectPanel({ project, onClose }: Props) {
         <div className="drawer-body">
           {project.id === "digital-twin-pro" && (
             <div className="project-gallery" aria-label="Digital Twin Pro Screenshots">
-              <div className="gallery-item">
-                <img src="/images/digital-twin-pro/screenshot4.jpg" alt="Digital Twin Pro screenshot 1" loading="lazy" />
-              </div>
-              <div className="gallery-item">
-                <img src="/images/digital-twin-pro/screenshot2.png" alt="Digital Twin Pro screenshot 2" loading="lazy" />
-              </div>
-              <div className="gallery-item">
-                <img src="/images/digital-twin-pro/screenshot1.jpg" alt="Digital Twin Pro screenshot 3" loading="lazy" />
-              </div>
-              <div className="gallery-item">
-                <img src="/images/digital-twin-pro/screenshot3.png" alt="Digital Twin Pro screenshot 4" loading="lazy" />
-              </div>
+              {Array.from({ length: 50 }).map((_, i) => {
+                const imgNum = (i % 4) + 1;
+                const ext = imgNum === 1 || imgNum === 4 ? "jpg" : "png";
+                return (
+                  <div className="gallery-item" key={i}>
+                    <img src={`/images/digital-twin-pro/screenshot${imgNum}.${ext}`} alt={`Digital Twin Pro screenshot ${i + 1}`} loading="lazy" />
+                  </div>
+                );
+              })}
             </div>
           )}
           {meaningful(project.summary) ? <p>{project.summary}</p> : null}

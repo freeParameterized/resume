@@ -1260,21 +1260,11 @@ a:hover {
   -webkit-overflow-scrolling: touch;
   margin: var(--sp-6) 0;
   padding-bottom: var(--sp-4);
-  scrollbar-width: thin;
-  scrollbar-color: var(--line) transparent;
+  scrollbar-width: none;
 }
 
 .project-gallery::-webkit-scrollbar {
-  height: 6px;
-}
-
-.project-gallery::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.project-gallery::-webkit-scrollbar-thumb {
-  background-color: var(--line);
-  border-radius: 3px;
+  display: none;
 }
 
 .gallery-item {
