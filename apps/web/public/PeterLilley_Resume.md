@@ -25,7 +25,7 @@ I am a software engineer. I build production systems that other professionals us
 - I built OCR ingestion software. It parses existing PDF plan sets. It checks and populates them automatically. This software replaced a manual mark-up loop.
 - I automate repetitive drafting with Python and Dynamo. This automation cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before licensed-engineer review by about 25%.
 - I design typed metadata schemas. These schemas attach to model entities. I coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines.
-- I built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks. They rename up to 40 layouts simultaneously in less than 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout.
+- I built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks. They parse hundreds of text entities and rename up to 40 layouts simultaneously in less than 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout.
 - The plugins map messy survey text and compass bearings into Civil 3D extended data. They use graph lookup tables to place 3D structures at exact flow lines.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
