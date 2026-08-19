@@ -41,16 +41,16 @@
   "skillGroups": [
     {
       "id": "llm",
-      "label": "Local inference & ML tooling",
+      "label": "Applied ML and inference",
       "items": [
-        "Local LLMs since 2023 (Ollama, LM Studio, Open WebUI)",
-        "Retrieval over curated corpora",
-        "Google Gemini API pipelines",
-        "Tesseract OCR on messy engineering PDFs",
-        "Prompt engineering",
-        "Levenshtein distance matching",
-        "Containerizing inference models",
-        "Cross-platform edge deployments (Linux, macOS, Windows)"
+        "Limits model output to a fixed command format. Code checks it before use",
+        "Reads text out of scanned engineering PDFs with Tesseract OCR",
+        "Matches misread or misspelled text to the correct term (Levenshtein distance)",
+        "Turns a photo into item and quantity data with the Google Gemini API",
+        "Keyword search over a fixed set of text files",
+        "Packages models in Docker containers",
+        "Runs models on Linux, macOS, and Windows computers",
+        "Runs language models offline on his own computer (Ollama, LM Studio)"
       ]
     },
     {
@@ -81,49 +81,49 @@
     },
     {
       "id": "math",
-      "label": "Math & structures",
+      "label": "Math and structures",
       "items": [
-        "Calculus II (CLEP credit at Saint Louis University, 2018)",
-        "Rigorous College Algebra (determinants, Cramer's rule)",
-        "Matrix transforms",
-        "3D projection and painter's-algorithm depth sorting",
+        "Matrix transforms and coordinate changes",
+        "3D projection, and depth sorting to draw shapes in the correct order",
         "Graph theory and dependency trees",
-        "Complex numbers, roots of unity, harmonic motion",
-        "Hydrologic runoff computation",
-        "Spatial indexing"
+        "Spatial indexing to find nearby objects quickly",
+        "Stormwater runoff calculations",
+        "Complex numbers and harmonic motion",
+        "Calculus II (CLEP credit at Saint Louis University, 2018)",
+        "College Algebra with determinants and Cramer's rule, no calculator"
       ]
     },
     {
       "id": "cad",
-      "label": "CAD / digital-twin infrastructure",
+      "label": "CAD automation and metadata",
       "items": [
-        "Civil 3D API plugins, AutoCAD automation, Revit/Dynamo scripting",
-        "Custom structured metadata attached to CAD entities",
-        "Pipe networks and stormwater modeling",
-        "Drawing-output and template standards auditing",
-        "Navisworks clash detection"
+        "Civil 3D API plugins, AutoCAD automation, and Revit and Dynamo scripting",
+        "Typed metadata attached to CAD objects",
+        "Pipe network and stormwater models",
+        "Checks drawings against company standards and reports what changed",
+        "Finds clashes between disciplines in Navisworks"
       ]
     },
     {
       "id": "manufacturing",
-      "label": "Metrology & quality",
+      "label": "Metrology and quality",
       "items": [
         "Geometric dimensioning and tolerancing (GD&T)",
         "Coordinate measuring machine (CMM) programming",
-        "CAD-model-versus-print dimensional validation",
+        "Compares measured parts against the CAD model and the print",
         "Tolerance inspection",
-        "ISO 9001 quality systems, PPAP, corrective actions",
-        "Calibration and traceability of metrology assets"
+        "ISO 9001 quality systems, PPAP, and corrective actions",
+        "Calibration and traceability of measuring equipment"
       ]
     },
     {
       "id": "estimating",
-      "label": "Takeoffs & estimating",
+      "label": "Takeoffs and estimating",
       "items": [
-        "Quantity takeoffs",
-        "Commercial and residential material estimating",
+        "Calculates material quantities from construction plans",
+        "Commercial and residential material estimates",
         "Inventory and pricing data models",
-        "Contractor-facing technical consultation"
+        "Technical advice for contractors"
       ]
     },
     {
@@ -133,9 +133,9 @@
         "Git",
         "CMake",
         "Linux",
-        "macOS Architecture",
+        "macOS",
         "Docker",
-        "Bash scripting for data pipelines",
+        "Bash scripts for data pipelines",
         "Audit logging"
       ]
     },
@@ -143,10 +143,10 @@
       "id": "networking",
       "label": "Networking",
       "items": [
-        "Networking Fundamentals",
-        "IPv4/IPv6",
+        "TCP/IP",
+        "IPv4 and IPv6",
         "Subnetting",
-        "Cisco Routing & Switching"
+        "Cisco routing and switching"
       ]
     }
   ],
