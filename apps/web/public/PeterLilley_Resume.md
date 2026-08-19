@@ -1,68 +1,69 @@
 # Peter A. Lilley
 
-**Software Engineer - Local LLM Inference, Language-to-Geometry Systems, Production Tooling**
+**Software Engineer - C#/.NET and C++17 Systems, Geometry and Automation Tooling**
 
 Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request · github.com/freeParameterized · freeparameter.com · Free Parameter LLC
 
 ## Summary
 
-I am a software engineer. I build production systems that other professionals use daily. I built a language-to-geometry pipeline. It uses a plain-language interface to generate 3D models and set up engineering deliverables. I use locally hosted LLM inference to handle intent. I use deterministic C# and .NET code to construct and validate geometry. I also build OCR ingestion and automation tools. These tools cut repetitive drafting from 8 to 12 hours to about 30 seconds per cycle. I work in C#, Python, C++17, TypeScript, and Dart.
+Software engineer. Builds production tooling that engineering teams use daily. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Applies matrix math, coordinate transforms, and graph structures to spatial data. Wrote C++ desktop applications and engine scripting before LLM tools existed. Constrains model output to a typed command schema. Deterministic .NET code then constructs the geometry and validates it before commit. Runs inference in-house, so no client drawing data leaves the office. Automation work cut a repetitive drafting cycle from 8 to 12 hours to about 30 seconds.
 
 ## Skills
 
 - **Languages:** C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
 - **AI and local models:** Ollama, LM Studio, Open WebUI, Google APIs, OCR, prompt engineering, text matching, containerizing inference models, cross-platform edge deployments
 - **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators
-- **Engineering and math:** Matrix math, 3D graphics, Express, React, Git, CMake, Linux, macOS Architecture, Docker, Bash scripting for data pipelines
+- **Engineering and math:** Matrix math, 3D graphics, Express, React, Git, CMake, Linux, macOS, Docker, Bash scripting for data pipelines
 - **Domain systems and quality:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001
-- **Networking:** Networking Fundamentals, IPv4/IPv6, Subnetting, Cisco Routing & Switching
+- **Networking:** TCP/IP fundamentals, IPv4/IPv6, subnetting, Cisco routing and switching
 
 ## Experience
 
 ### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
 *St. Louis, MO · Jul 2024 - Present*
 
-- I build CAD generation tools that turn natural-language input into 3D models and drawing setups using local LLMs and C#.
-- I built OCR ingestion software to parse, check, and populate existing PDF plan sets, replacing a manual mark-up loop.
-- I automate repetitive drafting with Python and Dynamo, cutting cycles from 8 hours to 30 seconds and reducing errors by 25%.
-- I design typed metadata schemas that attach to model entities to coordinate standards across disciplines.
-- I built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks, preventing long loading delays.
+- Write C# plugins against the Civil 3D .NET API. The plugins automate layout, audit drawings, and batch-rename title blocks.
+- Design typed metadata schemas that attach to model entities. The schemas carry company standards across disciplines.
+- Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.
+- Automate repetitive drafting with Python and Dynamo. Cycles dropped from 8 hours to about 30 seconds. Errors before review dropped about 25%.
+- Constrain model output to a typed command schema. Deterministic C# code then constructs and validates all geometry, so a bad request fails validation instead of shipping a plausible wrong number.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
 *O'Fallon, MO · Apr 2023 - Jun 2024*
 
-- I programmed and operated coordinate measuring machines to verify precision-machined parts against GD&T specifications.
-- I validated dimensional tolerances against CAD models and prints to catch geometry mismatches.
-- I enforced ISO 9001 across production lines and managed calibration and traceability of metrology assets.
+- Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.
+- Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.
+- Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets.
 
 ### Revit/CAD Technician - Mechanical/Plumbing — Heideman & Associates, Inc.
 *Fenton, MO · May 2018 - Apr 2019*
 
-- I produced MEP construction documents and built as-built models in Revit and AutoCAD.
-- I built automated data libraries for building-system objects and standardized outdated details.
+- Produced MEP construction documents. Built as-built models in Revit and AutoCAD.
+- Built automated data libraries for building-system objects. Standardized outdated details.
 
 ## Projects
 
 ### Digital Twin Pro
 *Personal product, Free Parameter LLC | Flutter/Dart 3, SQLite, Firebase, Google Gemini API, ARCore | github.com/freeParameterized/digital-twin-pro*
 
-- I designed and shipped a cross-platform 3D inventory application to a Google Play beta.
-- I architected a custom 3D renderer with a Z-sorted draw queue and custom projection instead of using a game engine.
-- I added photo-based item detection via a paid Gemini API.
-- I used SQLite to store inventory data locally with a move audit log, QR booklets, and CSV/JSON export.
+- Designed and shipped a cross-platform 3D inventory application to a Google Play beta.
+- Architected a custom 3D renderer with a Z-sorted draw queue and a custom projection instead of a game engine. Used LLM assistance to write most of the code.
+- Added photo-based item detection through a paid Gemini API.
+- Stored inventory in SQLite with a move audit log, QR booklets, and CSV/JSON export.
 
 ### CAD integration bridge
 *C++17, Dear ImGui, Windows COM | local repository*
 
-- I built a C++17 Dear ImGui host. It uses COM to bridge BricsCAD, AutoCAD, and Civil 3D. This personal project proved the concept for my later commercial deployments.
-- It discovers installed SDKs at runtime, hot-loads LISP, C#, and BRX plugins, and contains about 14,000 lines of code.
+- Built a C++17 Dear ImGui host. It bridges BricsCAD, AutoCAD, and Civil 3D through Windows COM.
+- It discovers installed SDKs at runtime and hot-loads LISP, C#, and BRX plugins.
+- This personal project proved the architecture before a similar commercial deployment.
 
 ### Interactive Portfolio (this site)
 *React, TypeScript, Three.js, Express, Ollama, Docker*
 
-- I built a React Three Fiber portfolio over an Express API.
-- It uses a local LLM to query structured resume data. The interface functions as a static site when the model server is offline.
-- I containerize inference models and deploy them to Linux, macOS, and Windows edge devices.
+- Built a React and TypeScript front end over an Express API.
+- A local model answers questions from structured resume data. The site works statically when the model server is offline.
+- Containerized the inference stack with Docker for Linux, macOS, and Windows hosts.
 
 ## Education
 
@@ -74,7 +75,7 @@ Accepted by Ranken Technical College for their calculus curriculum.
 ### Coursework toward Latin American Studies with Technical Applications — Missouri University of Science and Technology
 *Rolla, MO · 2019 - 2020*
 
-I completed coursework including rigorous, no-calculator College Algebra. It covered determinants, Cramer's rule, and introductory linear algebra concepts. I have technical fluency in Spanish.
+Coursework included no-calculator College Algebra. It covered determinants, Cramer's rule, and introductory linear algebra concepts. Technical fluency in Spanish.
 
 ### A.A.S., Building Systems Engineering Technology — Ranken Technical College
 *Wentzville, MO · 2019*

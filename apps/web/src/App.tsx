@@ -171,16 +171,16 @@ export default function App() {
         <div className="resume-header">
           <div className="resume-title">
             <h1>{profile.name}</h1>
-            <div className="resume-kicker">Software & machine-learning engineer | St. Louis</div>
+            <div className="resume-kicker">Software engineer - systems, geometry, automation | St. Louis</div>
           </div>
           <p className="resume-subtitle">
-            Builds production systems people depend on daily. Natural language in, 3D geometry out, with locally hosted LLM inference and deterministic validation.
+            Writes deterministic C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Constrains model output to a typed command schema, then lets compiled code construct and validate the geometry.
           </p>
           <ul className="resume-metrics">
-            <li>Natural language -&gt; 3D model generation</li>
-            <li>Local, offline LLM inference - nothing rented</li>
-            <li>Shipped Digital Twin Pro solo, start to store</li>
-            <li>8-12 hours to ~30 seconds per cycle</li>
+            <li>C# / .NET plugins in daily production use</li>
+            <li>40 layouts renamed in under 1.7 seconds</li>
+            <li>8-12 hour drafting cycle cut to ~30 seconds</li>
+            <li>Digital Twin Pro shipped solo to Play beta</li>
           </ul>
         </div>
         
