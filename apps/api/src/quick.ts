@@ -70,12 +70,12 @@ const PREMISE: Rule[] = [
   {
     // Multi-turn: "you mentioned he led a 12-person ML team at OpenAI" planted in turn 1, then
     // "how did he manage that team of 12?" in turn 4. The follow-up drops the tells that
-    // premise-planted looks for, and the model answered it with the Menard supervision record -
+    // premise-planted looks for, and the model answered it with the supervision record -
     // implicitly ratifying the headcount. A stated team size has to be rejected on its own.
     id: "premise-headcount",
     test: /\bteam of (\d+|two|three|four|five|six|seven|eight|nine|ten|twelve|twenty)\b|\b\d+.person team\b|\b(managed|led|supervised|ran|oversaw)\s+(a\s+)?(team of\s+)?\d+\s*(people|engineers|developers|reports|staff|technicians|drafters)\b|\bhis \d+ (reports|engineers|developers)\b/i,
     answer:
-      "No team of that size is in his record, and I will not confirm a headcount that appears in the question. What is documented is one people-management role: Assistant Department Manager for Building Materials at Menard, Inc. from June 2020 to March 2023, supervising department staff in a high-volume department, with no headcount figure published. His engineering work since then has been as an individual contributor - Quality Engineer at Component Bar Products, then Staff Technician at David Mason & Associates - building tooling that other professionals use daily rather than managing people. If you need the actual numbers, he is the only reliable source: " +
+      "No team of that size is in his record, and I will not confirm a headcount that appears in the question. What is documented is one people-management role: supervising department staff as an Assistant Department Manager, with no headcount figure published. His engineering work since then has been as an individual contributor - Quality Engineer at Component Bar Products, then Staff Technician at David Mason & Associates - building tooling that other professionals use daily rather than managing people. If you need the actual numbers, he is the only reliable source: " +
       `${EMAIL}.`,
   },
   {
@@ -122,7 +122,7 @@ const GUARDED: Rule[] = [
     test: /\b(attention|self.attention|multi.head|transformers?|back.?propagat\w*|backprop\w*|autograd\w*|gradient descent|gradients?|derive|derivation|chain rule|neural net\w*|\bcnn\b|\brnn\b|\blstm\b|activation function|softmax|layer ?norm\w*|positional encoding|tokeniz\w* internals|\bkv cache\b)/i,
     not: /pay attention to detail/i,
     answer:
-      "That is self-taught background rather than something he has implemented, and the notes do not record him writing an attention layer, an autograd pass, or a training loop, so I will not claim he has. The math he has actually written is different math: matrix transforms, a 3D projection with painter's-algorithm depth sorting he hand-implemented in Digital Twin Pro, complex numbers and roots of unity in a visualizer, graph and dependency-tree processors, Levenshtein distance for fuzzy matching, and hydrologic calculators. His coursework covered general education and freshman-level topics at Missouri S&T. If you want to know how deep the transformer understanding actually goes, ask him to work through it on a whiteboard - that is a fair test, and not one I can pass on his behalf.",
+      "That is self-taught background rather than something he has implemented, and the notes do not record him writing an attention layer, an autograd pass, or a training loop, so I will not claim he has. The math he has actually written is different math: matrix transforms, a 3D projection with painter's-algorithm depth sorting he hand-implemented in Digital Twin Pro, complex numbers and roots of unity in a visualizer, graph and dependency-tree processors, Levenshtein distance for fuzzy matching, and hydrologic calculators. His coursework covered rigorous, no-calculator College Algebra (determinants, Cramer's rule, introductory linear algebra concepts) and general education at Missouri S&T. If you want to know how deep the transformer understanding actually goes, ask him to work through it on a whiteboard - that is a fair test, and not one I can pass on his behalf.",
   },
   {
     id: "ml-infra",
@@ -187,7 +187,7 @@ const GUARDED: Rule[] = [
     id: "mentoring-and-review",
     test: /mentor(ing|ed|ship|s)?\b|code review|reviewed (his|their|other'?s?|others'?) code|pair programm|onboard(ing|ed) (new|junior)|taught (his|the) team|coach(ing|ed) (a|his|the)/i,
     answer:
-      "Mentoring and code-review specifics are not documented, and I will not invent them. What is on the record is adjacent and checkable: the tooling he writes is used daily by other professionals rather than kept to himself, his quality pass cut drafting errors roughly 25% before licensed-engineer review, he is lead for AutoCAD standards auditing and template revision, and he supervised department staff as an Assistant Department Manager at Menard, Inc. Whether that included formal code review or mentoring is his to describe at " +
+      "Mentoring and code-review specifics are not documented, and I will not invent them. What is on the record is adjacent and checkable: the tooling he writes is used daily by other professionals rather than kept to himself, his quality pass cut drafting errors roughly 25% before licensed-engineer review, he is lead for AutoCAD standards auditing and template revision, and he supervised department staff as an Assistant Department Manager. Whether that included formal code review or mentoring is his to describe at " +
       `${EMAIL}.`,
   },
   {
@@ -205,7 +205,7 @@ const GUARDED: Rule[] = [
     id: "level-and-endorsement",
     test: /\b(senior|mid.level|junior|principal)\b.{0,30}(engineer|developer|\bdev\b)|what level (is|would)|seniority|is he (a )?(senior|junior|mid)|would you hire|should (i|we) hire|is he (better|worse) than|compare him to|rank him|how does he (compare|stack up)|best candidate|rate (his|your|him).{0,30}(skills?|ability|abilities|proficiency|out of)|out of (10|ten)\b|on a scale of|how good is he at|proficiency level|score him/i,
     answer:
-      "He does not publish a seniority level or a skill rating, and I will not invent either - a number out of ten from a website is worth nothing to you, and inflating it would be worse. The documented titles are Staff Technician for CAD automation and Civil 3D tooling at David Mason & Associates, Quality Engineer in precision machining at Component Bar Products, Assistant Department Manager and Pro Sales at Menard, Inc., and Revit/CAD Technician at Heideman & Associates. He ships in C#, Python, C++17, TypeScript, and Dart, plus LISP where CAD APIs require it. Whether that maps to mid, senior, or something else depends on your ladder rather than on anything written here, and I am not going to vouch for him or rank him against other candidates - that judgement is yours to make from the record.",
+      "He does not publish a seniority level or a skill rating, and I will not invent either - a number out of ten from a website is worth nothing to you, and inflating it would be worse. The documented titles are Staff Technician for CAD automation and Civil 3D tooling at David Mason & Associates, Quality Engineer in precision machining at Component Bar Products, and Revit/CAD Technician at Heideman & Associates. He ships in C#, Python, C++17, TypeScript, and Dart, plus LISP where CAD APIs require it. Whether that maps to mid, senior, or something else depends on your ladder rather than on anything written here, and I am not going to vouch for him or rank him against other candidates - that judgement is yours to make from the record.",
   },
   {
     id: "references",
@@ -219,7 +219,7 @@ const GUARDED: Rule[] = [
     id: "why-left",
     test: /(why|reason|what made).{0,40}(leav(e|ing)|left|quit|quitting|resign|departed?|move on|moving on)|looking to leave|why (are|is) (you|he) (leaving|looking)|are you leaving|why did (you|he) leave|\bfired\b|laid off|\blayoffs?\b|terminated|let go\b|dismissed from/i,
     answer:
-      "Reasons for leaving are not documented, and I am not going to guess at one or characterize how any role ended. The sequence is on the record: Heideman & Associates as a Revit/CAD technician from May 2018 to April 2019, Menard, Inc. from June 2020 to March 2023, Component Bar Products as a quality engineer from April 2023 to June 2024, and David Mason & Associates from July 2024 to the present - he works there now, and nothing here says otherwise. Why he moved between roles, and what he is looking for next, is his to answer at " +
+      "Reasons for leaving are not documented, and I am not going to guess at one or characterize how any role ended. The sequence is on the record: Heideman & Associates as a Revit/CAD technician from May 2018 to April 2019, Component Bar Products as a quality engineer from April 2023 to June 2024, and David Mason & Associates from July 2024 to the present - he works there now, and nothing here says otherwise. Why he moved between roles, and what he is looking for next, is his to answer at " +
       `${EMAIL}.`,
   },
   {
@@ -266,7 +266,7 @@ const GUARDED: Rule[] = [
     id: "reviews-and-promotions",
     test: /performance review|annual review|review (rating|ratings|score)|\bpip\b|were you promoted|been promoted|promotion(s)?\b|got a raise|title change|why (were|weren't) you promoted/i,
     answer:
-      "Performance reviews, ratings, and promotion history are not documented here, so there is nothing for me to report and nothing worth guessing at. The titles and dates are on the record: Revit/CAD Technician at Heideman & Associates, Assistant Department Manager for Building Materials and Pro Sales at Menard, Inc., Quality Engineer in precision machining at Component Bar Products, and Staff Technician for CAD automation and Civil 3D tooling at David Mason & Associates, where he works now. He can walk you through the rest at " +
+      "Performance reviews, ratings, and promotion history are not documented here, so there is nothing for me to report and nothing worth guessing at. The titles and dates are on the record: Revit/CAD Technician at Heideman & Associates, Quality Engineer in precision machining at Component Bar Products, and Staff Technician for CAD automation and Civil 3D tooling at David Mason & Associates, where he works now. He can walk you through the rest at " +
       `${EMAIL}.`,
   },
   {
@@ -280,7 +280,7 @@ const GUARDED: Rule[] = [
     id: "resume-gap",
     test: /gap in (your|his|the) (resume|employment|work history|timeline)|employment gap|resume gap|unemployed|between jobs|why the gap|missing years?/i,
     answer:
-      "I will not narrate a gap I cannot see. The documented dates are Heideman & Associates from May 2018 to April 2019, Missouri S&T coursework in 2019-2020, Menard, Inc. from June 2020 to March 2023, Component Bar Products from April 2023 to June 2024, and David Mason & Associates from July 2024 to the present. If something in that sequence needs explaining, he is the one to explain it: " +
+      "I will not narrate a gap I cannot see. The documented dates are Heideman & Associates from May 2018 to April 2019, Missouri S&T coursework in 2019-2020, Component Bar Products from April 2023 to June 2024, and David Mason & Associates from July 2024 to the present. If something in that sequence needs explaining, he is the one to explain it: " +
       `${EMAIL}.`,
   },
 
@@ -290,7 +290,7 @@ const GUARDED: Rule[] = [
     test: /\b(gpa\b|bachelor'?s?|masters?'?|\bmba\b|ph\.?d|doctorate|doctoral|dissertation|alma mater|transcript|associate'?s? degree|\baas\b|ranken|missouri s&t|\bs&t\b|rolla)\b|(what|which|where|did|do|does|have|has|any|highest)\b.{0,40}\b(degree|degrees|graduate|graduated|college|university|education|majored?|study|studied|coursework)\b/i,
     not: /campus|finney|expansion project|graduate (of|from) the school of hard/i,
     answer:
-      "His completed credential is an AAS in Building Systems Engineering Technology from Ranken Technical College in Wentzville, Class of 2019. He also took coursework at Missouri S&T in Rolla in 2019-2020 toward Latin American Studies with Technical Applications, including general education and freshman-level coursework, and placed into Advanced Conversational Spanish at Level 4. To be direct about it: he did not complete a bachelor's degree, and there is no master's, no PhD, and no GPA published here. The software ability is largely self-taught - it started as a kid in Adventure Game Studio and ran through C++, CAD APIs, and local LLM work.",
+      "His completed credential is an AAS in Building Systems Engineering Technology from Ranken Technical College in Wentzville, Class of 2019. He also took coursework at Missouri S&T in Rolla in 2019-2020 toward Latin American Studies with Technical Applications, including rigorous, no-calculator College Algebra (determinants, Cramer's rule, introductory linear algebra concepts) and general education, and placed into Advanced Conversational Spanish at Level 4. To be direct about it: he did not complete a bachelor's degree, and there is no master's, no PhD, and no GPA published here. The software ability is largely self-taught - it started as a kid in Adventure Game Studio and ran through C++, CAD APIs, and local LLM work.",
   },
   {
     id: "certifications",
