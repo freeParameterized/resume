@@ -201,10 +201,9 @@ app.post("/api/visit", visitLimit, (req, res) => {
 app.get(["/api/profile", "/api/resume"], (_req, res) => {
   const corpus = loadCorpus();
   res.json({
-    profile: corpus.profile,
-    howIWork: corpus.howIWork,
-    aboutMe: corpus.aboutMe,
-    skillGroups: corpus.skillGroups,
+      profile: corpus.profile,
+      howIWork: corpus.howIWork,
+      skillGroups: corpus.skillGroups,
     experience: corpus.experience,
     education: corpus.education,
     early: corpus.early,
