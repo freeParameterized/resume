@@ -11,9 +11,9 @@ I am a software engineer. I build production systems that other professionals us
 ## Skills
 
 - **Languages:** C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
-- **AI and local models:** Ollama, LM Studio, Open WebUI, Google APIs, OCR, prompt engineering, text matching
+- **AI and local models:** Ollama, LM Studio, Open WebUI, Google APIs, OCR, prompt engineering, text matching, containerizing inference models, cross-platform edge deployments
 - **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators
-- **Engineering and math:** Matrix math, 3D graphics, Express, React, Git, CMake
+- **Engineering and math:** Matrix math, 3D graphics, Express, React, Git, CMake, Linux, macOS Architecture, Docker, Bash scripting for data pipelines
 - **Domain systems and quality:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001
 
 ## Experience
@@ -59,11 +59,13 @@ I am a software engineer. I build production systems that other professionals us
 - It discovers installed SDKs at runtime. It hot-loads LISP, C#, and BRX plugins. It has about 14,000 lines of code.
 
 ### Interactive Portfolio (this site)
-*React, TypeScript, Three.js, Express, Ollama*
+*React, TypeScript, Three.js, Express, Ollama, Docker*
 
 - I built a React Three Fiber portfolio over an Express API.
 - It retrieves data from a curated corpus. It answers questions through a local model.
 - It degrades to extractive answers when no model runs.
+- I containerize inference models. I deploy them to Linux, macOS, and Windows edge devices.
+- I write Bash scripts for data pipelines.
 
 ## Education
 

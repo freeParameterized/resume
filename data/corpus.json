@@ -48,7 +48,9 @@
         "Google Gemini API pipelines",
         "Tesseract OCR on messy engineering PDFs",
         "Prompt engineering",
-        "Levenshtein distance matching"
+        "Levenshtein distance matching",
+        "Containerizing inference models",
+        "Cross-platform edge deployments (Linux, macOS, Windows)"
       ]
     },
     {
@@ -130,7 +132,10 @@
       "items": [
         "Git",
         "CMake",
-        "Linux / Bash",
+        "Linux",
+        "macOS Architecture",
+        "Docker",
+        "Bash scripting for data pipelines",
         "Audit logging"
       ]
     }
@@ -552,12 +557,15 @@
         "Ollama",
         "LM Studio",
         "Open WebUI",
-        "Windows SAPI"
+        "Windows SAPI",
+        "Docker"
       ],
       "honesty": "The runtimes and models are third-party. He built the deployment, model selection, and the retrieval and voice plumbing in this site's API.",
       "summary": "He deployed offline models on this workstation. He wrote the code in this site that talks to them. This includes a model catalog, fallback chain, and corpus retrieval.",
       "bullets": [
         "He runs local models through Ollama, LM Studio, and Open WebUI. He has run them offline since 2023.",
+        "He containerizes inference models. He deploys them to Linux, macOS, and Windows edge devices.",
+        "He writes Bash scripts for data pipelines.",
         "He built this site's API. It selects a local model from an installed catalog. It refuses to auto-select cloud-tagged models.",
         "He built retrieval over a curated corpus. It uses a token-scoring pass to ground answers.",
         "He built honest degradation. If Ollama is stopped, the API returns extractive corpus answers. It says inference is offline instead of faking a model."
@@ -599,7 +607,8 @@
         "TypeScript",
         "Three.js / R3F",
         "Express",
-        "Ollama"
+        "Ollama",
+        "Docker"
       ],
       "honesty": "Written for this job search. The static build works with no backend; the chat only claims a live model when Ollama is actually reachable.",
       "summary": "A spatial work graph in React Three Fiber over an Express API that retrieves from a curated corpus and answers through a local model.",
@@ -607,7 +616,9 @@
         "React Three Fiber scene where each project is a node that opens its real details.",
         "Express API with helmet, a CORS allowlist, and rate limits on the chat routes.",
         "Retrieval-grounded chat that streams tokens and inline context cards, and falls back to extractive corpus answers when no model is running.",
-        "Six themes with localStorage persistence, reduced-motion support, and a printable resume view generated from the same data."
+        "Six themes with localStorage persistence, reduced-motion support, and a printable resume view generated from the same data.",
+        "He containerizes inference models. He deploys them to Linux, macOS, and Windows edge devices.",
+        "He writes Bash scripts for data pipelines."
       ]
     }
   ],
@@ -642,7 +653,7 @@
         "llm",
         "software engineer"
       ],
-      "text": "He is a software engineer. He builds production tools on top of spatial and CAD systems. He runs models locally. At his day job, he uses C#, Python, Dynamo, LISP, and VBA against Civil 3D, AutoCAD, and Revit. He built software that auto-checks and populates plan sets from PDFs. He built automation that cut repetitive drafting from 8 to 12 hours to about 30 seconds per cycle. This reduced errors before PE review by about 25%. His broader stack includes C++17, Dart, Flutter, TypeScript, and Three.js. He has used local LLMs since 2023. He uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On his own time, he shipped Digital Twin Pro. It is a Flutter 3D inventory product. He released it to a Google Play beta."
+      "text": "He is a software engineer. He builds production tools on top of spatial and CAD systems. He runs models locally. At his day job, he uses C#, Python, Dynamo, LISP, and VBA against Civil 3D, AutoCAD, and Revit. He built software that auto-checks and populates plan sets from PDFs. He built automation that cut repetitive drafting from 8 to 12 hours to about 30 seconds per cycle. This reduced errors before PE review by about 25%. His broader stack includes C++17, Dart, Flutter, TypeScript, and Three.js. He has used local LLMs since 2023. He containerizes models for Linux and macOS edge devices. He uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On his own time, he shipped Digital Twin Pro. It is a Flutter 3D inventory product. He released it to a Google Play beta."
     },
     {
       "id": "teamwork",
@@ -712,9 +723,12 @@
         "gpu",
         "cuda",
         "mlops",
-        "frameworks"
+        "frameworks",
+        "docker",
+        "linux",
+        "macos"
       ],
-      "text": "He has an applied-engineering profile. He built a language-to-geometry pipeline. It generates CAD models from natural-language input. The language model handles intent. Deterministic code owns geometry construction and validation. He deploys and runs local LLMs on his own hardware. He wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. He runs Tesseract OCR over messy engineering PDFs. He uses Levenshtein distance to match noisy strings. He built an experimental offline CAD GUI in C++. He writes graph processors and hydrologic calculators. He directed the implementation of a custom 3D projection and painter's-algorithm depth sorting. He used LLM assistance to accelerate coding. He does prompt engineering in Cursor and Gemini. He has a foundation of rigorous, no-calculator College Algebra from Missouri S&T and earned Calculus II credit via CLEP at Saint Louis University in 2018. This coursework covered determinants, Cramer's rule, and introductory linear algebra concepts. This proves his ability to handle the math required for his geometry and CAD automation work. He wrote a visualizer for matrix transforms, complex numbers, and roots of unity. He has never trained or fine-tuned a model. He has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. He has not implemented an attention layer or a training loop. He has no vector database and no embedding-based retrieval. He has no CUDA programming or MLOps platform experience. He has no published ML research."
+      "text": "He has an applied-engineering profile. He built a language-to-geometry pipeline. It generates CAD models from natural-language input. The language model handles intent. Deterministic code owns geometry construction and validation. He deploys and runs local LLMs on his own hardware. He containerizes inference models. He deploys them to Linux, macOS, and Windows edge devices. He writes Bash scripts for data pipelines. He wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. He runs Tesseract OCR over messy engineering PDFs. He uses Levenshtein distance to match noisy strings. He built an experimental offline CAD GUI in C++. He writes graph processors and hydrologic calculators. He directed the implementation of a custom 3D projection and painter's-algorithm depth sorting. He used LLM assistance to accelerate coding. He does prompt engineering in Cursor and Gemini. He has a foundation of rigorous, no-calculator College Algebra from Missouri S&T and earned Calculus II credit via CLEP at Saint Louis University in 2018. This coursework covered determinants, Cramer's rule, and introductory linear algebra concepts. This proves his ability to handle the math required for his geometry and CAD automation work. He wrote a visualizer for matrix transforms, complex numbers, and roots of unity. He has never trained or fine-tuned a model. He has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. He has not implemented an attention layer or a training loop. He has no vector database and no embedding-based retrieval. He has no CUDA programming or MLOps platform experience. He has no published ML research."
     },
     {
       "id": "digital-twin-pro",

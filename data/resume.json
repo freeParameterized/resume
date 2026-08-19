@@ -23,7 +23,7 @@
     },
     {
       "label": "AI and local models",
-      "items": "Ollama, LM Studio, Open WebUI, Google APIs, OCR, prompt engineering, text matching"
+      "items": "Ollama, LM Studio, Open WebUI, Google APIs, OCR, prompt engineering, text matching, containerizing inference models, cross-platform edge deployments"
     },
     {
       "label": "Databases and Data Systems",
@@ -31,7 +31,7 @@
     },
     {
       "label": "Engineering and math",
-      "items": "Matrix math, 3D graphics, Express, React, Git, CMake"
+      "items": "Matrix math, 3D graphics, Express, React, Git, CMake, Linux, macOS Architecture, Docker, Bash scripting for data pipelines"
     },
     {
       "label": "Domain systems and quality",
@@ -97,11 +97,13 @@
     },
     {
       "name": "Interactive Portfolio (this site)",
-      "meta": "React, TypeScript, Three.js, Express, Ollama",
+      "meta": "React, TypeScript, Three.js, Express, Ollama, Docker",
       "bullets": [
         "I built a React Three Fiber portfolio over an Express API.",
         "It retrieves data from a curated corpus. It answers questions through a local model.",
-        "It degrades to extractive answers when no model runs."
+        "It degrades to extractive answers when no model runs.",
+        "I containerize inference models. I deploy them to Linux, macOS, and Windows edge devices.",
+        "I write Bash scripts for data pipelines."
       ]
     }
   ],
