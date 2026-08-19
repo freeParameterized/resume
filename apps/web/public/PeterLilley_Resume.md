@@ -21,11 +21,11 @@ I am a software engineer. I build production systems that other professionals us
 ### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
 *St. Louis, MO · Jul 2024 - Present*
 
-- I build CAD generation tools. These tools turn natural-language input into 3D models and drawing setups. They use local LLM inference and deterministic C#/.NET. I introduced this capability at the firm.
+- I build CAD generation tools. These tools turn natural-language input into 3D models and drawing setups. They use local LLM inference and deterministic C# and .NET. I introduced this capability at the firm.
 - I built OCR ingestion software. It parses existing PDF plan sets. It checks and populates them automatically. This software replaced a manual mark-up loop.
 - I automate repetitive drafting with Python and Dynamo. This automation cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before licensed-engineer review by about 25%.
 - I design typed metadata schemas. These schemas attach to model entities. I coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines.
-- I built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks. They parse hundreds of text entities and rename up to 40 layouts simultaneously in less than 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout.
+- I built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks. They parse hundreds of text entities. They rename up to 40 layouts simultaneously in less than 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout.
 - The plugins map messy survey text and compass bearings into Civil 3D extended data. They use graph lookup tables to place 3D structures at exact flow lines.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
@@ -47,8 +47,8 @@ I am a software engineer. I build production systems that other professionals us
 ### Digital Twin Pro
 *Personal product, Free Parameter LLC | Flutter/Dart 3, SQLite, Firebase, Google Gemini API, ARCore | github.com/freeParameterized/digital-twin-pro*
 
-- I designed, funded, and shipped a cross-platform 3D inventory application. I released it to a Google Play beta and built a Windows desktop version.
-- I directed the implementation of a custom 3D renderer, using LLM assistance to accelerate coding while working full-time instead of using a game engine. I architected a painter's-algorithm scene rendering with a Z-sorted draw queue and custom projection.
+- I designed, funded, and shipped a cross-platform 3D inventory application. I released it to a Google Play beta. I built a Windows desktop version.
+- I directed the implementation of a custom 3D renderer. I used LLM assistance to accelerate coding. I worked full-time instead of using a game engine. I architected a painter's-algorithm scene rendering. It uses a Z-sorted draw queue and custom projection.
 - I added photo-based item detection and voice entry via a paid Gemini API.
 - I built the database with SQLite to store inventory data locally. I included a move audit log. I added QR booklets and CSV/JSON export.
 
@@ -75,7 +75,7 @@ Accepted by Ranken Technical College for their calculus curriculum.
 ### Coursework toward Latin American Studies with Technical Applications — Missouri University of Science and Technology
 *Rolla, MO · 2019 - 2020*
 
-Coursework including rigorous, no-calculator College Algebra (determinants, Cramer's rule, introductory linear algebra concepts) and general education. Technical fluency in Spanish.
+I completed coursework including rigorous, no-calculator College Algebra. It covered determinants, Cramer's rule, and introductory linear algebra concepts. I have technical fluency in Spanish.
 
 ### A.A.S., Building Systems Engineering Technology — Ranken Technical College
 *Wentzville, MO · 2019*
