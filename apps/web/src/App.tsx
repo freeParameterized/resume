@@ -225,6 +225,20 @@ export default function App() {
             Digital Twin Pro and DMA automation - the work that should lead a programming conversation.
           </p>
           <ProjectList projects={heroProjects} selectedId={selectedId} onSelect={onSelect} />
+          
+          <div className="hero-constrained" style={{ marginTop: 'var(--sp-8)' }}>
+            <div className="hero-constrained-header">Interactive Architecture Graph</div>
+            <Suspense fallback={<div className="scene-fallback">Loading work graph...</div>}>
+              <WorkGraph
+                projects={projects}
+                selectedId={selectedId}
+                onSelect={onSelect}
+                sceneBg={sceneBg}
+                reducedMotion={settings.reducedMotion}
+              />
+            </Suspense>
+          </div>
+
           <div style={{ marginTop: 22 }}>
             <GithubCard info={github} />
           </div>
@@ -235,7 +249,7 @@ export default function App() {
       </main>
       <Footer />
       <ProjectPanel project={selected} onClose={() => setSelectedId(null)} />
-      <ChatDock
+      {/* <ChatDock
         open={askOpen}
         onClose={() => setAskOpen(false)}
         health={health}
@@ -243,7 +257,7 @@ export default function App() {
         projects={projects}
         papers={papers.papers}
         onIntents={onIntents}
-      />
+      /> */}
       <SettingsPanel
         open={settingsOpen}
         onClose={() => setSettingsOpen(false)}

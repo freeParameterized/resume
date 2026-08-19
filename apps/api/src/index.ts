@@ -126,28 +126,28 @@ function visitClient(req: Request): string {
   return String(req.headers["user-agent"] || "");
 }
 
-app.post("/api/stt", voiceLimit, express.raw({ type: () => true, limit: "8mb" }), async (req, res) => {
-  try {
-    const buf = Buffer.isBuffer(req.body) ? req.body : Buffer.from(req.body || []);
-    if (!buf.length) {
-      res.status(400).json({ error: "audio body required (wav)" });
-      return;
-    }
-    const text = await transcribeAudio(buf);
-    logVisit({
-      event: "voice",
-      session: visitSession(req),
-      userAgent: visitClient(req),
-      detail: "mic",
-      once: true,
-    });
-    res.json({ text, speaker: voiceStatus().speaker });
-  } catch (err) {
-    const message = safeMessage(err, "Speech-to-text failed.");
-    const code = (err as { code?: string }).code === "STT_UNAVAILABLE" ? 503 : 500;
-    res.status(code).json({ error: message, voice: voiceStatus() });
-  }
-});
+// app.post("/api/stt", voiceLimit, express.raw({ type: () => true, limit: "8mb" }), async (req, res) => {
+//   try {
+//     const buf = Buffer.isBuffer(req.body) ? req.body : Buffer.from(req.body || []);
+//     if (!buf.length) {
+//       res.status(400).json({ error: "audio body required (wav)" });
+//       return;
+//     }
+//     const text = await transcribeAudio(buf);
+//     logVisit({
+//       event: "voice",
+//       session: visitSession(req),
+//       userAgent: visitClient(req),
+//       detail: "mic",
+//       once: true,
+//     });
+//     res.json({ text, speaker: voiceStatus().speaker });
+//   } catch (err) {
+//     const message = safeMessage(err, "Speech-to-text failed.");
+//     const code = (err as { code?: string }).code === "STT_UNAVAILABLE" ? 503 : 500;
+//     res.status(code).json({ error: message, voice: voiceStatus() });
+//   }
+// });
 
 app.use(express.json({ limit: "64kb" }));
 
@@ -406,29 +406,29 @@ app.post("/api/warm", async (_req, res) => {
   res.json(result);
 });
 
-app.post("/api/tts", voiceLimit, async (req, res) => {
-  const text = String(req.body?.text || "").trim();
-  if (!text) {
-    res.status(400).json({ error: "text is required" });
-    return;
-  }
-  try {
-    const wav = await synthesizeWav(text);
-    logVisit({
-      event: "voice",
-      session: visitSession(req),
-      userAgent: visitClient(req),
-      detail: "spoken",
-      once: true,
-    });
-    res.setHeader("Content-Type", "audio/wav");
-    res.setHeader("Cache-Control", "no-store");
-    res.send(wav);
-  } catch (err) {
-    const message = safeMessage(err, "Text-to-speech failed.");
-    res.status(500).json({ error: message, voice: voiceStatus() });
-  }
-});
+// app.post("/api/tts", voiceLimit, async (req, res) => {
+//   const text = String(req.body?.text || "").trim();
+//   if (!text) {
+//     res.status(400).json({ error: "text is required" });
+//     return;
+//   }
+//   try {
+//     const wav = await synthesizeWav(text);
+//     logVisit({
+//       event: "voice",
+//       session: visitSession(req),
+//       userAgent: visitClient(req),
+//       detail: "spoken",
+//       once: true,
+//     });
+//     res.setHeader("Content-Type", "audio/wav");
+//     res.setHeader("Cache-Control", "no-store");
+//     res.send(wav);
+//   } catch (err) {
+//     const message = safeMessage(err, "Text-to-speech failed.");
+//     res.status(500).json({ error: message, voice: voiceStatus() });
+//   }
+// });
 
 app.use((_req, res) => {
   res.status(404).json({ error: "not found" });

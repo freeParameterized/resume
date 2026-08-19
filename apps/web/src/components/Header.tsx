@@ -39,10 +39,10 @@ export function Header({ name, onAsk, onSettings, health }: Props) {
         <button type="button" className="ask-launch" onClick={onSettings}>
           Settings
         </button>
-        <button type="button" className="ask-launch" onClick={onAsk}>
+        {/* <button type="button" className="ask-launch" onClick={onAsk}>
           <span className={`status-dot${health?.ollama.reachable ? " on" : ""}`} />
           Ask
-        </button>
+        </button> */}
       </nav>
       <span className="visually-hidden">{live ? "API connected" : "Static corpus mode"}</span>
     </header>

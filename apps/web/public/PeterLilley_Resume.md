@@ -11,7 +11,7 @@ I am a software engineer. I build production systems that other professionals us
 ## Skills
 
 - **Languages:** C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
-- **AI and local models:** Ollama, LM Studio, Open WebUI, Google APIs, OCR, speech-to-text, prompt engineering, text matching
+- **AI and local models:** Ollama, LM Studio, Open WebUI, Google APIs, OCR, prompt engineering, text matching
 - **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators
 - **Engineering and math:** Matrix math, 3D graphics, Express, React, Git, CMake
 - **Domain systems and quality:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001
@@ -49,7 +49,7 @@ I am a software engineer. I build production systems that other professionals us
 
 - I designed, funded, and shipped a cross-platform 3D inventory application. I released it to a Google Play beta. I built a Windows desktop version.
 - I directed the implementation of a custom 3D renderer. I used LLM assistance to accelerate coding. I worked full-time instead of using a game engine. I architected a painter's-algorithm scene rendering. It uses a Z-sorted draw queue and custom projection.
-- I added photo-based item detection and voice entry via a paid Gemini API.
+- I added photo-based item detection via a paid Gemini API.
 - I built the database with SQLite to store inventory data locally. I included a move audit log. I added QR booklets and CSV/JSON export.
 
 ### CAD integration bridge
@@ -63,7 +63,7 @@ I am a software engineer. I build production systems that other professionals us
 
 - I built a React Three Fiber portfolio over an Express API.
 - It retrieves data from a curated corpus. It answers questions through a local model.
-- It uses on-device speech. It degrades to extractive answers when no model runs.
+- It degrades to extractive answers when no model runs.
 
 ## Education
 
