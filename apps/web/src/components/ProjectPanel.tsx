@@ -36,6 +36,22 @@ export function ProjectPanel({ project, onClose }: Props) {
           </button>
         </div>
         <div className="drawer-body">
+          {project.id === "digital-twin-pro" && (
+            <div className="project-gallery" aria-label="Digital Twin Pro Screenshots">
+              <div className="gallery-item">
+                <img src="/images/digital-twin-pro/screenshot4.jpg" alt="Digital Twin Pro screenshot 1" loading="lazy" />
+              </div>
+              <div className="gallery-item">
+                <img src="/images/digital-twin-pro/screenshot2.png" alt="Digital Twin Pro screenshot 2" loading="lazy" />
+              </div>
+              <div className="gallery-item">
+                <img src="/images/digital-twin-pro/screenshot1.jpg" alt="Digital Twin Pro screenshot 3" loading="lazy" />
+              </div>
+              <div className="gallery-item">
+                <img src="/images/digital-twin-pro/screenshot3.png" alt="Digital Twin Pro screenshot 4" loading="lazy" />
+              </div>
+            </div>
+          )}
           {meaningful(project.summary) ? <p>{project.summary}</p> : null}
           {meaningful(project.owner) ? <p className="job-meta">{project.owner}</p> : null}
           {meaningful(project.honesty) ? <div className="honesty">{project.honesty}</div> : null}

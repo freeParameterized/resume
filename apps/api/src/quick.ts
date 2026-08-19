@@ -154,7 +154,7 @@ const GUARDED: Rule[] = [
     id: "no-third-party-opinions",
     test: /(manager|boss|supervisor|coworker|colleague|teammate|peer|direct report|reference|referee)s?\b.{0,40}\b(say|says|said|think|thinks|thought|describe|describes|feel|feels|opinion|impression|worst|best|complain)|what would (your|his) .{0,30}(say|think)/i,
     answer:
-      "Nothing a manager, coworker, or reference has said about him is documented here, so there is nothing for me to quote and I will not invent it - putting words in a former manager's mouth is exactly the kind of detail that falls apart when someone checks. What is on the record is that his work is built to be reviewed rather than around review: plan sets go to licensed-engineer review, his quality pass cut drafting errors roughly 25% before that review, and in manufacturing he worked under ISO 9001 quality-system and production part approval requirements. He can offer employer references to the optimizations he delivered at David Mason & Associates. Ask him at " +
+      "Nothing a manager, coworker, or reference has said about him is documented here, so there is nothing for me to quote and I will not invent it - putting words in a former manager's mouth is exactly the kind of detail that falls apart when someone checks. What is on the record is that his work is built to be reviewed rather than around review: plan sets go to licensed-engineer review, his quality pass cut drafting errors roughly 25% before that review, and in manufacturing he worked under ISO 9001 quality-system and production part approval requirements. Ask him at " +
       `${EMAIL} and he will connect you.`,
   },
   {
@@ -212,7 +212,7 @@ const GUARDED: Rule[] = [
     test: /\breferences?\b|\breferees?\b|vouch for|background check|who (can|should) i (talk|speak) to|call (your|his) (manager|employer|boss)|reference check/i,
     not: /reference (the|this) (corpus|paper|doi)|citation/i,
     answer:
-      "No reference names or contact details are published here, and I will not produce any. He can offer employer references to the optimizations he delivered at David Mason & Associates, but that introduction has to come from him rather than from a website. Email him at " +
+      "No reference names or contact details are published here, and I will not produce any. Email him at " +
       `${EMAIL} and he will arrange it. Everything I can verify is the work itself, and I am happy to go into any of it.`,
   },
   {
