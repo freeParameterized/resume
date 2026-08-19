@@ -113,7 +113,7 @@ export function aboutToBlock(about: AboutMe): ContextBlock {
     kind: "about",
     id: "about",
     title: about.headline,
-    subtitle: "About Me",
+    subtitle: "Profile",
     body: about.body,
     badge: "About",
   };

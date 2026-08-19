@@ -44,7 +44,6 @@ export async function loadProfile(): Promise<Corpus> {
     const data = await getJson<{
       profile: Corpus["profile"];
       howIWork?: Corpus["howIWork"];
-      aboutMe?: Corpus["aboutMe"];
       skillGroups: Corpus["skillGroups"];
       experience: Corpus["experience"];
       education: Corpus["education"];
@@ -107,7 +106,7 @@ type AskMeta = {
   mode: string;
   model: string | null;
   citations: { id: string; title: string; score: number }[];
-  intents?: { about: boolean; projectIds: string[]; paperIds?: string[] };
+  intents?: { projectIds: string[]; paperIds?: string[] };
   contextBlocks?: ContextBlock[];
   offline?: boolean;
 };
@@ -171,7 +170,7 @@ export async function askQuestion(
           mode?: string;
           model?: string | null;
           citations?: { id: string; title: string; score: number }[];
-          intents?: { about: boolean; projectIds: string[]; paperIds?: string[] };
+          intents?: { projectIds: string[]; paperIds?: string[] };
           contextBlocks?: ContextBlock[];
           offline?: boolean;
         };

@@ -11,7 +11,7 @@ export type Settings = {
 const KEY = "living-resume-settings";
 
 export const DEFAULT_SETTINGS: Settings = {
-  theme: "copilot",
+  theme: "light",
   tts: true,
   stt: true,
   model: "",
@@ -26,12 +26,12 @@ export function loadSettings(): Settings {
       const tts = localStorage.getItem("living-resume-speak");
       return {
         ...DEFAULT_SETTINGS,
-        theme: THEMES.some((t) => t.id === legacyTheme) ? (legacyTheme as ThemeId) : "copilot",
+        theme: THEMES.some((t) => t.id === legacyTheme) ? (legacyTheme as ThemeId) : "light",
         tts: tts !== "off",
       };
     }
     const parsed = JSON.parse(raw) as Partial<Settings>;
-    const theme = THEMES.some((t) => t.id === parsed.theme) ? (parsed.theme as ThemeId) : "copilot";
+    const theme = THEMES.some((t) => t.id === parsed.theme) ? (parsed.theme as ThemeId) : "light";
     return {
       theme,
       tts: parsed.tts !== false,

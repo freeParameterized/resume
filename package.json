@@ -2,7 +2,7 @@
   "name": "living-resume",
   "private": true,
   "version": "1.0.0",
-  "description": "Peter A. Lilley — living resume (Vite + React Three Fiber + Express + local Ollama)",
+  "description": "Peter A. Lilley — Interactive Portfolio (Vite + React Three Fiber + Express + local Ollama)",
   "workspaces": [
     "apps/web",
     "apps/api"
@@ -23,6 +23,7 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "puppeteer": "^25.8.0"
   }
 }

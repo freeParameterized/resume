@@ -42,7 +42,7 @@ export function WorkGraph({
 }: Props) {
   const labels = useMemo(() => {
     const map = new Map(projects.map((p) => [p.id, p.shortName || p.name]));
-    map.set("about", "About Me");
+    map.set("about", "Profile");
     return map;
   }, [projects]);
 

@@ -1,7 +1,6 @@
 ﻿import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { loadGithub, loadHealth, loadModels, loadPapers, loadProfile, loadProjects } from "./api";
 import { DEEP_DIVE_IDS, HERO_PROJECT_IDS } from "./catalog";
-import { AboutPanel } from "./components/AboutPanel";
 import { ChatDock } from "./components/ChatDock";
 import { DeepDive } from "./components/DeepDive";
 import { EducationList } from "./components/EducationList";
@@ -9,7 +8,6 @@ import { ExperienceList } from "./components/ExperienceList";
 import { Footer } from "./components/Footer";
 import { GithubCard } from "./components/GithubCard";
 import { Header } from "./components/Header";
-import { HeroCopy } from "./components/HeroCopy";
 import { ProjectList } from "./components/ProjectList";
 import { ProjectPanel } from "./components/ProjectPanel";
 import { Section } from "./components/Section";
@@ -35,7 +33,6 @@ export default function App() {
   const [models, setModels] = useState<ModelCatalog | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [askOpen, setAskOpen] = useState(true);
-  const [aboutOpen, setAboutOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>(() => loadSettings());
 
@@ -91,26 +88,15 @@ export default function App() {
   );
 
   const onSelect = useCallback((id: string) => {
-    if (id === "about") {
-      setAboutOpen(true);
-      setSelectedId("about");
-      return;
-    }
     setSelectedId(id || null);
-    if (!id) setAboutOpen(false);
   }, []);
 
-  const onIntents = useCallback((intents: { about: boolean; projectIds: string[]; paperIds?: string[] }) => {
-    if (intents.about) {
-      setAboutOpen(true);
-      setSelectedId("about");
-    }
+  const onIntents = useCallback((intents: { projectIds: string[]; paperIds?: string[] }) => {
     if (intents.paperIds?.length) {
       setSelectedId("grok-tensor");
     }
     if (intents.projectIds[0]) {
       setSelectedId(intents.projectIds[0]);
-      if (intents.projectIds[0] !== "about") setAboutOpen(false);
     }
   }, []);
 
@@ -133,39 +119,42 @@ export default function App() {
       <Header
         name={profile.name}
         onAsk={() => setAskOpen(true)}
-        onAbout={() => {
-          setAboutOpen(true);
-          setSelectedId("about");
-        }}
         onSettings={() => setSettingsOpen(true)}
         health={health}
       />
-      <div className="hero">
-        <Suspense fallback={<div className="scene-fallback">Loading work graph...</div>}>
-          <WorkGraph
-            projects={projects}
-            selectedId={selectedId}
-            onSelect={onSelect}
-            sceneBg={sceneBg}
-            reducedMotion={settings.reducedMotion}
-          />
-        </Suspense>
-        <HeroCopy
-          kicker="Software & machine-learning engineer | St. Louis"
-          title={profile.name}
-          subtitle="Builds production systems people depend on daily. Natural language in, 3D geometry out, with locally hosted LLM inference and deterministic validation."
-          metrics={[
-            "Natural language -> 3D model generation",
-            "Local, offline LLM inference - nothing rented",
-            "Shipped Digital Twin Pro solo, start to store",
-            "8-12 hours to ~30 seconds per cycle",
-          ]}
-        />
-      </div>
       <main className="shell">
+        <div className="resume-header">
+          <div className="resume-title">
+            <h1>{profile.name}</h1>
+            <div className="resume-kicker">Software & machine-learning engineer | St. Louis</div>
+          </div>
+          <p className="resume-subtitle">
+            Builds production systems people depend on daily. Natural language in, 3D geometry out, with locally hosted LLM inference and deterministic validation.
+          </p>
+          <ul className="resume-metrics">
+            <li>Natural language -&gt; 3D model generation</li>
+            <li>Local, offline LLM inference - nothing rented</li>
+            <li>Shipped Digital Twin Pro solo, start to store</li>
+            <li>8-12 hours to ~30 seconds per cycle</li>
+          </ul>
+        </div>
+        
         <Section id="summary" index="01" title="Professional summary">
           <Summary profile={profile} />
         </Section>
+        
+        <div className="hero-constrained">
+          <div className="hero-constrained-header">Interactive 3D Work Graph</div>
+          <Suspense fallback={<div className="scene-fallback">Loading work graph...</div>}>
+            <WorkGraph
+              projects={projects}
+              selectedId={selectedId}
+              onSelect={onSelect}
+              sceneBg={sceneBg}
+              reducedMotion={settings.reducedMotion}
+            />
+          </Suspense>
+        </div>
         <Section id="skills" index="02" title="Core stack">
           <Skills groups={corpus.skillGroups} />
         </Section>
@@ -198,8 +187,7 @@ export default function App() {
         </Section>
       </main>
       <Footer />
-      <ProjectPanel project={selected && selected.id !== "about" ? selected : null} onClose={() => setSelectedId(null)} />
-      <AboutPanel about={corpus.aboutMe || null} open={aboutOpen} onClose={() => setAboutOpen(false)} />
+      <ProjectPanel project={selected} onClose={() => setSelectedId(null)} />
       <ChatDock
         open={askOpen}
         onClose={() => setAskOpen(false)}
@@ -207,7 +195,6 @@ export default function App() {
         settings={settings}
         projects={projects}
         papers={papers.papers}
-        about={corpus.aboutMe || null}
         onIntents={onIntents}
       />
       <SettingsPanel

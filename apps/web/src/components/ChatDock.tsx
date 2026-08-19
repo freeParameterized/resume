@@ -3,12 +3,11 @@ import { askQuestion } from "../api";
 import { createLiveRecorder, micSupported, speakText, stopSpeech, transcribeWav, unlockAudioPlayback } from "../audio";
 import { detectIntents } from "../intents";
 import type { Settings } from "../settings";
-import type { AboutMe, Health, Paper, Project } from "../types";
+import type { Health, Paper, Project } from "../types";
 import { logVisit } from "../visits";
 import {
   InlineContext,
   RESUME_PDF_URL,
-  aboutToBlock,
   meaningful,
   paperToBlock,
   projectToBlock,
@@ -39,8 +38,7 @@ type Props = {
   settings: Settings;
   projects: Project[];
   papers: Paper[];
-  about: AboutMe | null;
-  onIntents: (intents: { about: boolean; projectIds: string[]; paperIds?: string[] }) => void;
+  onIntents: (intents: { projectIds: string[]; paperIds?: string[] }) => void;
 };
 
 function mergeBlocks(existing: ContextBlock[], incoming: ContextBlock[] | undefined): ContextBlock[] {
@@ -55,7 +53,7 @@ function mergeBlocks(existing: ContextBlock[], incoming: ContextBlock[] | undefi
   return out;
 }
 
-export function ChatDock({ open, onClose, health, settings, projects, papers, about, onIntents }: Props) {
+export function ChatDock({ open, onClose, health, settings, projects, papers, onIntents }: Props) {
   const [question, setQuestion] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -69,7 +67,6 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, ab
   const liveIntents = useMemo(() => detectIntents(question, "", papers), [question, papers]);
   const liveBlocks = useMemo(() => {
     const blocks: ContextBlock[] = [];
-    if (liveIntents.about && about) blocks.push(aboutToBlock(about));
     for (const id of liveIntents.projectIds) {
       const p = projects.find((x) => x.id === id);
       if (p) blocks.push(projectToBlock(p));
@@ -79,7 +76,7 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, ab
       if (liveIntents.paperIds.includes(id)) blocks.push(paperToBlock(p, i));
     });
     return blocks.slice(0, 3);
-  }, [liveIntents, projects, papers, about]);
+  }, [liveIntents, projects, papers]);
 
   useEffect(() => {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight, behavior: "smooth" });
@@ -110,7 +107,6 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, ab
     unlockAudioPlayback();
     const intentsNow = detectIntents(text, "", papers);
     const seed: ContextBlock[] = [];
-    if (intentsNow.about && about) seed.push(aboutToBlock(about));
     for (const id of intentsNow.projectIds) {
       const p = projects.find((x) => x.id === id);
       if (p) seed.push(projectToBlock(p));
@@ -217,7 +213,7 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, ab
       <div className="ask-log" ref={logRef} aria-live="polite">
         {turns.length === 0 ? (
           <div className="bubble a muted">
-            Try “What got you into programming?” or “How does Digital Twin Pro render 3D?” Context cards stream into the
+            Try “How does Digital Twin Pro render 3D?” Context cards stream into the
             thread as we talk.
           </div>
         ) : null}

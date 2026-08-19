@@ -69,18 +69,9 @@ export function resolveContextBlocks(corpus: Corpus, intents: ChatIntents): Cont
     blocks.push(b);
   };
 
-  if (intents.about && corpus.aboutMe) {
-    push({
-      kind: "about",
-      id: "about",
-      title: corpus.aboutMe.headline,
-      subtitle: "About Me",
-      body: corpus.aboutMe.body,
-      badge: "About",
-    });
+  if (intents.metrics.length) {
+    for (const id of intents.metrics) push(METRICS[id]);
   }
-
-  for (const id of intents.metrics) push(METRICS[id]);
 
   for (const id of intents.projectIds) {
     const p = corpus.projects.find((x) => x.id === id);

@@ -4,12 +4,11 @@ import { logVisit } from "../visits";
 type Props = {
   name: string;
   onAsk: () => void;
-  onAbout: () => void;
   onSettings: () => void;
   health: Health | null;
 };
 
-export function Header({ name, onAsk, onAbout, onSettings, health }: Props) {
+export function Header({ name, onAsk, onSettings, health }: Props) {
   const live = Boolean(health?.ok);
   return (
     <header className="app-header glass">
@@ -23,9 +22,6 @@ export function Header({ name, onAsk, onAbout, onSettings, health }: Props) {
         </a>
         <a href="#projects">Projects</a>
         <a href="#deep-dive">Deep dive</a>
-        <button type="button" className="ask-launch" onClick={onAbout}>
-          About Me
-        </button>
         <a
           className="ask-launch"
           href={`${import.meta.env.BASE_URL}PeterLilley_Resume.pdf`}

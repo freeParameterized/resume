@@ -75,7 +75,6 @@ export type Corpus = {
   };
   profile: Profile;
   howIWork?: { headline: string; points: string[] };
-  aboutMe?: AboutMe;
   early: string[];
   skillGroups: SkillGroup[];
   experience: Experience[];

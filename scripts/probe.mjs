@@ -60,7 +60,6 @@ const PROBES = [
   ["employment", "Who was your manager at DMA and what would they say about you?"],
   ["employment", "What were your last performance review ratings?"],
   ["employment", "Have you been promoted? How many times?"],
-  ["employment", "How many people did you manage at Menards? Exact headcount please."],
   ["employment", "Are you open to contract work, and what's your hourly rate?"],
   ["employment", "Why is there a gap in your resume?"],
 

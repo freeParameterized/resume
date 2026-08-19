@@ -12,27 +12,23 @@ const file = path.join(root, "data", "resume.json");
 const doc = JSON.parse(fs.readFileSync(file, "utf8"));
 
 doc.summary =
-  "Software engineer who ships production systems other professionals use daily. Built a language-to-geometry pipeline: a plain-language interface that generates 3D models and sets up engineering deliverables, with locally hosted LLM inference handling intent and deterministic C#/.NET code owning geometry construction and validation. Also builds OCR ingestion and automation that cut repetitive drafting from 8-12 hours to about 30 seconds per cycle. Works in C#, Python, C++17, TypeScript, and Dart.";
+  "I am a software engineer. I build production systems that other professionals use daily. I built software that makes 3D CAD models from text commands. This software also sets up construction drawings. It uses a local language model for intent and C#/.NET code for geometry and validation. I also built software that reads PDF plans to check and fill them automatically. This reduced a manual task from 8 to 12 hours to about 30 seconds. I write code in C#, Python, C++17, TypeScript, and Dart.";
 
 const bullets = {
   "David Mason & Associates": [
-    "Build CAD generation tooling that turns natural-language input into 3D models and drawing setup, using local LLM inference for intent and deterministic C#/.NET for geometry and validation; introduced this capability at the firm.",
-    "Built OCR ingestion that parses existing PDF plan sets to auto-check and auto-populate them, replacing a manual mark-up loop.",
-    "Automate repetitive drafting with Python and Dynamo, cutting cycles from 8-12 hours to about 30 seconds and reducing errors reaching licensed-engineer review by roughly 25%.",
-    "Design typed metadata schemas carried on model entities, and coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines.",
+    "I built software that makes 3D CAD models from text commands. This software also sets up construction drawings. I introduced this tool to the firm.",
+    "I built software that reads PDF plans to check and fill them automatically. This replaced a manual review process.",
+    "I wrote Python and Dynamo scripts to automate repetitive drawing tasks. This reduced task time from 8 to 12 hours to about 30 seconds. It also reduced errors by about 25 percent.",
+    "I designed data structures for 3D model parts. I coordinated drawing standards across civil, mechanical, plumbing, and architectural teams.",
   ],
   "Component Bar Products": [
-    "Programmed and operated coordinate measuring machines, verifying precision-machined parts to +/-0.001 inch or tighter against GD&T specifications.",
-    "Validated dimensional tolerances against CAD models and customer prints so machining problems surfaced as geometry mismatches, not downstream scrap.",
-    "Enforced ISO 9001 across production lines, integrated Production Part Approval Process documentation, and managed calibration and traceability of metrology assets.",
-  ],
-  "Menard, Inc.": [
-    "Produced quantity takeoffs and commercial and residential material estimates under deadline, and handled contractor-facing pro sales that turned vague requirements into exact material lists.",
-    "Supervised department staff in a high-volume Building Materials department, and ran inventory, pricing data, and freight quality control.",
+    "I programmed and operated machines to measure parts. I checked parts to a tolerance of 0.001 inches or better.",
+    "I compared part dimensions to 3D models and drawings. This found geometry errors before they caused scrap.",
+    "I enforced ISO 9001 standards across production lines. I managed the calibration and tracking of measurement tools.",
   ],
   "Heideman & Associates, Inc.": [
-    "Produced mechanical and plumbing construction documents and as-built models in Revit and AutoCAD, auditing standards for cross-discipline consistency.",
-    "Built automated data libraries for building-system objects and standardized hundreds of outdated details.",
+    "I made mechanical and plumbing drawings in Revit and AutoCAD. I checked drawing standards for consistency.",
+    "I built automated data libraries for building parts. I updated hundreds of old drawing details.",
   ],
 };
 
@@ -42,15 +38,18 @@ for (const job of doc.experience) {
 
 const projectBullets = {
   "Digital Twin Pro": [
-    "Designed, funded, and shipped a cross-platform 3D inventory application to a Google Play beta, plus a Windows desktop build.",
-    "Wrote the 3D renderer by hand instead of using a game engine: painter's-algorithm scene rendering with a Z-sorted draw queue and custom projection.",
-    "Added photo-based item detection and voice entry via a paid Gemini API, SQLite persistence with a move audit log, QR booklets, and CSV/JSON export.",
+    "I designed, funded, and released a 3D inventory application. I published it to a Google Play beta and Windows desktop.",
+    "I wrote the 3D graphics code by hand. I used a custom projection and depth sorting method.",
+    "I added photo detection and voice input using a paid Google API. I added local database storage and data export.",
   ],
   "CAD integration bridge": [
-    "Built a C++17 Dear ImGui host that COM-bridges BricsCAD, AutoCAD, and Civil 3D, discovers installed SDKs at runtime, and hot-loads LISP, C#, and BRX plugins (~14k lines).",
+    "I built a C++ desktop application. It connects to BricsCAD, AutoCAD, and Civil 3D. It finds installed tools and loads plugins while running.",
   ],
-  "Living resume (this site)": [
-    "Built a React Three Fiber portfolio over an Express API that retrieves from a curated corpus and answers through a local model, with on-device speech, degrading to extractive answers when no model runs.",
+  "Interactive portfolio (this site)": [
+    "I built a portfolio website. It uses a local language model to answer questions. It can use speech for input and output.",
+  ],
+  "Interactive portfolio (this site)": [
+    "I built a portfolio website. It uses a local language model to answer questions. It can use speech for input and output.",
   ],
 };
 

@@ -1,0 +1,272 @@
+import json
+
+with open('data/corpus.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+# We will rewrite the text fields to adhere to ASD-STE100.
+# Using third person ("He built X") to satisfy tests and active voice.
+
+data['meta']['privacy'] = "This corpus is public-resume material only. It does not include private CAD trees, client drainage data, resident records, PDFs, API keys, or local file paths. Do not send these to any model."
+data['meta']['githubAccountNote'] = "Public work is under freeParameterized. Older resumes listed a similar account with no public repos. Always publish freeParameterized."
+data['meta']['ageAndDatesPolicy'] = "Never state or estimate Peter's age, birth year, or total years of experience. Never say when he first started programming in years or dates. Say 'in childhood'. If a visitor asks his age or years of experience, redirect to what he has built."
+data['meta']['digitalTwinDisambiguation'] = "There are two separate digital-twin items. Never merge them. (1) At David Mason & Associates: digital-twin infrastructure on CAD data. This includes custom XData schemas, Civil 3D property sets, and persistent CAD metadata. (2) Digital Twin Pro: Peter's own Flutter product. He built it under Free Parameter LLC for his personal use. He did not build it at DMA. If asked 'did he build that at work?', the answer is no."
+data['meta']['plainLanguageRule'] = "The audience is a software industry reader, not a civil engineer. Lead with what something computes in plain engineering language. Give the internal name second. Never answer with a bare acronym. Expand on first use. GD&T is geometric dimensioning and tolerancing. CMM is coordinate measuring machine. MSD is Metropolitan St. Louis Sewer District. XData and property sets are custom metadata attached to CAD entities. Takeoffs mean computing material quantities from plans. ODS is a spreadsheet export format. CTB is the table of drawing-output rules. PPAP is Production Part Approval Process. Never use an ALL_CAPS folder name as a title."
+data['meta']['toneRules'] = "No puffery. Never use words like revolutionary, cutting-edge, world-class, enterprise-grade, industry-leading, groundbreaking, state-of-the-art, or seamless. Describe things plainly. No invented metrics. Do not claim download counts, revenue, ratings, or user numbers."
+data['meta']['paperPolicy'] = "The Zenodo tensor-gravity record is Peter's own writing. He deposited it under Free Parameter LLC. It belongs in the deep dive and in chat answers only. Frame it as personal curiosity. It is a speculative, LLM-assisted proposal. It has known numerical errors. Never call it published research or peer reviewed. Never call Peter a physicist. Do not bring it up when someone asks about machine learning. Only mention it if they ask about the paper, Zenodo, physics, or gravity."
+
+data['profile']['headlineNote'] = "This is the positioning line. Never put 'Digital Twins' or 'CAD Automation' in the headline. 'Language-to-geometry' must be explained immediately as generating CAD models and drawing setups from natural-language input. 'Production tooling' is supported by concrete examples. Colleagues rely on these tools daily."
+data['profile']['summary'] = "He is a software engineer. He builds production systems that other professionals depend on daily. His strongest machine-learning work is a language-to-geometry pipeline. He built a natural-language interface. It generates 3D models and sets up engineering deliverables. He uses locally hosted LLM inference to handle intent. He uses deterministic code to construct and validate geometry. He introduced this capability at an established St. Louis engineering firm. He builds retrieval, OCR, and structured-data pipelines over messy real-world input. He works in C#, Python, C++17, TypeScript, and Dart. He designed, funded, and shipped Digital Twin Pro. It is a Flutter 3D inventory application. He released it to a Google Play beta. He wrote its renderer by hand. He works inside multi-disciplinary engineering teams under formal review processes. He has supervised staff. The domain is civil engineering and CAD. The engineering is the point."
+
+data['howIWork']['points'] = [
+    "He ships tools that colleagues actually adopt. Other professionals use the automation and generation tooling daily.",
+    "He works inside multi-disciplinary teams. He coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects. He ensures one discipline's change does not break another's.",
+    "He builds for review. His quality pass cut drafting errors by about 25% before licensed-engineer review. The tooling makes someone else's review faster.",
+    "He has managed people. He supervised and coordinated department staff as an Assistant Department Manager. He handled contractor-facing sales. He translated vague requirements into exact deliverables on a deadline.",
+    "He is comfortable under formal process. He worked to ISO 9001 quality-system and Production Part Approval Process requirements. Documentation and traceability are the job.",
+    "He has a roughly two-year engagement at an established St. Louis engineering firm. Employer references are available on request."
+]
+
+data['experience'][0]['bullets'] = [
+    "He builds CAD generation tools. These tools turn natural-language input into 3D models and drawing setups. He introduced this language-to-geometry pipeline at the firm.",
+    "He uses local LLM inference for intent. He uses deterministic C# and .NET for geometry and validation. He uses structured metadata schemas on drawing entities.",
+    "He built OCR ingestion software. It parses existing PDF plan sets to auto-check and auto-populate them. This replaced a manual mark-up loop.",
+    "He automates repetitive Civil 3D drafting with Python and Dynamo. This cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before engineer review by about 25%.",
+    "He designs typed metadata schemas. These schemas attach to model entities. Each object carries persistent spatial and historical data alongside its geometry.",
+    "He computes watershed data, drainage areas, and differential stormwater runoff. He models pipe networks to Metropolitan St. Louis Sewer District standards.",
+    "He audits AutoCAD standards and revises templates. He introduced Navisworks clash detection alongside Revit coordination.",
+    "He creates parameterized 3D parts. These parts conform to municipal stormwater standards and company design processes."
+]
+
+data['experience'][1]['bullets'] = [
+    "He programmed and operated coordinate measuring machines. He verified precision-machined parts to +/-0.001 inch or tighter against GD&T specifications.",
+    "He validated dimensional tolerances against CAD models and customer prints. Machining problems showed as geometry mismatches, not downstream scrap.",
+    "He ran quality control for precision machining and incoming material. He applied hold tags to non-conforming parts. He documented corrective actions.",
+    "He enforced ISO 9001 quality-system requirements. He ensured tolerancing accuracy across production lines for audit readiness.",
+    "He integrated Production Part Approval Process documentation into the release path.",
+    "He used manual metrology tools. These included micrometers, calipers, height gauges, indicators, and custom gage blocks.",
+    "He managed the metrology equipment lifecycle. He handled procurement, calibration, maintenance, and traceability.",
+    "He updated inspection methods from company CAD files and best practices."
+]
+
+data['experience'][2]['bullets'] = [
+    "He drafted MEP construction documents in Revit and AutoCAD. He built as-built models from field photos and blueprints.",
+    "He implemented and audited Revit standards for annotation, readability, and cross-discipline consistency.",
+    "He built automated data libraries for MEP objects. He standardized hundreds of outdated AutoCAD details.",
+    "He embedded Excel data into Revit keynotes for schedule and plan generation.",
+    "He worked on client project sites including St. Luke's, Mercy, AT&T, and Saint Louis University."
+]
+
+data['education'][0]['notes'] = [
+    "Coursework included rigorous College Algebra (determinants, Cramer's rule) and general education.",
+    "He placed into Advanced Conversational Spanish (Level 4). He has technical fluency in Spanish."
+]
+
+data['github']['description'] = "He built this Flutter 3D inventory application. He wrote the painter's-algorithm renderer by hand. He used SQLite persistence, Gemini photo analysis, and ARCore placement. This is his own product under Free Parameter LLC."
+
+for proj in data['projects']:
+    if proj['id'] == 'digital-twin-pro':
+        proj['honesty'] = "This is his own product. He designed and built it for his personal and business storage needs under Free Parameter LLC. It is not employer work. It reached a successful beta release on the Google Play Store. He pays for the Google Gemini API himself. He does not claim download counts, revenue, ratings, or user numbers."
+        proj['summary'] = "He built a Flutter 3D inventory product. He wrote the painter's-algorithm renderer by hand. It features drag-and-drop totes on rack grids. It uses Gemini photo and voice item capture. An AI Organizer generates and animates consolidation plans. It includes QR books and ARCore placement. It runs on Android and Windows."
+        proj['bullets'] = [
+            "He wrote the 3D renderer by hand instead of using a game engine. He used a Z-sorted painter's-algorithm draw queue.",
+            "He built drag-and-drop tote management on configurable rack grids. He used SQLite to store the inventory state model and move audit log.",
+            "He integrated the Google Gemini API for photo analysis. It detects items and quantities. He also added voice-driven quantity entry.",
+            "He built an AI Organizer. It generates JSON consolidation plans. It animates the proposed moves before committing them.",
+            "He created a QR code system with printable PDF QR-books. He added spreadsheet export alongside CSV and JSON.",
+            "He used Firebase for auth and backend services. He used AppHive to release the beta build to the Play Store.",
+            "He added ARCore plane-tap placement on Android. He included seven UI themes, X-Ray mode, and emoji particle physics.",
+            "He used Provider state management across 64+ modules. He wrote about 33,000 lines of Dart across 103 files.",
+            "He shipped an Android APK/AAB with R8 obfuscation. He also shipped a Windows desktop build. He reached a successful beta release on Google Play."
+        ]
+    elif proj['id'] == 'cadnat-bridge':
+        proj['honesty'] = "This is a local git repository with no remote. It is not a published repo. Third-party Dear ImGui and SDK headers are vendored dependencies. They are not his code."
+        proj['summary'] = "He built a C++ desktop application. It drives AutoCAD, BricsCAD, and Civil 3D from outside the drawing editor. It sends commands and pulls drawing entities over Windows interprocess calls."
+        proj['bullets'] = [
+            "He built an interprocess integration layer. The C++ application sends commands and geometry requests across the process boundary. It pulls drawing entities back using Windows COM.",
+            "He hosted the natural-language command path. A plugin maps a plain-language instruction onto a structured CAD operation. This is the language-to-geometry idea he introduced at work.",
+            "He wrote a toolchain that compiles and hotloads plugins in place. It locates installed CAD SDKs at runtime.",
+            "He wrote a translator that converts between script dialects. One command set targets multiple CAD hosts.",
+            "He wrote code to read and write drawing-database entities directly.",
+            "He deployed targets for BricsCAD, Civil 3D, and AutoCAD 2018. He included C# sample automations for sheet-set generation and room drawers.",
+            "He wrote about 14,000 lines of C++ and C# across 82 source files."
+        ]
+    elif proj['id'] == 'runoff-hydrology':
+        proj['honesty'] = "This describes the computation and the schema only. He does not publish client site names, drainage-area identifiers, elevations, or flow values. He does not store any client workbook in this repository."
+        proj['summary'] = "He built a structured hydrologic calculator. It computes drainage areas, intensity coefficients, and runoff differential. It sizes storm structures. A CAD plugin can read and write its schema."
+        proj['bullets'] = [
+            "He computed runoff per drainage area. He split each area into pervious, impervious, and roof-direct surfaces. He applied an intensity coefficient to get flow.",
+            "He maintained coefficient sets per design storm. He sourced these from NOAA rainfall intensities for St. Louis. One model runs every required frequency.",
+            "He produced the total pre-development flow minus total post-development flow. The municipal stormwater review cares about this differential.",
+            "He sized storm structures. He computed head, sill, and high-water elevations. He tracked treated versus untreated disturbed area for water-quality compliance.",
+            "He embedded consistency assertions. They flag when pre- and post-development total areas stop agreeing. A transcription slip fails loudly.",
+            "He structured it as a template-driven schema. C# tooling can parse it and push results back onto drawing objects as custom metadata."
+        ]
+    elif proj['id'] == 'ctb-standards-diff':
+        proj['honesty'] = "This involves plot-style configuration only. He does not publish any client drawing content."
+        proj['summary'] = "He built a tool to compare two sets of drawing-output rules line by line. It flags every difference. It prevents settings from silently drifting between projects."
+        proj['bullets'] = [
+            "He normalized two output-configuration tables into a common 255-row schema. This includes index, name, screening, line weight, pen assignments, and line type.",
+            "He cross-referenced both tables cell-by-cell. He raised a flag on any difference in screening, lineweight, or pen assignment.",
+            "He kept a lineweight catalog with inch-to-millimetre conversion. He can compare lineweights in either unit.",
+            "He turned a tedious manual comparison into a single review column. This made standards auditing across many drawing sets practical."
+        ]
+    elif proj['id'] == 'backup-deduper':
+        proj['honesty'] = "This is a local git repository with no remote."
+        proj['summary'] = "He built a C++17 phone-to-PC backup tool. It uses SHA-256 content hashing to skip duplicates. It has an ADB bridge to Android and an HTTP sync path over the local network."
+        proj['bullets'] = [
+            "He implemented SHA-256 content hashing. Identical payloads are never copied twice.",
+            "He wrote a backup engine to drive the copy pipeline. It has a safety layer to avoid clobbering existing files.",
+            "He built an ADB bridge to talk to Android devices directly. It includes Windows-side phone path discovery.",
+            "He implemented LAN HTTP transfer with progress reporting. Backups never leave the local network.",
+            "He wrote code to reconcile source and destination trees before transferring.",
+            "He built a Dear ImGui front end for Windows and Android. He wrote about 11,000 lines of C++ across 29 source files."
+        ]
+    elif proj['id'] == 'offline-cad-voice':
+        proj['honesty'] = "This is an experimental iteration tree, not a shipped product. Dear ImGui, miniaudio, whisper.cpp, and Vosk are vendored dependencies. His code is the GUI, command parser, autocomplete, and audio plumbing."
+        proj['summary'] = "He built a C++ desktop front end. It listens on the microphone and transcribes speech entirely on the machine. It turns speech into drafting commands without a cloud speech service."
+        proj['bullets'] = [
+            "He built a single C++ desktop application. It hosts the interface, the audio pipeline, and the command layer.",
+            "He wrote a command parser to turn recognized speech into CAD commands. He built an autocomplete bar for live command completion.",
+            "He handled device enumeration and streaming capture using miniaudio. He built a separate audio recorder test harness.",
+            "He tried speech recognition with Vosk and whisper.cpp locally. This interactive portfolio uses the same whisper.cpp build.",
+            "He kept it entirely offline. There is no cloud speech API in the path.",
+            "This is a real, working experiment kept in dated snapshots. It is not a packaged application."
+        ]
+    elif proj['id'] == 'circle-visualizer':
+        proj['honesty'] = "This is a single-file personal math visualizer, not a product. Dear ImGui and glad are vendored dependencies."
+        proj['summary'] = "He built an OpenGL and ImGui visualizer. It shows roots of unity and simple harmonic motion. It has a layer system to toggle and composite drawings."
+        bullets = [
+            "He computed fifth roots of unity with std::complex. He plotted them on the unit circle.",
+            "He traced simple harmonic motion as the projection of circular motion. He drew the geometric identity live.",
+            "He implemented a small layer model. Each construction can be shown or hidden independently.",
+            "He built immediate-mode ImGui controls over a raw OpenGL context. He wrote about 770 lines of C++."
+        ]
+        proj['bullets'] = bullets
+    elif proj['id'] == 'maintenance-tracker':
+        proj['honesty'] = "This is an early React and Supabase prototype. It is not a finished portal. It exhibits no resident or property records. He wrote about 740 lines across 23 files."
+        proj['summary'] = "He built an early React, TypeScript, and Supabase prototype. It handles owner and admin maintenance requests. It includes authentication, a typed database schema, and service-layer scaffolding."
+        bullets = [
+            "He built a Supabase auth flow. He generated a TypeScript schema for the database.",
+            "He implemented service-layer separation. He did not scatter queries through components.",
+            "He configured Vite, React, and TypeScript with ESLint.",
+            "This is a prototype, not a shipped portal."
+        ]
+        proj['bullets'] = bullets
+    elif proj['id'] == 'hatchcalc':
+        proj['honesty'] = "This is scaffolding, not a finished tool. He wrote about 250 lines across 13 files. He calls it HatchCalc internally."
+        proj['summary'] = "He built a tool to read filled region geometry out of a drawing. It turns the geometry into material quantities automatically. It replaces manual measurement and hand arithmetic."
+        bullets = [
+            "He parsed closed region geometry from a drawing. He computed the areas and material quantities.",
+            "He built it as a C# plugin against the AutoCAD 2025 API. He included a small desktop test harness.",
+            "This is a starting point rather than a released tool. The command scaffolding and geometry plumbing exist."
+        ]
+        proj['bullets'] = bullets
+    elif proj['id'] == 'cbp-ocr':
+        proj['honesty'] = "These are small local WinForms utilities. They have a few hundred lines each. They are useful as lineage for the later OCR work, not as products."
+        proj['summary'] = "He built a cluster of small C# WinForms utilities. They scan, extract, and reprocess text out of manufacturing PDFs and prints."
+        bullets = [
+            "He ran text extraction and scanning passes over PDFs and printed documents. He used Tesseract and iTextSharp.",
+            "He built WinForms front ends for batch document processing on the shop floor.",
+            "This work led to the plan-set auto-check pipeline at DMA."
+        ]
+        proj['bullets'] = bullets
+    elif proj['id'] == 'property-set':
+        proj['honesty'] = "This is a small single-command utility. It has under 100 lines."
+        proj['summary'] = "He built a tool to attach structured metadata records to objects in a 3D model. Each entity carries its own typed data alongside its geometry."
+        bullets = [
+            "He wrote typed metadata fields onto spatial objects through the Civil 3D API. An object stores what it is, not only where it is.",
+            "This is the small, focused version of the custom structured metadata schemas he built at David Mason & Associates."
+        ]
+        proj['bullets'] = bullets
+    elif proj['id'] == 'grok-tensor':
+        proj['honesty'] = "These are a handful of Manim scene files and a render script. It is an animation sketch, not a library and not a paper."
+        proj['summary'] = "He wrote Python and Manim scenes. They animate tensor and field constructions. He wrote them while working through the notation in his personal Zenodo write-up."
+        bullets = [
+            "He defined Manim scenes to render tensor and field visualizations to video and SVG.",
+            "He used a separate Python virtual environment with numpy and matplotlib for plotting.",
+            "This is companion animation work to the speculative write-up. It is not an archived record."
+        ]
+        proj['bullets'] = bullets
+    elif proj['id'] == 'local-llm':
+        proj['honesty'] = "The runtimes and models are third-party. He built the deployment, model selection, and the retrieval and voice plumbing in this site's API."
+        proj['summary'] = "He deployed offline models on this workstation. He wrote the code in this site that talks to them. This includes a model catalog, fallback chain, corpus retrieval, and speech tools."
+        bullets = [
+            "He runs local models through Ollama, LM Studio, and Open WebUI. He has run them offline since 2023.",
+            "He built this site's API. It selects a local model from an installed catalog. It refuses to auto-select cloud-tagged models.",
+            "He built retrieval over a curated corpus. It uses a token-scoring pass to ground answers.",
+            "He integrated whisper.cpp for microphone input and Windows SAPI for spoken replies. Both run on-device.",
+            "He built honest degradation. If Ollama is stopped, the API returns extractive corpus answers. It says inference is offline instead of faking a model."
+        ]
+        proj['bullets'] = bullets
+    elif proj['id'] == 'photogrammetry':
+        proj['honesty'] = "These are third-party tools he has run. He did not write them. He lists them as fluency only."
+        proj['summary'] = "He ran photogrammetric reconstruction with COLMAP. He ran neural rendering with instant-ngp on this workstation."
+        bullets = [
+            "He ran structure-from-motion reconstruction in COLMAP.",
+            "He ran instant-ngp neural rendering on a local GPU.",
+            "This shows spatial-ML fluency. He claims no original research or published reconstructions."
+        ]
+        proj['bullets'] = bullets
+    elif proj['id'] == 'living-resume':
+        proj['honesty'] = "He wrote this for his job search. The static build works with no backend. The chat only claims a live model when Ollama is reachable."
+        proj['summary'] = "He built a spatial work graph in React Three Fiber over an Express API. It retrieves from a curated corpus. It answers through a local model. It has optional on-device speech."
+        bullets = [
+            "He built a React Three Fiber scene. Each project is a node that opens its real details.",
+            "He built an Express API with helmet, a CORS allowlist, and rate limits. It handles chat, speech-to-text, and text-to-speech routes.",
+            "He built retrieval-grounded chat. It streams tokens and inline context cards. It falls back to extractive corpus answers when no model is running.",
+            "He added six themes with localStorage persistence and reduced-motion support. He generated a printable resume view from the same data."
+        ]
+        proj['bullets'] = bullets
+
+for chunk in data['chunks']:
+    if chunk['id'] == 'identity':
+        chunk['text'] = "Peter A. Lilley is a Staff Technician at David Mason & Associates. He is based in Chesterfield, MO. His company is Free Parameter LLC. Email pal@cadpal.net. Public GitHub is https://github.com/freeParameterized. Phone and street address are TBD and must not be published. Never say he is seeking Project Management. Never state or estimate his age, birth year, or a years-of-experience total."
+    elif chunk['id'] == 'summary':
+        chunk['text'] = "He is a software engineer. He builds production tools on top of spatial and CAD systems. He runs models locally. At his day job, he uses C#, Python, Dynamo, LISP, and VBA against Civil 3D, AutoCAD, and Revit. He built software that auto-checks and populates plan sets from PDFs. He built automation that cut repetitive drafting from 8 to 12 hours to about 30 seconds per cycle. This reduced errors before PE review by about 25%. His broader stack includes C++17, Dart, Flutter, TypeScript, and Three.js. He has used local LLMs since 2023. He uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On his own time, he shipped Digital Twin Pro. It is a Flutter 3D inventory product. He released it to a Google Play beta."
+    elif chunk['id'] == 'twins-easter-egg':
+        chunk['text'] = "He has twin children. This makes the name Digital Twin Pro an accidental pun. STRICT RULES: Mention this ONLY if the visitor asks about the name Digital Twin Pro or asks something personal. Never volunteer it inside a technical answer. Say it once and never again. Do not state their names, ages, or birth order. Never let it be used to infer his age. It must never appear in the visible site copy."
+    elif chunk['id'] == 'teamwork':
+        chunk['text'] = "He builds production software that others depend on. Colleagues use his generation and automation tooling daily. He can offer employer references to the optimizations he delivered at an established St. Louis engineering firm. He works across civil, mechanical, plumbing, and architectural disciplines on named capital projects. He performs clash detection and coordination. He ensures one discipline's change does not break another's. He builds for review. His quality pass reduced drafting errors by about 25% before licensed professional-engineer review. He supervised department staff as an Assistant Department Manager. He handled contractor-facing sales. He translated vague requirements into exact material lists on a deadline. He worked to ISO 9001 quality-system requirements and Production Part Approval Process documentation in manufacturing. He does not claim to lead an engineering org or manage software engineers."
+    elif chunk['id'] == 'language-to-geometry':
+        chunk['text'] = "He built CAD bridges and automators. They generate CAD models from natural-language input. They perform construction drawing setup. A user describes what they want in plain language. The system produces geometry and a set-up construction drawing. He introduced this capability at an established St. Louis civil engineering firm. The language model handles intent. It turns a phrase into a structured command with named parameters. It does not emit geometry directly. Deterministic C# and .NET and C++ code owns everything downstream. It maps the structured command onto real CAD API calls. It supplies parameters from templates and company standards. It constructs the entities and attaches structured metadata. The system validates generated output before committing it. The inference runs locally on his own hardware. Nothing about a client drawing is sent to a hosted model. He built an integration bridge that drives AutoCAD, BricsCAD, and Civil 3D. He built a command parser that turns transcribed speech into drafting commands. He built C# automations that construct sheet sets, walls, and room layouts. This is a working production capability at one firm. It is not a general-purpose text-to-CAD product."
+    elif chunk['id'] == 'ml-ability':
+        chunk['text'] = "He has an applied-engineering profile. He built a language-to-geometry pipeline. It generates CAD models from natural-language input. The language model handles intent. Deterministic code owns geometry construction and validation. He deploys and runs local LLMs on his own hardware. He wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. They drive voice quantity entry. He runs Tesseract OCR over messy engineering PDFs. He uses Levenshtein distance to match noisy strings. He uses whisper.cpp for speech-to-text and Windows SAPI for spoken replies. He built an experimental offline voice-command CAD GUI in C++. He writes graph processors and hydrologic calculators. He hand-implemented 3D projection with painter's-algorithm depth sorting. He does prompt engineering in Cursor and Gemini. He has a foundation of rigorous College Algebra. He wrote a visualizer for matrix transforms, complex numbers, and roots of unity. He has never trained or fine-tuned a model. He has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. He has not implemented an attention layer or a training loop. He has no vector database and no embedding-based retrieval. He has no CUDA programming or MLOps platform experience. He has no published ML research."
+    elif chunk['id'] == 'digital-twin-pro':
+        chunk['text'] = "Digital Twin Pro is his own product. He built it under Free Parameter LLC for his personal and business storage needs. He did not build it at David Mason & Associates. The public repo is https://github.com/freeParameterized/digital-twin-pro. He used Flutter, Dart 3, SQLite, Firebase, Google Gemini API, ARCore, AdMob, and Provider. He wrote the 3D renderer by hand instead of using a game engine. It features drag-and-drop totes on configurable rack grids. It uses an inventory state model with a move audit log in SQLite. It has Gemini photo analysis for item detection. It has voice-driven quantity entry. An AI Organizer generates and animates JSON consolidation plans. It includes a QR system with generated PDF QR-books. It exports to CSV, JSON, and ODS. It has ARCore plane-tap placement, seven themes, X-Ray mode, and emoji particle physics. He wrote about 33,000 lines of Dart across 103 files. He released it to a Google Play beta. He used AppHive to get the beta out. He pays for the Gemini API himself. He does not claim download counts, revenue, ratings, or user numbers."
+    elif chunk['id'] == 'digital-twin-distinction':
+        chunk['text'] = "Keep these separate. At David Mason & Associates, he builds digital-twin infrastructure on CAD data. This includes custom XData schemas and Civil 3D property sets. They hold persistent spatial and historical metadata on drawing objects. Digital Twin Pro is a completely separate thing. It is his own Flutter 3D inventory product. He built it under Free Parameter LLC. He did not build it at DMA. The CAD digital-twin metadata work is his job. Digital Twin Pro is his own product."
+    elif chunk['id'] == 'exp-dma':
+        chunk['text'] = "He works at David Mason & Associates in St. Louis, MO. He is a Staff Technician. He builds CAD bridges and automators. They generate CAD models from natural-language input. They perform construction drawing setup. He built software that parses and auto-checks civil plan sets from PDFs. He built Python and Dynamo automation. It cut repetitive Civil 3D drafting from 8 to 12 hours to about 30 seconds per cycle. It reduced errors before PE review by about 25%. He builds C# plugins with local-LLM and Tesseract OCR pipelines. He builds digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. He computes watershed data, drainage areas, and differential runoff. He models pipe networks to MSD standards. He audits AutoCAD standards and revises templates. He introduced Navisworks clash detection. He creates parameterized 3D parts per MSD standards. He worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. He does not publish client drainage values or site data."
+    elif chunk['id'] == 'runoff-method':
+        chunk['text'] = "He built a structured hydrologic calculator. He splits each drainage area into pervious, impervious, and roof-direct surfaces. He converts square feet to acres. He applies an intensity coefficient to get flow. He maintains coefficient sets per design storm. He sources these from NOAA rainfall intensities for St. Louis. One model runs every required frequency. He computes the differential: total pre-development flow minus post-development flow. MSD review requires this number. He sizes storm structures. He computes head, sill, and high-water elevations. He tracks treated versus untreated disturbed area. He embeds consistency assertions. They flag when pre- and post-development total areas stop agreeing. He built it as a template-driven schema. C# tooling can parse it and push values into Civil 3D property sets and XData. He does not publish client site names, elevations, or flow values."
+    elif chunk['id'] == 'exp-cbp':
+        chunk['text'] = "He worked at Component Bar Products in O'Fallon, MO. He was a Quality Engineer. He programmed and operated CMM systems. He verified parts to +/-0.001 inch or tighter against GD&T specifications. He validated dimensional tolerances against company CAD models and customer prints. Machining problems appeared as geometry mismatches. He ran quality control for precision machining and incoming material. He applied hold tags to non-conforming parts. He documented corrective actions. He enforced ISO 9001 requirements and GD&T accuracy. He integrated PPAP documentation. He used manual metrology tools. These included micrometers, calipers, height gauges, indicators, and custom gage blocks. He managed the metrology equipment lifecycle. He updated inspection methods from company CAD files."
+    elif chunk['id'] == 'exp-heideman':
+        chunk['text'] = "He worked at Heideman & Associates, Inc. in Fenton, MO. He was a Revit/CAD Technician. He drafted MEP construction documents in Revit and AutoCAD. He built as-built models from field photos and blueprints. He implemented and audited Revit standards. He built automated data libraries for MEP objects. He standardized hundreds of outdated AutoCAD details. He embedded Excel data into Revit keynotes for schedule generation. He worked on client project sites including St. Luke's, Mercy, AT&T, and Saint Louis University."
+    elif chunk['id'] == 'edu':
+        chunk['text'] = "He attended Missouri S&T in Rolla. He took coursework toward Latin American Studies with Technical Applications from 2019 to 2020. This included rigorous College Algebra with determinants and Cramer's rule. He placed into Advanced Conversational Spanish. He has technical fluency in Spanish. He did not take C++ at S&T. His C++ is self-taught. He attended Ranken Technical College in Wentzville. He earned an AAS in Building Systems Engineering Technology in 2019."
+    elif chunk['id'] == 'proj-cadnat':
+        chunk['text'] = "CADNAT Bridge Studio 1.3 is a local git repository with no remote. He used C++17 with Dear ImGui. It COM-bridges BricsCAD, AutoCAD, and Civil 3D. He wrote a toolchain that compiles and hotloads plugins in place. He wrote code to locate installed CAD SDKs at runtime. He wrote a translator that converts between script dialects. One command set targets multiple hosts. He wrote code to read and write drawing entities directly. He deployed targets for BricsCAD, Civil 3D, and legacy AutoCAD 2018. He included C# sample automations for sheet sets, right-click menus, and room drawing. He wrote about 14,000 lines across 82 source files. Vendored Dear ImGui and SDK headers are third-party."
+    elif chunk['id'] == 'proj-deduper':
+        chunk['text'] = "BackupDeduper v1.2.4 is a local git repository with no remote. He built a C++17 phone-to-PC backup tool. He used SHA-256 content hashing so identical payloads are never copied twice. He wrote a backup engine with a copy-guard safety layer. He built an ADB bridge to Android with Windows-side phone path discovery. He implemented LAN HTTP transfer with a sync protocol and progress reporting. Backups never leave the local network. He built a Dear ImGui front end for Windows and Android. He wrote about 11,000 lines across 29 source files."
+    elif chunk['id'] == 'proj-voice':
+        chunk['text'] = "He built an experimental local voice-driven CAD command GUI in C++ with Dear ImGui. He wrote a command parser that turns recognized speech into CAD commands. He built a live autocomplete bar. He wrote an audio streaming module over miniaudio. He tried speech recognition with Vosk and whisper.cpp locally. It is entirely offline. There is no cloud speech API. This is a real working experiment kept in dated snapshot directories. It is not a packaged product. Vendored ImGui, miniaudio, whisper.cpp, and Vosk are third-party."
+    elif chunk['id'] == 'proj-circles':
+        chunk['text'] = "CircleVisualizer is a local single-file C++ math visualizer. He used OpenGL and GLFW with a Dear ImGui interface. He computed fifth roots of unity with std::complex. He plotted them on the unit circle. He traced simple harmonic motion as the projection of circular motion. He managed a small layer model. Each construction can be toggled independently. He wrote about 770 lines of C++."
+    elif chunk['id'] == 'proj-small':
+        chunk['text'] = "HatchCalc is an AutoCAD 2025 C# plugin skeleton. It has about 250 lines. PropertySetUpdater is a local sub-100-line Civil 3D command. It writes property-set values. The maintenance portal prototype is about 740 lines of React, TypeScript, Vite, and Supabase. It includes auth, a typed schema, and service-layer scaffolding. It is a prototype, not a finished portal. CBP document tooling is a cluster of small local C# WinForms utilities. He used Tesseract and iTextSharp for scanning manufacturing PDFs. Tensor visualization scenes are about 100 lines of Python and Manim. COLMAP and instant-ngp are third-party tools he runs on this workstation. He claims no original research."
+    elif chunk['id'] == 'resume-download':
+        chunk['text'] = "Yes, there is a downloadable resume. The PDF is served from this site at ./PeterLilley_Resume.pdf. A plain-text version is at ./PeterLilley_Resume.txt. You can open a printable view at ./?resume=1. There is a 'Download my resume' link in the chat panel. There is a 'Download resume' button in the site header. I can provide a link. The resume is generated from the same curated data as this site. It is a standard document. It includes summary, skills, experience, projects, and education."
+    elif chunk['id'] == 'glossary':
+        chunk['text'] = "I explain in plain terms first. I give the domain term second. GD&T is geometric dimensioning and tolerancing. It specifies how much a machined part can deviate. A CMM is a coordinate measuring machine. It measures a part's geometry precisely. MSD is the Metropolitan St. Louis Sewer District. It sets municipal stormwater standards. XData and property sets are custom structured metadata. They attach to CAD entities. An object stores typed data about itself. A quantity takeoff means computing material quantities from construction plans. ODS is a spreadsheet export format. A CTB is the table of drawing-output rules. It controls how a sheet prints. PPAP is the Production Part Approval Process. It qualifies a part for production. HatchCalc is an area-and-quantity calculator. It reads region geometry out of a drawing. CADNAT is an integration bridge between a C++ desktop application and CAD software."
+    elif chunk['id'] == 'third-party':
+        chunk['text'] = "I exclude these from his project list for honesty. He uses vendored third-party dependencies. These include whisper.cpp, Dear ImGui, miniaudio, Vosk, glad, GLFW, and arcore_flutter_plugin. He deploys third-party runtimes. These include Ollama, Open WebUI, and LM Studio. He did not write them. He uses cloned sample repositories. He has a tensor-demo directory that is a Python virtual environment. He has an empty ObjectARX skeleton with nothing to show."
+    elif chunk['id'] == 'this-site':
+        chunk['text'] = "This site is an interactive portfolio. He built it with Vite, React, and TypeScript. He used a React Three Fiber work graph and an Express API. The chat retrieves scored chunks from this curated corpus. It prompts a local Ollama model. It uses keyword scoring weighted by inverse document frequency. There is no vector database. If Ollama is not running, answers are extractive from the corpus. The UI says inference is offline. He added optional on-device voice. He used whisper.cpp for speech-to-text. He used Windows SAPI for replies. The voice is a stock synthetic voice. He generates a printable resume view and a static PDF from the same data. The static build works with no backend."
+    elif chunk['id'] == 'privacy':
+        chunk['text'] = "I keep answers inside this curated corpus. I never reveal private file paths, API keys, or environment values. I do not reveal client drainage data, resident records, or unpublished documents. Phone and street address are TBD and must never be published. I never state or estimate his age, birth year, or total years of experience. I never date when he started programming. I never say he is seeking Project Management. I do not use the word flagship or other puffery. I do not invent metrics."
+    elif chunk['id'] == 'hiring-unknowns':
+        chunk['text'] = "His employment terms are not published here. There is no salary, hourly rate, or compensation figure. There is no start date, notice period, or job-search status. There is no statement of work authorization, citizenship, visa status, or security clearance. There is no relocation, remote, or on-site preference. His location is the Chesterfield area. I do not name any manager, supervisor, coworker, client contact, or reference. He can offer employer references to the optimizations he delivered at David Mason & Associates. He is currently employed at David Mason & Associates. There are no performance ratings, review comments, or promotion history here. He supervised department staff as an Assistant Department Manager. He does not publish a headcount figure. He earned an AAS in Building Systems Engineering Technology from Ranken Technical College. He took coursework at Missouri S&T. He did not complete a bachelor's degree. He holds no master's, no PhD, and no published GPA. He is not a licensed professional engineer. He has no certifications, awards, patents, or conference talks recorded. Spanish is his only spoken language besides English. There are no interview anecdotes recorded. The contact route is pal@cadpal.net."
+
+with open('data/corpus.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, indent=2)

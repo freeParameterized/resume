@@ -45,7 +45,7 @@ export const PROJECT_ALIASES: Record<string, string[]> = {
   "grok-tensor": ["manim", "tensor visual", "grok-tensor"],
   "local-llm": ["ollama", "lm studio", "open webui", "local llm", "local model", "local inference"],
   photogrammetry: ["colmap", "instant-ngp", "nerf"],
-  "living-resume": ["this site", "this website", "living resume", "how does this work"],
+  "interactive-portfolio": ["this site", "this website", "interactive portfolio", "how does this work"],
 };
 
 const JOB_ALIASES: Record<string, string[]> = {

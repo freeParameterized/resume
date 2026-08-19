@@ -28,6 +28,12 @@ this block to appear in the terminal:
 If you only want it on this machine, `npm start` runs the API and site without a tunnel:
 [http://127.0.0.1:5173](http://127.0.0.1:5173).
 
+If you already have the dev server running and just want to start the tunnel, you can run:
+
+```powershell
+npm run tunnel
+```
+
 ## The link changes every single time
 
 Quick-tunnel URLs are random and temporary. Restarting gives you a different one and the old

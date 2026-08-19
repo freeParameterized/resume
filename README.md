@@ -1,4 +1,4 @@
-# Peter A. Lilley — living resume
+# Peter A. Lilley — Interactive Portfolio
 
 A **living** frontend + backend exhibit: spatial tote / work graph (Three.js), resume-accurate project panels, Copilot-style chat with **inline context cards**, and **offline local inference** (Ollama + whisper.cpp + Windows SAPI) on this machine. To a visitor it is just a site.
 
@@ -27,11 +27,10 @@ npm start
 
 ## Demo
 
-1. Open the site. The glass **Ask about my code** dock is on the right. Typed or spoken questions stream tokens and **inline cards** (project, metric, job, About Me, optional paper).
+1. Open the site. The glass **Ask about my code** dock is on the right. Typed or spoken questions stream tokens and **inline cards** (project, metric, job, optional paper).
 2. **Settings** (Slack-style swatches): theme, voice on/off, mic on/off, local model, reduced motion — all in `localStorage`.
-3. Ask **“What got you into programming?”** — About Me fades in, camera moves, card inlines in chat (`originStoryDraft: true`).
-4. Hero stays tight: DMA PDF auto-check, 8–12h → ~30s, ~25% fewer errors, Digital Twin Pro. Longer work lives in **Deep dive**.
-5. Turn **Speak replies** off in Settings to fully disable TTS.
+3. Hero stays tight: DMA PDF auto-check, 8–12h → ~30s, ~25% fewer errors, Digital Twin Pro. Longer work lives in **Deep dive**.
+4. Turn **Speak replies** off in Settings to fully disable TTS.
 
 ## Ollama (local models)
 
