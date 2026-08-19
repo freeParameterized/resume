@@ -55,8 +55,10 @@ const RULES: Rule[] = [
   {
     // Routed to the model this took ~3.1s and drifted into first person; the facts are fixed,
     // so it is scripted like the other high-traffic technical follow-ups.
+    // Both halves must match: on "validat|verif|correct" alone this swallowed every question
+    // containing the word "correct", including ones about the paper and the resume.
     id: "geometry-validation",
-    test: /validat|verif|correct(ness)?|how do you know.*(right|correct)|check.*(geometry|output|model)|(geometry|output).*check/i,
+    test: /(?=.*(validat|verif|correct|checked|checking|how do you know))(?=.*(geometry|geometric|\bcad\b|drawing|output|deliverable|generated))/i,
     answer:
       "He keeps the model out of the part that has to be correct. The LLM interprets the request, and deterministic C#/.NET code against the CAD API owns geometry construction, parameter defaulting, and validation, so the output is checked by code rather than trusted because a model produced it. Validation runs before anything is committed to the drawing. On the stormwater runoff calculator he went further and added consistency assertions that fail loudly on transcription errors instead of quietly producing a plausible number. The same instinct shows up in his quality-engineering background: validating dimensional tolerances against CAD models so problems surface as geometry mismatches rather than downstream scrap.",
   },
@@ -100,7 +102,7 @@ const RULES: Rule[] = [
 
 /**
  * Questions the notes genuinely cannot answer: interview anecdotes, career aspirations,
- * favourites, a years-of-experience number. An 8B model asked these will happily invent a
+ * favorites, a years-of-experience number. An 8B model asked these will happily invent a
  * war story: it produced a detailed, entirely fictional account of a CMM accuracy problem at
  * Component Bar Products. A fabricated anecdote is exactly what would embarrass him if a
  * reviewer repeated it back to him, so these deflect honestly and point at real work instead.

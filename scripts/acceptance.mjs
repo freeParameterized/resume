@@ -30,17 +30,22 @@ const CASES = [
     must: [/not in the notes|would rather not invent/i],
     mustNot: [/Component Bar Products.{0,80}(accuracy|iterations)/i],
   },
-  // The two below have no pre-composed answer on purpose: they go to the model, and they
-  // check that a follow-up keeps the same third-person voice with no prompt leakage.
+  {
+    q: "How did you validate the generated geometry?",
+    must: [/\bhe\b/i, /deterministic|validation|CAD API/i],
+    mustNot: [/\bI validated\b|provided text|guidelines|Here is the answer|educated guess|likely/i],
+  },
+  // The two below have no pre-composed answer on purpose: they reach the model, and they check
+  // that a follow-up keeps the same third-person voice with no prompt leakage or invention.
   {
     q: "What was the hardest part of writing the renderer?",
     must: [/\bhe\b/i, /painter|SceneRenderer|by hand/i],
     mustNot: [/\bI (wrote|built|implemented|struggled)\b|provided text|guidelines|Here is the answer|To answer this/i],
   },
   {
-    q: "How did you validate the generated geometry?",
-    must: [/\bhe\b/i, /deterministic|validation|CAD API/i],
-    mustNot: [/\bI validated\b|provided text|guidelines|Here is the answer|educated guess|likely/i],
+    q: "How does the plan parsing tooling deal with drawings that do not follow the standard layer names?",
+    must: [/\bhe\b/i],
+    mustNot: [/\bI (would|use|handle|d )\b|provided text|guidelines|Here is the answer|To answer this|educated guess/i],
   },
 ];
 

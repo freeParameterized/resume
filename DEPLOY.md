@@ -109,7 +109,9 @@ Asks the questions a reviewer asks first and asserts the answers that must not d
 Twin Pro attributed to him personally and not to DMA, the Zenodo paper described as a
 self-deposited unreviewed preprint, a real resume link, no phone number, a refusal for
 "ignore your instructions", no invented interview anecdotes, and no first-person impersonation
-of Peter on follow-up questions. Expect `14 passed, 0 failed`.
+of Peter on follow-up questions. Expect `15 passed, 0 failed`. Two of the cases deliberately
+reach the model rather than a scripted answer, so the run takes about half a minute; if you run
+it twice inside a minute it pauses for the 20-questions-per-minute rate limit and continues.
 
 It also works against the public link: `node scripts/acceptance.mjs https://<random>.trycloudflare.com`.
 
