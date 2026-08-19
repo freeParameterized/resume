@@ -36,7 +36,7 @@ PROJECTS
 
 Digital Twin Pro | Personal product, Free Parameter LLC | Flutter/Dart 3, SQLite, Firebase, Google Gemini API, ARCore | github.com/freeParameterized/digital-twin-pro
 - I designed, funded, and shipped a cross-platform 3D inventory application. I released it to a Google Play beta and built a Windows desktop version.
-- I wrote the 3D renderer by hand instead of using a game engine. I used a painter's-algorithm scene rendering with a Z-sorted draw queue and custom projection.
+- I directed the implementation of a custom 3D renderer, using LLM assistance to accelerate coding while working full-time instead of using a game engine. I architected a painter's-algorithm scene rendering with a Z-sorted draw queue and custom projection.
 - I added photo-based item detection and voice entry via a paid Gemini API.
 - I built the database with SQLite to store inventory data locally. I included a move audit log. I added QR booklets and CSV/JSON export.
 

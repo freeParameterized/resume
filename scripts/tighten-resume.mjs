@@ -39,7 +39,7 @@ for (const job of doc.experience) {
 const projectBullets = {
   "Digital Twin Pro": [
     "I designed, funded, and released a 3D inventory application. I published it to a Google Play beta and Windows desktop.",
-    "I wrote the 3D graphics code by hand. I used a custom projection and depth sorting method.",
+    "I directed the implementation of the 3D graphics code, using LLMs to accelerate coding. I used a custom projection and depth sorting method.",
     "I added photo detection and voice input using a paid Google API. I added local database storage and data export.",
   ],
   "CAD integration bridge": [

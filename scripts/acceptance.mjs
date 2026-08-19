@@ -73,7 +73,7 @@ const CASES = [
   // that a follow-up keeps the same third-person voice with no prompt leakage or invention.
   {
     q: "What was the hardest part of writing the renderer?",
-    must: [/\bhe\b/i, /painter|SceneRenderer|by hand/i],
+    must: [/\bhe\b/i, /painter|SceneRenderer|directed/i],
     mustNot: [
       /\bI (wrote|built|implemented|struggled)\b|provided text|guidelines|Here is the answer|To answer this/i,
       // It invented an internal state: "He found implementing the Z-sorted painter's-algorithm
