@@ -9,7 +9,7 @@
     "digitalTwinDisambiguation": "There are two separate digital-twin items. Never merge them. (1) At David Mason & Associates: digital-twin infrastructure on CAD data. This includes custom XData schemas, Civil 3D property sets, and persistent CAD metadata. (2) Digital Twin Pro: Peter's own Flutter product. He built it under Free Parameter LLC for his personal use. He did not build it at DMA. If asked 'did he build that at work?', the answer is no.",
     "plainLanguageRule": "The audience is a software industry reader, not a civil engineer. Lead with what something computes in plain engineering language. Give the internal name second. Never answer with a bare acronym. Expand on first use. GD&T is geometric dimensioning and tolerancing. CMM is coordinate measuring machine. MSD is Metropolitan St. Louis Sewer District. XData and property sets are custom metadata attached to CAD entities. Takeoffs mean computing material quantities from plans. ODS is a spreadsheet export format. CTB is the table of drawing-output rules. PPAP is Production Part Approval Process. Never use an ALL_CAPS folder name as a title.",
     "toneRules": "No puffery. Never use words like revolutionary, cutting-edge, world-class, enterprise-grade, industry-leading, groundbreaking, state-of-the-art, or seamless. Describe things plainly. No invented metrics. Do not claim download counts, revenue, ratings, or user numbers.",
-    "paperPolicy": "The Zenodo tensor-gravity record is Peter's own writing. He deposited it under Free Parameter LLC. It belongs in the deep dive and in chat answers only. Frame it as personal curiosity. It is a speculative, LLM-assisted proposal. It has known numerical errors. Never call it published research or peer reviewed. Never call Peter a physicist. Do not bring it up when someone asks about machine learning. Only mention it if they ask about the paper, Zenodo, physics, or gravity."
+    "paperPolicy": ""
   },
   "profile": {
     "name": "Peter A. Lilley",
@@ -540,29 +540,6 @@
       ]
     },
     {
-      "id": "grok-tensor",
-      "name": "Tensor visualization scenes",
-      "shortName": "Manim",
-      "status": "local",
-      "featured": false,
-      "visibility": "Local — no remote",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "Python",
-        "Manim",
-        "matplotlib"
-      ],
-      "honesty": "These are a handful of Manim scene files and a render script. It is an animation sketch, not a library and not a paper.",
-      "summary": "He wrote Python and Manim scenes. They animate tensor and field constructions. He wrote them while working through the notation in his personal Zenodo write-up.",
-      "bullets": [
-        "He defined Manim scenes to render tensor and field visualizations to video and SVG.",
-        "He used a separate Python virtual environment with numpy and matplotlib for plotting.",
-        "This is companion animation work to the speculative write-up. It is not an archived record."
-      ]
-    },
-    {
       "id": "local-llm",
       "name": "Local inference stack",
       "shortName": "Ollama",
@@ -591,7 +568,7 @@
     },
     {
       "id": "photogrammetry",
-      "name": "COLMAP / instant-ngp",
+      "name": "instant-ngp",
       "shortName": "NeRF",
       "status": "fluency",
       "featured": false,
@@ -600,13 +577,11 @@
       "sourcePath": "local repository (path withheld)",
       "remote": null,
       "stack": [
-        "COLMAP",
         "instant-ngp"
       ],
-      "honesty": "These are third-party tools he has run. He did not write them. He lists them as fluency only.",
-      "summary": "He ran photogrammetric reconstruction with COLMAP. He ran neural rendering with instant-ngp on this workstation.",
+      "honesty": "This is a third-party tool he has run. He did not write it. He lists it as fluency only.",
+      "summary": "He ran neural rendering with instant-ngp on this workstation.",
       "bullets": [
-        "He ran structure-from-motion reconstruction in COLMAP.",
         "He ran instant-ngp neural rendering on a local GPU.",
         "This shows spatial-ML fluency. He claims no original research or published reconstructions."
       ]
@@ -941,11 +916,10 @@
         "maintenance",
         "supabase",
         "manim",
-        "colmap",
         "instant-ngp",
         "prototype"
       ],
-      "text": "HatchCalc is an AutoCAD 2025 C# plugin skeleton. It has about 250 lines. PropertySetUpdater is a local sub-100-line Civil 3D command. It writes property-set values. The maintenance portal prototype is about 740 lines of React, TypeScript, Vite, and Supabase. It includes auth, a typed schema, and service-layer scaffolding. It is a prototype, not a finished portal. CBP document tooling is a cluster of small local C# WinForms utilities. He used Tesseract and iTextSharp for scanning manufacturing PDFs. Tensor visualization scenes are about 100 lines of Python and Manim. COLMAP and instant-ngp are third-party tools he runs on this workstation. He claims no original research."
+      "text": "HatchCalc is an AutoCAD 2025 C# plugin skeleton. It has about 250 lines. PropertySetUpdater is a local sub-100-line Civil 3D command. It writes property-set values. The maintenance portal prototype is about 740 lines of React, TypeScript, Vite, and Supabase. It includes auth, a typed schema, and service-layer scaffolding. It is a prototype, not a finished portal. CBP document tooling is a cluster of small local C# WinForms utilities. He used Tesseract and iTextSharp for scanning manufacturing PDFs. Tensor visualization scenes are about 100 lines of Python and Manim. instant-ngp is a third-party tool he runs on this workstation. He claims no original research."
     },
     {
       "id": "resume-download",
