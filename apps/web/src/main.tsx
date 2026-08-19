@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { loadSettings, saveSettings } from "./settings";
+import { PasswordGate } from "./components/PasswordGate";
 
 /** /resume, #/resume, or ?resume=1 all render the printable sheet with no app chrome. */
 function isResumeRoute(): boolean {
@@ -20,7 +21,9 @@ if (isResumeRoute()) {
     const { ResumeSheet } = await import("./components/ResumeSheet");
     root.render(
       <StrictMode>
-        <ResumeSheet />
+        <PasswordGate>
+          <ResumeSheet />
+        </PasswordGate>
       </StrictMode>,
     );
   })();
@@ -31,7 +34,9 @@ if (isResumeRoute()) {
     const { default: App } = await import("./App");
     root.render(
       <StrictMode>
-        <App />
+        <PasswordGate>
+          <App />
+        </PasswordGate>
       </StrictMode>,
     );
   })();
