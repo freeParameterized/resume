@@ -21,12 +21,12 @@ I am a software engineer. I build production systems that other professionals us
 ### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
 *St. Louis, MO · Jul 2024 - Present*
 
-- I build CAD generation tools. These turn natural-language input into 3D models and drawing setups using local LLM inference and deterministic C#/.NET. I introduced this capability at the firm.
-- I built OCR ingestion software. It parses existing PDF plan sets to auto-check and auto-populate them. This replaced a manual mark-up loop.
-- I automate repetitive drafting with Python and Dynamo. This cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before licensed-engineer review by about 25%.
-- I design typed metadata schemas. These attach to model entities. I coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines.
-- I built C# custom commands for Civil 3D to automate layout, rename title blocks, audit drawings, and fix broken data. They rename up to 40 layouts simultaneously in under 1.7 seconds. This automation eliminates 15-to-20-second manual loading delays per layout during repetitive series renames.
-- I used C# to parse messy survey data into Civil 3D XData, building graph lookup tables to map 3D structures to exact flow lines.
+- I build CAD generation tools. These tools turn natural-language input into 3D models and drawing setups. They use local LLM inference and deterministic C#/.NET. I introduced this capability at the firm.
+- I built OCR ingestion software. It parses existing PDF plan sets. It checks and populates them automatically. This software replaced a manual mark-up loop.
+- I automate repetitive drafting with Python and Dynamo. This automation cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before licensed-engineer review by about 25%.
+- I design typed metadata schemas. These schemas attach to model entities. I coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines.
+- I built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks. They rename up to 40 layouts simultaneously in less than 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout.
+- The plugins map messy survey text and compass bearings into Civil 3D extended data. They use graph lookup tables to place 3D structures at exact flow lines.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
 *O'Fallon, MO · Apr 2023 - Jun 2024*

@@ -145,15 +145,15 @@
       "bullets": [
         "He builds CAD generation tools. These tools turn natural-language input into 3D models and drawing setups. He introduced this language-to-geometry pipeline at the firm.",
         "He uses local LLM inference for intent. He uses deterministic C# and .NET for geometry and validation. He uses structured metadata schemas on drawing entities.",
-        "He built OCR ingestion software. It parses existing PDF plan sets to auto-check and auto-populate them. This replaced a manual mark-up loop.",
-        "He automates repetitive Civil 3D drafting with Python and Dynamo. This cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before engineer review by about 25%.",
+        "He built OCR ingestion software. It parses existing PDF plan sets. It checks and populates them automatically. This software replaced a manual mark-up loop.",
+        "He automates repetitive Civil 3D drafting with Python and Dynamo. This automation cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before engineer review by about 25%.",
         "He designs typed metadata schemas. These schemas attach to model entities. Each object carries persistent spatial and historical data alongside its geometry.",
         "He computes watershed data, drainage areas, and differential stormwater runoff. He models pipe networks to Metropolitan St. Louis Sewer District standards.",
         "He audits AutoCAD standards and revises templates. He introduced Navisworks clash detection alongside Revit coordination.",
         "He creates parameterized 3D parts. These parts conform to municipal stormwater standards and company design processes.",
-        "He built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks. They parse hundreds of text entities in less than 1.7 seconds. This eliminates 15-to-20-second manual loading delays per layout.",
-        "The plugins map messy survey text and compass bearings into Civil 3D extended data. They use graph lookup tables to place 3D structures at exact flow lines.",
-        "They also export logs showing exactly which layers and objects changed to enforce company standards."
+        "He built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They audit drawings and export traceability logs.",
+        "These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout.",
+        "He used C# to parse messy survey text and compass bearings into XData. He built graph lookup tables to map 3D structures to exact flow lines."
       ],
       "projects": [
         "Airport Consolidation",
@@ -812,7 +812,7 @@
         "title block",
         "audit"
       ],
-      "text": "He works at David Mason & Associates in St. Louis, MO. He is a Staff Technician. He builds CAD bridges and automators. They generate CAD models from natural-language input. They perform construction drawing setup. He built software that parses and auto-checks civil plan sets from PDFs. He built Python and Dynamo automation. It cut repetitive Civil 3D drafting from 8 to 12 hours to about 30 seconds per cycle. It reduced errors before PE review by about 25%. He builds C# plugins with local-LLM and Tesseract OCR pipelines. He built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks. They parse hundreds of text entities in less than 1.7 seconds. This eliminates 15-to-20-second manual loading delays per layout. The plugins map messy survey text and compass bearings into Civil 3D extended data. They use graph lookup tables to place 3D structures at exact flow lines. They also export logs showing exactly which layers and objects changed to enforce company standards. He builds digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. He computes watershed data, drainage areas, and differential runoff. He models pipe networks to MSD standards. He audits AutoCAD standards and revises templates. He introduced Navisworks clash detection. He creates parameterized 3D parts per MSD standards. He worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. He does not publish client drainage values or site data."
+      "text": "He works at David Mason & Associates in St. Louis, MO. He is a Staff Technician. He builds CAD bridges and automators. They generate CAD models from natural-language input. They perform construction drawing setup. He built software that parses and auto-checks civil plan sets from PDFs. He built Python and Dynamo automation. It cut repetitive Civil 3D drafting from 8 to 12 hours to about 30 seconds per cycle. It reduced errors before PE review by about 25%. He builds C# plugins with local-LLM and Tesseract OCR pipelines. He built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They audit drawings and export traceability logs. These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout. He used C# to parse messy survey text and compass bearings into XData. He built graph lookup tables to map 3D structures to exact flow lines. He builds digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. He computes watershed data, drainage areas, and differential runoff. He models pipe networks to MSD standards. He audits AutoCAD standards and revises templates. He introduced Navisworks clash detection. He creates parameterized 3D parts per MSD standards. He worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. He does not publish client drainage values or site data."
     },
     {
       "id": "runoff-method",
