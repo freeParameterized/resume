@@ -50,7 +50,10 @@
         "I introduced this capability at the firm.",
         "I built OCR ingestion software. It parses existing PDF plan sets to auto-check and auto-populate them. This replaced a manual mark-up loop.",
         "I automate repetitive drafting with Python and Dynamo. This cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before licensed-engineer review by about 25%.",
-        "I design typed metadata schemas. These schemas attach to model entities. I coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines."
+        "I design typed metadata schemas. These schemas attach to model entities. I coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines.",
+        "I built C# plugins for Civil 3D to automate layout and title block renaming. This tool parses hundreds of text entities to enforce company standards.",
+        "It executes in under 1.7 seconds from a few text prompts. This eliminates 15-to-20-second manual loading delays between clicks.",
+        "I also wrote commands to audit drawings, fix broken data, and export logs showing exactly which layers and objects changed."
       ]
     },
     {
