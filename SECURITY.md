@@ -100,7 +100,10 @@ Press `Ctrl+C` in the terminal running `cloudflared`. To be certain it is closed
 Get-Process cloudflared -ErrorAction SilentlyContinue   # should print nothing
 ```
 
-Then load the old public URL in a browser: it should fail to connect.
+If anything is still listed — a terminal was closed instead of interrupted, or the window was
+lost — `npm run tunnel:stop` ends every cloudflared process and prints what it did.
+
+Then load the old public URL in a browser: it should fail to connect, or show Cloudflare's 502.
 
 ## If you want this properly locked down
 

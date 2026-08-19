@@ -16,6 +16,7 @@
     "resume:pdf": "node scripts/make-resume-pdf.mjs",
     "visits": "node scripts/visits.mjs",
     "tunnel": "node scripts/start-tunnel.mjs",
+    "tunnel:stop": "node scripts/stop-tunnel.mjs",
     "demo": "concurrently -k -n api,web,tunnel -c cyan,magenta,yellow \"npm run dev -w @living-resume/api\" \"npm run dev -w @living-resume/web\" \"node scripts/start-tunnel.mjs\""
   },
   "engines": {

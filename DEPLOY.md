@@ -73,7 +73,13 @@ So the permanent link is never broken or embarrassing; it is just the non-AI ver
 Get-Process cloudflared -ErrorAction SilentlyContinue   # should print nothing
 ```
 
-3. Load the old public URL in a browser: it should fail to connect.
+3. If that printed anything — closed terminal, lost window, anything — close it for certain:
+
+```powershell
+npm run tunnel:stop
+```
+
+4. Load the old public URL in a browser. It should fail, or show Cloudflare's 502 page.
 
 `SECURITY.md` covers what was exposed while it was up, and what was never exposed.
 

@@ -8,7 +8,7 @@
  * The URL is new on every restart, so it is fine for "look at this now" and wrong for
  * anything printed on a resume.
  */
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 
 const TARGET = process.env.TUNNEL_TARGET || "http://127.0.0.1:5173";
 const URL_RE = /https:\/\/[a-z0-9-]+\.trycloudflare\.com/i;
@@ -72,8 +72,24 @@ child.on("exit", (code) => {
   process.exitCode = code ?? 0;
 });
 
-for (const sig of ["SIGINT", "SIGTERM"]) {
+/**
+ * On Windows cloudflared runs under a shell, so killing this process alone can leave the
+ * tunnel alive and the "closed" link still serving. Kill the whole tree by pid instead.
+ * Verify with: Get-Process cloudflared   (should print nothing)
+ */
+function stopTunnel() {
+  if (!child.pid || child.exitCode !== null) return;
+  if (process.platform === "win32") {
+    spawnSync("taskkill", ["/pid", String(child.pid), "/T", "/F"], { stdio: "ignore" });
+    return;
+  }
+  child.kill();
+}
+
+for (const sig of ["SIGINT", "SIGTERM", "SIGHUP", "SIGBREAK"]) {
   process.on(sig, () => {
-    child.kill();
+    stopTunnel();
+    process.exit(0);
   });
 }
+process.on("exit", stopTunnel);

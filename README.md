@@ -90,6 +90,7 @@ Stub only: `server/remote.stub.js`. Not RDP, not VNC, not implemented.
 | `npm start` / `npm run dev` | API watch + Vite on 127.0.0.1:5173 |
 | `npm run demo` | API + Vite + Cloudflare tunnel, prints the public link |
 | `npm run tunnel` | Tunnel only, against an already-running site |
+| `npm run tunnel:stop` | Close every cloudflared process (kill switch) |
 | `npm run visits` | Recent-visitor summary from `logs/visits.log` |
 | `npm run resume:pdf` | Regenerate the resume PDF/TXT/MD, with validation |
 | `npm run build:pages` | Static frontend |
