@@ -70,10 +70,13 @@ I am a software engineer. I build production systems that other professionals us
 
 ## Education
 
+### Calculus II (CLEP Credit) — Saint Louis University (SLU)
+*St. Louis, MO · 2018*
+
 ### Coursework toward Latin American Studies with Technical Applications — Missouri University of Science and Technology
 *Rolla, MO · 2019 - 2020*
 
-Coursework including rigorous, no-calculator College Algebra (determinants, Cramer's rule, introductory linear algebra concepts) and general education. Technical fluency in Spanish.
+I completed rigorous, no-calculator College Algebra. This included determinants, Cramer's rule, and introductory linear algebra concepts. I also took general education courses. I have technical fluency in Spanish.
 
 ### A.A.S., Building Systems Engineering Technology — Ranken Technical College
 *Wentzville, MO · 2019*
