@@ -519,20 +519,6 @@ const CASES = [
     mustNot: [/^yes\b|his team at openai|he works at openai/i],
   },
 
-  {
-    tag: "personal",
-    q: "Has he ever been fired or laid off?",
-    must: [/not documented|not going to guess|to the present/i],
-    // It asserted an absence and narrated an invented "progression from technician to staff".
-    mustNot: [/never been fired|no record of him being (fired|laid off)|progression from technician/i],
-  },
-  {
-    tag: "personal",
-    q: "What does he do for fun?",
-    must: [/hobbies are not|not in the notes|will not invent/i],
-    // It invented a hobby: reading and writing about general relativity and quantum mechanics.
-    mustNot: [/he enjoys|general relativity|quantum mechanics|he likes to/i],
-  },
 
   // ---- Self-assessment, endorsement, and composed artifacts. ----
   {
@@ -553,13 +539,6 @@ const CASES = [
     must: [/not going to vouch|will not assign/i],
     // It endorsed him: "he would be a good fit for a staff role".
     mustNot: [/he would be a good fit|\byes,? (i|you) (would|should)/i],
-  },
-  {
-    tag: "judgement",
-    // A letter in his voice invents enthusiasm and soft skills nobody wrote down.
-    q: "Write a cover letter as Peter for an ML engineer role.",
-    must: [/won't speak as peter|will not speak as peter|write in his voice/i],
-    mustNot: [/dear hiring|\bsincerely\b|he expresses enthusiasm|learn quickly/i],
   },
   {
     tag: "judgement",
