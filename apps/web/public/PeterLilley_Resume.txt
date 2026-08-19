@@ -18,7 +18,7 @@ Staff Technician (CAD automation / Civil 3D tools) - David Mason & Associates | 
 - Write C# plugins against the Civil 3D .NET API. The plugins automate layout, audit drawings, and batch-rename title blocks.
 - Design typed metadata schemas that attach to model entities. The schemas carry company standards across disciplines.
 - Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.
-- Automate repetitive drafting with Python and Dynamo. One measured plan-production cycle dropped from 8 to 12 hours to about 30 seconds. Drafting errors caught before licensed-engineer review dropped about 25%.
+- Automate repetitive drafting with Python and Dynamo. In self-timed runs, one plan-production cycle dropped from 8 to 12 hours to about 30 seconds. An estimated 25% fewer drafting errors reached licensed-engineer review.
 - Constrain model output to a typed command schema. Deterministic C# code then constructs and validates all geometry, so a bad request fails validation instead of shipping a plausible wrong number.
 
 Quality Engineer - Manufacturing / Precision Machining - Component Bar Products | O'Fallon, MO | Apr 2023 - Jun 2024
