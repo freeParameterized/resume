@@ -49,7 +49,7 @@
         "I built OCR ingestion software. It parses existing PDF plan sets to auto-check and auto-populate them. This replaced a manual mark-up loop.",
         "I automate repetitive drafting with Python and Dynamo. This cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before licensed-engineer review by about 25%.",
         "I design typed metadata schemas. These attach to model entities. I coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines.",
-        "I built C# custom commands for Civil 3D to automate layout, rename title blocks, audit drawings, and fix broken data. They execute in under 1.7 seconds, eliminating manual loading delays.",
+        "I built C# custom commands for Civil 3D to automate layout, rename title blocks, audit drawings, and fix broken data. They rename up to 40 layouts simultaneously in under 1.7 seconds. This automation eliminates 15-to-20-second manual loading delays per layout during repetitive series renames.",
         "I used C# to parse messy survey data into Civil 3D XData, building graph lookup tables to map 3D structures to exact flow lines."
       ]
     },
@@ -106,12 +106,6 @@
     }
   ],
   "education": [
-    {
-      "org": "Saint Louis University (SLU)",
-      "location": "St. Louis, MO",
-      "credential": "Calculus II (CLEP Credit)",
-      "dates": "2018"
-    },
     {
       "org": "Saint Louis University (SLU)",
       "location": "St. Louis, MO",
