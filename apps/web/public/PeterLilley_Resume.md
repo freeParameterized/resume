@@ -15,57 +15,54 @@ I am a software engineer. I build production systems that other professionals us
 - **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators
 - **Engineering and math:** Matrix math, 3D graphics, Express, React, Git, CMake, Linux, macOS Architecture, Docker, Bash scripting for data pipelines
 - **Domain systems and quality:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001
+- **Networking:** Networking Fundamentals, IPv4/IPv6, Subnetting, Cisco Routing & Switching
 
 ## Experience
 
 ### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
 *St. Louis, MO · Jul 2024 - Present*
 
-- I build CAD generation tools. These tools turn natural-language input into 3D models and drawing setups. They use local LLM inference and deterministic C# and .NET. I introduced this capability at the firm.
-- I built OCR ingestion software. It parses existing PDF plan sets. It checks and populates them automatically. This software replaced a manual mark-up loop.
-- I automate repetitive drafting with Python and Dynamo. This automation cuts cycles from 8 to 12 hours to about 30 seconds. It reduces errors before licensed-engineer review by about 25%.
-- I design typed metadata schemas. These schemas attach to model entities. I coordinate standards automation across civil, mechanical, plumbing, and architectural disciplines.
-- I built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks. They parse hundreds of text entities. They rename up to 40 layouts simultaneously in less than 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout.
-- The plugins map messy survey text and compass bearings into Civil 3D extended data. They use graph lookup tables to place 3D structures at exact flow lines.
+- I build CAD generation tools that turn natural-language input into 3D models and drawing setups using local LLMs and C#.
+- I built OCR ingestion software to parse, check, and populate existing PDF plan sets, replacing a manual mark-up loop.
+- I automate repetitive drafting with Python and Dynamo, cutting cycles from 8 hours to 30 seconds and reducing errors by 25%.
+- I design typed metadata schemas that attach to model entities to coordinate standards across disciplines.
+- I built C# plugins for Civil 3D to automate layout, audit drawings, and batch-rename title blocks, preventing long loading delays.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
 *O'Fallon, MO · Apr 2023 - Jun 2024*
 
-- I programmed and operated coordinate measuring machines. I verified precision-machined parts to +/-0.001 inch or tighter against GD&T specifications.
-- I validated dimensional tolerances against CAD models and customer prints. Machining problems showed as geometry mismatches, not downstream scrap.
-- I enforced ISO 9001 across production lines. I integrated Production Part Approval Process documentation. I managed calibration and traceability of metrology assets.
+- I programmed and operated coordinate measuring machines to verify precision-machined parts against GD&T specifications.
+- I validated dimensional tolerances against CAD models and prints to catch geometry mismatches.
+- I enforced ISO 9001 across production lines and managed calibration and traceability of metrology assets.
 
 ### Revit/CAD Technician - Mechanical/Plumbing — Heideman & Associates, Inc.
 *Fenton, MO · May 2018 - Apr 2019*
 
-- I produced mechanical and plumbing construction documents. I built as-built models in Revit and AutoCAD.
-- I audited standards for cross-discipline consistency.
-- I built automated data libraries for building-system objects. I standardized hundreds of outdated details.
+- I produced MEP construction documents and built as-built models in Revit and AutoCAD.
+- I built automated data libraries for building-system objects and standardized outdated details.
 
 ## Projects
 
 ### Digital Twin Pro
 *Personal product, Free Parameter LLC | Flutter/Dart 3, SQLite, Firebase, Google Gemini API, ARCore | github.com/freeParameterized/digital-twin-pro*
 
-- I designed, funded, and shipped a cross-platform 3D inventory application. I released it to a Google Play beta. I built a Windows desktop version.
-- I directed the implementation of a custom 3D renderer. I used LLM assistance to accelerate coding. I worked full-time instead of using a game engine. I architected a painter's-algorithm scene rendering. It uses a Z-sorted draw queue and custom projection.
+- I designed and shipped a cross-platform 3D inventory application to a Google Play beta.
+- I architected a custom 3D renderer with a Z-sorted draw queue and custom projection instead of using a game engine.
 - I added photo-based item detection via a paid Gemini API.
-- I built the database with SQLite to store inventory data locally. I included a move audit log. I added QR booklets and CSV/JSON export.
+- I used SQLite to store inventory data locally with a move audit log, QR booklets, and CSV/JSON export.
 
 ### CAD integration bridge
 *C++17, Dear ImGui, Windows COM | local repository*
 
-- I built a C++17 Dear ImGui host. It COM-bridges BricsCAD, AutoCAD, and Civil 3D.
-- It discovers installed SDKs at runtime. It hot-loads LISP, C#, and BRX plugins. It has about 14,000 lines of code.
+- I built a C++17 Dear ImGui host that COM-bridges BricsCAD, AutoCAD, and Civil 3D.
+- It discovers installed SDKs at runtime, hot-loads LISP, C#, and BRX plugins, and contains about 14,000 lines of code.
 
 ### Interactive Portfolio (this site)
 *React, TypeScript, Three.js, Express, Ollama, Docker*
 
 - I built a React Three Fiber portfolio over an Express API.
-- It retrieves data from a curated corpus. It answers questions through a local model.
-- It degrades to extractive answers when no model runs.
-- I containerize inference models. I deploy them to Linux, macOS, and Windows edge devices.
-- I write Bash scripts for data pipelines.
+- It retrieves data from a curated corpus and answers questions through a local model, degrading gracefully when offline.
+- I containerize inference models and deploy them to Linux, macOS, and Windows edge devices.
 
 ## Education
 
