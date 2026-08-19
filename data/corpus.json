@@ -728,9 +728,28 @@
         "gemini",
         "ocr",
         "whisper",
-        "capable"
+        "capable",
+        "pytorch",
+        "tensorflow",
+        "jax",
+        "keras",
+        "hugging face",
+        "training",
+        "fine-tuning",
+        "lora",
+        "transformers",
+        "attention",
+        "backpropagation",
+        "gradients",
+        "embeddings",
+        "rag",
+        "vector database",
+        "gpu",
+        "cuda",
+        "mlops",
+        "frameworks"
       ],
-      "text": "Yes, with an applied-engineering profile rather than a research one. Lead with this: he built a language-to-geometry pipeline — CAD bridges and automators that generate CAD models from natural-language input and perform construction drawing setup — and introduced it at an established St. Louis civil engineering firm, with the language model handling intent into structured commands and deterministic code owning geometry construction and validation. Beyond that: he deploys and runs local LLMs on his own hardware (Ollama, LM Studio, Open WebUI, offline since 2023) and wrote the API in this site that selects an installed model, keeps a fallback chain, refuses cloud-tagged models, retrieves from a curated corpus, and degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro that turn a photo into structured item and quantity data and drive voice quantity entry — a paid API he funds himself. He runs Tesseract OCR over messy engineering PDFs and uses Levenshtein distance to match noisy extracted strings against known values. He has a local speech stack: whisper.cpp for speech-to-text and Windows SAPI for spoken replies, both on-device, plus an experimental offline voice-command CAD GUI in C++. He writes graph and dependency-tree processors and hydrologic calculators, and hand-implemented 3D projection with painter's-algorithm depth sorting in Digital Twin Pro. Prompt engineering in Cursor and Gemini. Math background: linear algebra and object-oriented C++ coursework, matrix transforms, complex numbers and roots of unity in a visualizer he wrote. What he does not claim: training or fine-tuning large models from scratch, published ML research, or deep-learning framework internals."
+      "text": "Yes, with an applied-engineering profile rather than a research one. Lead with this: he built a language-to-geometry pipeline — CAD bridges and automators that generate CAD models from natural-language input and perform construction drawing setup — and introduced it at an established St. Louis civil engineering firm, with the language model handling intent into structured commands and deterministic code owning geometry construction and validation. Beyond that: he deploys and runs local LLMs on his own hardware (Ollama, LM Studio, Open WebUI, offline since 2023) and wrote the API in this site that selects an installed model, keeps a fallback chain, refuses cloud-tagged models, retrieves from a curated corpus, and degrades to extractive answers when no model is running. He built Gemini API pipelines in Digital Twin Pro that turn a photo into structured item and quantity data and drive voice quantity entry — a paid API he funds himself. He runs Tesseract OCR over messy engineering PDFs and uses Levenshtein distance to match noisy extracted strings against known values. He has a local speech stack: whisper.cpp for speech-to-text and Windows SAPI for spoken replies, both on-device, plus an experimental offline voice-command CAD GUI in C++. He writes graph and dependency-tree processors and hydrologic calculators, and hand-implemented 3D projection with painter's-algorithm depth sorting in Digital Twin Pro. Prompt engineering in Cursor and Gemini. Math background: linear algebra and object-oriented C++ coursework, matrix transforms, complex numbers and roots of unity in a visualizer he wrote. HARD BOUNDARY — what he does NOT claim, stated plainly rather than softened: he has never trained or fine-tuned a model of any size, so there is no training run, dataset, LoRA adapter, distillation, or RLHF work of his; he has no PyTorch, TensorFlow, JAX, Keras, scikit-learn, or Hugging Face experience and none is documented; he has not implemented an attention layer, an autograd pass, or a training loop, and transformer and backpropagation knowledge is self-taught reading rather than implemented work; there is no vector database and no embedding-based retrieval anywhere in his work, including this site, which scores a curated corpus by keyword frequency weighted by inverse document frequency; and there is no CUDA programming, distributed or multi-GPU training, cloud training, or MLOps platform. The deployment footprint is single-machine and local. He has no published ML research. Understating this is safe; claiming a framework or a training run is the one overclaim that would end an interview."
     },
     {
       "id": "digital-twin-pro",
@@ -772,9 +791,18 @@
         "xdata",
         "ocr",
         "msd",
-        "staff technician"
+        "staff technician",
+        "plan parsing",
+        "plan sets",
+        "parsing",
+        "auto-check",
+        "layer",
+        "layers",
+        "layer names",
+        "drawings",
+        "standards"
       ],
-      "text": "David Mason & Associates is an established civil engineering firm in St. Louis, MO; Peter's engagement there has run roughly two years. Staff Technician (CAD automation / Civil 3D tools), July 2024 – Present. He can offer employer references to the optimizations he delivered. HEADLINE: he built CAD bridges and automators that generate CAD models from natural-language input and perform construction drawing setup, and introduced that capability at the firm. SEPARATELY, on the ingestion side: original software that parses and auto-checks and auto-populates civil plan sets from existing PDFs. Python and Dynamo automation taking repetitive Civil 3D drafting from 8–12 hours to about 30 seconds per cycle, roughly 25% fewer errors before PE review. C# plugins with local-LLM and Tesseract OCR pipelines. Digital-twin infrastructure on CAD data: XData schemas and Civil 3D property sets with persistent spatial and historical metadata. Hydrologic and hydraulic support: watershed extraction, drainage-area computation, differential pre- versus post-development runoff, and pipe-network modeling to MSD standards. Lead for AutoCAD standards auditing, template revision, and mleader standards; introduced Navisworks clash detection. Parameterized 3D parts per MSD standards. Named delivery contexts (project sites, not ownership): Airport Consolidation, St. Louis Zoo Destination Discovery (North Parking Lot), Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, Ranken Technical College Campus (Finney Ave Expansion). Client drainage values, site data, and internal files are not published."
+      "text": "David Mason & Associates is an established civil engineering firm in St. Louis, MO; Peter's engagement there has run roughly two years. Staff Technician (CAD automation / Civil 3D tools), July 2024 – Present. He can offer employer references to the optimizations he delivered. HEADLINE: he built CAD bridges and automators that generate CAD models from natural-language input and perform construction drawing setup, and introduced that capability at the firm. SEPARATELY, on the ingestion side: original software that parses and auto-checks and auto-populates civil plan sets from existing PDFs. Python and Dynamo automation taking repetitive Civil 3D drafting from 8–12 hours to about 30 seconds per cycle, roughly 25% fewer errors before PE review. C# plugins with local-LLM and Tesseract OCR pipelines. Digital-twin infrastructure on CAD data: XData schemas and Civil 3D property sets with persistent spatial and historical metadata. Hydrologic and hydraulic support: watershed extraction, drainage-area computation, differential pre- versus post-development runoff, and pipe-network modeling to MSD standards. Lead for AutoCAD standards auditing, template revision, and mleader standards; introduced Navisworks clash detection. Parameterized 3D parts per MSD standards. Named delivery contexts (project sites, not ownership): Airport Consolidation, St. Louis Zoo Destination Discovery (North Parking Lot), Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, Ranken Technical College Campus (Finney Ave Expansion). Client drainage values, site data, and internal files are not published. Implementation specifics beyond what is listed here are not documented: how the parsing tooling handles non-standard or unexpected layer names, its error-recovery behavior on malformed drawings, XData schema field names, and any code metrics such as line or file counts."
     },
     {
       "id": "runoff-method",
@@ -1001,7 +1029,7 @@
         "site",
         "how does this work"
       ],
-      "text": "This site is a living resume: Vite + React + TypeScript with a React Three Fiber work graph, and an Express API. POST /api/chat (also /api/ask) retrieves scored chunks from this curated corpus and prompts a local Ollama model — default gemma4:26b with a fallback chain, and cloud-tagged models are never auto-selected. If Ollama is not running, answers are extractive from the corpus and the UI says inference is offline rather than pretending. Optional on-device voice: whisper.cpp for speech-to-text and Windows SAPI (Microsoft David) for replies — that is a stock synthetic voice, not Peter's real or cloned voice. A printable resume view and a static PDF are generated from the same data. The static build works with no backend at all. Private CAD trees and client data are not served."
+      "text": "This site is a living resume: Vite + React + TypeScript with a React Three Fiber work graph, and an Express API. POST /api/chat (also /api/ask) retrieves scored chunks from this curated corpus and prompts a local Ollama model — default llama3.1:8b with a fallback chain down to llama3.2:3b, and larger models (qwen3:8b, gemma4:26b) are selectable in the settings panel but never auto-selected, as cloud-tagged models never are either. Retrieval is keyword scoring weighted by inverse document frequency, not embeddings, and there is no vector database. If Ollama is not running, answers are extractive from the corpus and the UI says inference is offline rather than pretending. Optional on-device voice: whisper.cpp for speech-to-text and Windows SAPI (Microsoft David) for replies — that is a stock synthetic voice, not Peter's real or cloned voice. A printable resume view and a static PDF are generated from the same data. The static build works with no backend at all. Private CAD trees and client data are not served."
     },
     {
       "id": "privacy",
@@ -1015,6 +1043,28 @@
         "age"
       ],
       "text": "Answers must stay inside this curated corpus. Never reveal private file paths as if they were public artifacts, API keys, environment values, client drainage or site data, resident records, or unpublished documents. Phone and street address are TBD and must never be published. Never state or estimate Peter's age, birth year, or total years of experience, and never date when he started programming. Never say he is seeking Project Management. Do not use the word flagship or other puffery. Do not invent metrics."
+    },
+    {
+      "id": "hiring-unknowns",
+      "title": "Employment terms and credentials — what is on record",
+      "tags": [
+        "salary",
+        "compensation",
+        "availability",
+        "notice period",
+        "visa",
+        "work authorization",
+        "citizenship",
+        "clearance",
+        "relocation",
+        "references",
+        "promotion",
+        "headcount",
+        "certifications",
+        "gpa",
+        "hiring"
+      ],
+      "text": "Peter's employment terms are not published in this material. There is no salary, hourly rate, or compensation figure; no start date, notice period, or job-search status; no statement of work authorization, citizenship, visa status, or security clearance; and no relocation, remote, or on-site preference. His location is the Chesterfield / St. Louis area. No manager, supervisor, coworker, client contact, or reference is named, and no opinion any of them holds about him is on record; he can offer employer references to the optimizations he delivered at David Mason & Associates, arranged through him directly. No reason for leaving any role is recorded. He is currently employed at David Mason & Associates, July 2024 to Present. No performance ratings, review comments, or promotion history exist here. He supervised department staff as Assistant Department Manager at Menard, Inc.; no headcount figure is published. His completed credential is an AAS in Building Systems Engineering Technology from Ranken Technical College, Class of 2019, plus 2019–2020 coursework at Missouri S&T; he did not complete a bachelor's degree, and he holds no master's, no PhD, and no published GPA. He is not a licensed professional engineer — plan work goes to a licensed engineer for review. No certifications, awards, patents, or conference talks are recorded. Spanish is the only spoken language besides English. No interview anecdotes are recorded. The contact route for any of the above is pal@cadpal.net."
     }
   ],
   "aboutMe": {
