@@ -110,7 +110,7 @@ export default function App() {
           </p>
           <ul className="resume-metrics">
             <li>C# / .NET plugins in daily production use</li>
-            <li>40 layouts renamed in under 1.7 seconds</li>
+            <li>C++17 COM bridge across three CAD platforms</li>
             <li>8-12 hour drafting cycle cut to ~30 seconds</li>
             <li>Digital Twin Pro shipped solo to Play beta</li>
           </ul>

@@ -98,7 +98,7 @@ const GUARDED: Rule[] = [
     id: "ml-frameworks",
     test: /\b(pytorch|tensorflow|\bkeras\b|\bjax\b|scikit.?learn|sklearn|hugging\s*face|\bonnx\b|\bmxnet\b|\bcaffe\b|\btorch\b|xgboost|lightgbm|\bnumpy\b|\bpandas\b)\b/i,
     answer:
-      "No framework work is documented for him: no PyTorch, TensorFlow, JAX, Keras, or Hugging Face code, and I am not going to imply otherwise. What he has built sits a layer above the framework - deploying and running local models and engineering systems around them. That means Ollama, LM Studio, and Open WebUI on hardware he owns, offline since 2023, under his own company rather than at his employer; the CAD command pipeline at the firm, which runs on an enterprise chat plan and where deterministic C#/.NET code owns the geometry and its validation; Tesseract OCR over messy engineering PDFs with Levenshtein matching on the noisy output; whisper.cpp speech-to-text; and Gemini API pipelines in Digital Twin Pro that turn a photo into structured item and quantity data. If a specific framework is a hard requirement, treat it as something he would be picking up rather than something he has shipped.",
+      "No framework work is documented for him: no PyTorch, TensorFlow, JAX, Keras, or Hugging Face code, and I am not going to imply otherwise. What he has built sits a layer above the framework, and the compiled code is the substance of it: the typed-command CAD pipeline at the firm, where deterministic C#/.NET code against the CAD API constructs the geometry and validates it before commit; Tesseract OCR over messy engineering PDFs with Levenshtein matching on the noisy output; whisper.cpp speech-to-text; and Gemini API pipelines in Digital Twin Pro that turn a photo into structured item and quantity data. Under Free Parameter LLC he also runs Ollama, LM Studio, and Open WebUI locally, offline since 2023. If a specific framework is a hard requirement, treat it as something he would be picking up rather than something he has shipped.",
   },
   {
     id: "ml-training",
@@ -128,7 +128,7 @@ const GUARDED: Rule[] = [
     id: "ml-infra",
     test: /\b(gpu|gpus|cuda|\btpu\b|nvidia|distributed training|multi.?gpu|deepspeed|megatron|\bnccl\b|kubeflow|mlflow|weights (and|&) biases|wandb|sagemaker|vertex ai|\bmlops\b|model registry|feature store|kubernetes|\bk8s\b|triton|\bvllm\b)\b/i,
     answer:
-      "Local inference on hardware he owns, and nothing past that is documented. No CUDA kernels, no distributed or multi-GPU training, no cloud training, and no MLOps platform - no Kubeflow, MLflow, Weights and Biases, SageMaker, or model registry. What exists is a single-machine setup he built and runs: Ollama and LM Studio serving quantized models offline since 2023, whisper.cpp for on-device speech-to-text, and the API on this site that selects an installed model, keeps a fallback chain, refuses cloud-tagged models, and degrades to extractive corpus answers when nothing is running. His infrastructure instinct is local and offline rather than managed cloud.",
+      "Nothing past a single machine is documented. No CUDA kernels, no distributed or multi-GPU training, no cloud training, and no MLOps platform - no Kubeflow, MLflow, Weights and Biases, SageMaker, or model registry. What exists is a setup he built and runs under Free Parameter LLC: Ollama and LM Studio serving quantized models offline since 2023, whisper.cpp for on-device speech-to-text, and the API on this site that selects an installed model, keeps a fallback chain, refuses cloud-tagged models, and degrades to extractive corpus answers when nothing is running. His infrastructure instinct is local and offline rather than managed cloud.",
   },
   {
     id: "ml-scale",
@@ -137,13 +137,13 @@ const GUARDED: Rule[] = [
     // serving-scale one; project-metrics answers that better.
     not: /digital\s*twin|\bdtp\b|play store|google play|revenue|downloads?|\brating/i,
     answer:
-      "One firm and one machine, not a fleet, and no numbers are published. What is actually deployed is the CAD automation and language-to-geometry tooling in daily use by colleagues at an established St. Louis engineering firm, the software that parses and auto-checks and auto-populates civil plan sets from existing PDFs, Digital Twin Pro on a Google Play beta, and this site. No request volumes, user counts, or throughput figures are documented and I will not estimate any. There is no high-traffic model-serving experience in his record: the inference footprint is local, single-machine, and offline by design.",
+      "One firm and one machine, not a fleet, and no numbers are published. What is actually deployed is the CAD automation and the typed-command CAD pipeline in daily use by colleagues at an established St. Louis engineering firm, the software that parses and auto-checks and auto-populates civil plan sets from existing PDFs, Digital Twin Pro on a Google Play beta, and this site. No request volumes, user counts, or throughput figures are documented and I will not estimate any. There is no high-traffic model-serving experience in his record: the inference footprint is local, single-machine, and offline by design.",
   },
   {
     id: "ml-papers",
     test: /\b(papers?|arxiv|literature|research|blogs?|newsletters?|podcasts?|books?)\b.{0,40}\b(read|reading|follow|following|recent|recently|latest|keep up|keeping up|up to date)\b|\b(read|reading|follow|following|keeping up with)\b.{0,30}\b(papers?|arxiv|literature|research|blogs?)\b|what.{0,20}(are you|is he) reading/i,
     answer:
-      "The notes do not record what he reads, so I will not invent a reading list. What they do record is what he has built with the ideas: local LLM deployment on his own hardware since 2023, a language-to-geometry pipeline where a model handles intent and deterministic code owns the geometry, keyword retrieval over a curated corpus, OCR and structured-data extraction from messy engineering PDFs, and on-device speech. What he has been reading lately is his answer to give, not mine.",
+      "The notes do not record what he reads, so I will not invent a reading list. What they do record is what he has built with the ideas: a typed-command CAD pipeline where deterministic C# and .NET code constructs the geometry and validates it, keyword retrieval over a curated corpus, OCR and structured-data extraction from messy engineering PDFs, on-device speech, and local model deployment under Free Parameter LLC since 2023. What he has been reading lately is his answer to give, not mine.",
   },
 
   // ---- Behavioral. The proven fabrication vector: it once invented a CMM incident at CBP. ----
@@ -164,21 +164,21 @@ const GUARDED: Rule[] = [
     id: "no-difficulty",
     test: /\b(hardest|toughest|trickiest|most (difficult|challenging|frustrating)|biggest (challenge|obstacle|hurdle)|hard(est)? part|difficult part|painful part)\b|what (was|went) (difficult|wrong|badly)|struggle[ds]? with|what fought back|biggest headache/i,
     answer:
-      "What he found hard is not recorded, and I would rather not invent a struggle on his behalf. What is documented is what the work actually is: the Digital Twin Pro renderer is a custom implementation rather than a wrapper around a game engine - SceneRenderer and Projection3D with a Z-sorted painter's-algorithm draw queue over a SQLite inventory model, with the 3D projection and depth sorting architected by him and executed with LLM assistance. On the language-to-geometry side the deliberate choice was keeping the model out of anything that has to be correct, so deterministic code owns construction and validation. Which part fought back hardest is a good question and his to answer at " +
+      "What he found hard is not recorded, and I would rather not invent a struggle on his behalf. What is documented is what the work actually is: the Digital Twin Pro renderer is a custom implementation rather than a wrapper around a game engine - SceneRenderer and Projection3D with a Z-sorted painter's-algorithm draw queue over a SQLite inventory model, with the 3D projection and depth sorting architected by him and executed with LLM assistance. On the CAD command pipeline the deliberate choice was keeping the model out of anything that has to be correct, so deterministic code owns construction and validation. Which part fought back hardest is a good question and his to answer at " +
       `${EMAIL}.`,
   },
   {
     id: "handles-feedback",
     test: /how (do|does) (you|he|they|peter) (handle|deal with|respond to|react to|take)\s+(\w+\s+){0,2}(pressure|conflict|criticism|critique|stress|feedback|rejection|setbacks?|disagreements?|being wrong|mistakes)|(receiving|taking|getting) (critical )?(feedback|criticism)|how (do|does) (you|he) work under pressure/i,
     answer:
-      "The notes do not record how he handles it, and I am not going to characterize his temperament for him. What they do record is a working style built around review rather than against it: plan sets go to a licensed engineer for review and his quality pass cut drafting errors roughly 25% before that review, he worked under ISO 9001 quality-system and production part approval requirements in manufacturing, and in the language-to-geometry pipeline he deliberately keeps the model out of the part that has to be correct, so a mistake surfaces as failed validation instead of a plausible wrong number. Someone who builds that way has a view about being checked, but the anecdote is his to tell at " +
+      "The notes do not record how he handles it, and I am not going to characterize his temperament for him. What they do record is a working style built around review rather than against it: plan sets go to a licensed engineer for review and his quality pass cut drafting errors roughly 25% before that review, he worked under ISO 9001 quality-system and production part approval requirements in manufacturing, and in the typed-command CAD pipeline he deliberately keeps the model out of the part that has to be correct, so a mistake surfaces as failed validation instead of a plausible wrong number. Someone who builds that way has a view about being checked, but the anecdote is his to tell at " +
       `${EMAIL}.`,
   },
   {
     id: "no-anecdotes",
     test: /tell me about a time|describe a (time|situation|scenario)|give me an example of (a time|when)|walk me through a time|share a (story|time)|biggest (failure|mistake|regret|weakness|challenge|struggle)|(your|his) (weakness|weaknesses|biggest failure|worst trait|shortcoming|blind spot)|went (badly|wrong|sideways|poorly)|conflict with a (coworker|colleague|manager|boss|client|teammate)|disagree(d|ment)|how do (you|they|he) handle\s+(\w+\s+)?(pressure|conflict|criticism|critique|stress|failure|feedback|rejection|setbacks?)|(missed|blew|blown|slipped) a (deadline|date|deliverable)|deadline (you|he) (missed|blew)|time (you|he) (was|were) wrong|describe a failure|failure (you|he) (owned|had)|(led|managed) a team through|time (you|he) led/i,
     answer:
-      "His interview stories are not in the notes I work from, and I would rather not invent one - a made-up anecdote is the one thing here that could actually embarrass him. What is documented is the work itself: the language-to-geometry pipeline at David Mason & Associates, the plan-parsing tooling that cut a repetitive drafting cycle from 8-12 hours to about 30 seconds, the quality pass that cut drafting errors roughly 25% before licensed-engineer review, and Digital Twin Pro on his own time. Ask him that question directly at " +
+      "His interview stories are not in the notes I work from, and I would rather not invent one - a made-up anecdote is the one thing here that could actually embarrass him. What is documented is the work itself: the typed-command CAD pipeline at David Mason & Associates, the plan-parsing tooling that cut a repetitive drafting cycle from 8-12 hours to about 30 seconds, the quality pass that cut drafting errors roughly 25% before licensed-engineer review, and Digital Twin Pro on his own time. Ask him that question directly at " +
       `${EMAIL} and you will get a better answer than I can give.`,
   },
   {
@@ -226,7 +226,7 @@ const GUARDED: Rule[] = [
     id: "proudest",
     test: /(proudest|most proud|proud of|biggest (achievement|accomplishment|win|success)|greatest (accomplishment|achievement)|best work|crowning)/i,
     answer:
-      "The notes do not rank his work or record how he feels about it, so take this as the record rather than as his answer. What stands out in it: the language-to-geometry pipeline he introduced at an established St. Louis engineering firm, where a locally hosted model handles intent and deterministic code owns geometry and validation; the plan-parsing tooling that cut a repetitive drafting cycle from 8-12 hours to about 30 seconds; the quality pass that cut drafting errors roughly 25% before licensed-engineer review; and Digital Twin Pro, which he designed, funded, built, and shipped to a Google Play beta on his own time, renderer included. Which of those he is proudest of is a question for him.",
+      "The notes do not rank his work or record how he feels about it, so take this as the record rather than as his answer. What stands out in it: the typed-command CAD pipeline he introduced at an established St. Louis engineering firm, where deterministic C# and .NET code constructs the geometry and validates it before commit; the plan-parsing tooling that cut a repetitive drafting cycle from 8-12 hours to about 30 seconds; the quality pass that cut drafting errors roughly 25% before licensed-engineer review; and Digital Twin Pro, which he designed, funded, built, and shipped to a Google Play beta on his own time, renderer included. Which of those he is proudest of is a question for him.",
   },
 
   // ---- Employment terms. A website should not answer any of these. ----
@@ -259,7 +259,7 @@ const GUARDED: Rule[] = [
     test: /relocat(e|ion|ing)|willing to move|\bmove to\b|\bon.?site\b|\bin.?office\b|fully remote|work remote(ly)?|remote (role|work|position|only)|\bhybrid\b|commut(e|ing)|would you move|based out of/i,
     not: /remote (repo|repository|branch|origin)|git remote|no remote/i,
     answer:
-      "Relocation, remote, and on-site preferences are not documented here, so I will not speak for him in either direction - that answer belongs to him rather than to a website, and getting it wrong could cost him a conversation he wanted. He is based in the Chesterfield / St. Louis area, and the machine-learning work he does runs on hardware he owns locally. Email him at " +
+      "Relocation, remote, and on-site preferences are not documented here, so I will not speak for him in either direction - that answer belongs to him rather than to a website, and getting it wrong could cost him a conversation he wanted. He is based in the Chesterfield / St. Louis area. Email him at " +
       `${EMAIL} to talk about location and arrangement.`,
   },
   {
@@ -385,7 +385,7 @@ const GUARDED: Rule[] = [
     id: "client-confidential",
     test: /(confidential|proprietary|nda\b|internal|private|client)\b.{0,40}(project|client|data|detail|number|file|drawing|site)|drainage (number|numbers|values?)|contract value|project (budget|cost|fee)|(zoo|airport|wildcare|wohl|pgva|wentzville|bjc|ranken).{0,30}(number|numbers|value|budget|cost|data|detail)|resident record/i,
     answer:
-      "He does not publish client data and I do not have it. Drainage values, site data, resident records, contract values, budgets, and internal files from engineering projects stay out of this entirely. What can be described is the nature of the work at David Mason & Associates: CAD automation and language-to-geometry tooling, software that parses and auto-checks civil plan sets from existing PDFs, digital-twin metadata on CAD entities through XData schemas and Civil 3D property sets, and hydrologic and hydraulic support including differential pre- versus post-development runoff and pipe-network modeling to Metropolitan St. Louis Sewer District standards. Project names appear on his resume as delivery context rather than ownership, and the numbers behind them are not mine to give.",
+      "He does not publish client data and I do not have it. Drainage values, site data, resident records, contract values, budgets, and internal files from engineering projects stay out of this entirely. What can be described is the nature of the work at David Mason & Associates: CAD automation and the typed-command CAD pipeline, software that parses and auto-checks civil plan sets from existing PDFs, digital-twin metadata on CAD entities through XData schemas and Civil 3D property sets, and hydrologic and hydraulic support including differential pre- versus post-development runoff and pipe-network modeling to Metropolitan St. Louis Sewer District standards. Project names appear on his resume as delivery context rather than ownership, and the numbers behind them are not mine to give.",
   },
 ];
 
@@ -395,7 +395,7 @@ const RULES: Rule[] = [
     id: "dtp-attribution",
     test: /digital\s*twin.*(at work|for work|at dma|through dma|your job|on the job|company (project|work)|work project)|(\bdid|\bwas)\s+(you|it).*(dma|at work).*digital\s*twin/i,
     answer:
-      "No, that one is his own. Digital Twin Pro is a personal project he built on his own time under Free Parameter LLC, not DMA work: he designed it, funded it, wrote it, and shipped it to a Google Play beta himself, including the Flutter 3D renderer. His DMA work is separate, and that is where the language-to-geometry pipeline and the plan-parsing automation live.",
+      "No, that one is his own. Digital Twin Pro is a personal project he built on his own time under Free Parameter LLC, not DMA work: he designed it, funded it, wrote it, and shipped it to a Google Play beta himself, including the Flutter 3D renderer. His DMA work is separate, and that is where the CAD command pipeline and the plan-parsing automation live.",
   },
   {
     id: "digital-twin-pro",
@@ -407,7 +407,7 @@ const RULES: Rule[] = [
     id: "language-to-geometry",
     test: /language.to.geometry|language to geometry|nl.?to.?cad|natural language.*(cad|geometry|3d|model)|(cad|geometry|3d model).*natural language/i,
     answer:
-      "Language-to-geometry means you describe what you want in ordinary words and the system produces real 3D geometry from it. Peter built it as a natural-language interface that generates 3D models and sets up engineering deliverables: a locally hosted LLM interprets the request, and deterministic code owns the actual construction and validation, so the output can be checked instead of trusted. The model is only used for understanding intent, never for silently deciding something that has to be correct. He introduced that capability at an established St. Louis engineering firm over roughly a two-year engagement. It is separate from the parsing work, which reads drawings that already exist.",
+      "That is the typed-command CAD pipeline Peter built. It maps a written request onto a typed command schema. Deterministic C# and .NET code then constructs the geometry and validates it before commit. The model never emits geometry and never sets a value that has to be correct, so a bad request fails a check instead of shipping a plausible wrong number. He introduced that capability at an established St. Louis engineering firm over roughly a two-year engagement. It is separate from the parsing work, which reads drawings that already exist.",
   },
   {
     // Routed to the model this took ~3.1s and drifted into first person; the facts are fixed,
@@ -423,19 +423,19 @@ const RULES: Rule[] = [
     id: "ml-experience",
     test: /\b(ml|machine.learning|\bai\b|llm|inference|model)\b.*(experience|background|work|do you|have you)|what.*(ml|machine.learning|ai).*(experience|background)|tell me about your (ml|ai|machine.learning)/i,
     answer:
-      "His strongest machine-learning work is the language-to-geometry pipeline: a natural-language interface that generates 3D models and sets up engineering deliverables, with an enterprise chat plan handling intent while deterministic code owns construction and validation. That firm work is not local inference. Around that he builds retrieval, OCR, and structured-data pipelines over messy real-world input. Since 2023 his own local-model work has run under Free Parameter LLC on hardware he owns rather than a rented API, this site included: chat runs on local Ollama and speech on whisper.cpp. It is applied and systems work rather than research: he has not trained or fine-tuned models, and he would rather say so than blur it.",
+      "His strongest machine-learning work is the typed-command CAD pipeline at David Mason & Associates. It maps a written request onto a typed command schema. Deterministic C# and .NET code then constructs the geometry and validates it before commit, so a bad request fails a check instead of shipping a plausible wrong number. Around that he builds retrieval, OCR, and structured-data pipelines over messy real-world input in C#, Python, and C++17. Since 2023 he has also run local models under Free Parameter LLC, this site included: chat runs on local Ollama and speech on whisper.cpp. It is applied and systems work rather than research: he has not trained or fine-tuned models, and he would rather say so than blur it.",
   },
   {
     id: "site-stack",
     test: /(what|which) model.{0,30}(running|powering|answering|behind|used|is this)|running (this|the) chat|what.{0,20}(powers|drives) (this|the) (chat|site)|how does this (site|chat) work|what is this (site|chat) (built|running) (on|with)|tech stack/i,
     answer:
-      "Chat runs on a local Ollama model on hardware Peter owns - llama3.1:8b by default, with a fallback chain down to llama3.2:3b, and larger models like qwen3:8b and gemma4:26b selectable in the settings panel, which also shows which one is actually answering. Cloud-tagged models are never auto-selected. Retrieval scores a curated corpus by keyword and hands the top chunks to that model, and if Ollama is not running the site answers extractively from corpus text and says inference is offline instead of pretending. Speech is on-device too: whisper.cpp for speech-to-text and Windows SAPI for spoken replies, which is a stock synthetic voice rather than Peter's. The front end is Vite, React, TypeScript, and React Three Fiber over an Express API.",
+      "Chat runs on a local Ollama model - llama3.1:8b by default, with a fallback chain down to llama3.2:3b, and larger models like qwen3:8b and gemma4:26b selectable in the settings panel, which also shows which one is actually answering. Cloud-tagged models are never auto-selected. Retrieval scores a curated corpus by keyword and hands the top chunks to that model, and if Ollama is not running the site answers extractively from corpus text and says inference is offline instead of pretending. Speech is on-device too: whisper.cpp for speech-to-text and Windows SAPI for spoken replies, which is a stock synthetic voice rather than Peter's. The front end is Vite, React, TypeScript, and React Three Fiber over an Express API.",
   },
   {
     id: "origin-story",
     test: /(got|get) (you|him) into (programming|coding|software)|how did (you|he) (start|get started|begin)|why (did you|do you) (start|program|code)|start(ed)? programming/i,
     answer:
-      "Adventure games first, then the APIs underneath them. Peter started as a kid writing scripts in Adventure Game Studio to build point-and-click adventure games, using AGS's own C-style scripting language, and making a world behave by typing at it is the part that stuck. Real C++ came next in Visual Studio, then CAD APIs in C#, Python, and LISP, where he built tools that generate models from natural-language input and parse existing plan sets to auto-check them, cutting a repetitive drafting cycle from 8-12 hours to about 30 seconds. Since 2023 it has been local LLMs on his own hardware, plus Digital Twin Pro on his own time.",
+      "Adventure games first, then the APIs underneath them. Peter started as a kid writing scripts in Adventure Game Studio to build point-and-click adventure games, using AGS's own C-style scripting language, and making a world behave by typing at it is the part that stuck. Real C++ came next in Visual Studio, then CAD APIs in C#, Python, and LISP. There he built tooling that parses existing plan sets and auto-checks them, cutting a repetitive drafting cycle from 8-12 hours to about 30 seconds, and the typed-command CAD pipeline, where deterministic code constructs the geometry and validates it before commit. Since 2023 he has also run local LLMs under Free Parameter LLC, plus Digital Twin Pro on his own time.",
   },
   {
     id: "teamwork",
@@ -453,7 +453,7 @@ const RULES: Rule[] = [
     id: "identity",
     test: /who is peter|who are you|tell me about (yourself|peter|him)|introduce (yourself|peter)|what do you do/i,
     answer:
-      "Peter Lilley is a software engineer in St. Louis who ships production systems other professionals depend on daily. His strongest work is language-to-geometry: a natural-language interface he built that generates 3D models and sets up engineering deliverables, with locally hosted LLM inference handling intent and deterministic code owning construction and validation. He introduced that capability at an established St. Louis engineering firm over roughly a two-year engagement, and around it he builds retrieval, OCR, and structured-data pipelines over messy real-world input in C#, Python, C++17, TypeScript, and Dart. On his own time he designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application with a hand-written renderer, to a Google Play beta. The domain happens to be civil engineering and CAD, but the engineering is what transfers.",
+      "Peter Lilley is a software engineer in St. Louis who ships production systems other professionals depend on daily. He writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs, with matrix math and typed data schemas underneath. His strongest work is the typed-command CAD pipeline he introduced at an established St. Louis engineering firm over roughly a two-year engagement: it maps a written request onto a typed command schema, and deterministic C# and .NET code then constructs the geometry and validates it before commit. Around it he builds retrieval, OCR, and structured-data pipelines over messy real-world input. On his own time he designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application with a hand-written renderer, to a Google Play beta. The domain happens to be civil engineering and CAD, but the engineering is what transfers.",
   },
 ];
 
@@ -467,13 +467,13 @@ const DEFLECTIONS: Rule[] = [
     id: "no-aspirations",
     test: /want to work on next|where do you see (yourself|himself)|career (goal|goals|plan|plans|path)|what are you looking for|next role|dream job|five years|long.term goals?/i,
     answer:
-      "What he is aiming at next is his to say, not mine - these notes cover what he has built rather than where he wants to go. What they show is the shape of the work he keeps choosing: locally hosted inference on hardware he owns, natural language in and validated 3D geometry out, and tools other professionals use daily. He is the right person to ask about the rest.",
+      "What he is aiming at next is his to say, not mine - these notes cover what he has built rather than where he wants to go. What they show is the shape of the work he keeps choosing: deterministic systems with typed schemas and validation around anything that has to be correct, and tools other professionals use daily. He is the right person to ask about the rest.",
   },
   {
     id: "no-favorites",
     test: /favorite|favourite|prefer (python|c#|c\+\+|typescript|rust|java)|which language do you (like|prefer)|best (language|framework|editor|ide)/i,
     answer:
-      "The notes do not record his favorites, so I will not make one up. What they do record is what he actually ships in: C#, Python, C++17, TypeScript, and Dart, plus LISP where CAD APIs require it. Dart and Flutter for Digital Twin Pro, C#/.NET and C++ for the CAD automation and the language-to-geometry work.",
+      "The notes do not record his favorites, so I will not make one up. What they do record is what he actually ships in: C#, Python, C++17, TypeScript, and Dart, plus LISP where CAD APIs require it. Dart and Flutter for Digital Twin Pro, C#/.NET and C++ for the CAD automation and the command pipeline.",
   },
   {
     id: "no-timeline",
@@ -570,7 +570,7 @@ export function quickAnswer(question: string): QuickAnswer | null {
     return {
       id: "refuse-environment",
       answer:
-        "I don't publish anything about the machine this runs on: no file paths, usernames, hostnames, environment values, or API keys. What is public is the architecture rather than the box - chat is a local Ollama model with keyword retrieval over a curated corpus, speech is whisper.cpp on-device, and all of it runs on hardware Peter owns rather than a rented API. Ask about the design and I will go into as much detail as you want.",
+        "I don't publish anything about the machine this runs on: no file paths, usernames, hostnames, environment values, or API keys. What is public is the architecture rather than the box - chat is a local Ollama model with keyword retrieval over a curated corpus, and speech is whisper.cpp on-device. Ask about the design and I will go into as much detail as you want.",
     };
   }
 

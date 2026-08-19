@@ -10,9 +10,10 @@ const MODELS = process.argv.slice(2).length
 const PROMPT = `You are Peter Lilley's resume assistant. Answer in 3 sentences.
 
 CORPUS EXCERPT:
-Peter Lilley is a software engineer in St. Louis who builds language-to-geometry systems:
-natural language in, 3D CAD geometry out, with locally hosted LLM inference and
-deterministic validation. He works at DMA and built Digital Twin Pro as a personal project.
+Peter Lilley is a software engineer in St. Louis who builds a typed-command CAD pipeline.
+It maps a written request onto a typed command schema. Deterministic C# and .NET code then
+constructs the geometry and validates it before commit. He works at DMA and built Digital
+Twin Pro as a personal project.
 
 QUESTION:
 Who is Peter?
