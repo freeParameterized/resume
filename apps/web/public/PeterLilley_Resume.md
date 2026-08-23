@@ -18,7 +18,7 @@ Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, a
 ## Experience
 
 ### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
-*St. Louis, MO · Jul 2024 - August 2026*
+*St. Louis, MO · Jul 2024 - Aug 2026*
 
 - Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.
 - Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.
@@ -69,7 +69,7 @@ Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, a
 
 ## Education
 
-### Calculus II (CLEP Credit) — Saint Louis University (SLU)
+### Calculus II (CLEP credit) — Saint Louis University (SLU)
 *St. Louis, MO · 2018*
 
 Accepted by Ranken Technical College for their calculus curriculum.

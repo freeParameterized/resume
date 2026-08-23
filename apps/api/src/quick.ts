@@ -443,13 +443,13 @@ const RULES: Rule[] = [
     id: "resume",
     test: /resume|\bcv\b|download.*(pdf|resume)|(pdf|printable).*(resume|cv)/i,
     answer:
-      `Yes, here it is: ${RESUME_PDF}. It is a one-to-two page PDF with real selectable text rather than an image, so applicant tracking systems can read it, and there is a plain-text version at /PeterLilley_Resume.txt if a job portal wants something pasteable. You will also find a "Download my resume (PDF)" link just below this chat box, and a print view at /resume.`,
+      `Yes, here it is: ${RESUME_PDF}. It is a one-to-two page PDF with real selectable text rather than an image, so applicant tracking systems can read it, and there is a plain-text version at /PeterLilley_Resume.txt if a job portal wants something pasteable. You will also find a "Download my resume (PDF)" link just below this chat box, and a print view at ?resume=1.`,
   },
   {
     id: "identity",
     test: /who is peter|who are you|tell me about (yourself|peter|him)|introduce (yourself|peter)|what do you do/i,
     answer:
-      "Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Uses prompt engineering, and keeps token use down by fixing syntax errors and doing basic refactors by hand. At David Mason & Associates, Jul 2024 to August 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
+      "Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Uses prompt engineering, and keeps token use down by fixing syntax errors and doing basic refactors by hand. At David Mason & Associates, Jul 2024 to Aug 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
   },
 ];
 

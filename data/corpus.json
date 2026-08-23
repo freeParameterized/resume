@@ -148,7 +148,7 @@
       "org": "David Mason & Associates",
       "location": "St. Louis, MO",
       "title": "Staff Technician (CAD automation / Civil 3D tools)",
-      "dates": "Jul 2024 - August 2026",
+      "dates": "Jul 2024 - Aug 2026",
       "bullets": [
         "Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.",
         "Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.",
@@ -208,7 +208,7 @@
       "id": "slu",
       "org": "Saint Louis University (SLU)",
       "location": "St. Louis, MO",
-      "credential": "Calculus II (CLEP Credit)",
+      "credential": "Calculus II (CLEP credit)",
       "dates": "2018",
       "notes": [
         "Accepted by Ranken Technical College for their calculus curriculum."
@@ -638,7 +638,7 @@
         "github",
         "free parameter"
       ],
-      "text": "Peter A. Lilley. Staff Technician at David Mason & Associates, Jul 2024 to August 2026. Chesterfield / St. Louis, MO. Free Parameter LLC. Email pal@cadpal.net. Public GitHub is https://github.com/freeParameterized."
+      "text": "Peter A. Lilley. Staff Technician at David Mason & Associates, Jul 2024 to Aug 2026. Chesterfield / St. Louis, MO. Free Parameter LLC. Email pal@cadpal.net. Public GitHub is https://github.com/freeParameterized."
     },
     {
       "id": "summary",
@@ -783,7 +783,7 @@
         "title block",
         "audit"
       ],
-      "text": "Worked at David Mason & Associates in St. Louis, MO from Jul 2024 to August 2026. Staff Technician. Built CAD bridges and automators. A written request is turned into a command the plugins already understand, then C# talks to Civil 3D. They also do construction drawing setup. Built software that parses and auto-checks civil plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes. It reduced errors before PE review by about 25%. Built C# plugins with Tesseract OCR pipelines. Built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They parse hundreds of text entities, audit drawings, and export traceability logs. Also built a color-coded IntelliSense-style layer and entity search GUI with autocomplete, dynamic entity pull, and a local phrase-to-command lookup so less experienced CAD users can move entities, run basic draw commands, retarget objects onto other layers, and otherwise edit uniformly across layouts in one command instead of clicking layout by layout. Minutes of sequential clicks, often hundreds, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them. These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout. Used C# to parse messy survey text and compass bearings into XData. Built graph lookup tables to map 3D structures to exact flow lines. Built digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. Computes watershed data, drainage areas, and differential runoff. Models pipe networks to MSD standards. Audits AutoCAD standards and revises templates. Introduced Navisworks clash detection. Creates parameterized 3D parts per MSD standards. Worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. Does not publish client drainage values or site data."
+      "text": "Worked at David Mason & Associates in St. Louis, MO from Jul 2024 to Aug 2026. Staff Technician. Built CAD bridges and automators. A written request is turned into a command the plugins already understand, then C# talks to Civil 3D. They also do construction drawing setup. Built software that parses and auto-checks civil plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes. It reduced errors before PE review by about 25%. Built C# plugins with Tesseract OCR pipelines. Built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They parse hundreds of text entities, audit drawings, and export traceability logs. Also built a color-coded IntelliSense-style layer and entity search GUI with autocomplete, dynamic entity pull, and a local phrase-to-command lookup so less experienced CAD users can move entities, run basic draw commands, retarget objects onto other layers, and otherwise edit uniformly across layouts in one command instead of clicking layout by layout. Minutes of sequential clicks, often hundreds, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them. These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout. Used C# to parse messy survey text and compass bearings into XData. Built graph lookup tables to map 3D structures to exact flow lines. Built digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. Computes watershed data, drainage areas, and differential runoff. Models pipe networks to MSD standards. Audits AutoCAD standards and revises templates. Introduced Navisworks clash detection. Creates parameterized 3D parts per MSD standards. Worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. Does not publish client drainage values or site data."
     },
     {
       "id": "runoff-method",
@@ -1031,7 +1031,7 @@
         "gpa",
         "hiring"
       ],
-      "text": "Employment terms are not published here. There is no salary, hourly rate, or compensation figure. There is no start date, notice period, or job-search status. There is no statement of work authorization, citizenship, visa status, or security clearance. There is no relocation, remote, or on-site preference. Location is the Chesterfield area. Worked at David Mason & Associates from Jul 2024 to August 2026. Supervised department staff as an Assistant Department Manager. Earned an AAS in Building Systems Engineering Technology from Ranken Technical College. The Calculus II CLEP credit from Saint Louis University was accepted for the Ranken calculus curriculum. Took coursework at Missouri S&T. Did not complete a bachelor's degree. Holds no master's, no PhD, and no published GPA. Is not a licensed professional engineer. Has no certifications, awards, patents, or conference talks recorded. Spanish is the only spoken language besides English. The contact route is pal@cadpal.net."
+      "text": "Employment terms are not published here. There is no salary, hourly rate, or compensation figure. There is no start date, notice period, or job-search status. There is no statement of work authorization, citizenship, visa status, or security clearance. There is no relocation, remote, or on-site preference. Location is the Chesterfield area. Worked at David Mason & Associates from Jul 2024 to Aug 2026. Supervised department staff as an Assistant Department Manager. Earned an AAS in Building Systems Engineering Technology from Ranken Technical College. The Calculus II CLEP credit from Saint Louis University was accepted for the Ranken calculus curriculum. Took coursework at Missouri S&T. Did not complete a bachelor's degree. Holds no master's, no PhD, and no published GPA. Is not a licensed professional engineer. Has no certifications, awards, patents, or conference talks recorded. Spanish is the only spoken language besides English. The contact route is pal@cadpal.net."
     }
   ],
   "voice": {

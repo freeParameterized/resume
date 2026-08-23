@@ -2,14 +2,15 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { loadSettings, saveSettings } from "./settings";
 
-/** /resume, #/resume, or ?resume=1 all render the printable sheet with no app chrome. */
+/** Printable sheet only. GitHub Pages lives at /resume/, so that path is the website, not print. */
 function isResumeRoute(): boolean {
   const { pathname, hash, search } = window.location;
-  return (
-    /\/resume\/?$/.test(pathname) ||
-    /^#\/?resume$/.test(hash) ||
-    new URLSearchParams(search).has("resume")
-  );
+  if (new URLSearchParams(search).has("resume")) return true;
+  if (/^#\/?resume$/.test(hash)) return true;
+  const base = new URL(import.meta.env.BASE_URL || "/", "http://local").pathname.replace(/\/+$/, "");
+  const path = pathname.replace(/\/+$/, "");
+  if (!path || path === base) return false;
+  return /\/resume$/.test(path);
 }
 
 const root = createRoot(document.getElementById("root")!);

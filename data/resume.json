@@ -39,7 +39,7 @@
       "org": "David Mason & Associates",
       "location": "St. Louis, MO",
       "title": "Staff Technician (CAD automation / Civil 3D tools)",
-      "dates": "Jul 2024 - August 2026",
+      "dates": "Jul 2024 - Aug 2026",
       "bullets": [
         "Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.",
         "Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.",
@@ -112,7 +112,7 @@
     {
       "org": "Saint Louis University (SLU)",
       "location": "St. Louis, MO",
-      "credential": "Calculus II (CLEP Credit)",
+      "credential": "Calculus II (CLEP credit)",
       "dates": "2018",
       "note": "Accepted by Ranken Technical College for their calculus curriculum."
     },

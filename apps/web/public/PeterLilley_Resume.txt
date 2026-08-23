@@ -13,7 +13,7 @@ Domain systems, quality, and networking: CAD plugins, Revit automation, 3D metad
 
 EXPERIENCE
 
-Staff Technician (CAD automation / Civil 3D tools) - David Mason & Associates | St. Louis, MO | Jul 2024 - August 2026
+Staff Technician (CAD automation / Civil 3D tools) - David Mason & Associates | St. Louis, MO | Jul 2024 - Aug 2026
 - Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.
 - Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.
 - Built a Civil 3D GUI for less experienced CAD users: color-coded IntelliSense-style layer and entity search with autocomplete, dynamic entity pull, and a local phrase-to-command lookup. From one command it moves entities, runs basic draw commands, retargets objects onto other layers, and otherwise edits uniformly across every layout instead of clicking through them in sequence. Minutes of that work, often hundreds of clicks, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them.
@@ -51,7 +51,7 @@ Interactive Portfolio (this site) | React, TypeScript, Express
 
 EDUCATION
 
-Calculus II (CLEP Credit) - Saint Louis University (SLU) | St. Louis, MO | 2018
+Calculus II (CLEP credit) - Saint Louis University (SLU) | St. Louis, MO | 2018
 Accepted by Ranken Technical College for their calculus curriculum.
 
 Coursework toward Latin American Studies with Technical Applications - Missouri University of Science and Technology | Rolla, MO | 2019 - 2020
