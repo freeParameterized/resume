@@ -4,11 +4,11 @@
 
 services:
   - type: web
-    name: living-resume-api
+    name: cadpal-api
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build -w @living-resume/api
-    startCommand: npm run start -w @living-resume/api
+    buildCommand: npm install && npm run build -w @cadpal/api
+    startCommand: npm run start -w @cadpal/api
     envVars:
       - key: HOST
         value: 0.0.0.0

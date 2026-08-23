@@ -13,5 +13,5 @@ export const DEEP_DIVE_IDS = [
   "cbp-ocr",
   "grok-tensor",
   "photogrammetry",
-  "living-resume",
+  "interactive-portfolio",
 ] as const;

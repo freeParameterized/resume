@@ -8,7 +8,7 @@ export type Settings = {
   reducedMotion: boolean;
 };
 
-const KEY = "living-resume-settings";
+const KEY = "cadpal-settings";
 
 export const DEFAULT_SETTINGS: Settings = {
   theme: "light",
@@ -20,10 +20,10 @@ export const DEFAULT_SETTINGS: Settings = {
 
 export function loadSettings(): Settings {
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = localStorage.getItem(KEY) || localStorage.getItem("living-resume-settings");
     if (!raw) {
-      const legacyTheme = localStorage.getItem("living-resume-theme");
-      const tts = localStorage.getItem("living-resume-speak");
+      const legacyTheme = localStorage.getItem("cadpal-theme") || localStorage.getItem("living-resume-theme");
+      const tts = localStorage.getItem("cadpal-speak") || localStorage.getItem("living-resume-speak");
       return {
         ...DEFAULT_SETTINGS,
         theme: THEMES.some((t) => t.id === legacyTheme) ? (legacyTheme as ThemeId) : "light",
@@ -47,8 +47,8 @@ export function loadSettings(): Settings {
 export function saveSettings(s: Settings) {
   try {
     localStorage.setItem(KEY, JSON.stringify(s));
-    localStorage.setItem("living-resume-theme", s.theme);
-    localStorage.setItem("living-resume-speak", s.tts ? "on" : "off");
+    localStorage.setItem("cadpal-theme", s.theme);
+    localStorage.setItem("cadpal-speak", s.tts ? "on" : "off");
   } catch {
     /* ignore */
   }

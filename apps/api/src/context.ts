@@ -17,9 +17,9 @@ const METRICS: Record<string, ContextBlock> = {
   "cycle-time": {
     kind: "metric",
     id: "cycle-time",
-    title: "8–12 hours → ~30 seconds",
+    title: "8 hours → minutes",
     subtitle: "DMA Civil 3D / Dynamo",
-    body: "Python/Dynamo scripts cut repetitive Civil 3D drafting from 8–12 hours to about 30 seconds per cycle.",
+    body: "Dynamo reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified about 8 hours of clicking down to minutes.",
     badge: "Metric",
   },
   "error-rate": {

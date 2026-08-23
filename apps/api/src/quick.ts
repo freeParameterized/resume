@@ -17,11 +17,7 @@
  * Wording is drawn from data/corpus.json. Plain ASCII punctuation only: this text also
  * travels through the PDF and terminal paths, which have already been bitten by smart dashes.
  *
- * VOICE: these have to sound like the model that answers everything else, or the first
- * follow-up question makes the opener look scripted. That means the same guide speaking
- * about Peter in the third person, three to five plain sentences, no epigrams and no
- * marketing cadence. The model's register is set in ollama.ts SYSTEM_RULES; if that
- * changes, these change with it.
+ * VOICE: silent first person, same as the resume. Implied subject, action verbs. Never I/he/him.
  */
 
 export type QuickAnswer = {
@@ -219,7 +215,7 @@ const GUARDED: Rule[] = [
     id: "why-left",
     test: /(why|reason|what made).{0,40}(leav(e|ing)|left|quit|quitting|resign|departed?|move on|moving on)|looking to leave|why (are|is) (you|he) (leaving|looking)|are you leaving|why did (you|he) leave|\bfired\b|laid off|\blayoffs?\b|terminated|let go\b|dismissed from/i,
     answer:
-      "Reasons for leaving are not documented, and I am not going to guess at one or characterize how any role ended. The sequence is on the record: Heideman & Associates as a Revit/CAD technician from May 2018 to April 2019, Component Bar Products as a quality engineer from April 2023 to June 2024, and David Mason & Associates from July 2024 to the present - he works there now, and nothing here says otherwise. Why he moved between roles, and what he is looking for next, is his to answer at " +
+      "Reasons for leaving are not documented, and I am not going to guess at one or characterize how any role ended. The sequence is on the record: Heideman & Associates as a Revit/CAD technician from May 2018 to April 2019, Component Bar Products as a quality engineer from April 2023 to June 2024, and David Mason & Associates from July 2024 to August 2026. Why he moved between roles, and what he is looking for next, is his to answer at " +
       `${EMAIL}.`,
   },
   {
@@ -280,7 +276,7 @@ const GUARDED: Rule[] = [
     id: "resume-gap",
     test: /gap in (your|his|the) (resume|employment|work history|timeline)|employment gap|resume gap|unemployed|between jobs|why the gap|missing years?/i,
     answer:
-      "I will not narrate a gap I cannot see. The documented dates are Heideman & Associates from May 2018 to April 2019, Missouri S&T coursework in 2019-2020, Component Bar Products from April 2023 to June 2024, and David Mason & Associates from July 2024 to the present. If something in that sequence needs explaining, he is the one to explain it: " +
+      "I will not narrate a gap I cannot see. The documented dates are Heideman & Associates from May 2018 to April 2019, Missouri S&T coursework in 2019-2020, Component Bar Products from April 2023 to June 2024, and David Mason & Associates from July 2024 to August 2026. If something in that sequence needs explaining, he is the one to explain it: " +
       `${EMAIL}.`,
   },
 
@@ -453,7 +449,7 @@ const RULES: Rule[] = [
     id: "identity",
     test: /who is peter|who are you|tell me about (yourself|peter|him)|introduce (yourself|peter)|what do you do/i,
     answer:
-      "Peter Lilley is a software engineer in St. Louis who ships production systems other professionals depend on daily. He writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs, with matrix math and typed data schemas underneath. His strongest work is the typed-command CAD pipeline he introduced at an established St. Louis engineering firm over roughly a two-year engagement: it maps a written request onto a typed command schema, and deterministic C# and .NET code then constructs the geometry and validates it before commit. Around it he builds retrieval, OCR, and structured-data pipelines over messy real-world input. On his own time he designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application with a hand-written renderer, to a Google Play beta. The domain happens to be civil engineering and CAD, but the engineering is what transfers.",
+      "Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Uses prompt engineering, and keeps token use down by fixing syntax errors and doing basic refactors by hand. At David Mason & Associates, Jul 2024 to August 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
   },
 ];
 

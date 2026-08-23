@@ -4,10 +4,9 @@ import { unlockAudioPlayback } from "../audio";
 import { detectIntents } from "../intents";
 import type { Settings } from "../settings";
 import type { Health, Paper, Project } from "../types";
-import { logVisit } from "../visits";
+import { onResumePdfClick, resumePdfLinkProps } from "../resumeDownload";
 import {
   InlineContext,
-  RESUME_PDF_URL,
   meaningful,
   paperToBlock,
   projectToBlock,
@@ -207,7 +206,7 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
           ? health?.ollama.reachable
             ? `Live Ollama · ${settings.model || health.ollama.model || "auto"}`
             : "Inference offline — answers come from the curated corpus, not a live model."
-          : "The live AI demo runs on Peter’s workstation — ask him for the live link. Until then this answers straight from the curated corpus."}
+          : "Live demo is on this workstation. Until then answers come from the same resume data."}
         {/* {apiUp ? ` · Voice ${settings.tts ? "on" : "off"} · Mic ${settings.stt ? "on" : "off"}` : ""} */}
       </p>
       <div className="ask-log" ref={logRef} aria-live="polite">
@@ -285,9 +284,8 @@ export function ChatDock({ open, onClose, health, settings, projects, papers, on
         </div>
         <a
           className="download-link chat-resume"
-          href={RESUME_PDF_URL}
-          download="PeterLilley_Resume.pdf"
-          onClick={() => logVisit("resume", "pdf")}
+          {...resumePdfLinkProps}
+          onClick={onResumePdfClick}
         >
           Download my resume (PDF)
         </a>

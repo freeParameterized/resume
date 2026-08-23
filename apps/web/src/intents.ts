@@ -62,6 +62,7 @@ const JOB_ALIASES: Record<string, string[]> = {
     "metrology",
     "tolerance",
   ],
+  menards: ["menard", "menards", "building materials", "millwork"],
   heideman: ["heideman", "revit", "mep"],
 };
 
@@ -75,7 +76,7 @@ const SKILL_ALIASES: Record<string, string[]> = {
 };
 
 const METRIC_ALIASES: Record<string, string[]> = {
-  "cycle-time": ["8–12", "8-12", "30 second", "30 seconds", "~30"],
+  "cycle-time": ["8 hour", "8 hours", "hydraulic grade", "pipe flow", "dynamo", "minutes"],
   "error-rate": ["25%", "fewer errors", "pe review"],
   "pdf-autocheck": ["pdf", "auto-check", "autocheck", "populate"],
 };

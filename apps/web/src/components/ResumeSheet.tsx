@@ -1,4 +1,5 @@
 import resume from "@resume";
+import { onResumePdfClick, resumePdfLinkProps } from "../resumeDownload";
 import "../styles/print.css";
 import { logVisit } from "../visits";
 
@@ -34,14 +35,15 @@ const doc = resume as ResumeDoc;
  */
 export function ResumeSheet() {
   const c = doc.contact;
+  const contactLine = [c.location, c.email, `Phone: ${c.phone}`, c.github, c.website, c.company]
+    .filter(Boolean)
+    .join(" · ");
   return (
     <main className="sheet">
       <header className="sheet-head">
         <h1>{doc.name}</h1>
         <p className="sheet-headline">{doc.headline}</p>
-        <p className="sheet-contact">
-          {c.location} · {c.email} · Phone: {c.phone} · {c.github} · {c.website} · {c.company}
-        </p>
+        <p className="sheet-contact">{contactLine}</p>
       </header>
 
       <section>
@@ -114,7 +116,7 @@ export function ResumeSheet() {
         <button type="button" onClick={() => window.print()}>
           Print / Save as PDF
         </button>
-        <a href="./PeterLilley_Resume.pdf" download onClick={() => logVisit("resume", "pdf")}>
+        <a {...resumePdfLinkProps} onClick={onResumePdfClick}>
           Download PDF
         </a>
         <a href="./PeterLilley_Resume.txt" download onClick={() => logVisit("resume", "txt")}>

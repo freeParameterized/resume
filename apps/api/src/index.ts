@@ -10,7 +10,7 @@ import { fetchGithub } from "./github.js";
 import { detectIntents } from "./intents.js";
 import { modelCatalog, pickLocalModel } from "./models.js";
 import { buildPrompt, generateOllama, ollamaHost, pingOllama, stripThinking, warmModel } from "./ollama.js";
-import { formatPapersPolicy, loadPapers, paperChunks, papersForSite } from "./papers.js";
+import { loadPapers, paperChunks, papersForSite } from "./papers.js";
 import { quickAnswer } from "./quick.js";
 import { extractiveAnswer, retrieve } from "./retrieve.js";
 import { logVisit, visitLogEnabled, type VisitEvent } from "./visits.js";
@@ -157,7 +157,7 @@ app.get("/api/health", async (_req, res) => {
   const ollama = await pingOllama();
   res.json({
     ok: true,
-    service: "living-resume-api",
+    service: "cadpal-api",
     uptimeSec: Math.round((Date.now() - started) / 1000),
     corpusChunks: corpus.chunks.length,
     papersAvailable: loadPapers().available,
@@ -207,7 +207,6 @@ app.get(["/api/profile", "/api/resume"], (_req, res) => {
     experience: corpus.experience,
     education: corpus.education,
     early: corpus.early,
-    meta: corpus.meta,
   });
 });
 
@@ -268,7 +267,7 @@ app.post(["/api/ask", "/api/chat"], chatLimit, async (req: Request, res: Respons
   const context = hits
     .map((h) => `[${h.chunk.title}]\n${h.chunk.text.slice(0, 1200)}`)
     .join("\n\n");
-  const prompt = buildPrompt(question, context, formatPapersPolicy(papersFile.papers));
+  const prompt = buildPrompt(question, context);
   const stream = wantStream(req);
   const catalog = await modelCatalog(String(req.body?.model || ""));
   const model = pickLocalModel(catalog.installed, String(req.body?.model || "")) || catalog.selected;
@@ -450,7 +449,7 @@ process.on("unhandledRejection", (reason) => {
 });
 
 app.listen(PORT, HOST, () => {
-  console.log(`living-resume api http://${HOST}:${PORT}`);
+  console.log(`cadpal api http://${HOST}:${PORT}`);
   console.log(
     visitLogEnabled()
       ? `[visits] logging to logs/visits.log (npm run visits to read it)`

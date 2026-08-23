@@ -1,6 +1,6 @@
-# Peter A. Lilley — Interactive Portfolio
+# Peter A. Lilley — resume
 
-A **living** frontend + backend exhibit: spatial tote / work graph (Three.js), resume-accurate project panels, Copilot-style chat with **inline context cards**, and **offline local inference** (Ollama + whisper.cpp + Windows SAPI) on this machine. To a visitor it is just a site.
+Resume site: work graph (Three.js), project panels, optional local chat, and a PDF built from the same data. First public URL is **https://freeParameterized.github.io/resume/**.
 
 Identity: Chesterfield / St. Louis, MO · **Free Parameter LLC**. Public GitHub: [github.com/freeParameterized](https://github.com/freeParameterized). Title published: **Staff Technician (CAD automation / Civil 3D tools)**. Phone and street stay TBD (not on the site).
 
@@ -13,7 +13,7 @@ it, and how to see who visited.
 Requires **Node 20+**. Ollama and voice tools are optional; text UI still runs if they are down.
 
 ```bash
-cd living-resume
+cd <repo>
 copy .env.example .env
 npm install
 npm start
@@ -52,8 +52,8 @@ Whisper.cpp (`D:\OfflineLLMGui\whisper.cpp`) + Windows SAPI **Microsoft David De
 
 1. Enable Pages in the GitHub repo (Settings → Pages → Source: GitHub Actions).
 2. `.github/workflows/pages.yml` deploys on every push to `main`, and can also be run by hand from the Actions tab.
-3. The workflow already sets `VITE_BASE=/living-resume/` for the project site and leaves `VITE_API_URL` empty, so the static build answers from the bundled corpus (live chat needs a local/hosted API).
-4. Custom domain **freeparameter.com**: in the Pages settings add the domain; at the DNS host create a `CNAME` (or A records per GitHub docs) from `www` or apex to `freeParameterized.github.io`. Add a `CNAME` file in `apps/web/public` if you want it in the artifact.
+3. The workflow sets `VITE_BASE=/resume/` and leaves `VITE_API_URL` empty, so the static build answers from the bundled corpus (live chat needs a local/hosted API).
+4. Repo name on GitHub should be **resume** so Pages is `https://freeParameterized.github.io/resume/`. cadpal.net comes later.
 
 ### Render (API)
 
@@ -77,7 +77,6 @@ Stub only: `server/remote.stub.js`. Not RDP, not VNC, not implemented.
 
 - Knowledge is `data/corpus.json` (plus optional `data/papers.json` when present).
 - Phone and street are TBD: `data/resume.json` → `contact.phone` / `contact.address`.
-- Do not say he is seeking Project Management.
 - Visitors are logged coarsely to `logs/visits.log` (gitignored, never served): timestamp, event
   type, browser/OS family, random session id. No IPs, no locations, no raw user-agent strings.
   Question text needs `VISIT_LOG_MESSAGES=1`. Read it with `npm run visits`.
@@ -93,6 +92,6 @@ Stub only: `server/remote.stub.js`. Not RDP, not VNC, not implemented.
 | `npm run visits` | Recent-visitor summary from `logs/visits.log` |
 | `npm run resume:pdf` | Regenerate the resume PDF/TXT/MD, with validation |
 | `npm run build:pages` | Static frontend |
-| `npm run start -w @living-resume/api` | Compiled API |
+| `npm run start -w @cadpal/api` | Compiled API |
 | `node scripts/acceptance.mjs <url>` | Answer-quality and honesty battery |
 | `node scripts/bench-chat.mjs [url]` | End-to-end chat latency, instant vs model |

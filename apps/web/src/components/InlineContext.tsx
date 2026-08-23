@@ -1,5 +1,5 @@
 import type { AboutMe, Experience, Paper, Project } from "../types";
-import { logVisit } from "../visits";
+import { onResumePdfClick, RESUME_PDF_FILENAME, RESUME_PDF_URL, resumePdfLinkProps } from "../resumeDownload";
 
 export type ContextBlock = {
   kind: "project" | "job" | "about" | "metric" | "skill" | "paper" | "resume";
@@ -25,7 +25,7 @@ export function meaningful(value: unknown): string | null {
   return trimmed;
 }
 
-export const RESUME_PDF_URL = `${import.meta.env.BASE_URL}PeterLilley_Resume.pdf`;
+export { RESUME_PDF_URL, RESUME_PDF_FILENAME } from "../resumeDownload";
 export const RESUME_TEXT_URL = `${import.meta.env.BASE_URL}PeterLilley_Resume.txt`;
 
 export function resumeToBlock(): ContextBlock {
@@ -36,7 +36,7 @@ export function resumeToBlock(): ContextBlock {
     subtitle: "One to two pages, plain and printable",
     body: "Here it is — a standard resume you can save or forward. There is a plain-text version too if a job portal wants pasteable text.",
     href: RESUME_PDF_URL,
-    download: "PeterLilley_Resume.pdf",
+    download: RESUME_PDF_FILENAME,
     linkLabel: "Download my resume (PDF)",
     badge: "Resume",
   };
@@ -66,9 +66,8 @@ export function InlineContext({ block }: { block: ContextBlock }) {
         block.download ? (
           <a
             className="download-link"
-            href={href}
-            download={block.download}
-            onClick={() => logVisit("resume", "pdf")}
+            {...resumePdfLinkProps}
+            onClick={onResumePdfClick}
           >
             {block.linkLabel || "Download"}
           </a>

@@ -1,23 +1,23 @@
 {
-  "name": "living-resume",
+  "name": "cadpal",
   "private": true,
   "version": "1.0.0",
-  "description": "Peter A. Lilley — Interactive Portfolio (Vite + React Three Fiber + Express + local Ollama)",
+  "description": "Peter A. Lilley — resume site (Vite + React + Express)",
   "workspaces": [
     "apps/web",
     "apps/api"
   ],
   "scripts": {
-    "start": "concurrently -k -n api,web -c cyan,magenta \"npm run dev -w @living-resume/api\" \"npm run dev -w @living-resume/web\"",
+    "start": "concurrently -k -n api,web -c cyan,magenta \"npm run dev -w @cadpal/api\" \"npm run dev -w @cadpal/web\"",
     "dev": "npm start",
-    "build": "npm run build -w @living-resume/web && npm run build -w @living-resume/api",
-    "build:pages": "npm run resume:pdf && npm run build -w @living-resume/web",
-    "preview": "npm run preview -w @living-resume/web",
+    "build": "npm run build -w @cadpal/web && npm run build -w @cadpal/api",
+    "build:pages": "npm run resume:pdf && npm run build -w @cadpal/web",
+    "preview": "npm run preview -w @cadpal/web",
     "resume:pdf": "node scripts/make-resume-pdf.mjs",
     "visits": "node scripts/visits.mjs",
     "tunnel": "node scripts/start-tunnel.mjs",
     "tunnel:stop": "node scripts/stop-tunnel.mjs",
-    "demo": "concurrently -k -n api,web,tunnel -c cyan,magenta,yellow \"npm run dev -w @living-resume/api\" \"npm run dev -w @living-resume/web\" \"node scripts/start-tunnel.mjs\""
+    "demo": "concurrently -k -n api,web,tunnel -c cyan,magenta,yellow \"npm run dev -w @cadpal/api\" \"npm run dev -w @cadpal/web\" \"node scripts/start-tunnel.mjs\""
   },
   "engines": {
     "node": ">=20"

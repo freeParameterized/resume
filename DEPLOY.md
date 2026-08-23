@@ -5,7 +5,7 @@ answers; `README.md` has the architecture.
 
 ## Show it live, right now
 
-One command, from `C:\Users\peter\source\repos\living-resume`:
+One command, from the repo root:
 
 ```powershell
 npm run demo
@@ -54,8 +54,8 @@ Spoken replies and the mic can each be turned off in the site's Settings panel.
 
 ## The always-on link (workstation off)
 
-The static site is published by GitHub Pages:
-**https://freeparameterized.github.io/living-resume/**
+The static site is published by GitHub Pages at
+**https://freeParameterized.github.io/resume/**.
 
 It publishes automatically on every push to `main`, and you can also trigger it by hand: repo
 on GitHub → Actions → **Pages client** → *Run workflow*. The first deploy only works once Pages
@@ -105,7 +105,7 @@ corpus (`data/corpus.json`) has no phone or address in it at all, and should sta
 npm run resume:pdf
 ```
 
-Writes `apps/web/public/PeterLilley_Resume.pdf` plus the `.txt` and `.md` versions. It
+Writes `apps/web/public/2026.08.20_PeterL_Resume.pdf` plus the `.txt` and `.md` versions. It
 self-validates before it reports success: the file really is a PDF and is not truncated, it is
 one or two pages (three is a hard failure), and the text layer is genuinely extractable and
 contains his name and the Summary heading rather than being a picture of a resume. If any check
@@ -182,7 +182,7 @@ afford the pause. For a live demo, leave it on `llama3.1:8b`.
 ## Fresh machine, from nothing
 
 ```powershell
-cd C:\Users\peter\source\repos\living-resume
+cd <repo>
 copy .env.example .env
 npm install
 npm start

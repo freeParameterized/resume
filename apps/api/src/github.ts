@@ -50,7 +50,7 @@ export async function fetchGithub(): Promise<GithubPayload> {
       signal: ctrl.signal,
       headers: {
         Accept: "application/vnd.github+json",
-        "User-Agent": "living-resume-local",
+        "User-Agent": "cadpal-local",
         "X-GitHub-Api-Version": "2022-11-28",
       },
     });

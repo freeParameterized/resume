@@ -2,33 +2,31 @@
 
 **Software Engineer - C#/.NET and C++17 Systems, Geometry and Automation Tooling**
 
-Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request · github.com/freeParameterized · freeparameter.com · Free Parameter LLC
+Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request · github.com/freeParameterized · Free Parameter LLC
 
 ## Summary
 
-Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Wrote C++ desktop applications and engine scripting before LLM tools existed. Constrains model output to a typed command schema, so deterministic code owns anything that has to be correct. Focus is applied ML systems and inference integration, not model training.
+Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Uses prompt engineering, and keeps token use down by fixing syntax errors and doing basic refactors by hand.
 
 ## Skills
 
 - **Languages:** C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
-- **Applied ML and inference:** Structured model output with validation gates, Tesseract OCR, Levenshtein matching, containerized inference on office GPUs, Ollama Q4_K_M (Gemma 4 26B, Gemma 4 8B), Gemma 4 12B instruct QAT Q4_0, LM Studio
-- **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators
-- **Engineering and math:** Matrix math, 3D graphics, Express, React, Git, CMake, Linux, macOS, Docker, Bash scripting for data pipelines
+- **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching
+- **Engineering and math:** Matrix math, 3D graphics, Express, React, Git (GitFlow, trunk-based, PRs, CI/CD), CMake, Linux, macOS, Docker, Bash scripting for data pipelines
 - **Domain systems, quality, and networking:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001, TCP/IP, IPv4/IPv6 subnetting, Cisco routing and switching
 
 ## Experience
 
 ### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
-*St. Louis, MO · Jul 2024 - Present*
+*St. Louis, MO · Jul 2024 - August 2026*
 
-- Built a generator for standard details and grading that conditions its output on existing company drawing data. Applied it to build the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Logged project hours confirmed the work fell from months of hand modeling to days.
-- Cut hydraulic grade line updates from 4 to 8 hours of clicking each elevation and layer on hundreds of profile pipes to minutes. The tool plots the water-level profile from a Hydraflow report. Staff compared manhours billed to engineers who use the tool versus those who do not. Shipped as one DLL with a C++ core wrapped in C# and a WinForms interface inside Civil 3D.
-- Built layout-wide edit commands that delete or move matching objects across every layout in a drawing, and freeze layers by drawing scale. A local phrase-to-command lookup picks the target layouts. Peers confirmed the manhour savings in a formal civil workload review.
-- Builds C# plugins against the Civil 3D .NET API to automate layout, audit drawings, and batch-rename title blocks. Typed metadata schemas attach to model entities and carry company standards across disciplines.
+- Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.
+- Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.
+- Built a Civil 3D GUI for less experienced CAD users: color-coded IntelliSense-style layer and entity search with autocomplete, dynamic entity pull, and a local phrase-to-command lookup. From one command it moves entities, runs basic draw commands, retargets objects onto other layers, and otherwise edits uniformly across every layout instead of clicking through them in sequence. Minutes of that work, often hundreds of clicks, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them.
+- Built C# plugins against the Civil 3D .NET API to automate layout, audit drawings, and batch-rename title blocks. Attached typed metadata to Civil 3D objects so company standards sit on the entities.
 - Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.
-- Automate repetitive drafting with Python and Dynamo. In self-timed runs, one plan-production cycle dropped from 8 to 12 hours to about 30 seconds.
-- Built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and a prepared store of company drawing data that conditions each request. The model returns command strings only. Deterministic C# code then constructs and validates the geometry and text, so a bad request fails validation instead of shipping a plausible wrong number. A local Ollama model serves those commands when the API is unreachable.
-- Extended that pipeline to locate outdated sheet text and to compare design options.
+- Built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and existing company drawing data as input for each request.
+- Extended that pipeline to locate outdated sheet text and to compare design options. Authored and reviewed Git pull requests on the plugins and pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
 *O'Fallon, MO · Apr 2023 - Jun 2024*
@@ -61,13 +59,13 @@ Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, a
 *C++17, Dear ImGui, Windows COM | private repository, walkthrough on request*
 
 - Built a C++17 Dear ImGui host. It bridges BricsCAD, AutoCAD, and Civil 3D through Windows COM. It discovers installed SDKs at runtime and hot-loads LISP, C#, and BRX plugins.
-- This personal project proved the architecture before a similar commercial deployment.
+- Personal prototype of the architecture later used on a commercial deployment.
 
 ### Interactive Portfolio (this site)
-*React, TypeScript, Express, Ollama, Docker*
+*React, TypeScript, Express*
 
 - Built a React and TypeScript front end over an Express API. The site builds to static files and needs no server to read.
-- Containerized a local inference stack with Docker and ran it on Linux, macOS, and Windows hosts.
+- Generates the printable resume and PDF from the same JSON data.
 
 ## Education
 

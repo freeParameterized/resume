@@ -1,6 +1,7 @@
 import type { Education } from "../types";
 
-export function EducationList({ items, early }: { items: Education[]; early: string[] }) {
+export function EducationList({ items, early }: { items: Education[]; early?: string[] }) {
+  const earlyLine = (early || []).join(" ").trim();
   return (
     <>
       <div className="edu-grid">
@@ -11,7 +12,7 @@ export function EducationList({ items, early }: { items: Education[]; early: str
             </div>
             <h3>{ed.org}</h3>
             <p>{ed.credential}</p>
-            {ed.notes ? (
+            {ed.notes?.length ? (
               <div className="chips">
                 {ed.notes.map((n) => (
                   <span className="chip" key={n}>
@@ -23,9 +24,11 @@ export function EducationList({ items, early }: { items: Education[]; early: str
           </article>
         ))}
       </div>
-      <p className="lede" style={{ marginTop: 18 }}>
-        Early foundation: {early.join(" ")}
-      </p>
+      {earlyLine ? (
+        <p className="lede" style={{ marginTop: 18 }}>
+          Early foundation: {earlyLine}
+        </p>
+      ) : null}
     </>
   );
 }

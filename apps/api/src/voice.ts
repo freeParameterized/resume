@@ -63,7 +63,7 @@ export function voiceStatus() {
 }
 
 function tmp(ext: string) {
-  return path.join(os.tmpdir(), `living-resume-${Date.now()}-${Math.random().toString(16).slice(2)}.${ext}`);
+  return path.join(os.tmpdir(), `cadpal-${Date.now()}-${Math.random().toString(16).slice(2)}.${ext}`);
 }
 
 const FFMPEG_CANDIDATES = [

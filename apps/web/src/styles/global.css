@@ -114,12 +114,13 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 40;
-  height: var(--header-h);
+  min-height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 0 22px;
+  padding: env(safe-area-inset-top, 0px) max(22px, env(safe-area-inset-right, 0px)) 0
+    max(22px, env(safe-area-inset-left, 0px));
   background: var(--panel);
   border-bottom: 1px solid var(--line);
 }
@@ -182,6 +183,97 @@ a:hover {
   background: rgba(196, 165, 116, 0.08);
 }
 
+.header-mobile-bar {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.nav-menu-btn,
+.ask-launch-mobile {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+}
+
+.nav-menu-btn {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.mobile-nav-panel {
+  position: fixed;
+  top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 52;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px))
+    max(16px, env(safe-area-inset-left, 0px));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+}
+
+.mobile-nav-panel a,
+.mobile-nav-panel .mobile-nav-action {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 12px;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.mobile-nav-panel a:hover,
+.mobile-nav-panel .mobile-nav-action:hover {
+  color: var(--ink);
+  background: var(--panel-2);
+}
+
+.mobile-nav-panel .mobile-nav-primary {
+  margin-top: 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.mobile-nav-panel .mobile-nav-action {
+  width: 100%;
+}
+
+.nav-menu-backdrop {
+  z-index: 51;
+}
+
+body.nav-menu-open {
+  overflow: hidden;
+}
+
 .resume-header {
   margin-bottom: 48px;
 }
@@ -197,12 +289,61 @@ a:hover {
 }
 
 .resume-kicker {
+  font-family: var(--sans);
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+  margin-bottom: 10px;
+  max-width: 46rem;
+  line-height: 1.45;
+}
+
+.resume-headline {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.resume-contact {
+  margin: 0;
   font-family: var(--mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.resume-contact a {
+  color: var(--ink);
+}
+
+.resume-skills {
+  margin: 0;
+}
+
+.resume-skill {
+  display: grid;
+  grid-template-columns: minmax(9rem, 14rem) 1fr;
+  gap: 8px 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-skill dt {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--brass);
-  margin-bottom: 16px;
+  color: var(--steel);
+  font-weight: 500;
+}
+
+.resume-skill dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .resume-subtitle {
@@ -695,17 +836,44 @@ a:hover {
 }
 
 @media (max-width: 720px) {
-  .nav .hide-sm {
+  .nav-desktop {
     display: none;
+  }
+
+  .header-mobile-bar {
+    display: flex;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .brand strong {
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .app-header {
+    gap: 10px;
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
+  }
+
+  .resume-skill {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .hero {
     min-height: 420px;
     height: 70svh;
-  }
-
-  .app-header {
-    padding: 0 12px;
   }
 }
 
@@ -869,7 +1037,9 @@ a:hover {
   button,
   .chat-actions button,
   .download-link,
-  .header-links a {
+  .header-links a,
+  .nav-menu-btn,
+  .ask-launch-mobile {
     min-height: 44px;
   }
 
@@ -1196,56 +1366,6 @@ a:hover {
 @media (max-width: 900px) {
   .shell {
     padding-right: var(--sp-4);
-  }
-}
-/* ---------------------------------------------------------------------------
-   Small-screen overflow fixes. The header nav is a flex row that could not fit
-   360-430px, which widened the page and pushed the hero and chat dock off-screen.
-   --------------------------------------------------------------------------- */
-@media (max-width: 720px) {
-  .app-header {
-    gap: var(--sp-3);
-  }
-
-  /* Scroll the links sideways instead of forcing the whole page wider. */
-  .nav {
-    gap: var(--sp-4);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    flex: 1 1 auto;
-    justify-content: flex-end;
-  }
-
-  .nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav a {
-    white-space: nowrap;
-  }
-
-  .brand {
-    flex: 0 0 auto;
-    max-width: 40%;
-  }
-
-  /* The company line is redundant next to the name on a phone. */
-  .brand span {
-    display: none;
-  }
-
-  .hero-overlay {
-    padding: var(--sp-5) var(--sp-4) var(--sp-6);
-  }
-
-  .hero-kicker {
-    letter-spacing: 0.1em;
-    overflow-wrap: anywhere;
-  }
-
-  .hero-overlay h1 {
-    font-size: clamp(1.6rem, 9vw, 2.2rem);
   }
 }
 

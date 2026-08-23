@@ -65,13 +65,7 @@ export type Corpus = {
   meta: {
     title: string;
     sanitized: boolean;
-    privacy: string;
     githubAccount: string;
-    githubAccountNote: string;
-    ageAndDatesPolicy?: string;
-    digitalTwinDisambiguation?: string;
-    toneRules?: string;
-    paperPolicy?: string;
   };
   profile: Profile;
   howIWork?: { headline: string; points: string[] };
