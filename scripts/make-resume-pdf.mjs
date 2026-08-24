@@ -66,38 +66,22 @@ function buildHtml(doc) {
     .map((part) => `<span>${part}</span>`)
     .join("");
 
-  const yearsTable = (caption, nameHeading, rows) => {
-    if (!Array.isArray(rows) || !rows.length) return "";
-    const body = rows
-      .map(
-        (r) =>
-          `<tr><th>${esc(r.name)}</th><td>${esc(r.strength)}</td><td>${esc(r.professionalYears)}</td><td>${esc(r.personalYears)}</td></tr>`,
-      )
-      .join("");
-    return `<table class="years"><caption>${esc(caption)}</caption><thead><tr><th>${esc(nameHeading)}</th><th>Strength</th><th>Professional years</th><th>Personal / passion years</th></tr></thead><tbody>${body}</tbody></table>`;
-  };
-
-  const skills = [
-    yearsTable("Languages", "Language", doc.languages),
-    yearsTable("AI and related tools", "Tool", doc.ai),
-    doc.spanish ? `<p><b>Spanish.</b> ${esc(doc.spanish)}</p>` : "",
-    doc.yearsNote ? `<p class="note">${esc(doc.yearsNote)}</p>` : "",
-    ...(doc.skills || []).map((s) => `<p class="skill"><span class="k">${esc(s.label)}:</span> ${esc(s.items)}</p>`),
-  ].join("\n");
+  const skills = doc.skills
+    .map((s) => `<p class="skill"><span class="k">${esc(s.label)}:</span> ${esc(s.items)}</p>`)
+    .join("\n");
 
   /**
    * Dates sit in their own right-aligned column on the same baseline as the role, which is
    * the convention recruiters scan. Flexbox rather than a table keeps the reading order
    * linear for applicant tracking systems.
    */
-  const entry = (title, subtitle, right, bullets, note, overview) => `
+  const entry = (title, subtitle, right, bullets, note) => `
     <article class="entry">
       <div class="row">
         <h3>${esc(title)}</h3>
         ${right ? `<span class="when">${esc(right)}</span>` : ""}
       </div>
       ${subtitle ? `<p class="where">${esc(subtitle)}</p>` : ""}
-      ${overview ? `<p class="overview">${esc(overview)}</p>` : ""}
       ${note ? `<p class="note">${esc(note)}</p>` : ""}
       ${
         bullets && bullets.length
@@ -107,7 +91,7 @@ function buildHtml(doc) {
     </article>`;
 
   const experience = doc.experience
-    .map((j) => entry(`${j.org} - ${j.title}`, j.location, j.dates, j.bullets, null, j.overview))
+    .map((j) => entry(`${j.org} - ${j.title}`, j.location, j.dates, j.bullets))
     .join("\n");
 
   const projects = doc.projects.map((p) => entry(p.name, p.meta, null, p.bullets)).join("\n");
@@ -150,7 +134,7 @@ function buildHtml(doc) {
     break-after: avoid; page-break-after: avoid;
   }
 
-  .entry { margin-bottom: 9pt; }
+  .entry { margin-bottom: 9pt; break-inside: avoid; page-break-inside: avoid; }
   .entry:last-child { margin-bottom: 0; }
   .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
   h3 { font-size: 10.5pt; font-weight: 700; margin: 0; }
@@ -170,11 +154,6 @@ function buildHtml(doc) {
 
   .skill { break-inside: avoid; page-break-inside: avoid; margin: 0 0 3pt; }
   .skill .k { font-weight: 700; }
-  .overview { margin: 0 0 4pt; }
-  table.years { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 0 0 8pt; }
-  table.years caption { text-align: left; font-weight: 700; margin-bottom: 3pt; }
-  table.years th, table.years td { border-bottom: 0.4pt solid #ccc; padding: 2pt 6pt 2pt 0; text-align: left; }
-  table.years td:nth-child(3), table.years td:nth-child(4) { text-align: right; font-variant-numeric: tabular-nums; }
 </style>
 </head>
 <body>
@@ -184,7 +163,7 @@ function buildHtml(doc) {
     <p class="contact">${contactLine}</p>
   </header>
   <section><h2>Summary</h2><p>${esc(doc.summary)}</p></section>
-  <section><h2>Languages and skills</h2>${skills}</section>
+  <section><h2>Skills</h2>${skills}</section>
   <section><h2>Experience</h2>${experience}</section>
   <section><h2>Projects</h2>${projects}</section>
   <section><h2>Education</h2>${education}</section>
@@ -202,24 +181,13 @@ function buildText(doc) {
     "SUMMARY",
     doc.summary,
     "",
-    "LANGUAGES AND SKILLS",
-    ...(doc.languages || []).map(
-      (r) => `${r.name}: ${r.strength}; professional ${r.professionalYears} yr; personal ${r.personalYears} yr`,
-    ),
-    "",
-    "AI AND RELATED TOOLS",
-    ...(doc.ai || []).map(
-      (r) => `${r.name}: ${r.strength}; professional ${r.professionalYears} yr; personal ${r.personalYears} yr`,
-    ),
-    doc.spanish ? `Spanish: ${doc.spanish}` : "",
-    doc.yearsNote || "",
+    "SKILLS",
     ...doc.skills.map((s) => `${s.label}: ${s.items}`),
     "",
     "EXPERIENCE",
   ].filter((line) => line != null);
   for (const j of doc.experience) {
     out.push("", `${j.title} - ${j.org} | ${j.location} | ${j.dates}`);
-    if (j.overview) out.push(j.overview);
     for (const b of j.bullets) out.push(`- ${b}`);
   }
   out.push("", "PROJECTS");
@@ -248,25 +216,7 @@ function buildMarkdown(doc) {
     "",
     doc.summary,
     "",
-    "## Languages and skills",
-    "",
-    "### Languages",
-    "",
-    "| Language | Strength | Professional years | Personal / passion years |",
-    "| --- | --- | ---: | ---: |",
-    ...(doc.languages || []).map(
-      (r) => `| ${r.name} | ${r.strength} | ${r.professionalYears} | ${r.personalYears} |`,
-    ),
-    "",
-    "### AI and related tools",
-    "",
-    "| Tool | Strength | Professional years | Personal / passion years |",
-    "| --- | --- | ---: | ---: |",
-    ...(doc.ai || []).map((r) => `| ${r.name} | ${r.strength} | ${r.professionalYears} | ${r.personalYears} |`),
-    "",
-    doc.spanish ? `**Spanish.** ${doc.spanish}` : "",
-    "",
-    doc.yearsNote || "",
+    "## Skills",
     "",
     ...doc.skills.map((s) => `- **${s.label}:** ${s.items}`),
     "",
@@ -274,7 +224,6 @@ function buildMarkdown(doc) {
   ];
   for (const j of doc.experience) {
     lines.push("", `### ${j.title} — ${j.org}`, `*${j.location} · ${j.dates}*`, "");
-    if (j.overview) lines.push(j.overview, "");
     for (const b of j.bullets) lines.push(`- ${b}`);
   }
   lines.push("", "## Projects");
@@ -357,7 +306,7 @@ if (buf.length < 10_000) fail(`PDF is only ${buf.length} bytes, which means it r
 
 const pageCount = (buf.toString("latin1").match(/\/Type\s*\/Page[^s]/g) || []).length;
 if (pageCount < 1) fail("could not find any page objects in the PDF");
-if (pageCount > 3) fail(`PDF is ${pageCount} pages; it must fit on 1–3. Trim bullets in data/resume.json.`);
+if (pageCount > 2) fail(`PDF is ${pageCount} pages; it must fit on 1–2. Trim bullets in data/resume.json.`);
 
 // Text must be extractable, not a scanned image.
 let extracted = "";

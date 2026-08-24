@@ -8,36 +8,9 @@ Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request ·
 
 Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch.
 
-## Languages and skills
+## Skills
 
-### Languages
-
-| Language | Strength | Professional years | Personal / passion years |
-| --- | --- | ---: | ---: |
-| C# | Strong | 2 | 3 |
-| Python | Strong | 2 | 2 |
-| C++17 | Strong | 0 | 6 |
-| Dart | Proficient | 0 | 2 |
-| TypeScript | Proficient | 0 | 2 |
-| JavaScript | Proficient | 0 | 2 |
-| SQL | Working | 0 | 2 |
-| AutoLISP / LISP | Working | 2 | 2 |
-| VBA | Working | 1 | 1 |
-
-### AI and related tools
-
-| Tool | Strength | Professional years | Personal / passion years |
-| --- | --- | ---: | ---: |
-| Prompt engineering (Claude, Cursor, ChatGPT) | Strong | 2 | 3 |
-| OpenAI API (typed CAD pipeline) | Strong | 2 | 0 |
-| Google Gemini API | Proficient | 0 | 2 |
-| Local LLMs (Ollama) | Proficient | 1 | 3 |
-| Tesseract OCR | Proficient | 2 | 2 |
-
-**Spanish.** Advanced conversational Spanish (placed into Level 4 / Advanced Conversational at Missouri S&T). Reads and discusses technical material in Spanish. Not a translation credential.
-
-Professional years count paid jobs where that language shipped. Personal years count documented side projects, through 2026. C++ is self-taught.
-
+- **Languages:** C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
 - **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching
 - **Engineering and math:** Matrix math, 3D graphics, Express, React, Git (GitFlow, trunk-based, PRs, CI/CD), CMake, Linux, macOS, Docker, Bash scripting for data pipelines
 - **Domain systems, quality, and networking:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001, TCP/IP, IPv4/IPv6 subnetting, Cisco routing and switching
@@ -46,8 +19,6 @@ Professional years count paid jobs where that language shipped. Personal years c
 
 ### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
 *St. Louis, MO · Jul 2024 - Aug 2026*
-
-Civil engineering firm delivering public infrastructure and campus work in the St. Louis region. Role: staff technician for Civil 3D automation — plugins, Dynamo scripts, and an internal command pipeline rather than production drafting as the main output. Grew from removing one-off CAD bottlenecks into tooling the rest of the team runs daily, cutting hours of clicking to minutes on live airport and campus drawings.
 
 - Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.
 - Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.
@@ -60,8 +31,6 @@ Civil engineering firm delivering public infrastructure and campus work in the S
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
 *O'Fallon, MO · Apr 2023 - Jun 2024*
 
-Precision machine shop producing bar-stock parts to customer prints. Role: quality engineer on the inspection bench — CMM programs, CAD-to-print checks, ISO 9001 calibration. Grew from running inspections into owning the metrology loop so dimensional misses died in the lab instead of at the customer.
-
 - Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.
 - Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.
 - Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets.
@@ -69,14 +38,10 @@ Precision machine shop producing bar-stock parts to customer prints. Role: quali
 ### Assistant Department Manager - Building Materials and Millwork — Menard, Inc.
 *Manchester / Ballwin, MO · Jun 2020 - Mar 2023*
 
-Home-improvement retailer with contractor millwork and building-materials desks. Role: assistant department manager — staffing, commercial material estimates, contractor-facing pricing. Grew from covering the floor into running those estimates on a deadline and supervising department staff.
-
 - Priced and estimated large commercial material orders. Supervised department staff.
 
 ### Revit/CAD Technician - Mechanical/Plumbing — Heideman & Associates, Inc.
 *Fenton, MO · May 2018 - Apr 2019*
-
-Mechanical and plumbing engineering firm producing construction documents. Role: Revit and AutoCAD technician for MEP sheets and as-builts. Grew from drafting into reusable object libraries and standardized details so later sheets started from a consistent model.
 
 - Produced MEP construction documents. Built as-built models in Revit and AutoCAD.
 - Built automated data libraries for building-system objects. Standardized outdated details.
@@ -104,10 +69,15 @@ Mechanical and plumbing engineering firm producing construction documents. Role:
 
 ## Education
 
-### A.A.S., Building Systems Engineering Technology — Ranken Technical College
-*Wentzville, MO · 2019*
+### Calculus II (CLEP credit) — Saint Louis University (SLU)
+*St. Louis, MO · 2018*
 
-### Coursework in Latin American Studies with Technical Applications — Missouri University of Science and Technology
+Accepted by Ranken Technical College for their calculus curriculum.
+
+### Coursework toward Latin American Studies with Technical Applications — Missouri University of Science and Technology
 *Rolla, MO · 2019 - 2020*
 
-Placed into Advanced Conversational Spanish (Level 4). Technical fluency in Spanish.
+Technical fluency in Spanish.
+
+### A.A.S., Building Systems Engineering Technology — Ranken Technical College
+*Wentzville, MO · 2019*

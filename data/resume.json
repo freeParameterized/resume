@@ -16,27 +16,11 @@
     "company": "Free Parameter LLC"
   },
   "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch.",
-  "yearsNote": "Professional years count paid jobs where that language shipped. Personal years count documented side projects, through 2026. C++ is self-taught.",
-  "languages": [
-    { "name": "C#", "strength": "Strong", "professionalYears": 2, "personalYears": 3 },
-    { "name": "Python", "strength": "Strong", "professionalYears": 2, "personalYears": 2 },
-    { "name": "C++17", "strength": "Strong", "professionalYears": 0, "personalYears": 6 },
-    { "name": "Dart", "strength": "Proficient", "professionalYears": 0, "personalYears": 2 },
-    { "name": "TypeScript", "strength": "Proficient", "professionalYears": 0, "personalYears": 2 },
-    { "name": "JavaScript", "strength": "Proficient", "professionalYears": 0, "personalYears": 2 },
-    { "name": "SQL", "strength": "Working", "professionalYears": 0, "personalYears": 2 },
-    { "name": "AutoLISP / LISP", "strength": "Working", "professionalYears": 2, "personalYears": 2 },
-    { "name": "VBA", "strength": "Working", "professionalYears": 1, "personalYears": 1 }
-  ],
-  "ai": [
-    { "name": "Prompt engineering (Claude, Cursor, ChatGPT)", "strength": "Strong", "professionalYears": 2, "personalYears": 3 },
-    { "name": "OpenAI API (typed CAD pipeline)", "strength": "Strong", "professionalYears": 2, "personalYears": 0 },
-    { "name": "Google Gemini API", "strength": "Proficient", "professionalYears": 0, "personalYears": 2 },
-    { "name": "Local LLMs (Ollama)", "strength": "Proficient", "professionalYears": 1, "personalYears": 3 },
-    { "name": "Tesseract OCR", "strength": "Proficient", "professionalYears": 2, "personalYears": 2 }
-  ],
-  "spanish": "Advanced conversational Spanish (placed into Level 4 / Advanced Conversational at Missouri S&T). Reads and discusses technical material in Spanish. Not a translation credential.",
   "skills": [
+    {
+      "label": "Languages",
+      "items": "C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA"
+    },
     {
       "label": "Databases and Data Systems",
       "items": "SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching"
@@ -56,7 +40,6 @@
       "location": "St. Louis, MO",
       "title": "Staff Technician (CAD automation / Civil 3D tools)",
       "dates": "Jul 2024 - Aug 2026",
-      "overview": "Civil engineering firm delivering public infrastructure and campus work in the St. Louis region. Role: staff technician for Civil 3D automation — plugins, Dynamo scripts, and an internal command pipeline rather than production drafting as the main output. Grew from removing one-off CAD bottlenecks into tooling the rest of the team runs daily, cutting hours of clicking to minutes on live airport and campus drawings.",
       "bullets": [
         "Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.",
         "Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.",
@@ -72,7 +55,6 @@
       "location": "O'Fallon, MO",
       "title": "Quality Engineer - Manufacturing / Precision Machining",
       "dates": "Apr 2023 - Jun 2024",
-      "overview": "Precision machine shop producing bar-stock parts to customer prints. Role: quality engineer on the inspection bench — CMM programs, CAD-to-print checks, ISO 9001 calibration. Grew from running inspections into owning the metrology loop so dimensional misses died in the lab instead of at the customer.",
       "bullets": [
         "Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.",
         "Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.",
@@ -84,7 +66,6 @@
       "location": "Manchester / Ballwin, MO",
       "title": "Assistant Department Manager - Building Materials and Millwork",
       "dates": "Jun 2020 - Mar 2023",
-      "overview": "Home-improvement retailer with contractor millwork and building-materials desks. Role: assistant department manager — staffing, commercial material estimates, contractor-facing pricing. Grew from covering the floor into running those estimates on a deadline and supervising department staff.",
       "bullets": [
         "Priced and estimated large commercial material orders. Supervised department staff."
       ]
@@ -94,7 +75,6 @@
       "location": "Fenton, MO",
       "title": "Revit/CAD Technician - Mechanical/Plumbing",
       "dates": "May 2018 - Apr 2019",
-      "overview": "Mechanical and plumbing engineering firm producing construction documents. Role: Revit and AutoCAD technician for MEP sheets and as-builts. Grew from drafting into reusable object libraries and standardized details so later sheets started from a consistent model.",
       "bullets": [
         "Produced MEP construction documents. Built as-built models in Revit and AutoCAD.",
         "Built automated data libraries for building-system objects. Standardized outdated details."
@@ -130,18 +110,25 @@
   ],
   "education": [
     {
+      "org": "Saint Louis University (SLU)",
+      "location": "St. Louis, MO",
+      "credential": "Calculus II (CLEP credit)",
+      "dates": "2018",
+      "note": "Accepted by Ranken Technical College for their calculus curriculum."
+    },
+    {
+      "org": "Missouri University of Science and Technology",
+      "location": "Rolla, MO",
+      "credential": "Coursework toward Latin American Studies with Technical Applications",
+      "dates": "2019 - 2020",
+      "note": "Technical fluency in Spanish."
+    },
+    {
       "org": "Ranken Technical College",
       "location": "Wentzville, MO",
       "credential": "A.A.S., Building Systems Engineering Technology",
       "dates": "2019",
       "note": ""
-    },
-    {
-      "org": "Missouri University of Science and Technology",
-      "location": "Rolla, MO",
-      "credential": "Coursework in Latin American Studies with Technical Applications",
-      "dates": "2019 - 2020",
-      "note": "Placed into Advanced Conversational Spanish (Level 4). Technical fluency in Spanish."
     }
   ]
 }

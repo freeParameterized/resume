@@ -9,7 +9,7 @@ import { GithubCard } from "./components/GithubCard";
 import { Header } from "./components/Header";
 import { ResumeIntro, ResumeSummary } from "./components/ResumeIntro";
 import { Section } from "./components/Section";
-import { Skills, type LanguageRow } from "./components/Skills";
+import { Skills } from "./components/Skills";
 // CadHostMock backed up at ./components/_backup/CadHostMock.tsx — CAD product chrome
 // (BricsCAD / BRX / LISP) is too domain-specific for most ML hiring managers.
 // import { CadHostMock } from "./components/CadHostMock";
@@ -22,19 +22,8 @@ import { logVisit } from "./visits";
 let pageViewSent = false;
 
 type ResumeDoc = {
-  languages: LanguageRow[];
-  ai: LanguageRow[];
-  spanish: string;
-  yearsNote: string;
   skills: { label: string; items: string }[];
-  experience: {
-    org: string;
-    location: string;
-    title: string;
-    dates: string;
-    overview?: string;
-    bullets: string[];
-  }[];
+  experience: { org: string; location: string; title: string; dates: string; bullets: string[] }[];
   projects: { name: string; meta: string; bullets: string[] }[];
   education: { org: string; location: string; credential: string; dates: string; note?: string }[];
 };
@@ -116,14 +105,8 @@ export default function App() {
           <ResumeSummary />
         </Section>
 
-        <Section id="skills" index="02" title="Languages and skills">
-          <Skills
-            languages={doc.languages}
-            ai={doc.ai}
-            spanish={doc.spanish}
-            yearsNote={doc.yearsNote}
-            groups={doc.skills}
-          />
+        <Section id="skills" index="02" title="Skills">
+          <Skills groups={doc.skills} />
         </Section>
 
         <Section id="experience" index="03" title="Experience">
@@ -134,7 +117,6 @@ export default function App() {
               location: job.location,
               title: job.title,
               dates: job.dates,
-              overview: job.overview,
               bullets: job.bullets,
             }))}
           />
