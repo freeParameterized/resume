@@ -3,7 +3,7 @@ Software Engineer - C#/.NET and C++17 Systems, Geometry and Automation Tooling
 Chesterfield / St. Louis, MO | pal@cadpal.net | Phone: Available on request | github.com/freeParameterized | Free Parameter LLC
 
 SUMMARY
-Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch.
+Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch.
 
 LANGUAGES AND SKILLS
 C#: Strong; professional 2 yr; personal 3 yr
@@ -17,7 +17,7 @@ AutoLISP / LISP: Working; professional 2 yr; personal 2 yr
 VBA: Working; professional 1 yr; personal 1 yr
 
 AI AND RELATED TOOLS
-Prompt engineering (Cursor, ChatGPT): Strong; professional 2 yr; personal 3 yr
+Prompt engineering (Claude, Cursor, ChatGPT): Strong; professional 2 yr; personal 3 yr
 OpenAI API (typed CAD pipeline): Strong; professional 2 yr; personal 0 yr
 Google Gemini API: Proficient; professional 0 yr; personal 2 yr
 Local LLMs (Ollama): Proficient; professional 1 yr; personal 3 yr

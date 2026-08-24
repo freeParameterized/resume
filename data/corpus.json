@@ -15,7 +15,7 @@
     "website": "",
     "github": "https://github.com/freeParameterized",
     "identity": "Chesterfield / St. Louis, MO - Free Parameter LLC",
-    "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch."
+    "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch."
   },
   "howIWork": {
     "headline": "Working with people",
@@ -34,7 +34,7 @@
       "id": "llm",
       "label": "Prompt engineering",
       "items": [
-        "Prompt engineering in Cursor, ChatGPT, and Gemini",
+        "Prompt engineering in Claude, Cursor, ChatGPT, and Gemini",
         "Uses existing company drawings as input when generating CAD work",
         "Turns a photo into item and quantity data with the Google Gemini API"
       ]
@@ -645,7 +645,7 @@
         "llm",
         "software engineer"
       ],
-      "text": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch. At David Mason & Associates, ships C# and Python against Civil 3D, AutoCAD, and Revit so layout, hydrology drafting, and sheet edits that used to take hours finish in minutes, with other engineers checking the time. Built software that auto-checks and populates plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Broader stack includes Dart, TypeScript, and Three.js. Has used local LLMs since 2023. Uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On personal time, designed, funded, and shipped Digital Twin Pro, a Flutter 3D inventory product, to a Google Play beta."
+      "text": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch. At David Mason & Associates, ships C# and Python against Civil 3D, AutoCAD, and Revit so layout, hydrology drafting, and sheet edits that used to take hours finish in minutes, with other engineers checking the time. Built software that auto-checks and populates plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Broader stack includes Dart, TypeScript, and Three.js. Has used local LLMs since 2023. Uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On personal time, designed, funded, and shipped Digital Twin Pro, a Flutter 3D inventory product, to a Google Play beta."
     },
     {
       "id": "teamwork",

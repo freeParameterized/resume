@@ -449,7 +449,7 @@ const RULES: Rule[] = [
     id: "identity",
     test: /who is peter|who are you|tell me about (yourself|peter|him)|introduce (yourself|peter)|what do you do/i,
     answer:
-      "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch. At David Mason & Associates, Jul 2024 to Aug 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
+      "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch. At David Mason & Associates, Jul 2024 to Aug 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
   },
 ];
 

@@ -6,7 +6,7 @@ Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request ·
 
 ## Summary
 
-Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch.
+Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch.
 
 ## Languages and skills
 
@@ -28,7 +28,7 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 
 | Tool | Strength | Professional years | Personal / passion years |
 | --- | --- | ---: | ---: |
-| Prompt engineering (Cursor, ChatGPT) | Strong | 2 | 3 |
+| Prompt engineering (Claude, Cursor, ChatGPT) | Strong | 2 | 3 |
 | OpenAI API (typed CAD pipeline) | Strong | 2 | 0 |
 | Google Gemini API | Proficient | 0 | 2 |
 | Local LLMs (Ollama) | Proficient | 1 | 3 |
