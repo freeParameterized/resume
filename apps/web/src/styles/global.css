@@ -565,6 +565,90 @@ body.nav-menu-open {
   margin: 6px 0;
 }
 
+.tablet-demo {
+  margin: 16px 0 0;
+  width: min(720px, 100%);
+}
+
+.tablet-shell {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 10px 10px 16px;
+  width: 100%;
+  min-width: 280px;
+  min-height: 420px;
+  resize: both;
+  overflow: auto;
+}
+
+.tablet-bezel {
+  position: relative;
+  background: #111;
+  border-radius: 14px;
+  padding: 14px 10px 18px;
+}
+
+.tablet-camera {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: #3f3f46;
+}
+
+.tablet-screen {
+  position: relative;
+  height: min(78vh, 780px);
+  min-height: 520px;
+  background: #0a0a0a;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.tablet-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.tablet-fallback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 16px;
+  color: #e5e7eb;
+  font-size: 0.88rem;
+}
+
+.tablet-fallback-note {
+  color: #a1a1aa;
+  font-size: 0.78rem;
+}
+
+.tablet-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+.tablet-host-swap {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--brass-2);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;

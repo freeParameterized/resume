@@ -10,6 +10,8 @@ import { Header } from "./components/Header";
 import { ResumeIntro, ResumeSummary } from "./components/ResumeIntro";
 import { Section } from "./components/Section";
 import { Skills } from "./components/Skills";
+import { CadHostMock } from "./components/CadHostMock";
+import { TabletFrame } from "./components/TabletFrame";
 import { loadSettings, saveSettings, type Settings } from "./settings";
 import type { Corpus, GithubInfo, Health, Paper, Project } from "./types";
 import { logVisit } from "./visits";
@@ -129,6 +131,8 @@ export default function App() {
                     <li key={b}>{b}</li>
                   ))}
                 </ul>
+                {p.name === "Digital Twin Pro" ? <TabletFrame title={p.name} /> : null}
+                {p.name === "CAD integration bridge" ? <CadHostMock /> : null}
               </article>
             ))}
           </div>
