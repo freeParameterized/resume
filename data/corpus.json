@@ -15,7 +15,7 @@
     "website": "",
     "github": "https://github.com/freeParameterized",
     "identity": "Chesterfield / St. Louis, MO - Free Parameter LLC",
-    "summary": "Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Uses prompt engineering, and keeps token use down by fixing syntax errors and doing basic refactors by hand. Respects current LLM limits. Builds OCR and structured-data pipelines over messy engineering input. Designed, funded, and shipped Digital Twin Pro to a Google Play beta on personal time. Worked inside multi-disciplinary engineering teams under formal review. Supervised staff."
+    "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch."
   },
   "howIWork": {
     "headline": "Working with people",
@@ -34,7 +34,7 @@
       "id": "llm",
       "label": "Prompt engineering",
       "items": [
-        "Prompt engineering, with a manual pass for syntax errors and basic refactoring",
+        "Prompt engineering in Cursor, ChatGPT, and Gemini",
         "Uses existing company drawings as input when generating CAD work",
         "Turns a photo into item and quantity data with the Google Gemini API"
       ]
@@ -43,13 +43,15 @@
       "id": "languages",
       "label": "Languages",
       "items": [
-        "C++17 (memory, vectors, OOP, Dear ImGui, COM)",
-        "C# / .NET (WPF, WinForms, Civil 3D and AutoCAD plugins)",
-        "Dart / Flutter",
-        "Python",
-        "JavaScript / TypeScript (Node, React, Three.js)",
-        "LISP / AutoLISP",
-        "VBA"
+        "C# / .NET — Strong; ~2 years professional, ~3 years personal (WPF, WinForms, Civil 3D and AutoCAD plugins)",
+        "Python — Strong; ~2 years professional, ~2 years personal",
+        "C++17 — Strong; self-taught, ~6 years personal (memory, vectors, OOP, Dear ImGui, COM); no professional years on the record",
+        "Dart / Flutter — Proficient; personal / passion projects",
+        "JavaScript / TypeScript — Proficient; personal (Node, React, Three.js)",
+        "SQL — Working; personal projects",
+        "LISP / AutoLISP — Working; ~2 years professional and personal",
+        "VBA — Working; ~1 year professional and personal",
+        "Spanish — advanced conversational (Level 4 at Missouri S&T); technical fluency, not a translation credential"
       ]
     },
     {
@@ -76,8 +78,7 @@
         "Graph theory and dependency trees",
         "Spatial indexing to find nearby objects quickly",
         "Stormwater runoff calculations",
-        "Complex numbers and harmonic motion",
-        "Calculus II (CLEP credit at Saint Louis University, 2018)"
+        "Complex numbers and harmonic motion"
       ]
     },
     {
@@ -149,6 +150,7 @@
       "location": "St. Louis, MO",
       "title": "Staff Technician (CAD automation / Civil 3D tools)",
       "dates": "Jul 2024 - Aug 2026",
+      "overview": "Civil engineering firm delivering public infrastructure and campus work in the St. Louis region. Role: staff technician for Civil 3D automation — plugins, Dynamo scripts, and an internal command pipeline rather than production drafting as the main output. Grew from removing one-off CAD bottlenecks into tooling the rest of the team runs daily, cutting hours of clicking to minutes on live airport and campus drawings.",
       "bullets": [
         "Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.",
         "Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.",
@@ -175,6 +177,7 @@
       "location": "O'Fallon, MO",
       "title": "Quality Engineer - Manufacturing / Precision Machining",
       "dates": "Apr 2023 - Jun 2024",
+      "overview": "Precision machine shop producing bar-stock parts to customer prints. Role: quality engineer on the inspection bench — CMM programs, CAD-to-print checks, ISO 9001 calibration. Grew from running inspections into owning the metrology loop so dimensional misses died in the lab instead of at the customer.",
       "bullets": [
         "Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.",
         "Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.",
@@ -187,6 +190,7 @@
       "location": "Manchester / Ballwin, MO",
       "title": "Assistant Department Manager - Building Materials and Millwork",
       "dates": "Jun 2020 - Mar 2023",
+      "overview": "Home-improvement retailer with contractor millwork and building-materials desks. Role: assistant department manager — staffing, commercial material estimates, contractor-facing pricing. Grew from covering the floor into running those estimates on a deadline and supervising department staff.",
       "bullets": [
         "Priced and estimated large commercial material orders. Supervised department staff."
       ]
@@ -197,6 +201,7 @@
       "location": "Fenton, MO",
       "title": "Revit/CAD Technician - Mechanical/Plumbing",
       "dates": "May 2018 - Apr 2019",
+      "overview": "Mechanical and plumbing engineering firm producing construction documents. Role: Revit and AutoCAD technician for MEP sheets and as-builts. Grew from drafting into reusable object libraries and standardized details so later sheets started from a consistent model.",
       "bullets": [
         "Produced MEP construction documents. Built as-built models in Revit and AutoCAD.",
         "Built automated data libraries for building-system objects. Standardized outdated details."
@@ -205,31 +210,21 @@
   ],
   "education": [
     {
-      "id": "slu",
-      "org": "Saint Louis University (SLU)",
-      "location": "St. Louis, MO",
-      "credential": "Calculus II (CLEP credit)",
-      "dates": "2018",
-      "notes": [
-        "Accepted by Ranken Technical College for their calculus curriculum."
-      ]
+      "id": "ranken",
+      "org": "Ranken Technical College",
+      "location": "Wentzville, MO",
+      "credential": "A.A.S., Building Systems Engineering Technology",
+      "dates": "2019"
     },
     {
       "id": "mst",
       "org": "Missouri S&T",
-      "location": "Rolla",
-      "credential": "Coursework toward Latin American Studies with Technical Applications",
+      "location": "Rolla, MO",
+      "credential": "Coursework in Latin American Studies with Technical Applications",
       "dates": "2019 - 2020",
       "notes": [
         "Placed into Advanced Conversational Spanish (Level 4). Technical fluency in Spanish."
       ]
-    },
-    {
-      "id": "ranken",
-      "org": "Ranken Technical College",
-      "location": "Wentzville",
-      "credential": "AAS Building Systems Engineering Technology",
-      "dates": "2019"
     }
   ],
   "github": {
@@ -650,7 +645,7 @@
         "llm",
         "software engineer"
       ],
-      "text": "Software engineer. Builds tools on spatial and CAD systems. At David Mason & Associates, used C#, Python, Dynamo, LISP, and VBA against Civil 3D, AutoCAD, and Revit. Built software that auto-checks and populates plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes. This reduced errors before PE review by about 25%. Broader stack includes C++17, Dart, Flutter, TypeScript, and Three.js. Has used local LLMs since 2023. Containerizes models for Linux and macOS edge devices. Uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On personal time, shipped Digital Twin Pro. It is a Flutter 3D inventory product. Released it to a Google Play beta."
+      "text": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch. At David Mason & Associates, ships C# and Python against Civil 3D, AutoCAD, and Revit so layout, hydrology drafting, and sheet edits that used to take hours finish in minutes, with other engineers checking the time. Built software that auto-checks and populates plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Broader stack includes Dart, TypeScript, and Three.js. Has used local LLMs since 2023. Uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On personal time, designed, funded, and shipped Digital Twin Pro, a Flutter 3D inventory product, to a Google Play beta."
     },
     {
       "id": "teamwork",
@@ -727,7 +722,7 @@
         "linux",
         "macos"
       ],
-      "text": "Applied-engineering profile. Built a CAD automation pipeline at David Mason & Associates: a written request is turned into a command, then C# talks to Civil 3D. Under Free Parameter LLC, deploys and runs local LLMs on local hardware. Containerizes inference models. Deploys them to Linux, macOS, and Windows edge devices. Writes Bash scripts for data pipelines. Wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. Built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. Runs Tesseract OCR over messy engineering PDFs. Uses Levenshtein distance to match noisy strings. Built an experimental offline CAD GUI in C++. Writes graph processors and hydrologic calculators. Directed the implementation of a custom 3D projection and painter's-algorithm depth sorting. Used LLM assistance to accelerate coding. Does prompt engineering in Cursor and Gemini. Earned Calculus II credit via CLEP at Saint Louis University in 2018. Wrote a visualizer for matrix transforms, complex numbers, and roots of unity. Has never trained or fine-tuned a model. Has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. Has not implemented an attention layer or a training loop. Has no vector database and no embedding-based retrieval. Has no CUDA programming or MLOps platform experience. Has no published ML research."
+      "text": "Applied-engineering profile. Built a CAD automation pipeline at David Mason & Associates: a written request is turned into a command, then C# talks to Civil 3D. Under Free Parameter LLC, deploys and runs local LLMs on local hardware. Containerizes inference models. Deploys them to Linux, macOS, and Windows edge devices. Writes Bash scripts for data pipelines. Wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. Built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. Runs Tesseract OCR over messy engineering PDFs. Uses Levenshtein distance to match noisy strings. Built an experimental offline CAD GUI in C++. Writes graph processors and hydrologic calculators. Directed the implementation of a custom 3D projection and painter's-algorithm depth sorting. Used LLM assistance to accelerate coding. Does prompt engineering in Cursor and Gemini. Wrote a visualizer for matrix transforms, complex numbers, and roots of unity. Has never trained or fine-tuned a model. Has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. Has not implemented an attention layer or a training loop. Has no vector database and no embedding-based retrieval. Has no CUDA programming or MLOps platform experience. Has no published ML research."
     },
     {
       "id": "digital-twin-pro",
@@ -839,7 +834,7 @@
         "education",
         "math"
       ],
-      "text": "Completed a Calculus II CLEP credit at Saint Louis University (SLU) in 2018. This credit fulfilled the calculus requirements for the Ranken Technical College curriculum. Attended Missouri S&T in Rolla. Took coursework toward Latin American Studies with Technical Applications from 2019 to 2020. Placed into Advanced Conversational Spanish. Has technical fluency in Spanish. Did not take C++ at S&T. C++ is self-taught. Attended Ranken Technical College in Wentzville. Earned an AAS in Building Systems Engineering Technology in 2019."
+      "text": "Earned an A.A.S. in Building Systems Engineering Technology from Ranken Technical College in Wentzville in 2019. Attended Missouri S&T in Rolla from 2019 to 2020 for coursework in Latin American Studies with Technical Applications. Placed into Advanced Conversational Spanish (Level 4). Has technical fluency in Spanish. Did not take C++ at S&T. C++ is self-taught. Did not complete a bachelor's degree. Holds no master's and no PhD."
     },
     {
       "id": "proj-cadnat",
@@ -1009,7 +1004,7 @@
         "typed command",
         "schema"
       ],
-      "text": "Uses prompt engineering, and keeps token use down by fixing syntax errors and doing basic refactors by hand. Does not call this applied ML or model training. Has not trained or fine-tuned a model."
+      "text": "Prompt engineering is listed among the skills. Does not call this applied ML or model training. Has not trained or fine-tuned a model."
     },
     {
       "id": "hiring-unknowns",
@@ -1031,7 +1026,7 @@
         "gpa",
         "hiring"
       ],
-      "text": "Employment terms are not published here. There is no salary, hourly rate, or compensation figure. There is no start date, notice period, or job-search status. There is no statement of work authorization, citizenship, visa status, or security clearance. There is no relocation, remote, or on-site preference. Location is the Chesterfield area. Worked at David Mason & Associates from Jul 2024 to Aug 2026. Supervised department staff as an Assistant Department Manager. Earned an AAS in Building Systems Engineering Technology from Ranken Technical College. The Calculus II CLEP credit from Saint Louis University was accepted for the Ranken calculus curriculum. Took coursework at Missouri S&T. Did not complete a bachelor's degree. Holds no master's, no PhD, and no published GPA. Is not a licensed professional engineer. Has no certifications, awards, patents, or conference talks recorded. Spanish is the only spoken language besides English. The contact route is pal@cadpal.net."
+      "text": "Employment terms are not published here. There is no salary, hourly rate, or compensation figure. There is no start date, notice period, or job-search status. There is no statement of work authorization, citizenship, visa status, or security clearance. There is no relocation, remote, or on-site preference. Location is the Chesterfield area. Worked at David Mason & Associates from Jul 2024 to Aug 2026. Supervised department staff as an Assistant Department Manager. Earned an A.A.S. in Building Systems Engineering Technology from Ranken Technical College. Took Spanish and Latin American Studies coursework at Missouri S&T and placed into Advanced Conversational Spanish. Did not complete a bachelor's degree. Holds no master's, no PhD, and no published GPA. Is not a licensed professional engineer. Has no certifications, awards, patents, or conference talks recorded. Spanish is the only spoken language besides English. The contact route is pal@cadpal.net."
     }
   ],
   "voice": {

@@ -118,7 +118,7 @@ const GUARDED: Rule[] = [
     test: /\b(attention|self.attention|multi.head|transformers?|back.?propagat\w*|backprop\w*|autograd\w*|gradient descent|gradients?|derive|derivation|chain rule|neural net\w*|\bcnn\b|\brnn\b|\blstm\b|activation function|softmax|layer ?norm\w*|positional encoding|tokeniz\w* internals|\bkv cache\b)/i,
     not: /pay attention to detail/i,
     answer:
-      "That is self-taught background rather than something he has implemented, and the notes do not record him writing an attention layer, an autograd pass, or a training loop, so I will not claim he has. The math he has actually written is different math: matrix transforms, a 3D projection with painter's-algorithm depth sorting he architected and directed using LLMs to accelerate coding in Digital Twin Pro, complex numbers and roots of unity in a visualizer, graph and dependency-tree processors, Levenshtein distance for fuzzy matching, and hydrologic calculators. His math coursework includes a Calculus II CLEP credit accepted by Ranken, plus general education at Missouri S&T. If you want to know how deep the transformer understanding actually goes, ask him to work through it on a whiteboard - that is a fair test, and not one I can pass on his behalf.",
+      "That is self-taught background rather than something he has implemented, and the notes do not record him writing an attention layer, an autograd pass, or a training loop, so I will not claim he has. The math he has actually written is different math: matrix transforms, a 3D projection with painter's-algorithm depth sorting he architected and directed using LLMs to accelerate coding in Digital Twin Pro, complex numbers and roots of unity in a visualizer, graph and dependency-tree processors, Levenshtein distance for fuzzy matching, and hydrologic calculators. Documented coursework sits inside the Ranken A.A.S. and general education at Missouri S&T. If you want to know how deep the transformer understanding actually goes, ask him to work through it on a whiteboard - that is a fair test, and not one I can pass on his behalf.",
   },
   {
     id: "ml-infra",
@@ -449,7 +449,7 @@ const RULES: Rule[] = [
     id: "identity",
     test: /who is peter|who are you|tell me about (yourself|peter|him)|introduce (yourself|peter)|what do you do/i,
     answer:
-      "Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Uses prompt engineering, and keeps token use down by fixing syntax errors and doing basic refactors by hand. At David Mason & Associates, Jul 2024 to Aug 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
+      "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch. At David Mason & Associates, Jul 2024 to Aug 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
   },
 ];
 

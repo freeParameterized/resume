@@ -10,6 +10,7 @@ export type Experience = {
   location: string;
   title: string;
   dates: string;
+  overview?: string;
   bullets: string[];
   projects?: string[];
   notForDma?: string;

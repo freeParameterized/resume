@@ -51,6 +51,7 @@ export function Header({ name, theme, onToggleTheme, health }: Props) {
 
         <nav className="nav nav-desktop" aria-label="Sections">
           <a href="#summary">Summary</a>
+          <a href="#skills">Languages</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
@@ -91,6 +92,9 @@ export function Header({ name, theme, onToggleTheme, health }: Props) {
           <nav id={menuId} className="mobile-nav-panel fade-in" aria-label="Mobile sections">
             <a href="#summary" onClick={closeMenu}>
               Summary
+            </a>
+            <a href="#skills" onClick={closeMenu}>
+              Languages
             </a>
             <a href="#experience" onClick={closeMenu}>
               Experience

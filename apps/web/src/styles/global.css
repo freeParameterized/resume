@@ -322,6 +322,77 @@ body.nav-menu-open {
   margin: 0;
 }
 
+.skills-block {
+  display: grid;
+  gap: 18px;
+}
+
+.lang-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.lang-table caption {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 8px;
+}
+
+.lang-table th,
+.lang-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px 8px 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.lang-table thead th {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.lang-table tbody th {
+  font-weight: 600;
+}
+
+.lang-table td:nth-child(3),
+.lang-table td:nth-child(4) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.spanish-callout,
+.years-note,
+.job-overview,
+.sheet-overview {
+  max-width: var(--measure, 68ch);
+  line-height: 1.55;
+}
+
+.years-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.spanish-callout {
+  margin: 0;
+}
+
+.job-overview {
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
 .resume-skill {
   display: grid;
   grid-template-columns: minmax(9rem, 14rem) 1fr;

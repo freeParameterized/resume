@@ -1,10 +1,18 @@
 import resume from "@resume";
+import { Skills, type LanguageRow } from "./Skills";
 import { onResumePdfClick, resumePdfLinkProps } from "../resumeDownload";
 import "../styles/print.css";
 import { logVisit } from "../visits";
 
 type SkillGroup = { label: string; items: string };
-type Job = { org: string; location: string; title: string; dates: string; bullets: string[] };
+type Job = {
+  org: string;
+  location: string;
+  title: string;
+  dates: string;
+  overview?: string;
+  bullets: string[];
+};
 type Proj = { name: string; meta: string; bullets: string[] };
 type Edu = { org: string; location: string; credential: string; dates: string; note?: string };
 
@@ -15,12 +23,16 @@ type ResumeDoc = {
     location: string;
     email: string;
     phone: string;
-    address: string;
-    github: string;
-    website: string;
-    company: string;
+    address?: string;
+    github?: string;
+    website?: string;
+    company?: string;
   };
   summary: string;
+  languages: LanguageRow[];
+  ai: LanguageRow[];
+  spanish: string;
+  yearsNote: string;
   skills: SkillGroup[];
   experience: Job[];
   projects: Proj[];
@@ -52,15 +64,14 @@ export function ResumeSheet() {
       </section>
 
       <section>
-        <h2>Skills</h2>
-        <dl className="sheet-skills">
-          {doc.skills.map((s) => (
-            <div className="sheet-skill" key={s.label}>
-              <dt>{s.label}</dt>
-              <dd>{s.items}</dd>
-            </div>
-          ))}
-        </dl>
+        <h2>Languages and skills</h2>
+        <Skills
+          languages={doc.languages}
+          ai={doc.ai}
+          spanish={doc.spanish}
+          yearsNote={doc.yearsNote}
+          groups={doc.skills}
+        />
       </section>
 
       <section>
@@ -73,6 +84,7 @@ export function ResumeSheet() {
             <p className="sheet-meta">
               {j.location} · {j.dates}
             </p>
+            {j.overview ? <p className="sheet-overview">{j.overview}</p> : null}
             <ul>
               {j.bullets.map((b) => (
                 <li key={b}>{b}</li>

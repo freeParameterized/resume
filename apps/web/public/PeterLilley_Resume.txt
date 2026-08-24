@@ -3,10 +3,27 @@ Software Engineer - C#/.NET and C++17 Systems, Geometry and Automation Tooling
 Chesterfield / St. Louis, MO | pal@cadpal.net | Phone: Available on request | github.com/freeParameterized | Free Parameter LLC
 
 SUMMARY
-Software engineer. Writes C#, C++17, and Python against the Civil 3D, AutoCAD, and Revit APIs. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Uses prompt engineering, and keeps token use down by fixing syntax errors and doing basic refactors by hand.
+Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs, and also writes code from scratch.
 
-SKILLS
-Languages: C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
+LANGUAGES AND SKILLS
+C#: Strong; professional 2 yr; personal 3 yr
+Python: Strong; professional 2 yr; personal 2 yr
+C++17: Strong; professional 0 yr; personal 6 yr
+Dart: Proficient; professional 0 yr; personal 2 yr
+TypeScript: Proficient; professional 0 yr; personal 2 yr
+JavaScript: Proficient; professional 0 yr; personal 2 yr
+SQL: Working; professional 0 yr; personal 2 yr
+AutoLISP / LISP: Working; professional 2 yr; personal 2 yr
+VBA: Working; professional 1 yr; personal 1 yr
+
+AI AND RELATED TOOLS
+Prompt engineering (Cursor, ChatGPT): Strong; professional 2 yr; personal 3 yr
+OpenAI API (typed CAD pipeline): Strong; professional 2 yr; personal 0 yr
+Google Gemini API: Proficient; professional 0 yr; personal 2 yr
+Local LLMs (Ollama): Proficient; professional 1 yr; personal 3 yr
+Tesseract OCR: Proficient; professional 2 yr; personal 2 yr
+Spanish: Advanced conversational Spanish (placed into Level 4 / Advanced Conversational at Missouri S&T). Reads and discusses technical material in Spanish. Not a translation credential.
+Professional years count paid jobs where that language shipped. Personal years count documented side projects, through 2026. C++ is self-taught.
 Databases and Data Systems: SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching
 Engineering and math: Matrix math, 3D graphics, Express, React, Git (GitFlow, trunk-based, PRs, CI/CD), CMake, Linux, macOS, Docker, Bash scripting for data pipelines
 Domain systems, quality, and networking: CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001, TCP/IP, IPv4/IPv6 subnetting, Cisco routing and switching
@@ -14,6 +31,7 @@ Domain systems, quality, and networking: CAD plugins, Revit automation, 3D metad
 EXPERIENCE
 
 Staff Technician (CAD automation / Civil 3D tools) - David Mason & Associates | St. Louis, MO | Jul 2024 - Aug 2026
+Civil engineering firm delivering public infrastructure and campus work in the St. Louis region. Role: staff technician for Civil 3D automation — plugins, Dynamo scripts, and an internal command pipeline rather than production drafting as the main output. Grew from removing one-off CAD bottlenecks into tooling the rest of the team runs daily, cutting hours of clicking to minutes on live airport and campus drawings.
 - Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.
 - Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.
 - Built a Civil 3D GUI for less experienced CAD users: color-coded IntelliSense-style layer and entity search with autocomplete, dynamic entity pull, and a local phrase-to-command lookup. From one command it moves entities, runs basic draw commands, retargets objects onto other layers, and otherwise edits uniformly across every layout instead of clicking through them in sequence. Minutes of that work, often hundreds of clicks, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them.
@@ -23,14 +41,17 @@ Staff Technician (CAD automation / Civil 3D tools) - David Mason & Associates | 
 - Extended that pipeline to locate outdated sheet text and to compare design options. Authored and reviewed Git pull requests on the plugins and pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD.
 
 Quality Engineer - Manufacturing / Precision Machining - Component Bar Products | O'Fallon, MO | Apr 2023 - Jun 2024
+Precision machine shop producing bar-stock parts to customer prints. Role: quality engineer on the inspection bench — CMM programs, CAD-to-print checks, ISO 9001 calibration. Grew from running inspections into owning the metrology loop so dimensional misses died in the lab instead of at the customer.
 - Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.
 - Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.
 - Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets.
 
 Assistant Department Manager - Building Materials and Millwork - Menard, Inc. | Manchester / Ballwin, MO | Jun 2020 - Mar 2023
+Home-improvement retailer with contractor millwork and building-materials desks. Role: assistant department manager — staffing, commercial material estimates, contractor-facing pricing. Grew from covering the floor into running those estimates on a deadline and supervising department staff.
 - Priced and estimated large commercial material orders. Supervised department staff.
 
 Revit/CAD Technician - Mechanical/Plumbing - Heideman & Associates, Inc. | Fenton, MO | May 2018 - Apr 2019
+Mechanical and plumbing engineering firm producing construction documents. Role: Revit and AutoCAD technician for MEP sheets and as-builts. Grew from drafting into reusable object libraries and standardized details so later sheets started from a consistent model.
 - Produced MEP construction documents. Built as-built models in Revit and AutoCAD.
 - Built automated data libraries for building-system objects. Standardized outdated details.
 
@@ -51,10 +72,7 @@ Interactive Portfolio (this site) | React, TypeScript, Express
 
 EDUCATION
 
-Calculus II (CLEP credit) - Saint Louis University (SLU) | St. Louis, MO | 2018
-Accepted by Ranken Technical College for their calculus curriculum.
-
-Coursework toward Latin American Studies with Technical Applications - Missouri University of Science and Technology | Rolla, MO | 2019 - 2020
-Technical fluency in Spanish.
-
 A.A.S., Building Systems Engineering Technology - Ranken Technical College | Wentzville, MO | 2019
+
+Coursework in Latin American Studies with Technical Applications - Missouri University of Science and Technology | Rolla, MO | 2019 - 2020
+Placed into Advanced Conversational Spanish (Level 4). Technical fluency in Spanish.

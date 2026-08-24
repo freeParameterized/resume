@@ -10,6 +10,7 @@ export function ExperienceList({ jobs }: { jobs: Experience[] }) {
           </div>
           <h3>{job.org}</h3>
           <div className="role">{job.title}</div>
+          {job.overview ? <p className="job-overview">{job.overview}</p> : null}
           <ul>
             {job.bullets.map((b) => (
               <li key={b}>{b}</li>
