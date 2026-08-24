@@ -1,6 +1,10 @@
 /**
- * Not mounted on the public resume (see App.tsx). Visual backup:
- * ./_backup/CadHostMock.tsx
+ * BACKUP 2026-08-23
+ * Interactive CADNAT Host mock (Dear ImGui lookalike + Three.js viewport).
+ * Removed from the public resume because ML hiring managers are unlikely to
+ * recognize BricsCAD / BRX / LISP hot-load chrome unless they have also
+ * worked in CAD. Restore by uncommenting the CadHostMock usage in App.tsx
+ * and copying this file back to ../CadHostMock.tsx.
  */
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";

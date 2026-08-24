@@ -10,7 +10,9 @@ import { Header } from "./components/Header";
 import { ResumeIntro, ResumeSummary } from "./components/ResumeIntro";
 import { Section } from "./components/Section";
 import { Skills } from "./components/Skills";
-import { CadHostMock } from "./components/CadHostMock";
+// CadHostMock backed up at ./components/_backup/CadHostMock.tsx — CAD product chrome
+// (BricsCAD / BRX / LISP) is too domain-specific for most ML hiring managers.
+// import { CadHostMock } from "./components/CadHostMock";
 import { TabletFrame } from "./components/TabletFrame";
 import { loadSettings, saveSettings, type Settings } from "./settings";
 import type { Corpus, GithubInfo, Health, Paper, Project } from "./types";
@@ -132,7 +134,7 @@ export default function App() {
                   ))}
                 </ul>
                 {p.name === "Digital Twin Pro" ? <TabletFrame title={p.name} /> : null}
-                {p.name === "CAD integration bridge" ? <CadHostMock /> : null}
+                {/* {p.name === "CAD integration bridge" ? <CadHostMock /> : null} */}
               </article>
             ))}
           </div>
