@@ -51,9 +51,12 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 ### Digital Twin Pro
 *Personal product, Free Parameter LLC | Flutter/Dart 3, SQLite, Firebase, Google Gemini API, ARCore | github.com/freeParameterized/digital-twin-pro*
 
-- Designed and shipped a cross-platform 3D inventory application to a Google Play beta.
-- Architected a custom 3D renderer with a Z-sorted draw queue and a custom projection instead of a game engine. Used LLM assistance to write most of the code.
-- Added photo-based item detection through a paid Gemini API. Stored inventory in SQLite with a move audit log and CSV/JSON export.
+- Concept to Google Play beta in five weekends: a 3D inventory app with a custom renderer (Z-sorted draw queue, own projection) instead of a game engine.
+- Tote contents update by voice, photo, or typing from several screens. Gemini parses speech into items; the camera runs photo recognition. All of it lands on one typed item-to-quantity map shared with SQLite and exports.
+- AI Organizer recommends moves that group like with like, previews them on the rack, then commits. A move log records each tote's from, to, and action.
+- Export one tote's QR with toggleable payload fields, or the whole set as PNG, JPEG, or a multi-page PDF book for labels on the physical bins.
+- Save a warehouse as a project, export it, and import it again (config, SQLite, photos stored locally, CSV/JSON). Drag-and-drop on the rack, including swap onto an occupied slot.
+- Per-tote colors or one uniform style. Independent front and isometric frames. Three rack styles, seven UI themes, grid customization, and slot labels that relabel every location.
 
 ### CAD integration bridge
 *C++17, Dear ImGui, Windows COM | private repository, walkthrough on request*
