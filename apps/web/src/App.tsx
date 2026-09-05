@@ -2,7 +2,6 @@
 import resume from "@resume";
 import { loadGithub, loadHealth, loadPapers, loadProfile, loadProjects } from "./api";
 import { DEEP_DIVE_IDS } from "./catalog";
-import { CommandDock } from "./components/CommandDock";
 import { DeepDive } from "./components/DeepDive";
 import { EducationList } from "./components/EducationList";
 import { ExperienceList } from "./components/ExperienceList";
@@ -82,10 +81,6 @@ export default function App() {
   }
 
   const { profile } = corpus;
-  const printUrl = `${import.meta.env.BASE_URL}?resume=1`;
-  const jump = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   return (
     <>
@@ -102,9 +97,8 @@ export default function App() {
       />
       <main className="shell">
         <ResumeIntro />
-        <CommandDock onJump={jump} onPrint={() => window.open(printUrl, "_self")} />
 
-        <Section id="work" index="" title={`Experience · ${doc.experience.length} roles`}>
+        <Section id="work" index="" title="Experience">
           <ExperienceList
             jobs={doc.experience.map((job) => ({
               id: `${job.org}-${job.dates}`,
@@ -158,7 +152,7 @@ export default function App() {
             <a href={profile.github} target="_blank" rel="noreferrer">
               {profile.github.replace(/^https:\/\//, "")}
             </a>
-            . Type <code>resume</code> in the command line for a printable copy.
+            . Download or print a copy from the header.
           </p>
         </Section>
 
