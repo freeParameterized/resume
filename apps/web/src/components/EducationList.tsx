@@ -4,23 +4,22 @@ export function EducationList({ items, early }: { items: Education[]; early?: st
   const earlyLine = (early || []).join(" ").trim();
   return (
     <>
-      <div className="edu-grid">
+      <div className="edu-list">
         {items.map((ed) => (
-          <article key={ed.id} className="edu-card">
-            <div className="job-meta">
-              {ed.dates} · {ed.location}
-            </div>
+          <article key={ed.id} className="edu-row">
             <h3>{ed.org}</h3>
             <p>{ed.credential}</p>
-            {ed.notes?.length ? (
-              <div className="chips">
-                {ed.notes.map((n) => (
-                  <span className="chip" key={n}>
+            <p className="role-dates">
+              {ed.dates}
+              {ed.location ? ` · ${ed.location}` : ""}
+            </p>
+            {ed.notes?.length
+              ? ed.notes.map((n) => (
+                  <p key={n} className="edu-note">
                     {n}
-                  </span>
-                ))}
-              </div>
-            ) : null}
+                  </p>
+                ))
+              : null}
           </article>
         ))}
       </div>

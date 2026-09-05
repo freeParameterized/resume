@@ -52,52 +52,50 @@ const esc = (s) =>
 
 function buildHtml(doc) {
   const c = doc.contact;
-  const contactLine = [
-    c.location,
-    c.email,
-    `Phone: ${c.phone}`,
-    c.github,
-    c.website,
-    c.company,
-  ]
-    .filter(Boolean)
-    .map(esc)
-    // Separator drawn by CSS rather than a unicode middot, which has broken in this pipeline.
-    .map((part) => `<span>${part}</span>`)
-    .join("");
+  const role = doc.role || doc.headline;
+  const focus = doc.focus || "";
+  const contactLine = [c.location, c.email, c.phone, c.github, c.website].filter(Boolean).map(esc);
 
   const skills = doc.skills
-    .map((s) => `<p class="skill"><span class="k">${esc(s.label)}:</span> ${esc(s.items)}</p>`)
+    .map((s) => `<p class="skill"><span class="k">${esc(s.label)}</span> ${esc(s.items)}</p>`)
     .join("\n");
 
-  /**
-   * Dates sit in their own right-aligned column on the same baseline as the role, which is
-   * the convention recruiters scan. Flexbox rather than a table keeps the reading order
-   * linear for applicant tracking systems.
-   */
-  const entry = (title, subtitle, right, bullets, note) => `
-    <article class="entry">
-      <div class="row">
-        <h3>${esc(title)}</h3>
-        ${right ? `<span class="when">${esc(right)}</span>` : ""}
-      </div>
-      ${subtitle ? `<p class="where">${esc(subtitle)}</p>` : ""}
-      ${note ? `<p class="note">${esc(note)}</p>` : ""}
-      ${
-        bullets && bullets.length
-          ? `<ul>${bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>`
-          : ""
-      }
-    </article>`;
+  const bullets = (items) =>
+    items && items.length ? `<ul>${items.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>` : "";
 
   const experience = doc.experience
-    .map((j) => entry(`${j.org} - ${j.title}`, j.location, j.dates, j.bullets))
+    .map(
+      (j) => `
+    <article class="entry">
+      <h3>${esc(j.title)}</h3>
+      <p class="where">${esc(j.org)} — ${esc(j.location)}</p>
+      <p class="when">${esc(j.dates)}</p>
+      ${bullets(j.printBullets || j.bullets)}
+    </article>`,
+    )
     .join("\n");
 
-  const projects = doc.projects.map((p) => entry(p.name, p.meta, null, p.bullets)).join("\n");
+  const projects = doc.projects
+    .map(
+      (p) => `
+    <article class="entry">
+      <h3>${esc(p.name)}</h3>
+      <p class="stack">${esc(p.stack || p.meta)}</p>
+      ${bullets(p.printBullets || p.bullets)}
+    </article>`,
+    )
+    .join("\n");
 
   const education = doc.education
-    .map((e) => entry(`${e.credential} - ${e.org}`, e.location, e.dates, null, e.note))
+    .map(
+      (e) => `
+    <article class="entry">
+      <h3>${esc(e.org)}</h3>
+      <p class="where">${esc(e.credential)}</p>
+      <p class="when">${esc(e.dates)}${e.location ? ` · ${esc(e.location)}` : ""}</p>
+      ${e.note ? `<p class="note">${esc(e.note)}</p>` : ""}
+    </article>`,
+    )
     .join("\n");
 
   return `<!doctype html>
@@ -106,66 +104,56 @@ function buildHtml(doc) {
 <meta charset="utf-8" />
 <title>${esc(doc.name)} — Resume</title>
 <style>
-  /* One family, real weights. Georgia is present on Windows and macOS and renders well
-     both on screen and in print, so the recipient sees what we rendered here. */
-  @page { size: letter; margin: 0.6in; }
-  html, body { background: #fff; color: #000; margin: 0; padding: 0; }
+  @page { size: letter; margin: 0.55in; }
+  html, body { background: #fff; color: #111; margin: 0; padding: 0; }
   body {
     font-family: Georgia, Charter, "Times New Roman", Times, serif;
-    font-size: 10.5pt;
-    line-height: 1.22;
+    font-size: 10pt;
+    line-height: 1.28;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* Header: name dominant, one compact contact line beneath. */
-  header { border-bottom: 1pt solid #000; padding-bottom: 6pt; margin-bottom: 11pt; }
-  h1 { font-size: 22pt; line-height: 1.05; margin: 0 0 3pt; letter-spacing: -0.01em; }
-  .headline { font-weight: 700; margin: 0 0 5pt; font-size: 10.5pt; }
-  .contact { font-size: 9pt; margin: 0; color: #1a1a1a; }
-  /* Delimiter comes from CSS so no unicode punctuation is needed in the content. */
+  header { margin-bottom: 10pt; }
+  h1 { font-size: 20pt; line-height: 1.05; margin: 0 0 3pt; letter-spacing: -0.01em; }
+  .headline { margin: 0 0 4pt; font-size: 10.5pt; }
+  .headline .role { font-weight: 700; }
+  .contact { font-size: 9pt; margin: 0 0 8pt; color: #222; }
   .contact span + span::before { content: "  |  "; color: #666; }
-
-  /* More space above a heading than below it, so each section reads as one group. */
-  section { margin: 0 0 4pt; }
-  section + section { margin-top: 13pt; }
+  .summary { margin: 0; }
+  section { margin: 11pt 0 0; }
   h2 {
-    font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
-    border-bottom: 0.5pt solid #999; margin: 0 0 6pt; padding-bottom: 2pt;
+    font-size: 9pt; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700;
+    border-bottom: 0.6pt solid #111; margin: 0 0 6pt; padding-bottom: 2pt;
     break-after: avoid; page-break-after: avoid;
   }
-
-  .entry { margin-bottom: 9pt; break-inside: avoid; page-break-inside: avoid; }
+  .entry { margin-bottom: 8pt; break-inside: avoid; page-break-inside: avoid; }
   .entry:last-child { margin-bottom: 0; }
-  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
   h3 { font-size: 10.5pt; font-weight: 700; margin: 0; }
-  .when { font-size: 9pt; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .where { font-size: 9pt; font-style: italic; margin: 0 0 3pt; color: #222; }
-  .note { margin: 0 0 3pt; }
+  .where { font-size: 9pt; margin: 0; color: #222; }
+  .when { font-size: 9pt; margin: 0 0 2pt; color: #333; font-variant-numeric: tabular-nums; }
+  .stack { font-size: 9pt; font-style: italic; margin: 0 0 2pt; color: #222; }
+  .note { margin: 2pt 0 0; font-size: 9.5pt; }
   p { margin: 0 0 4pt; orphans: 2; widows: 2; }
-
-  /* Hanging indent: wrapped lines align under the text, not under the marker. */
   ul { margin: 0; padding: 0; list-style: none; }
   li {
-    position: relative; padding-left: 11pt; margin-bottom: 2.5pt;
+    position: relative; padding-left: 12pt; margin-bottom: 2pt;
     break-inside: avoid; page-break-inside: avoid;
   }
-  li::before { content: "\\2022"; position: absolute; left: 0; top: 0; }
+  li::before { content: "\\2013"; position: absolute; left: 0; top: 0; }
   li:last-child { margin-bottom: 0; }
-
-  .skill { break-inside: avoid; page-break-inside: avoid; margin: 0 0 3pt; }
-  .skill .k { font-weight: 700; }
+  .skill { break-inside: avoid; page-break-inside: avoid; margin: 0 0 2.5pt; }
+  .skill .k { font-weight: 700; margin-right: 6pt; }
 </style>
 </head>
 <body>
   <header>
     <h1>${esc(doc.name)}</h1>
-    <p class="headline">${esc(doc.headline)}</p>
-    <p class="contact">${contactLine}</p>
+    <p class="headline"><span class="role">${esc(role)}</span>${focus ? ` · ${esc(focus)}` : ""}</p>
+    <p class="contact">${contactLine.map((part) => `<span>${part}</span>`).join("")}</p>
+    <p class="summary">${esc(doc.summary)}</p>
   </header>
-  <section><h2>Summary</h2><p>${esc(doc.summary)}</p></section>
-  <section><h2>Skills</h2>${skills}</section>
   <section><h2>Experience</h2>${experience}</section>
-  <section><h2>Projects</h2>${projects}</section>
+  <section><h2>Selected Projects</h2>${projects}</section>
+  <section><h2>Skills</h2>${skills}</section>
   <section><h2>Education</h2>${education}</section>
 </body>
 </html>`;
@@ -173,31 +161,30 @@ function buildHtml(doc) {
 
 function buildText(doc) {
   const c = doc.contact;
+  const role = doc.role || doc.headline;
   const out = [
     doc.name,
-    doc.headline,
-    [c.location, c.email, `Phone: ${c.phone}`, c.github, c.website, c.company].filter(Boolean).join(" | "),
+    [role, doc.focus].filter(Boolean).join(" · "),
+    [c.location, c.email, c.phone, c.github, c.website].filter(Boolean).join(" | "),
     "",
-    "SUMMARY",
     doc.summary,
-    "",
-    "SKILLS",
-    ...doc.skills.map((s) => `${s.label}: ${s.items}`),
     "",
     "EXPERIENCE",
   ].filter((line) => line != null);
   for (const j of doc.experience) {
-    out.push("", `${j.title} - ${j.org} | ${j.location} | ${j.dates}`);
-    for (const b of j.bullets) out.push(`- ${b}`);
+    out.push("", j.title, `${j.org} — ${j.location}`, j.dates);
+    for (const b of j.printBullets || j.bullets) out.push(`– ${b}`);
   }
-  out.push("", "PROJECTS");
+  out.push("", "SELECTED PROJECTS");
   for (const p of doc.projects) {
-    out.push("", `${p.name} | ${p.meta}`);
-    for (const b of p.bullets) out.push(`- ${b}`);
+    out.push("", p.name, p.stack || p.meta);
+    for (const b of p.printBullets || p.bullets) out.push(`– ${b}`);
   }
+  out.push("", "SKILLS");
+  for (const s of doc.skills) out.push(`${s.label} ${s.items}`);
   out.push("", "EDUCATION");
   for (const e of doc.education) {
-    out.push("", `${e.credential} - ${e.org} | ${e.location} | ${e.dates}`);
+    out.push("", e.org, e.credential, e.dates);
     if (e.note) out.push(e.note);
   }
   return out.join("\n") + "\n";
@@ -205,35 +192,32 @@ function buildText(doc) {
 
 function buildMarkdown(doc) {
   const c = doc.contact;
+  const role = doc.role || doc.headline;
   const lines = [
     `# ${doc.name}`,
     "",
-    `**${doc.headline}**`,
+    `**${[role, doc.focus].filter(Boolean).join(" · ")}**`,
     "",
-    [c.location, c.email, `Phone: ${c.phone}`, c.github, c.website, c.company].filter(Boolean).join(" · "),
-    "",
-    "## Summary",
+    [c.location, c.email, c.phone, c.github, c.website].filter(Boolean).join(" | "),
     "",
     doc.summary,
-    "",
-    "## Skills",
-    "",
-    ...doc.skills.map((s) => `- **${s.label}:** ${s.items}`),
     "",
     "## Experience",
   ];
   for (const j of doc.experience) {
-    lines.push("", `### ${j.title} — ${j.org}`, `*${j.location} · ${j.dates}*`, "");
-    for (const b of j.bullets) lines.push(`- ${b}`);
+    lines.push("", `### ${j.title}`, `${j.org} — ${j.location}`, j.dates, "");
+    for (const b of j.printBullets || j.bullets) lines.push(`- ${b}`);
   }
-  lines.push("", "## Projects");
+  lines.push("", "## Selected Projects");
   for (const p of doc.projects) {
-    lines.push("", `### ${p.name}`, `*${p.meta}*`, "");
-    for (const b of p.bullets) lines.push(`- ${b}`);
+    lines.push("", `### ${p.name}`, `*${p.stack || p.meta}*`, "");
+    for (const b of p.printBullets || p.bullets) lines.push(`- ${b}`);
   }
+  lines.push("", "## Skills", "");
+  for (const s of doc.skills) lines.push(`**${s.label}** ${s.items}`);
   lines.push("", "## Education");
   for (const e of doc.education) {
-    lines.push("", `### ${e.credential} — ${e.org}`, `*${e.location} · ${e.dates}*`);
+    lines.push("", `### ${e.org}`, e.credential, e.dates);
     if (e.note) lines.push("", e.note);
   }
   return lines.join("\n") + "\n";
@@ -284,7 +268,7 @@ try {
       `--print-to-pdf=${pdfOut}`,
       `file:///${tmpHtml.replace(/\\/g, "/")}`,
     ],
-    { stdio: "inherit", timeout: 120_000 },
+    { stdio: "inherit", timeout: 180_000 },
   );
 } catch (err) {
   fail(`headless print did not complete: ${err.message}`);
@@ -317,7 +301,7 @@ try {
 }
 if (extracted) {
   if (!extracted.includes("Lilley")) fail("extracted text does not contain his name — the page printed blank");
-  if (!/SUMMARY|Summary/.test(extracted)) fail("extracted text has no Summary heading — content did not render");
+  if (!/EXPERIENCE|Experience/.test(extracted)) fail("extracted text has no Experience heading — content did not render");
   console.log(`[resume:pdf] extracted ${extracted.trim().split(/\s+/).length} words of selectable text`);
 } else if (!buf.includes(Buffer.from("Lilley", "latin1")) && !buf.includes(Buffer.from("FlateDecode"))) {
   fail("PDF contains no recognizable text streams");

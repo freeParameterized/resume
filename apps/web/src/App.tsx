@@ -2,17 +2,15 @@
 import resume from "@resume";
 import { loadGithub, loadHealth, loadPapers, loadProfile, loadProjects } from "./api";
 import { DEEP_DIVE_IDS } from "./catalog";
+import { CommandDock } from "./components/CommandDock";
 import { DeepDive } from "./components/DeepDive";
 import { EducationList } from "./components/EducationList";
 import { ExperienceList } from "./components/ExperienceList";
 import { GithubCard } from "./components/GithubCard";
 import { Header } from "./components/Header";
-import { ResumeIntro, ResumeSummary } from "./components/ResumeIntro";
+import { ResumeIntro } from "./components/ResumeIntro";
 import { Section } from "./components/Section";
 import { Skills } from "./components/Skills";
-// CadHostMock backed up at ./components/_backup/CadHostMock.tsx — CAD product chrome
-// (BricsCAD / BRX / LISP) is too domain-specific for most ML hiring managers.
-// import { CadHostMock } from "./components/CadHostMock";
 import { TabletFrame } from "./components/TabletFrame";
 import { loadSettings, saveSettings, type Settings } from "./settings";
 import type { Corpus, GithubInfo, Health, Paper, Project } from "./types";
@@ -24,7 +22,7 @@ let pageViewSent = false;
 type ResumeDoc = {
   skills: { label: string; items: string }[];
   experience: { org: string; location: string; title: string; dates: string; bullets: string[] }[];
-  projects: { name: string; meta: string; bullets: string[] }[];
+  projects: { name: string; stack?: string; meta: string; bullets: string[] }[];
   education: { org: string; location: string; credential: string; dates: string; note?: string }[];
 };
 
@@ -84,10 +82,14 @@ export default function App() {
   }
 
   const { profile } = corpus;
+  const printUrl = `${import.meta.env.BASE_URL}?resume=1`;
+  const jump = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <>
-      <a className="skip" href="#summary">
+      <a className="skip" href="#work">
         Skip to resume
       </a>
       <Header
@@ -100,16 +102,9 @@ export default function App() {
       />
       <main className="shell">
         <ResumeIntro />
+        <CommandDock onJump={jump} onPrint={() => window.open(printUrl, "_self")} />
 
-        <Section id="summary" index="01" title="Summary">
-          <ResumeSummary />
-        </Section>
-
-        <Section id="skills" index="02" title="Skills">
-          <Skills groups={doc.skills} />
-        </Section>
-
-        <Section id="experience" index="03" title="Experience">
+        <Section id="work" index="" title={`Experience · ${doc.experience.length} roles`}>
           <ExperienceList
             jobs={doc.experience.map((job) => ({
               id: `${job.org}-${job.dates}`,
@@ -122,25 +117,28 @@ export default function App() {
           />
         </Section>
 
-        <Section id="projects" index="04" title="Projects">
-          <div className="timeline">
+        <Section id="projects" index="" title="Selected Projects">
+          <div className="role-list">
             {doc.projects.map((p) => (
-              <article className="job" key={p.name}>
+              <article className="role-block is-open" key={p.name}>
                 <h3>{p.name}</h3>
-                <div className="role">{p.meta}</div>
+                <p className="role-org">{p.stack || p.meta}</p>
                 <ul>
                   {p.bullets.map((b) => (
                     <li key={b}>{b}</li>
                   ))}
                 </ul>
                 {p.name === "Digital Twin Pro" ? <TabletFrame title={p.name} /> : null}
-                {/* {p.name === "CAD integration bridge" ? <CadHostMock /> : null} */}
               </article>
             ))}
           </div>
         </Section>
 
-        <Section id="education" index="05" title="Education">
+        <Section id="skills" index="" title="Skills">
+          <Skills groups={doc.skills} />
+        </Section>
+
+        <Section id="education" index="" title="Education">
           <EducationList
             items={doc.education.map((ed) => ({
               id: ed.org,
@@ -153,21 +151,22 @@ export default function App() {
           />
         </Section>
 
-        {corpus.howIWork ? (
-          <Section id="how-i-work" index="06" title={corpus.howIWork.headline}>
-            <ul className="how-list">
-              {corpus.howIWork.points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </Section>
-        ) : null}
+        <Section id="contact" index="" title="Contact">
+          <p className="lede">
+            Open to software and CAD-automation roles, remote or {profile.location}. Reach me at{" "}
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>, or read the code at{" "}
+            <a href={profile.github} target="_blank" rel="noreferrer">
+              {profile.github.replace(/^https:\/\//, "")}
+            </a>
+            . Type <code>resume</code> in the command line for a printable copy.
+          </p>
+        </Section>
 
-        <Section id="github" index="07" title="GitHub">
+        <Section id="github" index="" title="GitHub">
           <GithubCard info={github} />
         </Section>
 
-        <Section id="deep-dive" index="08" title="Deep dive">
+        <Section id="deep-dive" index="" title="Deep dive">
           <DeepDive projects={deepProjects} papersAvailable={papers.available} papers={papers.papers} />
         </Section>
       </main>

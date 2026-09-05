@@ -55,7 +55,7 @@ const PREMISE: Rule[] = [
       "i",
     ),
     answer:
-      "That is not part of his record. Peter has not worked at any of the large technology companies, and the employers on his resume are Heideman & Associates as a Revit/CAD technician, Component Bar Products as a quality engineer in precision machining, and David Mason & Associates, where he is a Staff Technician on CAD automation and Civil 3D tooling now. Separately, on his own time, he runs Free Parameter LLC, which is how Digital Twin Pro is published. Whatever you heard about another employer, do not attach it to him.",
+      "That is not part of his record. Peter has not worked at any of the large technology companies, and the employers on his resume are Heideman & Associates as a Revit/CAD technician, Component Bar Products as a quality engineer in precision machining, and David Mason & Associates, where he is an Automation Tooling Engineer (Staff Technician) on CAD automation and Civil 3D tooling now. Separately, on his own time, he runs Free Parameter LLC, which is how Digital Twin Pro is published. Whatever you heard about another employer, do not attach it to him.",
   },
   {
     id: "premise-venture",
@@ -71,7 +71,7 @@ const PREMISE: Rule[] = [
     id: "premise-headcount",
     test: /\bteam of (\d+|two|three|four|five|six|seven|eight|nine|ten|twelve|twenty)\b|\b\d+.person team\b|\b(managed|led|supervised|ran|oversaw)\s+(a\s+)?(team of\s+)?\d+\s*(people|engineers|developers|reports|staff|technicians|drafters)\b|\bhis \d+ (reports|engineers|developers)\b/i,
     answer:
-      "No team of that size is in his record, and I will not confirm a headcount that appears in the question. What is documented is one people-management role: supervising department staff as an Assistant Department Manager, with no headcount figure published. His engineering work since then has been as an individual contributor - Quality Engineer at Component Bar Products, then Staff Technician at David Mason & Associates - building tooling that other professionals use daily rather than managing people. If you need the actual numbers, he is the only reliable source: " +
+      "No team of that size is in his record, and I will not confirm a headcount that appears in the question. What is documented is one people-management role: supervising department staff as an Assistant Department Manager, with no headcount figure published. His engineering work since then has been as an individual contributor - Quality Engineer at Component Bar Products, then Automation Tooling Engineer (Staff Technician) at David Mason & Associates - building tooling that other professionals use daily rather than managing people. If you need the actual numbers, he is the only reliable source: " +
       `${EMAIL}.`,
   },
   {
@@ -201,7 +201,7 @@ const GUARDED: Rule[] = [
     id: "level-and-endorsement",
     test: /\b(senior|mid.level|junior|principal)\b.{0,30}(engineer|developer|\bdev\b)|what level (is|would)|seniority|is he (a )?(senior|junior|mid)|would you hire|should (i|we) hire|is he (better|worse) than|compare him to|rank him|how does he (compare|stack up)|best candidate|rate (his|your|him).{0,30}(skills?|ability|abilities|proficiency|out of)|out of (10|ten)\b|on a scale of|how good is he at|proficiency level|score him/i,
     answer:
-      "He does not publish a seniority level or a skill rating, and I will not invent either - a number out of ten from a website is worth nothing to you, and inflating it would be worse. The documented titles are Staff Technician for CAD automation and Civil 3D tooling at David Mason & Associates, Quality Engineer in precision machining at Component Bar Products, and Revit/CAD Technician at Heideman & Associates. He ships in C#, Python, C++17, TypeScript, and Dart, plus LISP where CAD APIs require it. Whether that maps to mid, senior, or something else depends on your ladder rather than on anything written here, and I am not going to vouch for him or rank him against other candidates - that judgement is yours to make from the record.",
+      "He does not publish a seniority level or a skill rating, and I will not invent either - a number out of ten from a website is worth nothing to you, and inflating it would be worse. The documented titles are Automation Tooling Engineer (Staff Technician) for CAD automation and Civil 3D tooling at David Mason & Associates, Quality Engineer in precision machining at Component Bar Products, and Revit/CAD Technician at Heideman & Associates. He ships in C#, Python, C++17, TypeScript, and Dart, plus LISP where CAD APIs require it. Whether that maps to mid, senior, or something else depends on your ladder rather than on anything written here, and I am not going to vouch for him or rank him against other candidates - that judgement is yours to make from the record.",
   },
   {
     id: "references",
@@ -240,7 +240,7 @@ const GUARDED: Rule[] = [
     id: "availability",
     test: /\bavailab(le|ility)\b|notice period|start date|when can (you|he) start|how soon can (you|he)|two weeks notice|schedule (a|an) (call|chat|interview|screen)|interview (this|next) week|open to (a )?(new role|opportunities|offers)|actively looking|job search/i,
     answer:
-      "Availability, start dates, and notice periods are not published here, and guessing at them would be worse than useless to you. He is currently working at David Mason & Associates as a Staff Technician on CAD automation and Civil 3D tooling; anything about timing is a question for him directly at " +
+      "Availability, start dates, and notice periods are not published here, and guessing at them would be worse than useless to you. He is currently working at David Mason & Associates as an Automation Tooling Engineer (Staff Technician) on CAD automation and Civil 3D tooling; anything about timing is a question for him directly at " +
       `${EMAIL}.`,
   },
   {
@@ -262,7 +262,7 @@ const GUARDED: Rule[] = [
     id: "reviews-and-promotions",
     test: /performance review|annual review|review (rating|ratings|score)|\bpip\b|were you promoted|been promoted|promotion(s)?\b|got a raise|title change|why (were|weren't) you promoted/i,
     answer:
-      "Performance reviews, ratings, and promotion history are not documented here, so there is nothing for me to report and nothing worth guessing at. The titles and dates are on the record: Revit/CAD Technician at Heideman & Associates, Quality Engineer in precision machining at Component Bar Products, and Staff Technician for CAD automation and Civil 3D tooling at David Mason & Associates, where he works now. He can walk you through the rest at " +
+      "Performance reviews, ratings, and promotion history are not documented here, so there is nothing for me to report and nothing worth guessing at. The titles and dates are on the record: Revit/CAD Technician at Heideman & Associates, Quality Engineer in precision machining at Component Bar Products, and Automation Tooling Engineer (Staff Technician) for CAD automation and Civil 3D tooling at David Mason & Associates, where he works now. He can walk you through the rest at " +
       `${EMAIL}.`,
   },
   {
@@ -358,7 +358,7 @@ const GUARDED: Rule[] = [
     id: "github-and-oss",
     test: /open ?source contribut|contributed to (open source|any open|other people|others)|upstream contribution|pull requests? to|how many (repos|repositories|commits|stars|forks|followers|contributions)|github (stats|contributions|activity|streak|profile stats)|contribution (graph|count)/i,
     answer:
-      "No counts are published and I will not produce one: repository, commit, star, follower, and contribution numbers are not in what I have. His public account is github.com/freeParameterized, and the live figures this site shows for Digital Twin Pro come from GitHub itself rather than from me. On open source specifically, there is no record of him contributing to other people's projects. Several of the projects he is known for - CADNAT Bridge Studio, BackupDeduper, CircleVisualizer, and the offline CAD voice GUI - are local repositories with no remote at all, so they are not published anywhere and should not be presented as though they were.",
+      "No counts are published and I will not produce one: repository, commit, star, follower, and contribution numbers are not in what I have. His public account is github.com/freeParameterized, and the live figures this site shows for Digital Twin Pro come from GitHub itself rather than from me. Two completed public projects are Digital Twin Pro and OraLab (https://freeparameterized.github.io/oracle-sandbox/, source https://github.com/freeParameterized/oracle-sandbox). On open source specifically, there is no record of him contributing to other people's projects. Several of the projects he is known for - CADNAT Bridge Studio, BackupDeduper, CircleVisualizer, and the offline CAD voice GUI - are local repositories with no remote at all, so they are not published anywhere and should not be presented as though they were.",
   },
   {
     // Asked what databases he has used, the model listed "Civil 3D property sets, XData
@@ -368,7 +368,7 @@ const GUARDED: Rule[] = [
     test: /\bdatabases?\b|\bsql\b|sqlite|postgres|mysql|mongo|supabase|\bnosql\b|\bdb\b|data (model|store|persistence|layer)|schema design|\borm\b/i,
     not: /vector (db|database|store)/i,
     answer:
-      "SQLite is the main one: Digital Twin Pro persists its inventory model in SQLite and he owns that schema end to end. Past that, the documented data work is not classic relational engineering - it is structured metadata attached to CAD entities through XData schemas and Civil 3D property sets, which carry persistent spatial and historical data on drawing objects, plus a typed Supabase schema in a small React maintenance prototype he is openly candid about being unfinished. No data-warehouse, NoSQL, or large-scale database work is documented, and I will not imply any.",
+      "The completed SQL project is OraLab: a public Oracle SQL training lab at https://freeparameterized.github.io/oracle-sandbox/ (source https://github.com/freeParameterized/oracle-sandbox). It runs Oracle-mode SQL in-heap on H2 against the classic HR sample, with a Monaco workbench and a docked schema graph. SQLite is the other owned schema: Digital Twin Pro persists its inventory model there end to end. Past that, the documented data work includes structured metadata attached to CAD entities through XData schemas and Civil 3D property sets, plus a typed Supabase schema in a small React maintenance prototype that is unfinished. No data-warehouse, NoSQL, or large-scale database work is documented, and I will not imply any. OraLab is not employment at Oracle Corporation.",
   },
   {
     id: "ai-authorship",
