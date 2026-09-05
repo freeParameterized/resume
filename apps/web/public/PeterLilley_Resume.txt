@@ -1,5 +1,5 @@
 Peter A. Lilley
-Automation Tooling Engineer (Staff Technician) · C#/.NET, C++17, CAD / geometry
+Automation Tooling Engineer (Staff Technician) · C#/.NET, C++17, BIM Tooling / CAD Drafting
 Chesterfield / St. Louis, MO | pal@cadpal.net | Available on request | github.com/freeParameterized
 
 Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch.

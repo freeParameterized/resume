@@ -1,6 +1,6 @@
 # Peter A. Lilley
 
-**Automation Tooling Engineer (Staff Technician) — C#/.NET, C++17, CAD / Geometry**
+**Automation Tooling Engineer (Staff Technician) — C#/.NET, C++17, BIM Tooling / CAD Drafting**
 
 Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request · github.com/freeParameterized · Free Parameter LLC
 
