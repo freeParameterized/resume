@@ -5,7 +5,27 @@
     "regenerate": "After editing, run: npm run resume:pdf"
   },
   "name": "Peter A. Lilley",
+  "role": "Automation Tooling Engineer (Staff Technician)",
+  "focus": "C#/.NET, C++17, CAD / geometry",
   "headline": "Automation Tooling Engineer (Staff Technician) \u2014 C#/.NET, C++17, CAD / Geometry",
+  "stats": [
+    {
+      "value": "C#",
+      "label": "primary"
+    },
+    {
+      "value": "C++17",
+      "label": "systems"
+    },
+    {
+      "value": "CAD",
+      "label": "automation"
+    },
+    {
+      "value": "SQL",
+      "label": "OraLab"
+    }
+  ],
   "contact": {
     "location": "Chesterfield / St. Louis, MO",
     "email": "pal@cadpal.net",
@@ -50,6 +70,13 @@
         "Built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and existing company drawing data as input for each request.",
         "Extended that pipeline to locate outdated sheet text and to compare design options. Authored and reviewed Git pull requests on the plugins and pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD.",
         "Colleagues use the automation and generation tooling daily. Coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects so one discipline's change does not break another's."
+      ],
+      "printBullets": [
+        "Quality pass cut an estimated 25% of drafting errors before licensed-engineer review.",
+        "Built a generator for standard details and grading from existing survey data. Hundreds of thousands of entities; days of hand modeling became minutes.",
+        "Wrote Dynamo automation that reads Civil 3D Excel reports and draws pipe flow levels and HGLs; about 8 hours of clicking fell to minutes.",
+        "Cut a common multi-layout edit from several hundred clicks to a single two-second command by unifying entity search, retargeting, and batch edit.",
+        "Built C#/.NET Civil 3D plugins, OCR ingestion of PDF plan sets, and an OpenAI pipeline with GitFlow review and CI/CD. Colleagues use the tooling daily."
       ]
     },
     {
@@ -61,6 +88,10 @@
         "Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.",
         "Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.",
         "Worked to ISO 9001 quality-system and Production Part Approval Process requirements. Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets."
+      ],
+      "printBullets": [
+        "Wrote inspection tooling against CMM output; validated machined geometry to GD&T specs and flagged model-to-print mismatches.",
+        "Worked to ISO 9001 and PPAP requirements. Managed calibration and traceability of metrology assets."
       ]
     },
     {
@@ -71,6 +102,10 @@
       "bullets": [
         "Priced and estimated large commercial material orders.",
         "Supervised and coordinated department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline."
+      ],
+      "printBullets": [
+        "Priced and estimated large commercial material orders.",
+        "Supervised and coordinated department staff. Handled contractor-facing sales and turned requests into material lists on a deadline."
       ]
     },
     {
@@ -82,6 +117,10 @@
         "Drafted mechanical and plumbing construction documents in Revit and AutoCAD. Projects included St. Luke's Hospital, Mercy, AT&T, Saint Louis University, and American Water.",
         "Produced as-built drawings from field photos and blueprints. Built automated data libraries. Standardized hundreds of outdated AutoCAD details.",
         "Coordinated with structural and architectural disciplines. Clash detection. Kept multi-discipline file structure and Revit templates consistent."
+      ],
+      "printBullets": [
+        "Drafted mechanical and plumbing construction documents in Revit and AutoCAD, including St. Luke's, Mercy, AT&T, SLU, and American Water.",
+        "Produced as-builts; built object libraries; standardized outdated AutoCAD details; clash detection across disciplines."
       ]
     },
     {
@@ -92,12 +131,16 @@
       "bullets": [
         "Drafted architectural construction documents in AutoCAD for residential and commercial work.",
         "Kept layers managed in the office template. Modified and organized the detail library. Audited drawings against office CAD standards before issue."
+      ],
+      "printBullets": [
+        "Drafted architectural construction documents in AutoCAD; kept layers and the detail library to office CAD standards."
       ]
     }
   ],
   "projects": [
     {
       "name": "Digital Twin Pro",
+      "stack": "Flutter \u00b7 Dart 3 \u00b7 SQLite \u00b7 Firebase \u00b7 ARCore",
       "meta": "Personal product, Free Parameter LLC | Flutter/Dart 3, SQLite, Firebase, Google Gemini API, ARCore | github.com/freeParameterized/digital-twin-pro",
       "bullets": [
         "Concept to Google Play beta in five weekends: a 3D inventory app with a custom renderer (Z-sorted draw queue, own projection) instead of a game engine.",
@@ -106,31 +149,50 @@
         "Export one tote's QR with toggleable payload fields, or the whole set as PNG, JPEG, or a multi-page PDF book for labels on the physical bins.",
         "Save a warehouse as a project, export it, and import it again (config, SQLite, photos stored locally, CSV/JSON). Drag-and-drop on the rack, including swap onto an occupied slot.",
         "Per-tote colors or one uniform style. Independent front and isometric frames. Three rack styles, seven UI themes, grid customization, and slot labels that relabel every location."
+      ],
+      "printBullets": [
+        "3D inventory app with a hand-written renderer \u2014 Z-sorted draw queue and custom projection, no game engine.",
+        "Voice, photo, and typed input all resolve to one typed item-to-quantity map shared by storage and export.",
+        "Export a single tote's QR with selectable payload fields, or the whole set as a multi-page PDF for physical labels."
       ]
     },
     {
       "name": "OraLab",
+      "stack": "TypeScript \u00b7 Next.js \u00b7 Java / H2 Oracle mode \u00b7 Monaco",
       "meta": "Completed project | TypeScript, Next.js, Java / H2 Oracle mode, Monaco | freeparameterized.github.io/oracle-sandbox | github.com/freeParameterized/oracle-sandbox",
       "bullets": [
         "Shipped a public Oracle SQL training lab: live engine, classic HR sample, Monaco editor, tutorials, glossary, and a docked schema graph.",
         "Runs Oracle-mode SQL in-heap (DUAL, NVL/DECODE, ROWNUM, VARCHAR2/NUMBER/DATE, sequences, HR joins, MINUS, analytic RANK / ROW_NUMBER).",
         "Workbench rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. Local explain path, then an in-tab model."
+      ],
+      "printBullets": [
+        "Shipped a public Oracle SQL training lab: live engine, classic HR sample, Monaco editor, tutorials, and a docked schema graph.",
+        "Oracle-mode SQL in-heap (DUAL, NVL/DECODE, ROWNUM, sequences, HR joins, MINUS, analytic windows). Live at freeparameterized.github.io/oracle-sandbox."
       ]
     },
     {
       "name": "CAD integration bridge",
+      "stack": "C++17 \u00b7 Dear ImGui \u00b7 Windows COM",
       "meta": "C++17, Dear ImGui, Windows COM | private repository, walkthrough on request",
       "bullets": [
         "Built a C++17 Dear ImGui host. It bridges BricsCAD, AutoCAD, and Civil 3D through Windows COM. It discovers installed SDKs at runtime and hot-loads LISP, C#, and BRX plugins.",
         "Personal prototype of the architecture later used on a commercial deployment."
+      ],
+      "printBullets": [
+        "Host process that bridges BricsCAD, AutoCAD, and Civil 3D over COM, discovers installed SDKs at runtime, and hot-loads LISP, C#, and native plugins.",
+        "Prototype architecture that later shipped commercially."
       ]
     },
     {
       "name": "Interactive Portfolio (this site)",
+      "stack": "React \u00b7 TypeScript \u00b7 Express",
       "meta": "React, TypeScript, Express",
       "bullets": [
         "Built a React and TypeScript front end over an Express API. The site builds to static files and needs no server to read.",
         "Generates the printable resume and PDF from the same JSON data."
+      ],
+      "printBullets": [
+        "Front end over a small API; builds to static files. The web page and the printable PDF render from the same JSON."
       ]
     }
   ],
@@ -140,7 +202,7 @@
       "location": "Wentzville, MO",
       "credential": "A.A.S. in Building Systems Engineering Technology",
       "dates": "2019",
-      "note": "Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University)."
+      "note": "Additional coursework: Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University)."
     }
   ]
 }

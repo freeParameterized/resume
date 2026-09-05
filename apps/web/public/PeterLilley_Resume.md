@@ -92,4 +92,4 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 ### A.A.S. in Building Systems Engineering Technology — Ranken Technical College
 *Wentzville, MO · 2019*
 
-Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University).
+Additional coursework: Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University).
