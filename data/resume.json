@@ -35,11 +35,11 @@
     "website": "",
     "company": "Free Parameter LLC"
   },
-  "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch.",
+  "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Combines AI-assisted development (Claude, ChatGPT, Gemini) with strong core engineering fundamentals from scratch.",
   "skills": [
     {
       "label": "Languages",
-      "items": "C#, C#/.NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, Oracle SQL, LISP, VBA"
+      "items": "C# / .NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, Oracle SQL, LISP, VBA"
     },
     {
       "label": "Software engineering",
@@ -47,7 +47,7 @@
     },
     {
       "label": "Databases and Data Systems",
-      "items": "SQLite, Firebase, Postgres, Oracle SQL, H2 (Oracle mode), XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching"
+      "items": "Postgres, Oracle SQL, SQLite, Firebase, H2"
     },
     {
       "label": "CAD, geometry, and domain",
@@ -61,7 +61,7 @@
       "title": "Automation Tooling Engineer (Staff Technician)",
       "dates": "Jul 2024 - Aug 2026",
       "bullets": [
-        "Quality pass cut an estimated 25% of drafting errors before licensed-engineer review.",
+        "Engineered automated quality checks that cut an estimated 25% of drafting errors prior to engineer review.",
         "Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.",
         "Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.",
         "Built a Civil 3D GUI for less experienced CAD users: color-coded IntelliSense-style layer and entity search with autocomplete, dynamic entity pull, and a local phrase-to-command lookup. From one command it moves entities, runs basic draw commands, retargets objects onto other layers, and otherwise edits uniformly across every layout instead of clicking through them in sequence. Minutes of that work, often hundreds of clicks, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them.",
@@ -72,7 +72,7 @@
         "Colleagues use the automation and generation tooling daily. Coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects so one discipline's change does not break another's."
       ],
       "printBullets": [
-        "Quality pass cut an estimated 25% of drafting errors before licensed-engineer review.",
+        "Engineered automated quality checks that cut an estimated 25% of drafting errors prior to engineer review.",
         "Built a generator for standard details and grading from existing survey data. Hundreds of thousands of entities; days of hand modeling became minutes.",
         "Wrote Dynamo automation that reads Civil 3D Excel reports and draws pipe flow levels and HGLs; about 8 hours of clicking fell to minutes.",
         "Cut a common multi-layout edit from several hundred clicks to a single two-second command by unifying entity search, retargeting, and batch edit.",
@@ -109,6 +109,19 @@
       ]
     },
     {
+      "org": "Jeff Day & Associates, LLC",
+      "location": "Manchester, MO",
+      "title": "CAD Drafter",
+      "dates": "2020",
+      "bullets": [
+        "Drafted architectural construction documents in AutoCAD for residential and commercial work.",
+        "Kept layers managed in the office template. Modified and organized the detail library. Audited drawings against office CAD standards before issue."
+      ],
+      "printBullets": [
+        "Drafted architectural construction documents in AutoCAD; kept layers and the detail library to office CAD standards."
+      ]
+    },
+    {
       "org": "Heideman & Associates, Inc.",
       "location": "Fenton, MO",
       "title": "Revit/CAD Technician - Mechanical/Plumbing",
@@ -121,19 +134,6 @@
       "printBullets": [
         "Drafted mechanical and plumbing construction documents in Revit and AutoCAD, including St. Luke's, Mercy, AT&T, SLU, and American Water.",
         "Produced as-builts; built object libraries; standardized outdated AutoCAD details; clash detection across disciplines."
-      ]
-    },
-    {
-      "org": "Jeff Day & Associates, LLC",
-      "location": "Manchester, MO",
-      "title": "CAD Drafter",
-      "dates": "2020",
-      "bullets": [
-        "Drafted architectural construction documents in AutoCAD for residential and commercial work.",
-        "Kept layers managed in the office template. Modified and organized the detail library. Audited drawings against office CAD standards before issue."
-      ],
-      "printBullets": [
-        "Drafted architectural construction documents in AutoCAD; kept layers and the detail library to office CAD standards."
       ]
     }
   ],

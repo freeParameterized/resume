@@ -150,7 +150,7 @@ const GUARDED: Rule[] = [
     id: "no-third-party-opinions",
     test: /(manager|boss|supervisor|coworker|colleague|teammate|peer|direct report|reference|referee)s?\b.{0,40}\b(say|says|said|think|thinks|thought|describe|describes|feel|feels|opinion|impression|worst|best|complain)|what would (your|his) .{0,30}(say|think)/i,
     answer:
-      "Nothing a manager, coworker, or reference has said about him is documented here, so there is nothing for me to quote and I will not invent it - putting words in a former manager's mouth is exactly the kind of detail that falls apart when someone checks. What is on the record is that his work is built to be reviewed rather than around review: plan sets go to licensed-engineer review, his quality pass cut drafting errors roughly 25% before that review, and in manufacturing he worked under ISO 9001 quality-system and production part approval requirements. Ask him at " +
+      "Nothing a manager, coworker, or reference has said about him is documented here, so there is nothing for me to quote and I will not invent it - putting words in a former manager's mouth is exactly the kind of detail that falls apart when someone checks. What is on the record is that his work is built to be reviewed rather than around review: plan sets go to licensed-engineer review, he engineered automated quality checks that cut drafting errors roughly 25% prior to engineer review, and in manufacturing he worked under ISO 9001 quality-system and production part approval requirements. Ask him at " +
       `${EMAIL} and he will connect you.`,
   },
   {
@@ -167,14 +167,14 @@ const GUARDED: Rule[] = [
     id: "handles-feedback",
     test: /how (do|does) (you|he|they|peter) (handle|deal with|respond to|react to|take)\s+(\w+\s+){0,2}(pressure|conflict|criticism|critique|stress|feedback|rejection|setbacks?|disagreements?|being wrong|mistakes)|(receiving|taking|getting) (critical )?(feedback|criticism)|how (do|does) (you|he) work under pressure/i,
     answer:
-      "The notes do not record how he handles it, and I am not going to characterize his temperament for him. What they do record is a working style built around review rather than against it: plan sets go to a licensed engineer for review and his quality pass cut drafting errors roughly 25% before that review, he worked under ISO 9001 quality-system and production part approval requirements in manufacturing, and in the typed-command CAD pipeline he deliberately keeps the model out of the part that has to be correct, so a mistake surfaces as failed validation instead of a plausible wrong number. Someone who builds that way has a view about being checked, but the anecdote is his to tell at " +
+      "The notes do not record how he handles it, and I am not going to characterize his temperament for him. What they do record is a working style built around review rather than against it: plan sets go to a licensed engineer for review and he engineered automated quality checks that cut drafting errors roughly 25% prior to engineer review, he worked under ISO 9001 quality-system and production part approval requirements in manufacturing, and in the typed-command CAD pipeline he deliberately keeps the model out of the part that has to be correct, so a mistake surfaces as failed validation instead of a plausible wrong number. Someone who builds that way has a view about being checked, but the anecdote is his to tell at " +
       `${EMAIL}.`,
   },
   {
     id: "no-anecdotes",
     test: /tell me about a time|describe a (time|situation|scenario)|give me an example of (a time|when)|walk me through a time|share a (story|time)|biggest (failure|mistake|regret|weakness|challenge|struggle)|(your|his) (weakness|weaknesses|biggest failure|worst trait|shortcoming|blind spot)|went (badly|wrong|sideways|poorly)|conflict with a (coworker|colleague|manager|boss|client|teammate)|disagree(d|ment)|how do (you|they|he) handle\s+(\w+\s+)?(pressure|conflict|criticism|critique|stress|failure|feedback|rejection|setbacks?)|(missed|blew|blown|slipped) a (deadline|date|deliverable)|deadline (you|he) (missed|blew)|time (you|he) (was|were) wrong|describe a failure|failure (you|he) (owned|had)|(led|managed) a team through|time (you|he) led/i,
     answer:
-      "His interview stories are not in the notes I work from, and I would rather not invent one - a made-up anecdote is the one thing here that could actually embarrass him. What is documented is the work itself: the typed-command CAD pipeline at David Mason & Associates, the plan-parsing tooling that cut a repetitive drafting cycle from 8-12 hours to about 30 seconds, the quality pass that cut drafting errors roughly 25% before licensed-engineer review, and Digital Twin Pro on his own time. Ask him that question directly at " +
+      "His interview stories are not in the notes I work from, and I would rather not invent one - a made-up anecdote is the one thing here that could actually embarrass him. What is documented is the work itself: the typed-command CAD pipeline at David Mason & Associates, the plan-parsing tooling that cut a repetitive drafting cycle from 8-12 hours to about 30 seconds, automated quality checks that cut drafting errors roughly 25% prior to engineer review, and Digital Twin Pro on his own time. Ask him that question directly at " +
       `${EMAIL} and you will get a better answer than I can give.`,
   },
   {
@@ -183,7 +183,7 @@ const GUARDED: Rule[] = [
     id: "mentoring-and-review",
     test: /mentor(ing|ed|ship|s)?\b|code review|reviewed (his|their|other'?s?|others'?) code|pair programm|onboard(ing|ed) (new|junior)|taught (his|the) team|coach(ing|ed) (a|his|the)/i,
     answer:
-      "Mentoring and code-review specifics are not documented, and I will not invent them. What is on the record is adjacent and checkable: the tooling he writes is used daily by other professionals rather than kept to himself, his quality pass cut drafting errors roughly 25% before licensed-engineer review, he is lead for AutoCAD standards auditing and template revision, and he supervised department staff as an Assistant Department Manager. Whether that included formal code review or mentoring is his to describe at " +
+      "Mentoring and code-review specifics are not documented, and I will not invent them. What is on the record is adjacent and checkable: the tooling he writes is used daily by other professionals rather than kept to himself, he engineered automated quality checks that cut drafting errors roughly 25% prior to engineer review, he is lead for AutoCAD standards auditing and template revision, and he supervised department staff as an Assistant Department Manager. Whether that included formal code review or mentoring is his to describe at " +
       `${EMAIL}.`,
   },
   {
@@ -222,7 +222,7 @@ const GUARDED: Rule[] = [
     id: "proudest",
     test: /(proudest|most proud|proud of|biggest (achievement|accomplishment|win|success)|greatest (accomplishment|achievement)|best work|crowning)/i,
     answer:
-      "The notes do not rank his work or record how he feels about it, so take this as the record rather than as his answer. What stands out in it: the typed-command CAD pipeline he introduced at an established St. Louis engineering firm, where deterministic C# and .NET code constructs the geometry and validates it before commit; the plan-parsing tooling that cut a repetitive drafting cycle from 8-12 hours to about 30 seconds; the quality pass that cut drafting errors roughly 25% before licensed-engineer review; and Digital Twin Pro, which he designed, funded, built, and shipped to a Google Play beta on his own time, renderer included. Which of those he is proudest of is a question for him.",
+      "The notes do not rank his work or record how he feels about it, so take this as the record rather than as his answer. What stands out in it: the typed-command CAD pipeline he introduced at an established St. Louis engineering firm, where deterministic C# and .NET code constructs the geometry and validates it before commit; the plan-parsing tooling that cut a repetitive drafting cycle from 8-12 hours to about 30 seconds; automated quality checks that cut drafting errors roughly 25% prior to engineer review; and Digital Twin Pro, which he designed, funded, built, and shipped to a Google Play beta on his own time, renderer included. Which of those he is proudest of is a question for him.",
   },
 
   // ---- Employment terms. A website should not answer any of these. ----
@@ -437,7 +437,7 @@ const RULES: Rule[] = [
     id: "teamwork",
     test: /can (he|you) work (on|in|with) a team|works? well (on|in|with) (a team|others|people)|\bteam player\b|is (he|peter) (professional|collaborative|easy to work with)|collaborat|work with (people|others|engineers)|multi.?disciplinary|\bteamwork\b|manages? (people|staff)|leadership experience|has (he|peter) managed/i,
     answer:
-      "Yes. The automation and generation tooling he writes is used daily by other professionals rather than parked in a personal folder, which is the test he cares about. He works inside multi-disciplinary teams across civil, mechanical, plumbing, and architectural scopes on named capital projects, coordinating so one discipline's change does not quietly break another's. He also builds for review rather than around it: his quality pass cut an estimated 25% of drafting errors before licensed-engineer review. He has managed people as an Assistant Department Manager, supervising department staff and handling contractor-facing sales, and he has worked under ISO 9001 quality-system and production part approval requirements.",
+      "Yes. The automation and generation tooling he writes is used daily by other professionals rather than parked in a personal folder, which is the test he cares about. He works inside multi-disciplinary teams across civil, mechanical, plumbing, and architectural scopes on named capital projects, coordinating so one discipline's change does not quietly break another's. He also builds for review rather than around it: he engineered automated quality checks that cut an estimated 25% of drafting errors prior to engineer review. He has managed people as an Assistant Department Manager, supervising department staff and handling contractor-facing sales, and he has worked under ISO 9001 quality-system and production part approval requirements.",
   },
   {
     id: "resume",
@@ -449,7 +449,7 @@ const RULES: Rule[] = [
     id: "identity",
     test: /who is peter|who are you|tell me about (yourself|peter|him)|introduce (yourself|peter)|what do you do/i,
     answer:
-      "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch. At David Mason & Associates, Jul 2024 to Aug 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
+      "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Combines AI-assisted development (Claude, ChatGPT, Gemini) with strong core engineering fundamentals from scratch. At David Mason & Associates, Jul 2024 to Aug 2026, built Civil 3D automation on the OpenAI API and OCR pipelines over messy plan sets. On personal time designed, funded, built, and shipped Digital Twin Pro, a Flutter 3D inventory application, to a Google Play beta.",
   },
 ];
 
