@@ -19,7 +19,7 @@
   "skills": [
     {
       "label": "Languages",
-      "items": "C#, C#/.NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, LISP, VBA"
+      "items": "C#, C#/.NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, Oracle SQL, LISP, VBA"
     },
     {
       "label": "Software engineering",
@@ -27,7 +27,7 @@
     },
     {
       "label": "Databases and Data Systems",
-      "items": "SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching"
+      "items": "SQLite, Firebase, Postgres, Oracle SQL, H2 (Oracle mode), XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching"
     },
     {
       "label": "CAD, geometry, and domain",
@@ -109,6 +109,15 @@
       ]
     },
     {
+      "name": "OraLab",
+      "meta": "Completed project | TypeScript, Next.js, Java / H2 Oracle mode, Monaco | freeparameterized.github.io/oracle-sandbox | github.com/freeParameterized/oracle-sandbox",
+      "bullets": [
+        "Shipped a public Oracle SQL training lab: live engine, classic HR sample, Monaco editor, tutorials, glossary, and a docked schema graph.",
+        "Runs Oracle-mode SQL in-heap (DUAL, NVL/DECODE, ROWNUM, VARCHAR2/NUMBER/DATE, sequences, HR joins, MINUS, analytic RANK / ROW_NUMBER).",
+        "Workbench rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. Local explain path, then an in-tab model."
+      ]
+    },
+    {
       "name": "CAD integration bridge",
       "meta": "C++17, Dear ImGui, Windows COM | private repository, walkthrough on request",
       "bullets": [
@@ -131,7 +140,7 @@
       "location": "Wentzville, MO",
       "credential": "A.A.S. in Building Systems Engineering Technology",
       "dates": "2019",
-      "note": "Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T)."
+      "note": "Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University)."
     }
   ]
 }

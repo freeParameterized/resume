@@ -36,7 +36,8 @@
         "C# / .NET (WPF, WinForms, Civil 3D and AutoCAD plugins)",
         "Dart / Flutter",
         "Python",
-        "JavaScript / TypeScript (Node, React, Three.js)",
+        "JavaScript / TypeScript (Node, React, Three.js, Next.js)",
+        "SQL / Oracle SQL",
         "LISP / AutoLISP",
         "VBA",
         "Object-Oriented Design (OOD)",
@@ -51,6 +52,8 @@
         "SQLite",
         "Firebase",
         "Postgres",
+        "Oracle SQL",
+        "H2 (Oracle mode)",
         "XData schemas",
         "Data modeling",
         "JSON structuring",
@@ -219,7 +222,7 @@
       "credential": "A.A.S. in Building Systems Engineering Technology",
       "dates": "2019",
       "notes": [
-        "Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T)."
+        "Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University)."
       ]
     }
   ],
@@ -272,6 +275,33 @@
         "Added ARCore plane-tap placement on Android. Included seven UI themes, X-Ray mode, and emoji particle physics.",
         "Used Provider state management across 64+ modules. Wrote about 33,000 lines of Dart across 103 files.",
         "Shipped an Android APK/AAB with R8 obfuscation. Also shipped a Windows desktop build. Reached a Google Play beta from concept in five weekends, about 10-12 days of actual work."
+      ]
+    },
+    {
+      "id": "oralab",
+      "name": "OraLab",
+      "shortName": "OraLab",
+      "status": "public",
+      "featured": true,
+      "owner": "Personal project under Free Parameter LLC. Not employer work.",
+      "visibility": "Public GitHub Pages - completed and live",
+      "url": "https://freeparameterized.github.io/oracle-sandbox/",
+      "sourcePath": "https://github.com/freeParameterized/oracle-sandbox",
+      "remote": "https://github.com/freeParameterized/oracle-sandbox.git",
+      "stack": [
+        "TypeScript",
+        "Next.js",
+        "Oracle SQL",
+        "Java",
+        "H2 Oracle mode",
+        "Monaco"
+      ],
+      "honesty": "This is a completed public project. GitHub Pages serves the static lab. The Oracle-mode JVM and /api/sql run locally (JDK 21+, Node 22+). It is not a licensed Oracle Database and it is not PL/SQL packages. It is not employment at Oracle Corporation. Oracle University coursework is the curriculum the lab runs.",
+      "summary": "Shipped OraLab, a public Oracle SQL training sandbox. In-heap H2 in Oracle mode runs the classic HR sample plus a sales grain. Monaco editor, tutorials, glossary, and a docked schema graph. Live at https://freeparameterized.github.io/oracle-sandbox/. Source at https://github.com/freeParameterized/oracle-sandbox.",
+      "bullets": [
+        "Shipped a completed public Oracle SQL lab: live engine, HR sample, Monaco editor, tutorials, glossary, and a docked schema graph.",
+        "Oracle-mode SQL: DUAL, NVL/DECODE, ROWNUM vs FETCH FIRST, VARCHAR2/NUMBER/DATE, sequences, HR joins, MINUS, analytic RANK / ROW_NUMBER.",
+        "Workbench rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. Explain tries local Ollama, then an in-tab model."
       ]
     },
     {
@@ -834,7 +864,23 @@
         "education",
         "math"
       ],
-      "text": "Completed a Calculus II CLEP credit at Saint Louis University (SLU) in 2018. This credit fulfilled the calculus requirements for the Ranken Technical College curriculum. Attended Missouri S&T in Rolla. Took coursework toward Latin American Studies with Technical Applications from 2019 to 2020. Placed into Advanced Conversational Spanish. Has technical fluency in Spanish. Did not take C++ at S&T. C++ is self-taught. Attended Ranken Technical College in Wentzville. Earned an AAS in Building Systems Engineering Technology in 2019."
+      "text": "Completed a Calculus II CLEP credit at Saint Louis University (SLU) in 2018. This credit fulfilled the calculus requirements for the Ranken Technical College curriculum. Attended Missouri S&T in Rolla. Took coursework toward Latin American Studies with Technical Applications from 2019 to 2020. Placed into Advanced Conversational Spanish. Has technical fluency in Spanish. Did not take C++ at S&T. C++ is self-taught. Attended Ranken Technical College in Wentzville. Earned an AAS in Building Systems Engineering Technology in 2019. Took Oracle University coursework in Oracle Database SQL (DUAL, NVL/DECODE, ROWNUM, VARCHAR2/NUMBER/DATE, sequences, HR joins, analytics) and shipped OraLab as the lab for those lessons."
+    },
+    {
+      "id": "proj-oralab",
+      "title": "Project - OraLab",
+      "tags": [
+        "oralab",
+        "oracle-sandbox",
+        "oracle sql",
+        "sql",
+        "next.js",
+        "h2",
+        "monaco",
+        "hr schema",
+        "completed"
+      ],
+      "text": "OraLab is a completed public project. Live site https://freeparameterized.github.io/oracle-sandbox/. Source https://github.com/freeParameterized/oracle-sandbox. Built an Oracle SQL training sandbox so Oracle University Database SQL lessons run against a real engine instead of slides. In-heap H2 in MODE=Oracle with the classic HR tables (REGIONS through JOB_HISTORY) plus a sales grain for normalization. Monaco editor, tutorials, glossary, and a node graph docked beside sandbox.sql. Covers DUAL, SYSDATE, TO_CHAR, NVL, DECODE, ROWNUM versus analytic RANK / ROW_NUMBER, VARCHAR2 / NUMBER / DATE, sequences, HR joins, MINUS, and sargable predicates. Ctrl+Alt rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. GitHub Pages is the static lab. The Oracle-mode JVM and /api/sql run on localhost. Not a licensed Oracle Database. Not PL/SQL packages. Not employment at Oracle Corporation."
     },
     {
       "id": "proj-cadnat",

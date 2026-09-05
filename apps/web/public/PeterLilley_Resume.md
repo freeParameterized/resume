@@ -10,9 +10,9 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 
 ## Skills
 
-- **Languages:** C#, C#/.NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, LISP, VBA
+- **Languages:** C#, C#/.NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, Oracle SQL, LISP, VBA
 - **Software engineering:** Object-Oriented Design (OOD), REST APIs, multi-threading, CI/CD pipelines, Git (GitFlow, trunk-based, pull requests), CMake, Linux, macOS, Docker, Bash
-- **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching
+- **Databases and Data Systems:** SQLite, Firebase, Postgres, Oracle SQL, H2 (Oracle mode), XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching
 - **CAD, geometry, and domain:** AutoCAD, Civil 3D, Revit, Navisworks, Dynamo, matrix math, 3D graphics, CAD plugins, typed metadata, GD&T, CMM, ISO 9001, TCP/IP, Cisco routing
 
 ## Experience
@@ -68,6 +68,13 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 - Save a warehouse as a project, export it, and import it again (config, SQLite, photos stored locally, CSV/JSON). Drag-and-drop on the rack, including swap onto an occupied slot.
 - Per-tote colors or one uniform style. Independent front and isometric frames. Three rack styles, seven UI themes, grid customization, and slot labels that relabel every location.
 
+### OraLab
+*Completed project | TypeScript, Next.js, Java / H2 Oracle mode, Monaco | freeparameterized.github.io/oracle-sandbox | github.com/freeParameterized/oracle-sandbox*
+
+- Shipped a public Oracle SQL training lab: live engine, classic HR sample, Monaco editor, tutorials, glossary, and a docked schema graph.
+- Runs Oracle-mode SQL in-heap (DUAL, NVL/DECODE, ROWNUM, VARCHAR2/NUMBER/DATE, sequences, HR joins, MINUS, analytic RANK / ROW_NUMBER).
+- Workbench rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. Local explain path, then an in-tab model.
+
 ### CAD integration bridge
 *C++17, Dear ImGui, Windows COM | private repository, walkthrough on request*
 
@@ -85,4 +92,4 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 ### A.A.S. in Building Systems Engineering Technology — Ranken Technical College
 *Wentzville, MO · 2019*
 
-Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T).
+Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University).
