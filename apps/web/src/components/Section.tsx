@@ -11,7 +11,7 @@ export function Section({ id, index, title, children }: Props) {
   return (
     <section className="section" id={id}>
       <div className="section-head">
-        <span className="idx">{index}</span>
+        {index ? <span className="idx">{index}</span> : null}
         <h2>{title}</h2>
       </div>
       {children}

@@ -50,11 +50,11 @@ export function Header({ name, theme, onToggleTheme, health }: Props) {
         </div>
 
         <nav className="nav nav-desktop" aria-label="Sections">
-          <a href="#summary">Summary</a>
-          <a href="#experience">Experience</a>
+          <a href="#work">Work</a>
           <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
           <a href="#education">Education</a>
-          <a href="#deep-dive">Deep dive</a>
+          <a href="#contact">Contact</a>
           <a className="ask-launch" {...resumePdfLinkProps} onClick={onResumePdfClick}>
             Download resume
           </a>
@@ -89,17 +89,20 @@ export function Header({ name, theme, onToggleTheme, health }: Props) {
         <>
           <button type="button" className="drawer-backdrop nav-menu-backdrop" aria-label="Close menu" onClick={closeMenu} />
           <nav id={menuId} className="mobile-nav-panel fade-in" aria-label="Mobile sections">
-            <a href="#summary" onClick={closeMenu}>
-              Summary
-            </a>
-            <a href="#experience" onClick={closeMenu}>
-              Experience
+            <a href="#work" onClick={closeMenu}>
+              Work
             </a>
             <a href="#projects" onClick={closeMenu}>
               Projects
             </a>
+            <a href="#skills" onClick={closeMenu}>
+              Skills
+            </a>
             <a href="#education" onClick={closeMenu}>
               Education
+            </a>
+            <a href="#contact" onClick={closeMenu}>
+              Contact
             </a>
             <a href="#deep-dive" onClick={closeMenu}>
               Deep dive
