@@ -81,7 +81,7 @@ export async function pingOllama(): Promise<OllamaStatus> {
 
 const SYSTEM_RULES = `Public GitHub is https://github.com/freeParameterized.
 Digital Twin Pro is a personal product under Free Parameter LLC, not DMA work.
-A resume PDF is at ./2026.08.20_PeterL_Resume.pdf.`;
+A resume PDF is at ./resume.pdf.`;
 
 export function buildPrompt(question: string, context: string, papersPolicy = ""): string {
   // The section header used to read "CORPUS EXCERPTS", and llama3.1 kept referring to it

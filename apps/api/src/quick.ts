@@ -34,7 +34,7 @@ type Rule = {
   answer: string;
 };
 
-const RESUME_PDF = "/PeterLilley_Resume.pdf";
+const RESUME_PDF = "./resume.pdf";
 const EMAIL = "pal@cadpal.net";
 
 /** Employers he has never had. A visitor naming one is asserting a premise, not asking. */

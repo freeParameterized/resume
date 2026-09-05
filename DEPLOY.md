@@ -105,7 +105,8 @@ corpus (`data/corpus.json`) has no phone or address in it at all, and should sta
 npm run resume:pdf
 ```
 
-Writes `apps/web/public/2026.08.20_PeterL_Resume.pdf` plus the `.txt` and `.md` versions. It
+Writes `apps/web/public/resume.pdf` plus the `.txt` and `.md` versions. A download from the
+site is saved as `YYYY.MM.DD_resume.pdf` (today's date, no personal name). It
 self-validates before it reports success: the file really is a PDF and is not truncated, it is
 one or two pages (three is a hard failure), and the text layer is genuinely extractable and
 contains his name and the Summary heading rather than being a picture of a resume. If any check

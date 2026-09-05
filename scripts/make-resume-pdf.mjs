@@ -17,7 +17,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "..");
 const dataPath = path.join(repoRoot, "data", "resume.json");
 const publicDir = path.join(repoRoot, "apps", "web", "public");
-const pdfOut = path.join(publicDir, "2026.08.20_PeterL_Resume.pdf");
+const pdfOut = path.join(publicDir, "resume.pdf");
 const txtOut = path.join(publicDir, "PeterLilley_Resume.txt");
 const mdOut = path.join(publicDir, "PeterLilley_Resume.md");
 

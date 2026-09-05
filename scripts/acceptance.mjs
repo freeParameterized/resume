@@ -42,7 +42,7 @@ const NEVER = [
 const CASES = [
   { q: "Who is Peter", must: [/software engineer/i, /st\.? louis/i] },
   { q: "What is your ML experience", must: [/typed[- ]command/i, /deterministic/i] },
-  { q: "Can I get your resume", must: [/2026\.08\.20_PeterL_Resume\.pdf/] },
+  { q: "Can I get your resume", must: [/resume\.pdf/] },
   { q: "What got you into programming", must: [/adventure game/i], mustNot: [/\b(19|20)\d{2}\b.*born|age \d\d/i] },
   { q: "Tell me about Digital Twin Pro", must: [/personal|own time/i, /flutter/i] },
   { q: "Did you build Digital Twin Pro at work?", must: [/not dma|personal|own time/i], mustNot: [/built (it )?at dma/i] },
@@ -607,7 +607,7 @@ const CASES = [
   {
     tag: "regression",
     q: "Can I get your resume?",
-    must: [/2026\.08\.20_PeterL_Resume\.pdf/],
+    must: [/resume\.pdf/],
     mustNot: [/will not narrate|not documented/i],
   },
   {

@@ -21,7 +21,7 @@ It does **not**:
 ## Exactly what is exposed while it runs
 
 - The website itself: the 3D page, the About and project text, the themes
-- The resume files: `2026.08.20_PeterL_Resume.pdf`, `PeterLilley_Resume.txt`, `.md`
+- The resume files: `resume.pdf`, `PeterLilley_Resume.txt`, `.md`
 - These API endpoints: health, profile, projects, papers, models, chat, warm, speech-to-text,
   text-to-speech, and a write-only visit counter (`POST /api/visit`) that records a page view or
   a resume download and returns nothing readable

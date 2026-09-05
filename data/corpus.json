@@ -965,7 +965,7 @@
         "one page",
         "ats"
       ],
-      "text": "Yes, there is a downloadable resume. The PDF is served from this site at ./2026.08.20_PeterL_Resume.pdf. A plain-text version is at ./PeterLilley_Resume.txt. You can open a printable view at ./?resume=1. There is a 'Download my resume' link in the chat panel. There is a 'Download resume' button in the site header. I can provide a link. The resume is generated from the same curated data as this site. It is a standard document. It includes summary, skills, experience, projects, and education."
+      "text": "Yes, there is a downloadable resume. The PDF is served from this site at ./resume.pdf. A download saves as today's date plus resume, for example 2026.09.05_resume.pdf, with no personal name in the file. A plain-text version is at ./PeterLilley_Resume.txt. You can open a printable view at ./?resume=1. There is a 'Download my resume' link in the chat panel. There is a 'Download resume' button in the site header. I can provide a link. The resume is generated from the same curated data as this site. It is a standard document. It includes summary, skills, experience, projects, and education."
     },
     {
       "id": "glossary",

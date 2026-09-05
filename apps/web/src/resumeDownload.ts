@@ -1,8 +1,20 @@
 import type { MouseEvent } from "react";
 import { logVisit } from "./visits";
 
-export const RESUME_PDF_FILENAME = "2026.08.20_PeterL_Resume.pdf";
-export const RESUME_PDF_URL = `${import.meta.env.BASE_URL}${RESUME_PDF_FILENAME}`;
+/** Stable public asset — no personal name in the URL. */
+export const RESUME_PDF_ASSET = "resume.pdf";
+export const RESUME_PDF_URL = `${import.meta.env.BASE_URL}${RESUME_PDF_ASSET}`;
+
+/** Saved filename: today's date, no personal name. Example: 2026.09.05_resume.pdf */
+export function datedResumeFilename(now = new Date()): string {
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, "0");
+  const d = String(now.getDate()).padStart(2, "0");
+  return `${y}.${m}.${d}_resume.pdf`;
+}
+
+/** Page-load value for static `download` attributes; click handler restamps at save time. */
+export const RESUME_PDF_FILENAME = datedResumeFilename();
 
 let cached: Blob | null = null;
 let inflight: Promise<Blob> | null = null;
@@ -37,30 +49,23 @@ prefetchResumePdf();
 async function saveResumePdf(): Promise<void> {
   logVisit("resume", "pdf");
   const blob = await getPdfBlob();
-  const file = new File([blob], RESUME_PDF_FILENAME, { type: "application/pdf" });
+  const filename = datedResumeFilename();
+  const file = new File([blob], filename, { type: "application/pdf" });
 
   const nav = navigator as Navigator & { canShare?: (data: ShareData) => boolean };
   if (typeof nav.share === "function" && nav.canShare?.({ files: [file] })) {
     try {
-      await nav.share({ files: [file], title: RESUME_PDF_FILENAME });
+      await nav.share({ files: [file], title: filename });
       return;
     } catch (err) {
       if (err instanceof Error && err.name === "AbortError") return;
     }
   }
 
-  const ios =
-    /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-  if (ios) {
-    window.location.assign(RESUME_PDF_URL);
-    return;
-  }
-
   const url = URL.createObjectURL(file);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = RESUME_PDF_FILENAME;
+  anchor.download = filename;
   anchor.rel = "noopener";
   document.body.appendChild(anchor);
   anchor.click();
