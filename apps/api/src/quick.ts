@@ -55,7 +55,7 @@ const PREMISE: Rule[] = [
       "i",
     ),
     answer:
-      "That is not part of his record. Peter has not worked at any of the large technology companies, and the employers on his resume are Heideman & Associates as a Revit/CAD technician, Component Bar Products as a quality engineer in precision machining, and David Mason & Associates, where he is a Automation Tooling Engineer (Staff Technician) on CAD automation and Civil 3D tooling now. Separately, on his own time, he runs Free Parameter LLC, which is how Digital Twin Pro is published. Whatever you heard about another employer, do not attach it to him.",
+      "That is not part of his record. Peter has not worked at any of the large technology companies, and the employers on his resume are Heideman & Associates as a Revit/CAD technician, Component Bar Products as a quality engineer in precision machining, and David Mason & Associates, where he is an Automation Tooling Engineer (Staff Technician) on CAD automation and Civil 3D tooling now. Separately, on his own time, he runs Free Parameter LLC, which is how Digital Twin Pro is published. Whatever you heard about another employer, do not attach it to him.",
   },
   {
     id: "premise-venture",
@@ -240,7 +240,7 @@ const GUARDED: Rule[] = [
     id: "availability",
     test: /\bavailab(le|ility)\b|notice period|start date|when can (you|he) start|how soon can (you|he)|two weeks notice|schedule (a|an) (call|chat|interview|screen)|interview (this|next) week|open to (a )?(new role|opportunities|offers)|actively looking|job search/i,
     answer:
-      "Availability, start dates, and notice periods are not published here, and guessing at them would be worse than useless to you. He is currently working at David Mason & Associates as a Automation Tooling Engineer (Staff Technician) on CAD automation and Civil 3D tooling; anything about timing is a question for him directly at " +
+      "Availability, start dates, and notice periods are not published here, and guessing at them would be worse than useless to you. He is currently working at David Mason & Associates as an Automation Tooling Engineer (Staff Technician) on CAD automation and Civil 3D tooling; anything about timing is a question for him directly at " +
       `${EMAIL}.`,
   },
   {
