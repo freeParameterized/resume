@@ -153,21 +153,11 @@ export default function App() {
           />
         </Section>
 
-        {corpus.howIWork ? (
-          <Section id="how-i-work" index="06" title={corpus.howIWork.headline}>
-            <ul className="how-list">
-              {corpus.howIWork.points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </Section>
-        ) : null}
-
-        <Section id="github" index="07" title="GitHub">
+        <Section id="github" index="06" title="GitHub">
           <GithubCard info={github} />
         </Section>
 
-        <Section id="deep-dive" index="08" title="Deep dive">
+        <Section id="deep-dive" index="07" title="Deep dive">
           <DeepDive projects={deepProjects} papersAvailable={papers.available} papers={papers.papers} />
         </Section>
       </main>

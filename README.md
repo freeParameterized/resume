@@ -2,7 +2,7 @@
 
 Resume site: work graph (Three.js), project panels, optional local chat, and a PDF built from the same data. First public URL is **https://freeParameterized.github.io/resume/**.
 
-Identity: Chesterfield / St. Louis, MO · **Free Parameter LLC**. Public GitHub: [github.com/freeParameterized](https://github.com/freeParameterized). Title published: **Staff Technician (CAD automation / Civil 3D tools)**. Phone and street stay TBD (not on the site).
+Identity: Chesterfield / St. Louis, MO · **Free Parameter LLC**. Public GitHub: [github.com/freeParameterized](https://github.com/freeParameterized). Title published: **Automation Tooling Engineer (Staff Technician)**. Phone and street stay TBD (not on the site).
 
 **Showing it to someone?** Read [DEPLOY.md](DEPLOY.md) instead of this file. It is the runbook:
 the one command that starts everything with a public link, why that link expires, how to stop

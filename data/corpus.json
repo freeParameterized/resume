@@ -6,8 +6,8 @@
   },
   "profile": {
     "name": "Peter A. Lilley",
-    "headline": "Software Engineer - C#/.NET and C++17 Systems, Geometry and Automation Tooling",
-    "title": "Staff Technician (CAD automation / Civil 3D tools)",
+    "headline": "Automation Tooling Engineer (Staff Technician) \u2014 C#/.NET, C++17, CAD / Geometry",
+    "title": "Automation Tooling Engineer (Staff Technician)",
     "location": "Chesterfield / St. Louis, MO",
     "phone": "TBD",
     "email": "pal@cadpal.net",
@@ -16,17 +16,6 @@
     "github": "https://github.com/freeParameterized",
     "identity": "Chesterfield / St. Louis, MO - Free Parameter LLC",
     "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Adopted LLMs (Claude, ChatGPT, Gemini), and also writes code from scratch."
-  },
-  "howIWork": {
-    "headline": "Working with people",
-    "points": [
-      "Colleagues use the automation and generation tooling daily.",
-      "Works inside multi-disciplinary teams. Coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects so one discipline's change does not break another's.",
-      "Quality pass cut an estimated 25% of drafting errors before licensed-engineer review.",
-      "Supervised and coordinated department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline.",
-      "Worked to ISO 9001 quality-system and Production Part Approval Process requirements.",
-      "A roughly two-year engagement at an established St. Louis engineering firm. Employer references are available on request."
-    ]
   },
   "early": [],
   "skillGroups": [
@@ -49,7 +38,10 @@
         "Python",
         "JavaScript / TypeScript (Node, React, Three.js)",
         "LISP / AutoLISP",
-        "VBA"
+        "VBA",
+        "Object-Oriented Design (OOD)",
+        "REST APIs",
+        "Multi-threading"
       ]
     },
     {
@@ -128,7 +120,9 @@
         "macOS",
         "Docker",
         "Bash scripts for data pipelines",
-        "Audit logging"
+        "Audit logging",
+        "CI/CD pipelines",
+        "REST APIs"
       ]
     },
     {
@@ -147,16 +141,18 @@
       "id": "dma",
       "org": "David Mason & Associates",
       "location": "St. Louis, MO",
-      "title": "Staff Technician (CAD automation / Civil 3D tools)",
+      "title": "Automation Tooling Engineer (Staff Technician)",
       "dates": "Jul 2024 - Aug 2026",
       "bullets": [
+        "Quality pass cut an estimated 25% of drafting errors before licensed-engineer review.",
         "Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.",
         "Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.",
         "Built a Civil 3D GUI for less experienced CAD users: color-coded IntelliSense-style layer and entity search with autocomplete, dynamic entity pull, and a local phrase-to-command lookup. From one command it moves entities, runs basic draw commands, retargets objects onto other layers, and otherwise edits uniformly across every layout instead of clicking through them in sequence. Minutes of that work, often hundreds of clicks, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them.",
         "Built C# plugins against the Civil 3D .NET API to automate layout, audit drawings, and batch-rename title blocks. Attached typed metadata to Civil 3D objects so company standards sit on the entities.",
         "Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.",
         "Built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and existing company drawing data as input for each request. A local Ollama model covers those commands when the API is unreachable.",
-        "Extended that pipeline to locate outdated sheet text and to compare design options. Authored and reviewed Git pull requests on the plugins and pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD."
+        "Extended that pipeline to locate outdated sheet text and to compare design options. Authored and reviewed Git pull requests on the plugins and pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD.",
+        "Colleagues use the automation and generation tooling daily. Coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects so one discipline's change does not break another's."
       ],
       "projects": [
         "Airport Consolidation",
@@ -178,7 +174,7 @@
       "bullets": [
         "Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.",
         "Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.",
-        "Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets."
+        "Worked to ISO 9001 quality-system and Production Part Approval Process requirements. Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets."
       ]
     },
     {
@@ -188,7 +184,8 @@
       "title": "Assistant Department Manager - Building Materials and Millwork",
       "dates": "Jun 2020 - Mar 2023",
       "bullets": [
-        "Priced and estimated large commercial material orders. Supervised department staff."
+        "Priced and estimated large commercial material orders.",
+        "Supervised and coordinated department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline."
       ]
     },
     {
@@ -201,35 +198,29 @@
         "Produced MEP construction documents. Built as-built models in Revit and AutoCAD.",
         "Built automated data libraries for building-system objects. Standardized outdated details."
       ]
+    },
+    {
+      "id": "jeff-day",
+      "org": "Jeff Day & Associates, LLC",
+      "location": "Manchester, MO",
+      "title": "CAD Drafter",
+      "dates": "2020",
+      "bullets": [
+        "Drafted architectural construction documents in AutoCAD for residential and commercial work.",
+        "Kept layers managed in the office template. Modified and organized the detail library. Audited drawings against office CAD standards before issue."
+      ]
     }
   ],
   "education": [
     {
-      "id": "slu",
-      "org": "Saint Louis University (SLU)",
-      "location": "St. Louis, MO",
-      "credential": "Calculus II (CLEP credit)",
-      "dates": "2018",
-      "notes": [
-        "Accepted by Ranken Technical College for their calculus curriculum."
-      ]
-    },
-    {
-      "id": "mst",
-      "org": "Missouri S&T",
-      "location": "Rolla",
-      "credential": "Coursework toward Latin American Studies with Technical Applications",
-      "dates": "2019 - 2020",
-      "notes": [
-        "Placed into Advanced Conversational Spanish (Level 4). Technical fluency in Spanish."
-      ]
-    },
-    {
       "id": "ranken",
       "org": "Ranken Technical College",
-      "location": "Wentzville",
-      "credential": "AAS Building Systems Engineering Technology",
-      "dates": "2019"
+      "location": "Wentzville, MO",
+      "credential": "A.A.S. in Building Systems Engineering Technology",
+      "dates": "2019",
+      "notes": [
+        "Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T)."
+      ]
     }
   ],
   "github": {
@@ -642,7 +633,7 @@
         "github",
         "free parameter"
       ],
-      "text": "Peter A. Lilley. Staff Technician at David Mason & Associates, Jul 2024 to Aug 2026. Chesterfield / St. Louis, MO. Free Parameter LLC. Email pal@cadpal.net. Public GitHub is https://github.com/freeParameterized."
+      "text": "Peter A. Lilley. Automation Tooling Engineer (Staff Technician) at David Mason & Associates, Jul 2024 to Aug 2026. Chesterfield / St. Louis, MO. Free Parameter LLC. Email pal@cadpal.net. Public GitHub is https://github.com/freeParameterized."
     },
     {
       "id": "summary",
@@ -787,7 +778,7 @@
         "title block",
         "audit"
       ],
-      "text": "Worked at David Mason & Associates in St. Louis, MO from Jul 2024 to Aug 2026. Staff Technician. Built CAD bridges and automators. A written request is turned into a command the plugins already understand, then C# talks to Civil 3D. They also do construction drawing setup. Built software that parses and auto-checks civil plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes. It reduced errors before PE review by about 25%. Built C# plugins with Tesseract OCR pipelines. Built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They parse hundreds of text entities, audit drawings, and export traceability logs. Also built a color-coded IntelliSense-style layer and entity search GUI with autocomplete, dynamic entity pull, and a local phrase-to-command lookup so less experienced CAD users can move entities, run basic draw commands, retarget objects onto other layers, and otherwise edit uniformly across layouts in one command instead of clicking layout by layout. Minutes of sequential clicks, often hundreds, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them. These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout. Used C# to parse messy survey text and compass bearings into XData. Built graph lookup tables to map 3D structures to exact flow lines. Built digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. Computes watershed data, drainage areas, and differential runoff. Models pipe networks to MSD standards. Audits AutoCAD standards and revises templates. Introduced Navisworks clash detection. Creates parameterized 3D parts per MSD standards. Worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. Does not publish client drainage values or site data."
+      "text": "Worked at David Mason & Associates in St. Louis, MO from Jul 2024 to Aug 2026. Automation Tooling Engineer (Staff Technician). Built CAD bridges and automators. A written request is turned into a command the plugins already understand, then C# talks to Civil 3D. They also do construction drawing setup. Built software that parses and auto-checks civil plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes. It reduced errors before PE review by about 25%. Built C# plugins with Tesseract OCR pipelines. Built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They parse hundreds of text entities, audit drawings, and export traceability logs. Also built a color-coded IntelliSense-style layer and entity search GUI with autocomplete, dynamic entity pull, and a local phrase-to-command lookup so less experienced CAD users can move entities, run basic draw commands, retarget objects onto other layers, and otherwise edit uniformly across layouts in one command instead of clicking layout by layout. Minutes of sequential clicks, often hundreds, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them. These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout. Used C# to parse messy survey text and compass bearings into XData. Built graph lookup tables to map 3D structures to exact flow lines. Built digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. Computes watershed data, drainage areas, and differential runoff. Models pipe networks to MSD standards. Audits AutoCAD standards and revises templates. Introduced Navisworks clash detection. Creates parameterized 3D parts per MSD standards. Worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. Does not publish client drainage values or site data."
     },
     {
       "id": "runoff-method",

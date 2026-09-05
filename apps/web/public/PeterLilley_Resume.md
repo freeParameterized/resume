@@ -1,6 +1,6 @@
 # Peter A. Lilley
 
-**Software Engineer - C#/.NET and C++17 Systems, Geometry and Automation Tooling**
+**Automation Tooling Engineer (Staff Technician) — C#/.NET, C++17, CAD / Geometry**
 
 Chesterfield / St. Louis, MO · pal@cadpal.net · Phone: Available on request · github.com/freeParameterized · Free Parameter LLC
 
@@ -10,16 +10,17 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 
 ## Skills
 
-- **Languages:** C#, Python, C++, Dart, TypeScript, JavaScript, SQL, LISP, VBA
+- **Languages:** C#, C#/.NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, LISP, VBA
+- **Software engineering:** Object-Oriented Design (OOD), REST APIs, multi-threading, CI/CD pipelines, Git (GitFlow, trunk-based, pull requests), CMake, Linux, macOS, Docker, Bash
 - **Databases and Data Systems:** SQLite, Firebase, Postgres, XData schemas, data modeling, JSON structuring, graph calculators, Tesseract OCR, Levenshtein matching
-- **Engineering and math:** Matrix math, 3D graphics, Express, React, Git (GitFlow, trunk-based, PRs, CI/CD), CMake, Linux, macOS, Docker, Bash scripting for data pipelines
-- **Domain systems, quality, and networking:** CAD plugins, Revit automation, 3D metadata, ARCore, part dimensioning, coordinate measuring machines, ISO 9001, TCP/IP, IPv4/IPv6 subnetting, Cisco routing and switching
+- **CAD, geometry, and domain:** AutoCAD, Civil 3D, Revit, Navisworks, Dynamo, matrix math, 3D graphics, CAD plugins, typed metadata, GD&T, CMM, ISO 9001, TCP/IP, Cisco routing
 
 ## Experience
 
-### Staff Technician (CAD automation / Civil 3D tools) — David Mason & Associates
+### Automation Tooling Engineer (Staff Technician) — David Mason & Associates
 *St. Louis, MO · Jul 2024 - Aug 2026*
 
+- Quality pass cut an estimated 25% of drafting errors before licensed-engineer review.
 - Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.
 - Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.
 - Built a Civil 3D GUI for less experienced CAD users: color-coded IntelliSense-style layer and entity search with autocomplete, dynamic entity pull, and a local phrase-to-command lookup. From one command it moves entities, runs basic draw commands, retargets objects onto other layers, and otherwise edits uniformly across every layout instead of clicking through them in sequence. Minutes of that work, often hundreds of clicks, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them.
@@ -27,24 +28,33 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 - Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.
 - Built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and existing company drawing data as input for each request.
 - Extended that pipeline to locate outdated sheet text and to compare design options. Authored and reviewed Git pull requests on the plugins and pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD.
+- Colleagues use the automation and generation tooling daily. Coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects so one discipline's change does not break another's.
 
 ### Quality Engineer - Manufacturing / Precision Machining — Component Bar Products
 *O'Fallon, MO · Apr 2023 - Jun 2024*
 
 - Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.
 - Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.
-- Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets.
+- Worked to ISO 9001 quality-system and Production Part Approval Process requirements. Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets.
 
 ### Assistant Department Manager - Building Materials and Millwork — Menard, Inc.
 *Manchester / Ballwin, MO · Jun 2020 - Mar 2023*
 
-- Priced and estimated large commercial material orders. Supervised department staff.
+- Priced and estimated large commercial material orders.
+- Supervised and coordinated department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline.
 
 ### Revit/CAD Technician - Mechanical/Plumbing — Heideman & Associates, Inc.
 *Fenton, MO · May 2018 - Apr 2019*
 
-- Produced MEP construction documents. Built as-built models in Revit and AutoCAD.
-- Built automated data libraries for building-system objects. Standardized outdated details.
+- Drafted mechanical and plumbing construction documents in Revit and AutoCAD. Projects included St. Luke's Hospital, Mercy, AT&T, Saint Louis University, and American Water.
+- Produced as-built drawings from field photos and blueprints. Built automated data libraries. Standardized hundreds of outdated AutoCAD details.
+- Coordinated with structural and architectural disciplines. Clash detection. Kept multi-discipline file structure and Revit templates consistent.
+
+### CAD Drafter — Jeff Day & Associates, LLC
+*Manchester, MO · 2020*
+
+- Drafted architectural construction documents in AutoCAD for residential and commercial work.
+- Kept layers managed in the office template. Modified and organized the detail library. Audited drawings against office CAD standards before issue.
 
 ## Projects
 
@@ -72,15 +82,7 @@ Software engineer with a background in CAD and engineering. Builds web and mobil
 
 ## Education
 
-### Calculus II (CLEP credit) — Saint Louis University (SLU)
-*St. Louis, MO · 2018*
-
-Accepted by Ranken Technical College for their calculus curriculum.
-
-### Coursework toward Latin American Studies with Technical Applications — Missouri University of Science and Technology
-*Rolla, MO · 2019 - 2020*
-
-Technical fluency in Spanish.
-
-### A.A.S., Building Systems Engineering Technology — Ranken Technical College
+### A.A.S. in Building Systems Engineering Technology — Ranken Technical College
 *Wentzville, MO · 2019*
+
+Additional coursework and credits: Calculus II (SLU / CLEP), Technical Spanish and Applications (Missouri S&T).

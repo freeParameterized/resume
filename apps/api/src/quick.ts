@@ -55,7 +55,7 @@ const PREMISE: Rule[] = [
       "i",
     ),
     answer:
-      "That is not part of his record. Peter has not worked at any of the large technology companies, and the employers on his resume are Heideman & Associates as a Revit/CAD technician, Component Bar Products as a quality engineer in precision machining, and David Mason & Associates, where he is a Staff Technician on CAD automation and Civil 3D tooling now. Separately, on his own time, he runs Free Parameter LLC, which is how Digital Twin Pro is published. Whatever you heard about another employer, do not attach it to him.",
+      "That is not part of his record. Peter has not worked at any of the large technology companies, and the employers on his resume are Heideman & Associates as a Revit/CAD technician, Component Bar Products as a quality engineer in precision machining, and David Mason & Associates, where he is a Automation Tooling Engineer (Staff Technician) on CAD automation and Civil 3D tooling now. Separately, on his own time, he runs Free Parameter LLC, which is how Digital Twin Pro is published. Whatever you heard about another employer, do not attach it to him.",
   },
   {
     id: "premise-venture",
@@ -71,7 +71,7 @@ const PREMISE: Rule[] = [
     id: "premise-headcount",
     test: /\bteam of (\d+|two|three|four|five|six|seven|eight|nine|ten|twelve|twenty)\b|\b\d+.person team\b|\b(managed|led|supervised|ran|oversaw)\s+(a\s+)?(team of\s+)?\d+\s*(people|engineers|developers|reports|staff|technicians|drafters)\b|\bhis \d+ (reports|engineers|developers)\b/i,
     answer:
-      "No team of that size is in his record, and I will not confirm a headcount that appears in the question. What is documented is one people-management role: supervising department staff as an Assistant Department Manager, with no headcount figure published. His engineering work since then has been as an individual contributor - Quality Engineer at Component Bar Products, then Staff Technician at David Mason & Associates - building tooling that other professionals use daily rather than managing people. If you need the actual numbers, he is the only reliable source: " +
+      "No team of that size is in his record, and I will not confirm a headcount that appears in the question. What is documented is one people-management role: supervising department staff as an Assistant Department Manager, with no headcount figure published. His engineering work since then has been as an individual contributor - Quality Engineer at Component Bar Products, then Automation Tooling Engineer (Staff Technician) at David Mason & Associates - building tooling that other professionals use daily rather than managing people. If you need the actual numbers, he is the only reliable source: " +
       `${EMAIL}.`,
   },
   {
@@ -201,7 +201,7 @@ const GUARDED: Rule[] = [
     id: "level-and-endorsement",
     test: /\b(senior|mid.level|junior|principal)\b.{0,30}(engineer|developer|\bdev\b)|what level (is|would)|seniority|is he (a )?(senior|junior|mid)|would you hire|should (i|we) hire|is he (better|worse) than|compare him to|rank him|how does he (compare|stack up)|best candidate|rate (his|your|him).{0,30}(skills?|ability|abilities|proficiency|out of)|out of (10|ten)\b|on a scale of|how good is he at|proficiency level|score him/i,
     answer:
-      "He does not publish a seniority level or a skill rating, and I will not invent either - a number out of ten from a website is worth nothing to you, and inflating it would be worse. The documented titles are Staff Technician for CAD automation and Civil 3D tooling at David Mason & Associates, Quality Engineer in precision machining at Component Bar Products, and Revit/CAD Technician at Heideman & Associates. He ships in C#, Python, C++17, TypeScript, and Dart, plus LISP where CAD APIs require it. Whether that maps to mid, senior, or something else depends on your ladder rather than on anything written here, and I am not going to vouch for him or rank him against other candidates - that judgement is yours to make from the record.",
+      "He does not publish a seniority level or a skill rating, and I will not invent either - a number out of ten from a website is worth nothing to you, and inflating it would be worse. The documented titles are Automation Tooling Engineer (Staff Technician) for CAD automation and Civil 3D tooling at David Mason & Associates, Quality Engineer in precision machining at Component Bar Products, and Revit/CAD Technician at Heideman & Associates. He ships in C#, Python, C++17, TypeScript, and Dart, plus LISP where CAD APIs require it. Whether that maps to mid, senior, or something else depends on your ladder rather than on anything written here, and I am not going to vouch for him or rank him against other candidates - that judgement is yours to make from the record.",
   },
   {
     id: "references",
@@ -240,7 +240,7 @@ const GUARDED: Rule[] = [
     id: "availability",
     test: /\bavailab(le|ility)\b|notice period|start date|when can (you|he) start|how soon can (you|he)|two weeks notice|schedule (a|an) (call|chat|interview|screen)|interview (this|next) week|open to (a )?(new role|opportunities|offers)|actively looking|job search/i,
     answer:
-      "Availability, start dates, and notice periods are not published here, and guessing at them would be worse than useless to you. He is currently working at David Mason & Associates as a Staff Technician on CAD automation and Civil 3D tooling; anything about timing is a question for him directly at " +
+      "Availability, start dates, and notice periods are not published here, and guessing at them would be worse than useless to you. He is currently working at David Mason & Associates as a Automation Tooling Engineer (Staff Technician) on CAD automation and Civil 3D tooling; anything about timing is a question for him directly at " +
       `${EMAIL}.`,
   },
   {
@@ -262,7 +262,7 @@ const GUARDED: Rule[] = [
     id: "reviews-and-promotions",
     test: /performance review|annual review|review (rating|ratings|score)|\bpip\b|were you promoted|been promoted|promotion(s)?\b|got a raise|title change|why (were|weren't) you promoted/i,
     answer:
-      "Performance reviews, ratings, and promotion history are not documented here, so there is nothing for me to report and nothing worth guessing at. The titles and dates are on the record: Revit/CAD Technician at Heideman & Associates, Quality Engineer in precision machining at Component Bar Products, and Staff Technician for CAD automation and Civil 3D tooling at David Mason & Associates, where he works now. He can walk you through the rest at " +
+      "Performance reviews, ratings, and promotion history are not documented here, so there is nothing for me to report and nothing worth guessing at. The titles and dates are on the record: Revit/CAD Technician at Heideman & Associates, Quality Engineer in precision machining at Component Bar Products, and Automation Tooling Engineer (Staff Technician) for CAD automation and Civil 3D tooling at David Mason & Associates, where he works now. He can walk you through the rest at " +
       `${EMAIL}.`,
   },
   {
