@@ -51,7 +51,6 @@ export function ProjectPanel({ project, onClose }: Props) {
           )}
           {meaningful(project.summary) ? <p>{project.summary}</p> : null}
           {meaningful(project.owner) ? <p className="job-meta">{project.owner}</p> : null}
-          {meaningful(project.honesty) ? <div className="honesty">{project.honesty}</div> : null}
           <div className="stack-row">
             {project.stack.map((s) => (
               <span className="chip" key={s}>

@@ -1,1075 +1,1252 @@
 {
-  "meta": {
-    "title": "Peter A. Lilley",
-    "sanitized": true,
-    "githubAccount": "https://github.com/freeParameterized"
+ "meta": {
+  "title": "Peter A. Lilley",
+  "sanitized": true,
+  "githubAccount": "https://github.com/freeParameterized"
+ },
+ "profile": {
+  "name": "Peter A. Lilley",
+  "headline": "Software Engineer — C++ (Qt, OpenGL), C#/.NET, Python · CAD/BIM and 3D graphics",
+  "title": "Software Engineer",
+  "location": "Chesterfield / St. Louis, MO",
+  "phone": "TBD",
+  "email": "pal@cadpal.net",
+  "company": "Free Parameter LLC",
+  "website": "",
+  "github": "https://github.com/freeParameterized",
+  "identity": "Chesterfield / St. Louis, MO - Free Parameter LLC",
+  "summary": "Software engineer with a CAD/BIM background. Builds native desktop software in C++ (Qt 6, OpenGL, Open CASCADE), production automation in C#/.NET and Python, and web and mobile apps in TypeScript and Flutter. Two years at David Mason & Associates building Civil 3D tooling that engineers use daily. Built Cadnat, a CAD/BIM desktop application of about 80,000 lines of C++, and released Omabiblia, an open-source OpenGL application. Uses AI-assisted development alongside testing, CI, packaging, and code review."
+ },
+ "early": [],
+ "skillGroups": [
+  {
+   "id": "llm",
+   "label": "Prompt engineering",
+   "items": [
+    "Prompt engineering, with a manual pass for syntax errors and basic refactoring",
+    "Uses existing company drawings as input when generating CAD work",
+    "Turns a photo into item and quantity data with the Google Gemini API"
+   ]
   },
-  "profile": {
-    "name": "Peter A. Lilley",
-    "headline": "Automation Tooling Engineer (Staff Technician) \u2014 C#/.NET, C++17, BIM Tooling / CAD Drafting",
-    "title": "Automation Tooling Engineer (Staff Technician)",
-    "location": "Chesterfield / St. Louis, MO",
-    "phone": "TBD",
-    "email": "pal@cadpal.net",
-    "company": "Free Parameter LLC",
-    "website": "",
-    "github": "https://github.com/freeParameterized",
-    "identity": "Chesterfield / St. Louis, MO - Free Parameter LLC",
-    "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Combines AI-assisted development (Claude, ChatGPT, Gemini) with strong core engineering fundamentals from scratch."
+  {
+   "id": "languages",
+   "label": "Languages",
+   "items": [
+    "C++17 (memory, vectors, OOP, Dear ImGui, COM)",
+    "C# / .NET (WPF, WinForms, Civil 3D and AutoCAD plugins)",
+    "Dart / Flutter",
+    "Python",
+    "JavaScript / TypeScript (Node, React, Three.js, Next.js)",
+    "SQL / Oracle SQL",
+    "LISP / AutoLISP",
+    "VBA",
+    "Object-Oriented Design (OOD)",
+    "REST APIs",
+    "Multi-threading"
+   ]
   },
-  "early": [],
-  "skillGroups": [
-    {
-      "id": "llm",
-      "label": "Prompt engineering",
-      "items": [
-        "Prompt engineering, with a manual pass for syntax errors and basic refactoring",
-        "Uses existing company drawings as input when generating CAD work",
-        "Turns a photo into item and quantity data with the Google Gemini API"
-      ]
-    },
-    {
-      "id": "languages",
-      "label": "Languages",
-      "items": [
-        "C++17 (memory, vectors, OOP, Dear ImGui, COM)",
-        "C# / .NET (WPF, WinForms, Civil 3D and AutoCAD plugins)",
-        "Dart / Flutter",
-        "Python",
-        "JavaScript / TypeScript (Node, React, Three.js, Next.js)",
-        "SQL / Oracle SQL",
-        "LISP / AutoLISP",
-        "VBA",
-        "Object-Oriented Design (OOD)",
-        "REST APIs",
-        "Multi-threading"
-      ]
-    },
-    {
-      "id": "databases",
-      "label": "Databases and Data Systems",
-      "items": [
-        "Postgres",
-        "Oracle SQL",
-        "SQLite",
-        "Firebase",
-        "H2"
-      ]
-    },
-    {
-      "id": "math",
-      "label": "Math and structures",
-      "items": [
-        "Matrix transforms and coordinate changes",
-        "3D projection, and depth sorting to draw shapes in the correct order",
-        "Graph theory and dependency trees",
-        "Spatial indexing to find nearby objects quickly",
-        "Stormwater runoff calculations",
-        "Complex numbers and harmonic motion"
-      ]
-    },
-    {
-      "id": "cad",
-      "label": "CAD automation and metadata",
-      "items": [
-        "Civil 3D API plugins, AutoCAD automation, and Revit and Dynamo scripting",
-        "Typed metadata attached to CAD objects",
-        "Pipe network and stormwater models",
-        "Checks drawings against company standards and reports what changed",
-        "Finds clashes between disciplines in Navisworks"
-      ]
-    },
-    {
-      "id": "manufacturing",
-      "label": "Metrology and quality",
-      "items": [
-        "Geometric dimensioning and tolerancing (GD&T)",
-        "Coordinate measuring machine (CMM) programming",
-        "Compares measured parts against the CAD model and the print",
-        "Tolerance inspection",
-        "ISO 9001 quality systems, PPAP, and corrective actions",
-        "Calibration and traceability of measuring equipment"
-      ]
-    },
-    {
-      "id": "estimating",
-      "label": "Takeoffs and estimating",
-      "items": [
-        "Calculates material quantities from construction plans",
-        "Commercial and residential material estimates",
-        "Inventory and pricing data models",
-        "Technical advice for contractors"
-      ]
-    },
-    {
-      "id": "ops",
-      "label": "Tooling",
-      "items": [
-        "Git",
-        "GitFlow",
-        "trunk-based development",
-        "pull-request review",
-        "CI/CD",
-        "merge conflict resolution",
-        "CMake",
-        "Linux",
-        "macOS",
-        "Docker",
-        "Bash scripts for data pipelines",
-        "Audit logging",
-        "CI/CD pipelines",
-        "REST APIs"
-      ]
-    },
-    {
-      "id": "networking",
-      "label": "Networking",
-      "items": [
-        "TCP/IP",
-        "IPv4 and IPv6",
-        "Subnetting",
-        "Cisco routing and switching"
-      ]
-    }
-  ],
-  "experience": [
-    {
-      "id": "dma",
-      "org": "David Mason & Associates",
-      "location": "St. Louis, MO",
-      "title": "Automation Tooling Engineer (Staff Technician)",
-      "dates": "Jul 2024 - Aug 2026",
-      "bullets": [
-        "Engineered automated quality checks that cut an estimated 25% of drafting errors prior to engineer review.",
-        "Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.",
-        "Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.",
-        "Built a Civil 3D GUI for less experienced CAD users: color-coded IntelliSense-style layer and entity search with autocomplete, dynamic entity pull, and a local phrase-to-command lookup. From one command it moves entities, runs basic draw commands, retargets objects onto other layers, and otherwise edits uniformly across every layout instead of clicking through them in sequence. Minutes of that work, often hundreds of clicks, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them.",
-        "Built C# plugins against the Civil 3D .NET API to automate layout, audit drawings, and batch-rename title blocks. Attached typed metadata to Civil 3D objects so company standards sit on the entities.",
-        "Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.",
-        "Built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and existing company drawing data as input for each request. A local Ollama model covers those commands when the API is unreachable.",
-        "Extended that pipeline to locate outdated sheet text and to compare design options. Authored and reviewed Git pull requests on the plugins and pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD.",
-        "Colleagues use the automation and generation tooling daily. Coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects so one discipline's change does not break another's."
-      ],
-      "projects": [
-        "Airport Consolidation",
-        "St. Louis Zoo Destination Discovery (North Parking Lot)",
-        "Wildcare Park",
-        "Wohl Bridge Renovation",
-        "PGVA Reach",
-        "Wentzville BJC",
-        "Ranken Technical College Campus (Finney Ave Expansion)"
-      ],
-      "notForDma": "Digital Twin Pro is NOT DMA work. It is Peter's own product under Free Parameter LLC."
-    },
-    {
-      "id": "cbp",
-      "org": "Component Bar Products",
-      "location": "O'Fallon, MO",
-      "title": "Quality Engineer - Manufacturing / Precision Machining",
-      "dates": "Apr 2023 - Jun 2024",
-      "bullets": [
-        "Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.",
-        "Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.",
-        "Worked to ISO 9001 quality-system and Production Part Approval Process requirements. Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets."
-      ]
-    },
-    {
-      "id": "menards",
-      "org": "Menard, Inc.",
-      "location": "Manchester / Ballwin, MO",
-      "title": "Assistant Department Manager - Building Materials and Millwork",
-      "dates": "Jun 2020 - Mar 2023",
-      "bullets": [
-        "Priced and estimated large commercial material orders.",
-        "Supervised and coordinated department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline."
-      ]
-    },
-    {
-      "id": "jeff-day",
-      "org": "Jeff Day & Associates, LLC",
-      "location": "Manchester, MO",
-      "title": "CAD Drafter",
-      "dates": "2020",
-      "bullets": [
-        "Drafted architectural construction documents in AutoCAD for residential and commercial work.",
-        "Kept layers managed in the office template. Modified and organized the detail library. Audited drawings against office CAD standards before issue."
-      ]
-    },
-    {
-      "id": "heideman",
-      "org": "Heideman & Associates, Inc.",
-      "location": "Fenton, MO",
-      "title": "Revit/CAD Technician - Mechanical/Plumbing",
-      "dates": "May 2018 - Apr 2019",
-      "bullets": [
-        "Produced MEP construction documents. Built as-built models in Revit and AutoCAD.",
-        "Built automated data libraries for building-system objects. Standardized outdated details."
-      ]
-    }
-  ],
-  "education": [
-    {
-      "id": "ranken",
-      "org": "Ranken Technical College",
-      "location": "Wentzville, MO",
-      "credential": "A.A.S. in Building Systems Engineering Technology",
-      "dates": "2019",
-      "notes": [
-        "Additional coursework: Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University)."
-      ]
-    }
-  ],
-  "github": {
-    "owner": "freeParameterized",
-    "repo": "digital-twin-pro",
-    "url": "https://github.com/freeParameterized/digital-twin-pro",
-    "language": "Dart",
-    "description": "Built this Flutter 3D inventory application. Custom painter's-algorithm renderer instead of a game engine. Used SQLite persistence, Gemini photo analysis, and ARCore placement. This is a personal product under Free Parameter LLC.",
-    "fallbackStars": null,
-    "fallbackNote": "Live GitHub metadata is fetched at runtime when the network is available; this object is the offline fallback."
+  {
+   "id": "databases",
+   "label": "Databases and Data Systems",
+   "items": [
+    "Postgres",
+    "Oracle SQL",
+    "SQLite",
+    "Firebase",
+    "H2"
+   ]
   },
-  "projects": [
-    {
-      "id": "digital-twin-pro",
-      "name": "Digital Twin Pro",
-      "shortName": "DT Pro",
-      "status": "public",
-      "featured": true,
-      "owner": "Personal product - Free Parameter LLC. Not employer work, not built at or for David Mason & Associates.",
-      "visibility": "Public GitHub - released to a Google Play beta",
-      "version": "v1.0.5+5",
-      "url": "https://github.com/freeParameterized/digital-twin-pro",
-      "sourcePath": "local repository (path withheld)",
-      "remote": "https://github.com/freeParameterized/digital-twin-pro.git",
-      "stack": [
-        "Flutter",
-        "Dart 3",
-        "SQLite",
-        "Firebase",
-        "Google Gemini API (paid)",
-        "ARCore",
-        "AppHive",
-        "AdMob",
-        "Provider"
-      ],
-      "honesty": "This is a personal product. Designed and built it for personal and business storage needs under Free Parameter LLC. It is not employer work. Went from concept to a Google Play beta in five weekends, about 10-12 days of actual work. Does not claim an LLM wrote most of the code. Photos are stored locally in the project folder. Does not claim per-user API quotas, DDoS protection, photo-moderation reporting, or immediately blocking a user: SecurityService is a stub that allows all operations, rate limiting is TODO, and Gemini harm blocks for those categories are set to none. Pays for the Google Gemini API. Does not claim download counts, revenue, ratings, or user numbers.",
-      "summary": "Built a Flutter 3D inventory product from concept to Google Play beta in five weekends. Custom painter's-algorithm renderer instead of a game engine. It features drag-and-drop totes on rack grids, including swap onto an occupied slot. Tote contents update by voice, photo, or typing from several screens. Spoken inventory is parsed to typed JSON maps. Custom QR codes encode contents and an optional photo path. Export one tote or the whole set as PNG, JPEG, or a multi-page PDF book for physical labels. Projects save, export, and import as folders. It uses Gemini photo capture, an AI Organizer that recommends like-with-like moves and previews them on the rack, QR books, and ARCore. A move log records each tote's from, to, and action. It runs on Android and Windows.",
-      "bullets": [
-        "Architected the 3D renderer. Custom Z-sorted painter's-algorithm draw queue instead of a game engine.",
-        "Built drag-and-drop tote management on configurable rack grids, including swap onto an occupied slot. Used SQLite to store the inventory state model and move audit log.",
-        "Integrated the Google Gemini API for photo analysis. It detects items and quantities.",
-        "Tote contents can be updated by voice, photo, or typing from several screens: vocal quantities parses speech through Gemini into items, the camera runs photo recognition, and Edit Tote plus the database sheet take manual edits (with mics on description and quantity fields). All paths write one typed item-to-quantity map (integers or ~ estimates) shared by the tote, SQLite, and exports.",
-        "Custom QR codes encode tote JSON with toggleable fields (contents, quantities, items, colors, rack or floor position, optional photo path). Export one tote as PNG, or the whole set as PNG, JPEG, or a multi-page PDF book (QR plus location label per page) for print-and-stick on the physical bins. Cloud photo links are the next step on the photo-path field.",
-        "Saved each warehouse as a project folder with project_config.json, a project-scoped SQLite inventory.db, and photos stored locally in the project photos folder. Save, export, and import so the current job can be written out and opened again. CSV/JSON export and import are also available. Cloud photo links are not shipped.",
-        "Per-tote body and lid colors, or Apply style to all totes for a uniform look. Independent front and isometric frames (QR, photo, text, tote, or hidden). Three rack styles (metal, wood, plastic tube). Seven UI themes. Grid customization (rows and columns), with a location naming convention (letters on rows or columns, numbering from the base or the top) that relabels every slot.",
-        "Built an AI Organizer. Gemini recommends a short JSON plan of swaps and moves to group like with like (related items in the same zone). Preview animates those moves on the rack before commit; quick organize applies them immediately. The feature is experimental.",
-        "Move history is a deep log of tote transfers (action, from, to, tote label), not a field on the Tote row. SlotState also tracks which boxes have passed through a slot for evolved labels.",
-        "Used Firebase for auth and backend services. Used AppHive to release the beta build to the Play Store.",
-        "Added ARCore plane-tap placement on Android. Included seven UI themes, X-Ray mode, and emoji particle physics.",
-        "Used Provider state management across 64+ modules. Wrote about 33,000 lines of Dart across 103 files.",
-        "Shipped an Android APK/AAB with R8 obfuscation. Also shipped a Windows desktop build. Reached a Google Play beta from concept in five weekends, about 10-12 days of actual work."
-      ]
-    },
-    {
-      "id": "oralab",
-      "name": "OraLab",
-      "shortName": "OraLab",
-      "status": "public",
-      "featured": true,
-      "owner": "Personal project under Free Parameter LLC. Not employer work.",
-      "visibility": "Public GitHub Pages - completed and live",
-      "url": "https://freeparameterized.github.io/oracle-sandbox/",
-      "sourcePath": "https://github.com/freeParameterized/oracle-sandbox",
-      "remote": "https://github.com/freeParameterized/oracle-sandbox.git",
-      "stack": [
-        "TypeScript",
-        "Next.js",
-        "Oracle SQL",
-        "Java",
-        "H2 Oracle mode",
-        "Monaco"
-      ],
-      "honesty": "This is a completed public project. GitHub Pages serves the static lab. The Oracle-mode JVM and /api/sql run locally (JDK 21+, Node 22+). It is not a licensed Oracle Database and it is not PL/SQL packages. It is not employment at Oracle Corporation. Oracle University coursework is the curriculum the lab runs.",
-      "summary": "Shipped OraLab, a public Oracle SQL training sandbox. In-heap H2 in Oracle mode runs the classic HR sample plus a sales grain. Monaco editor, tutorials, glossary, and a docked schema graph. Live at https://freeparameterized.github.io/oracle-sandbox/. Source at https://github.com/freeParameterized/oracle-sandbox.",
-      "bullets": [
-        "Shipped a completed public Oracle SQL lab: live engine, HR sample, Monaco editor, tutorials, glossary, and a docked schema graph.",
-        "Oracle-mode SQL: DUAL, NVL/DECODE, ROWNUM vs FETCH FIRST, VARCHAR2/NUMBER/DATE, sequences, HR joins, MINUS, analytic RANK / ROW_NUMBER.",
-        "Workbench rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. Explain tries local Ollama, then an in-tab model."
-      ]
-    },
-    {
-      "id": "cadnat-bridge",
-      "name": "Integration bridge between a C++ desktop app and CAD software",
-      "shortName": "CAD bridge",
-      "internalName": "CADNAT Bridge Studio 1.3",
-      "status": "local",
-      "featured": false,
-      "visibility": "Local repository - no remote",
-      "version": "1.3",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "C++17",
-        "Dear ImGui",
-        "COM",
-        "CMake",
-        "LISP",
-        "C#",
-        "BRX"
-      ],
-      "honesty": "This is a local git repository with no remote. It is not a published repo. Third-party Dear ImGui and SDK headers are vendored dependencies. They are not original code.",
-      "summary": "Built a C++ desktop application. It drives AutoCAD, BricsCAD, and Civil 3D from outside the drawing editor. It sends commands and pulls drawing entities over Windows interprocess calls.",
-      "bullets": [
-        "Built an interprocess integration layer. The C++ application sends commands and geometry requests across the process boundary. It pulls drawing entities back using Windows COM.",
-        "Hosted the same command path used at work: a plugin turns a written request into a command, then C# talks to the CAD host.",
-        "Wrote a toolchain that compiles and hotloads plugins in place. It locates installed CAD SDKs at runtime.",
-        "Wrote a translator that converts between script dialects. One command set targets multiple CAD hosts.",
-        "Wrote code to read and write drawing-database entities directly.",
-        "Deployed targets for BricsCAD, Civil 3D, and AutoCAD 2018. Included C# sample automations for sheet-set generation and room drawers.",
-        "Wrote about 14,000 lines of C++ and C# across 82 source files."
-      ]
-    },
-    {
-      "id": "runoff-hydrology",
-      "name": "Stormwater runoff calculator and drainage sizing model",
-      "shortName": "Runoff",
-      "status": "professional",
-      "featured": false,
-      "visibility": "Professional work at David Mason & Associates - method described, client data withheld",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "Civil 3D",
-        "Spreadsheet schema",
-        "C# / entity metadata",
-        "Municipal stormwater standards"
-      ],
-      "honesty": "This describes the computation and the schema only. Does not publish client site names, drainage-area identifiers, elevations, or flow values. Does not store any client workbook in this repository.",
-      "summary": "Built a structured hydrologic calculator. It computes drainage areas, intensity coefficients, and runoff differential. It sizes storm structures. A CAD plugin can read and write its schema.",
-      "bullets": [
-        "Computed runoff per drainage area. Split each area into pervious, impervious, and roof-direct surfaces. Applied an intensity coefficient to get flow.",
-        "Maintained coefficient sets per design storm. Sourced these from NOAA rainfall intensities for St. Louis. One model runs every required frequency.",
-        "Produced the total pre-development flow minus total post-development flow. The municipal stormwater review cares about this differential.",
-        "Sized storm structures. Computed head, sill, and high-water elevations. Tracked treated versus untreated disturbed area for water-quality compliance.",
-        "Embedded consistency assertions. They flag when pre- and post-development total areas stop agreeing. A transcription slip fails loudly.",
-        "Structured it as a template-driven schema. C# tooling can parse it and push results back onto drawing objects as custom metadata."
-      ]
-    },
-    {
-      "id": "ctb-standards-diff",
-      "name": "Drawing-output standards comparison tool",
-      "shortName": "Standards diff",
-      "internalName": "CTB plot-style diff",
-      "status": "professional",
-      "featured": false,
-      "visibility": "Professional work (David Mason & Associates) - method described",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "Spreadsheet schema",
-        "AutoCAD CTB",
-        "Standards auditing"
-      ],
-      "honesty": "This involves plot-style configuration only. Does not publish any client drawing content.",
-      "summary": "Built a tool to compare two sets of drawing-output rules line by line. It flags every difference. It prevents settings from silently drifting between projects.",
-      "bullets": [
-        "Normalized two output-configuration tables into a common 255-row schema. This includes index, name, screening, line weight, pen assignments, and line type.",
-        "Cross-referenced both tables cell-by-cell. Raised a flag on any difference in screening, lineweight, or pen assignment.",
-        "Kept a lineweight catalog with inch-to-millimetre conversion. Can compare lineweights in either unit.",
-        "Turned a tedious manual comparison into a single review column. This made standards auditing across many drawing sets practical."
-      ]
-    },
-    {
-      "id": "backup-deduper",
-      "name": "BackupDeduper",
-      "shortName": "Deduper",
-      "status": "local",
-      "featured": false,
-      "visibility": "Local repository - no remote",
-      "version": "v1.2.4",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "C++17",
-        "Dear ImGui",
-        "SHA-256",
-        "CMake",
-        "Android NDK",
-        "Windows"
-      ],
-      "honesty": "This is a local git repository with no remote.",
-      "summary": "Built a C++17 phone-to-PC backup tool. It uses SHA-256 content hashing to skip duplicates. It has an ADB bridge to Android and an HTTP sync path over the local network.",
-      "bullets": [
-        "Implemented SHA-256 content hashing. Identical payloads are never copied twice.",
-        "Wrote a backup engine to drive the copy pipeline. It has a safety layer to avoid clobbering existing files.",
-        "Built an ADB bridge to talk to Android devices directly. It includes Windows-side phone path discovery.",
-        "Implemented LAN HTTP transfer with progress reporting. Backups never leave the local network.",
-        "Wrote code to reconcile source and destination trees before transferring.",
-        "Built a Dear ImGui front end for Windows and Android. Wrote about 11,000 lines of C++ across 29 source files."
-      ]
-    },
-    {
-      "id": "offline-cad-voice",
-      "name": "Desktop app running recognition locally",
-      "shortName": "Desktop app",
-      "status": "local",
-      "featured": false,
-      "visibility": "Local - experimental, no remote",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "C++",
-        "Dear ImGui",
-        "Vosk",
-        "miniaudio"
-      ],
-      "honesty": "This is an experimental iteration tree, not a shipped product. Dear ImGui, miniaudio, and Vosk are vendored dependencies. Code is the GUI, command parser, autocomplete, and audio plumbing.",
-      "summary": "Built a C++ desktop front end. It listens on the microphone and transcribes entirely on the machine. It turns input into drafting commands without a cloud service.",
-      "bullets": [
-        "Built a single C++ desktop application. It hosts the interface, the audio pipeline, and the command layer.",
-        "Wrote a command parser to turn recognized input into CAD commands. Built an autocomplete bar for live command completion.",
-        "Handled device enumeration and streaming capture using miniaudio. Built a separate audio recorder test harness.",
-        "Tried recognition with Vosk locally.",
-        "Kept it entirely offline. There is no cloud API in the path.",
-        "This is a real, working experiment kept in dated snapshots. It is not a packaged application."
-      ]
-    },
-    {
-      "id": "circle-visualizer",
-      "name": "CircleVisualizer",
-      "shortName": "Circles",
-      "status": "local",
-      "featured": false,
-      "visibility": "Local - no repository",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "C++",
-        "OpenGL",
-        "GLFW",
-        "Dear ImGui",
-        "std::complex"
-      ],
-      "honesty": "This is a single-file personal math visualizer, not a product. Dear ImGui and glad are vendored dependencies.",
-      "summary": "Built an OpenGL and ImGui visualizer. It shows roots of unity and simple harmonic motion. It has a layer system to toggle and composite drawings.",
-      "bullets": [
-        "Computed fifth roots of unity with std::complex. Plotted them on the unit circle.",
-        "Traced simple harmonic motion as the projection of circular motion. Drew the geometric identity live.",
-        "Implemented a small layer model. Each construction can be shown or hidden independently.",
-        "Built immediate-mode ImGui controls over a raw OpenGL context. Wrote about 770 lines of C++."
-      ]
-    },
-    {
-      "id": "maintenance-tracker",
-      "name": "Maintenance portal prototype",
-      "shortName": "Maintenance",
-      "status": "public",
-      "featured": false,
-      "visibility": "GitHub - freeParameterized/maintenance",
-      "url": "https://github.com/freeParameterized/maintenance",
-      "sourcePath": "local repository (path withheld)",
-      "remote": "https://github.com/freeParameterized/maintenance.git",
-      "stack": [
-        "React",
-        "TypeScript",
-        "Vite",
-        "Supabase"
-      ],
-      "honesty": "This is an early React and Supabase prototype. It is not a finished portal. It exhibits no resident or property records. Wrote about 740 lines across 23 files.",
-      "summary": "Built an early React, TypeScript, and Supabase prototype. It handles owner and admin maintenance requests. It includes authentication, a typed database schema, and service-layer scaffolding.",
-      "bullets": [
-        "Built a Supabase auth flow. Generated a TypeScript schema for the database.",
-        "Implemented service-layer separation. Did not scatter queries through components.",
-        "Configured Vite, React, and TypeScript with ESLint.",
-        "This is a prototype, not a shipped portal."
-      ]
-    },
-    {
-      "id": "hatchcalc",
-      "name": "Area-and-quantity calculator for drawings",
-      "shortName": "Area calc",
-      "internalName": "HatchCalc (repo: Template)",
-      "status": "public",
-      "featured": false,
-      "visibility": "GitHub - freeParameterized/Template",
-      "url": "https://github.com/freeParameterized/Template",
-      "sourcePath": "local repository (path withheld)",
-      "remote": "https://github.com/freeParameterized/Template.git",
-      "stack": [
-        "C#",
-        "AutoCAD 2025 API",
-        "WinForms"
-      ],
-      "honesty": "This is scaffolding, not a finished tool. Wrote about 250 lines across 13 files. Calls it HatchCalc internally.",
-      "summary": "Built a tool to read filled region geometry out of a drawing. It turns the geometry into material quantities automatically. It replaces manual measurement and hand arithmetic.",
-      "bullets": [
-        "Parsed closed region geometry from a drawing. Computed the areas and material quantities.",
-        "Built it as a C# plugin against the AutoCAD 2025 API. Included a small desktop test harness.",
-        "This is a starting point rather than a released tool. The command scaffolding and geometry plumbing exist."
-      ]
-    },
-    {
-      "id": "cbp-ocr",
-      "name": "Document text-extraction utilities",
-      "shortName": "Text extract",
-      "status": "local",
-      "featured": false,
-      "visibility": "Local - no remote",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "C#",
-        "WinForms",
-        "Tesseract",
-        "iTextSharp"
-      ],
-      "honesty": "These are small local WinForms utilities. They have a few hundred lines each. They are useful as lineage for the later OCR work, not as products.",
-      "summary": "Built a cluster of small C# WinForms utilities. They scan, extract, and reprocess text out of manufacturing PDFs and prints.",
-      "bullets": [
-        "Ran text extraction and scanning passes over PDFs and printed documents. Used Tesseract and iTextSharp.",
-        "Built WinForms front ends for batch document processing on the shop floor.",
-        "This work led to the plan-set auto-check pipeline at DMA."
-      ]
-    },
-    {
-      "id": "property-set",
-      "name": "Structured metadata attached to model entities",
-      "shortName": "Metadata",
-      "internalName": "PropertySetUpdater",
-      "status": "local",
-      "featured": false,
-      "visibility": "Local - no repository",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "C#",
-        "Civil 3D API"
-      ],
-      "honesty": "This is a small single-command utility. It has under 100 lines.",
-      "summary": "Built a tool to attach structured metadata records to objects in a 3D model. Each entity carries its own typed data alongside its geometry.",
-      "bullets": [
-        "Wrote typed metadata fields onto spatial objects through the Civil 3D API. An object stores what it is, not only where it is.",
-        "This is the small, focused version of the custom structured metadata schemas built at David Mason & Associates."
-      ]
-    },
-    {
-      "id": "local-llm",
-      "name": "Local inference stack",
-      "shortName": "Ollama",
-      "status": "local",
-      "featured": false,
-      "visibility": "This workstation",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "Ollama",
-        "LM Studio",
-        "Open WebUI",
-        "Windows SAPI",
-        "Docker"
-      ],
-      "honesty": "The runtimes and models are third-party. Built the deployment, model selection, and the retrieval and voice plumbing in this site's API.",
-      "summary": "Deployed offline models on this workstation. Wrote the code in this site that talks to them. This includes a model catalog, fallback chain, and corpus retrieval.",
-      "bullets": [
-        "Runs local models through Ollama, LM Studio, and Open WebUI. Ran them offline since 2023.",
-        "Containerizes inference models. Deploys them to Linux, macOS, and Windows edge devices.",
-        "Writes Bash scripts for data pipelines.",
-        "Built this site's API. It selects a local model from an installed catalog. It refuses to auto-select cloud-tagged models.",
-        "Built retrieval over a curated corpus. It uses a token-scoring pass to ground answers.",
-        "Implemented a static fallback. If Ollama is offline, the API returns JSON directly from the corpus."
-      ]
-    },
-    {
-      "id": "photogrammetry",
-      "name": "instant-ngp",
-      "shortName": "NeRF",
-      "status": "fluency",
-      "featured": false,
-      "visibility": "On-machine fluency",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "instant-ngp"
-      ],
-      "honesty": "This is a third-party tool. Did not write it. Listed as fluency only.",
-      "summary": "Ran neural rendering with instant-ngp on this workstation.",
-      "bullets": [
-        "Ran instant-ngp neural rendering on a local GPU.",
-        "This shows spatial-ML fluency. Claims no original research or published reconstructions."
-      ]
-    },
-    {
-      "id": "interactive-portfolio",
-      "name": "This interactive portfolio",
-      "shortName": "This site",
-      "status": "local",
-      "featured": false,
-      "visibility": "This repository",
-      "url": null,
-      "sourcePath": "local repository (path withheld)",
-      "remote": null,
-      "stack": [
-        "Vite",
-        "React",
-        "TypeScript",
-        "Express",
-        "Ollama",
-        "Docker"
-      ],
-      "honesty": "Written for this job search. The static build works with no backend. Chat and voice demos exist in the API but are disabled on the public site.",
-      "summary": "React and TypeScript resume site over an Express API. It builds to static files and generates a PDF from the same data.",
-      "bullets": [
-        "React and TypeScript front end. The site builds to static files and needs no server to read.",
-        "Express API with optional local Ollama chat when the backend is running.",
-        "Printable resume view and PDF generated from data/resume.json.",
-        "Light and dark themes with localStorage persistence and reduced-motion support.",
-        "Docker packaging for the optional inference stack on Linux, macOS, and Windows."
-      ]
-    }
-  ],
-  "excludedFromProjects": [
-    "Dear ImGui, miniaudio, Vosk, glad, GLFW - vendored third-party dependencies inside these repos, not this code.",
-    "Ollama, Open WebUI, LM Studio - third-party runtimes deploys and configures; no Ollama or Open WebUI source of the was found on this machine, only local model stores and a vcpkg port.",
-    "arcore_flutter_plugin - third-party Flutter plugin vendored into Digital Twin Pro.",
-    "PDFsharp.Samples-master - a cloned third-party sample repository.",
-    "tensor-demo - almost entirely a Python .venv (site-packages); no meaningful original code.",
-    "civil_arx - an empty ObjectARX project skeleton (a stub dllmain), nothing to show yet.",
-    "maintenance-site under the older Free-Parameter account - a duplicate of freeParameterized/maintenance; only one is listed."
-  ],
-  "chunks": [
-    {
-      "id": "identity",
-      "title": "Identity",
-      "tags": [
-        "profile",
-        "contact",
-        "github",
-        "free parameter"
-      ],
-      "text": "Peter A. Lilley. Automation Tooling Engineer (Staff Technician) at David Mason & Associates, Jul 2024 to Aug 2026. Chesterfield / St. Louis, MO. Free Parameter LLC. Email pal@cadpal.net. Public GitHub is https://github.com/freeParameterized."
-    },
-    {
-      "id": "summary",
-      "title": "Professional summary",
-      "tags": [
-        "summary",
-        "ml",
-        "cad",
-        "llm",
-        "software engineer"
-      ],
-      "text": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Combines AI-assisted development (Claude, ChatGPT, Gemini) with strong core engineering fundamentals from scratch. At David Mason & Associates, used C#, Python, Dynamo, LISP, and VBA against Civil 3D, AutoCAD, and Revit. Built software that auto-checks and populates plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes. This reduced errors before PE review by about 25%. Broader stack includes C++17, Dart, Flutter, TypeScript, and Three.js. Has used local LLMs since 2023. Containerizes models for Linux and macOS edge devices. Uses Tesseract OCR, whisper.cpp, graph calculators, and Levenshtein matching. On personal time, shipped Digital Twin Pro. It is a Flutter 3D inventory product. Released it to a Google Play beta."
-    },
-    {
-      "id": "teamwork",
-      "title": "Can work on a team? Is professional?",
-      "tags": [
-        "team",
-        "teamwork",
-        "collaborate",
-        "collaboration",
-        "professional",
-        "reliable",
-        "references",
-        "production",
-        "adopted",
-        "review",
-        "leadership",
-        "manage"
-      ],
-      "text": "Colleagues use the generation and automation tooling daily. Works across civil, mechanical, plumbing, and architectural disciplines on named capital projects, including clash detection so one discipline's change does not break another's. Quality pass reduced drafting errors by about 25% before licensed professional-engineer review. Supervised department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline. Worked to ISO 9001 quality-system requirements and Production Part Approval Process documentation in manufacturing. Does not claim to lead an engineering org or manage software engineers."
-    },
-    {
-      "id": "language-to-geometry",
-      "title": "Typed-command CAD pipeline - the headline capability",
-      "tags": [
-        "natural language",
-        "nlp",
-        "generation",
-        "language to geometry",
-        "typed command",
-        "command schema",
-        "cad bridge",
-        "automator",
-        "llm",
-        "grounding",
-        "structured output",
-        "pipeline",
-        "how does it work"
-      ],
-      "text": "Built CAD bridges and automators. A written request is turned into a command the plugins already understand, then C# talks to Civil 3D, AutoCAD, or BricsCAD. They also do construction drawing setup. Introduced this at a St. Louis civil engineering firm. It is not a general-purpose text-to-CAD product. Built an integration bridge that drives AutoCAD, BricsCAD, and Civil 3D. Built a command parser that turns transcribed speech into drafting commands. Built C# automations that construct sheet sets, walls, and room layouts."
-    },
-    {
-      "id": "ml-ability",
-      "title": "Can do machine learning?",
-      "tags": [
-        "ml",
-        "machine learning",
-        "ai",
-        "llm",
-        "ollama",
-        "gemini",
-        "ocr",
-        "whisper",
-        "capable",
-        "pytorch",
-        "tensorflow",
-        "jax",
-        "keras",
-        "hugging face",
-        "training",
-        "fine-tuning",
-        "lora",
-        "transformers",
-        "attention",
-        "backpropagation",
-        "gradients",
-        "embeddings",
-        "rag",
-        "vector database",
-        "gpu",
-        "cuda",
-        "mlops",
-        "frameworks",
-        "docker",
-        "linux",
-        "macos"
-      ],
-      "text": "Applied-engineering profile. Built a CAD automation pipeline at David Mason & Associates: a written request is turned into a command, then C# talks to Civil 3D. Under Free Parameter LLC, deploys and runs local LLMs on local hardware. Containerizes inference models. Deploys them to Linux, macOS, and Windows edge devices. Writes Bash scripts for data pipelines. Wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. Built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. Runs Tesseract OCR over messy engineering PDFs. Uses Levenshtein distance to match noisy strings. Built an experimental offline CAD GUI in C++. Writes graph processors and hydrologic calculators. Architected a custom 3D projection and painter's-algorithm depth sorting in Digital Twin Pro. Does prompt engineering in Cursor and Gemini. Wrote a visualizer for matrix transforms, complex numbers, and roots of unity. Has never trained or fine-tuned a model. Has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. Has not implemented an attention layer or a training loop. Has no vector database and no embedding-based retrieval. Has no CUDA programming or MLOps platform experience. Has no published ML research."
-    },
-    {
-      "id": "digital-twin-pro",
-      "title": "Digital Twin Pro - personal product",
-      "tags": [
-        "digital twin pro",
-        "flutter",
-        "dart",
-        "firebase",
-        "arcore",
-        "gemini",
-        "apphive",
-        "play store",
-        "featured",
-        "personal"
-      ],
-      "text": "Digital Twin Pro is a personal product. Built it under Free Parameter LLC for the personal and business storage needs. Did not build it at David Mason & Associates. The public repo is https://github.com/freeParameterized/digital-twin-pro. Used Flutter, Dart 3, SQLite, Firebase, Google Gemini API, ARCore, AdMob, and Provider. Went from concept to a Google Play beta in five weekends, about 10-12 days of actual work. Custom 3D renderer instead of a game engine. It features drag-and-drop totes on configurable rack grids. Drop a tote onto an occupied slot to swap both boxes. It uses an inventory state model with a move audit log in SQLite. Tote contents update by voice, photo, or typing from several screens. Spoken inventory is parsed through Gemini into JSON, then decoded as a Map and coerced onto a typed item-to-quantity map (integers or tilde estimates) before writing the tote. Photo recognition and manual edits on Edit Tote and the database sheet write the same map. Custom QR codes encode that tote JSON with toggleable fields (contents, counts, items, colors, location, optional photo path). Export one tote as PNG, or the whole set as PNG, JPEG, or a multi-page PDF book (QR plus location label per page) for print-and-stick on the physical bins. Each warehouse is a project folder with config, a project-scoped SQLite database, and photos stored locally. Save, export, and import so the job can be written out and opened again. CSV/JSON export and import are also available. Custom settings apply independently in front and isometric frames. Per-tote body and lid colors, or apply one uniform style to all totes. Three rack styles (metal, wood, plastic tube). Seven UI themes. Grid customization for rows and columns, with a location naming convention that can put letters on rows or columns and number from the base or the top. It has Gemini photo analysis for item detection. An AI Organizer recommends moves that group like with like, previews them on the rack, then commits. A move log records each tote's from, to, and action. It has ARCore plane-tap placement, seven themes, X-Ray mode, and emoji particle physics. Wrote about 33,000 lines of Dart across 103 files. Released it to a Google Play beta. Used AppHive to get the beta out. Pays for the Gemini API personally. Does not claim download counts, revenue, ratings, or user numbers."
-    },
-    {
-      "id": "digital-twin-distinction",
-      "title": "Two different digital-twin things",
-      "tags": [
-        "digital twin",
-        "xdata",
-        "property sets",
-        "dma",
-        "attribution",
-        "at work"
-      ],
-      "text": "Keep these separate. At David Mason & Associates, builds digital-twin infrastructure on CAD data. This includes custom XData schemas and Civil 3D property sets. They hold persistent spatial and historical metadata on drawing objects. Digital Twin Pro is a completely separate thing. It is a personal Flutter 3D inventory product. Built it under Free Parameter LLC. Did not build it at DMA. The CAD digital-twin metadata work is the DMA role. Digital Twin Pro is a personal product."
-    },
-    {
-      "id": "exp-dma",
-      "title": "Experience - David Mason & Associates",
-      "tags": [
-        "dma",
-        "david mason",
-        "civil 3d",
-        "xdata",
-        "ocr",
-        "msd",
-        "staff technician",
-        "plan parsing",
-        "plan sets",
-        "parsing",
-        "auto-check",
-        "layer",
-        "layers",
-        "layer names",
-        "drawings",
-        "standards",
-        "c# plugins",
-        "title block",
-        "audit"
-      ],
-      "text": "Worked at David Mason & Associates in St. Louis, MO from Jul 2024 to Aug 2026. Automation Tooling Engineer (Staff Technician). Built CAD bridges and automators. A written request is turned into a command the plugins already understand, then C# talks to Civil 3D. They also do construction drawing setup. Built software that parses and auto-checks civil plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes. It reduced errors before PE review by about 25%. Built C# plugins with Tesseract OCR pipelines. Built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They parse hundreds of text entities, audit drawings, and export traceability logs. Also built a color-coded IntelliSense-style layer and entity search GUI with autocomplete, dynamic entity pull, and a local phrase-to-command lookup so less experienced CAD users can move entities, run basic draw commands, retarget objects onto other layers, and otherwise edit uniformly across layouts in one command instead of clicking layout by layout. Minutes of sequential clicks, often hundreds, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them. These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout. Used C# to parse messy survey text and compass bearings into XData. Built graph lookup tables to map 3D structures to exact flow lines. Built digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. Computes watershed data, drainage areas, and differential runoff. Models pipe networks to MSD standards. Audits AutoCAD standards and revises templates. Introduced Navisworks clash detection. Creates parameterized 3D parts per MSD standards. Worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. Does not publish client drainage values or site data."
-    },
-    {
-      "id": "runoff-method",
-      "title": "Differential runoff and storm-network sizing",
-      "tags": [
-        "runoff",
-        "hydrology",
-        "drainage",
-        "msd",
-        "noaa",
-        "storm",
-        "spreadsheet",
-        "schema"
-      ],
-      "text": "Built a structured hydrologic calculator. Splits each drainage area into pervious, impervious, and roof-direct surfaces. Converts square feet to acres. Applies an intensity coefficient to get flow. Maintains coefficient sets per design storm. Sources these from NOAA rainfall intensities for St. Louis. One model runs every required frequency. Computes the differential: total pre-development flow minus post-development flow. MSD review requires this number. Sizes storm structures. Computes head, sill, and high-water elevations. Tracks treated versus untreated disturbed area. Embeds consistency assertions. They flag when pre- and post-development total areas stop agreeing. Built it as a template-driven schema. C# tooling can parse it and push values into Civil 3D property sets and XData. Does not publish client site names, elevations, or flow values."
-    },
-    {
-      "id": "exp-cbp",
-      "title": "Experience - Component Bar Products",
-      "tags": [
-        "component bar",
-        "quality engineer",
-        "gdt",
-        "gd&t",
-        "cmm",
-        "iso 9001",
-        "ppap",
-        "metrology",
-        "manufacturing",
-        "machining"
-      ],
-      "text": "Worked at Component Bar Products in O'Fallon, MO. Quality Engineer. Programmed and operated CMM systems. Verified parts to +/-0.001 inch or tighter against GD&T specifications. Validated dimensional tolerances against company CAD models and customer prints. Machining problems appeared as geometry mismatches. Ran quality control for precision machining and incoming material. Applied hold tags to non-conforming parts. Documented corrective actions. Enforced ISO 9001 requirements and GD&T accuracy. Integrated PPAP documentation. Used manual metrology tools. These included micrometers, calipers, height gauges, indicators, and custom gage blocks. Managed the metrology equipment lifecycle. Updated inspection methods from company CAD files."
-    },
-    {
-      "id": "exp-heideman",
-      "title": "Experience - Heideman & Associates",
-      "tags": [
-        "heideman",
-        "revit",
-        "mep",
-        "autocad",
-        "standards"
-      ],
-      "text": "Worked at Heideman & Associates, Inc. in Fenton, MO. Revit/CAD Technician. Drafted MEP construction documents in Revit and AutoCAD. Built as-built models from field photos and blueprints. Implemented and audited Revit standards. Built automated data libraries for MEP objects. Standardized hundreds of outdated AutoCAD details. Embedded Excel data into Revit keynotes for schedule generation. Worked on client project sites including St. Luke's, Mercy, AT&T, and Saint Louis University."
-    },
-    {
-      "id": "edu",
-      "title": "Education and languages",
-      "tags": [
-        "missouri s&t",
-        "ranken",
-        "spanish",
-        "education",
-        "math"
-      ],
-      "text": "Attended Missouri S&T in Rolla. Took coursework toward Latin American Studies with Technical Applications from 2019 to 2020. Placed into Advanced Conversational Spanish. Has technical fluency in Spanish. Did not take C++ at S&T. C++ is self-taught. Attended Ranken Technical College in Wentzville. Earned an AAS in Building Systems Engineering Technology in 2019. Took Oracle University coursework in Oracle Database SQL (DUAL, NVL/DECODE, ROWNUM, VARCHAR2/NUMBER/DATE, sequences, HR joins, analytics) and shipped OraLab as the lab for those lessons."
-    },
-    {
-      "id": "proj-oralab",
-      "title": "Project - OraLab",
-      "tags": [
-        "oralab",
-        "oracle-sandbox",
-        "oracle sql",
-        "sql",
-        "next.js",
-        "h2",
-        "monaco",
-        "hr schema",
-        "completed"
-      ],
-      "text": "OraLab is a completed public project. Live site https://freeparameterized.github.io/oracle-sandbox/. Source https://github.com/freeParameterized/oracle-sandbox. Built an Oracle SQL training sandbox so Oracle University Database SQL lessons run against a real engine instead of slides. In-heap H2 in MODE=Oracle with the classic HR tables (REGIONS through JOB_HISTORY) plus a sales grain for normalization. Monaco editor, tutorials, glossary, and a node graph docked beside sandbox.sql. Covers DUAL, SYSDATE, TO_CHAR, NVL, DECODE, ROWNUM versus analytic RANK / ROW_NUMBER, VARCHAR2 / NUMBER / DATE, sequences, HR joins, MINUS, and sargable predicates. Ctrl+Alt rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. GitHub Pages is the static lab. The Oracle-mode JVM and /api/sql run on localhost. Not a licensed Oracle Database. Not PL/SQL packages. Not employment at Oracle Corporation."
-    },
-    {
-      "id": "proj-cadnat",
-      "title": "Project - CADNAT Bridge Studio",
-      "tags": [
-        "cadnat",
-        "c++",
-        "imgui",
-        "bricscad",
-        "autocad",
-        "civil 3d",
-        "com",
-        "hotload",
-        "local"
-      ],
-      "text": "CADNAT Bridge Studio 1.3 is a local git repository with no remote. Built a C++17 Dear ImGui host. It uses COM to bridge BricsCAD, AutoCAD, and Civil 3D. It was a personal prototype of the architecture later used on a commercial deployment. Wrote a toolchain that compiles and hotloads plugins in place. Wrote code to locate installed CAD SDKs at runtime. Wrote a translator that converts between script dialects. One command set targets multiple hosts. Wrote code to read and write drawing entities directly. Deployed targets for BricsCAD, Civil 3D, and legacy AutoCAD 2018. Included C# sample automations for sheet sets, right-click menus, and room drawing. Wrote about 14,000 lines across 82 source files. Vendored Dear ImGui and SDK headers are third-party."
-    },
-    {
-      "id": "proj-deduper",
-      "title": "Project - BackupDeduper",
-      "tags": [
-        "backupdeduper",
-        "deduper",
-        "c++",
-        "sha-256",
-        "adb",
-        "android",
-        "lan",
-        "local"
-      ],
-      "text": "BackupDeduper v1.2.4 is a local git repository with no remote. Built a C++17 phone-to-PC backup tool. Used SHA-256 content hashing so identical payloads are never copied twice. Wrote a backup engine with a copy-guard safety layer. Built an ADB bridge to Android with Windows-side phone path discovery. Implemented LAN HTTP transfer with a sync protocol and progress reporting. Backups never leave the local network. Built a Dear ImGui front end for Windows and Android. Wrote about 11,000 lines across 29 source files."
-    },
-    {
-      "id": "proj-voice",
-      "title": "Project - offline CAD voice GUI",
-      "tags": [
-        "voice",
-        "whisper",
-        "vosk",
-        "speech",
-        "cad gui",
-        "working_cad_gui",
-        "offline",
-        "imgui"
-      ],
-      "text": "Built an experimental local voice-driven CAD command GUI in C++ with Dear ImGui. Wrote a command parser that turns recognized speech into CAD commands. Built a live autocomplete bar. Wrote an audio streaming module over miniaudio. Tried speech recognition with Vosk and whisper.cpp locally. It is entirely offline. There is no cloud speech API. This is a real working experiment kept in dated snapshot directories. It is not a packaged product. Vendored ImGui, miniaudio, whisper.cpp, and Vosk are third-party."
-    },
-    {
-      "id": "proj-circles",
-      "title": "Project - CircleVisualizer",
-      "tags": [
-        "circlevisualizer",
-        "opengl",
-        "complex",
-        "roots of unity",
-        "harmonic",
-        "math",
-        "visualizer"
-      ],
-      "text": "CircleVisualizer is a local single-file C++ math visualizer. Used OpenGL and GLFW with a Dear ImGui interface. Computed fifth roots of unity with std::complex. Plotted them on the unit circle. Traced simple harmonic motion as the projection of circular motion. Managed a small layer model. Each construction can be toggled independently. Wrote about 770 lines of C++."
-    },
-    {
-      "id": "proj-small",
-      "title": "Smaller projects, prototypes, and fluency",
-      "tags": [
-        "hatchcalc",
-        "template",
-        "propertyset",
-        "maintenance",
-        "supabase",
-        "manim",
-        "instant-ngp",
-        "prototype"
-      ],
-      "text": "HatchCalc is an AutoCAD 2025 C# plugin skeleton. It has about 250 lines. PropertySetUpdater is a local sub-100-line Civil 3D command. It writes property-set values. The maintenance portal prototype is about 740 lines of React, TypeScript, Vite, and Supabase. It includes auth, a typed schema, and service-layer scaffolding. It is a prototype, not a finished portal. CBP document tooling is a cluster of small local C# WinForms utilities. Used Tesseract and iTextSharp for scanning manufacturing PDFs. Tensor visualization scenes are about 100 lines of Python and Manim. instant-ngp is a third-party tool runs on this workstation. Claims no original research."
-    },
-    {
-      "id": "resume-download",
-      "title": "Downloadable resume - the link exists, hand it over",
-      "tags": [
-        "resume",
-        "cv",
-        "pdf",
-        "download",
-        "download the pdf",
-        "send me your cv",
-        "can i get your resume",
-        "print",
-        "one page",
-        "ats"
-      ],
-      "text": "Yes, there is a downloadable resume. The PDF is served from this site at ./resume.pdf. A download saves as today's date plus resume, for example 2026.09.05_resume.pdf, with no personal name in the file. A plain-text version is at ./PeterLilley_Resume.txt. You can open a printable view at ./?resume=1. There is a 'Download my resume' link in the chat panel. There is a 'Download resume' button in the site header. I can provide a link. The resume is generated from the same curated data as this site. It is a standard document. It includes summary, skills, experience, projects, and education."
-    },
-    {
-      "id": "glossary",
-      "title": "Plain-language glossary - never answer with a bare acronym",
-      "tags": [
-        "glossary",
-        "jargon",
-        "acronym",
-        "what does that mean",
-        "xdata",
-        "gd&t",
-        "cmm",
-        "msd",
-        "takeoff",
-        "ctb",
-        "hatchcalc"
-      ],
-      "text": "I explain in plain terms first. I give the domain term second. GD&T is geometric dimensioning and tolerancing. It specifies how much a machined part can deviate. A CMM is a coordinate measuring machine. It measures a part's geometry precisely. MSD is the Metropolitan St. Louis Sewer District. It sets municipal stormwater standards. XData and property sets are custom structured metadata. They attach to CAD entities. An object stores typed data about itself. A quantity takeoff means computing material quantities from construction plans. ODS is a spreadsheet export format. A CTB is the table of drawing-output rules. It controls how a sheet prints. PPAP is the Production Part Approval Process. It qualifies a part for production. HatchCalc is an area-and-quantity calculator. It reads region geometry out of a drawing. CADNAT is an integration bridge between a C++ desktop application and CAD software."
-    },
-    {
-      "id": "third-party",
-      "title": "What is not this code",
-      "tags": [
-        "third party",
-        "clone",
-        "dependency",
-        "exclusions",
-        "vendored"
-      ],
-      "text": "Exclude these from the project list for honesty. Uses vendored third-party dependencies. These include whisper.cpp, Dear ImGui, miniaudio, Vosk, glad, GLFW, and arcore_flutter_plugin. Deploys third-party runtimes. These include Ollama, Open WebUI, and LM Studio. Did not write them. Uses cloned sample repositories. Has a tensor-demo directory that is a Python virtual environment. Has an empty ObjectARX skeleton with nothing to show."
-    },
-    {
-      "id": "this-site",
-      "title": "This interactive portfolio site",
-      "tags": [
-        "vite",
-        "three.js",
-        "express",
-        "ollama",
-        "rag",
-        "site",
-        "how does this work"
-      ],
-      "text": "This site is a resume portfolio. Built it with Vite, React, and TypeScript over an Express API. The public build is static and needs no backend. It generates a printable resume view and PDF from the same JSON data. An optional Express API can answer questions with a local Ollama model when it is running. The chat UI is currently disabled on the public site. Voice features are suspended. Containerized the optional inference stack with Docker for Linux, macOS, and Windows."
-    },
-    {
-      "id": "git-prs-cicd",
-      "title": "Git, pull requests, and CI/CD",
-      "tags": [
-        "git",
-        "github",
-        "gitflow",
-        "trunk-based",
-        "pull request",
-        "pr",
-        "code review",
-        "peer review",
-        "ci/cd",
-        "merge conflict",
-        "version control",
-        "devops"
-      ],
-      "text": "At David Mason & Associates authored and reviewed Git pull requests on Civil 3D plugins and the automation pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD. Peer review is the quality gate before merge. Does not claim to have designed the firm's branching policy from scratch."
-    },
-    {
-      "id": "prompt-engineering",
-      "title": "Prompt engineering",
-      "tags": [
-        "prompt engineering",
-        "prompt",
-        "syntax",
-        "refactor",
-        "manual edit",
-        "token",
-        "typed command",
-        "schema"
-      ],
-      "text": "Uses Claude, ChatGPT, Gemini, and Cursor. Does not call this applied ML or model training. Has not trained or fine-tuned a model."
-    },
-    {
-      "id": "hiring-unknowns",
-      "title": "Employment terms and credentials - what is on record",
-      "tags": [
-        "salary",
-        "compensation",
-        "availability",
-        "notice period",
-        "visa",
-        "work authorization",
-        "citizenship",
-        "clearance",
-        "relocation",
-        "references",
-        "promotion",
-        "headcount",
-        "certifications",
-        "gpa",
-        "hiring"
-      ],
-      "text": "Employment terms are not published here. There is no salary, hourly rate, or compensation figure. There is no start date, notice period, or job-search status. There is no statement of work authorization, citizenship, visa status, or security clearance. There is no relocation, remote, or on-site preference. Location is the Chesterfield area. Worked at David Mason & Associates from Jul 2024 to Aug 2026. Supervised department staff as an Assistant Department Manager. Earned an AAS in Building Systems Engineering Technology from Ranken Technical College. Took coursework at Missouri S&T. Did not complete a bachelor's degree. Holds no master's, no PhD, and no published GPA. Is not a licensed professional engineer. Has no certifications, awards, patents, or conference talks recorded. Spanish is the only spoken language besides English. The contact route is pal@cadpal.net."
-    }
-  ],
-  "voice": {
-    "speaker": "male-default",
-    "note": "Windows SAPI Microsoft David Desktop - a stock synthetic voice, not Peter's real or cloned voice. Future: VOICE_CLONE_PATH."
+  {
+   "id": "math",
+   "label": "Math and structures",
+   "items": [
+    "Matrix transforms and coordinate changes",
+    "3D projection, and depth sorting to draw shapes in the correct order",
+    "Graph theory and dependency trees",
+    "Spatial indexing to find nearby objects quickly",
+    "Stormwater runoff calculations",
+    "Complex numbers and harmonic motion"
+   ]
+  },
+  {
+   "id": "cad",
+   "label": "CAD automation and metadata",
+   "items": [
+    "Civil 3D API plugins, AutoCAD automation, and Revit and Dynamo scripting",
+    "Typed metadata attached to CAD objects",
+    "Pipe network and stormwater models",
+    "Checks drawings against company standards and reports what changed",
+    "Finds clashes between disciplines in Navisworks"
+   ]
+  },
+  {
+   "id": "manufacturing",
+   "label": "Metrology and quality",
+   "items": [
+    "Geometric dimensioning and tolerancing (GD&T)",
+    "Coordinate measuring machine (CMM) programming",
+    "Compares measured parts against the CAD model and the print",
+    "Tolerance inspection",
+    "ISO 9001 quality systems, PPAP, and corrective actions",
+    "Calibration and traceability of measuring equipment"
+   ]
+  },
+  {
+   "id": "estimating",
+   "label": "Takeoffs and estimating",
+   "items": [
+    "Calculates material quantities from construction plans",
+    "Commercial and residential material estimates",
+    "Inventory and pricing data models",
+    "Technical advice for contractors"
+   ]
+  },
+  {
+   "id": "ops",
+   "label": "Tooling",
+   "items": [
+    "Git",
+    "GitFlow",
+    "trunk-based development",
+    "pull-request review",
+    "CI/CD",
+    "merge conflict resolution",
+    "CMake",
+    "Linux",
+    "macOS",
+    "Docker",
+    "Bash scripts for data pipelines",
+    "Audit logging",
+    "CI/CD pipelines",
+    "REST APIs"
+   ]
+  },
+  {
+   "id": "networking",
+   "label": "Networking",
+   "items": [
+    "TCP/IP",
+    "IPv4 and IPv6",
+    "Subnetting",
+    "Cisco routing and switching"
+   ]
   }
+ ],
+ "experience": [
+  {
+   "id": "dma",
+   "org": "David Mason & Associates",
+   "location": "St. Louis, MO",
+   "title": "Automation Tooling Engineer (Staff Technician)",
+   "dates": "Jul 2024 - Aug 2026",
+   "bullets": [
+    "Engineered automated quality checks that cut an estimated 25% of drafting errors prior to engineer review.",
+    "Built a generator for standard details and grading from existing company drawing data. Applied it to the existing utilities model for an airport project, covering hundreds of thousands of surveyed entities. Hand modeling that took days fell to minutes.",
+    "Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes.",
+    "Built a Civil 3D GUI for less experienced CAD users: color-coded IntelliSense-style layer and entity search with autocomplete, dynamic entity pull, and a local phrase-to-command lookup. From one command it moves entities, runs basic draw commands, retargets objects onto other layers, and otherwise edits uniformly across every layout instead of clicking through them in sequence. Minutes of that work, often hundreds of clicks, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them.",
+    "Built C# plugins against the Civil 3D .NET API to automate layout, audit drawings, and batch-rename title blocks. Attached typed metadata to Civil 3D objects so company standards sit on the entities.",
+    "Built OCR ingestion software that parses existing PDF plan sets, checks values, and populates drawings.",
+    "Built the firm's internal Civil 3D automation pipeline on the OpenAI API. It serves a user chat, scheduled batch jobs, and existing company drawing data as input for each request. A local Ollama model covers those commands when the API is unreachable.",
+    "Extended that pipeline to locate outdated sheet text and to compare design options. Authored and reviewed Git pull requests on the plugins and pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD.",
+    "Colleagues use the automation and generation tooling daily. Coordinates across civil, mechanical, plumbing, and architectural disciplines on named capital projects so one discipline's change does not break another's."
+   ],
+   "projects": [
+    "Airport Consolidation",
+    "St. Louis Zoo Destination Discovery (North Parking Lot)",
+    "Wildcare Park",
+    "Wohl Bridge Renovation",
+    "PGVA Reach",
+    "Wentzville BJC",
+    "Ranken Technical College Campus (Finney Ave Expansion)"
+   ],
+   "notForDma": "Digital Twin Pro is NOT DMA work. It is Peter's own product under Free Parameter LLC."
+  },
+  {
+   "id": "cbp",
+   "org": "Component Bar Products",
+   "location": "O'Fallon, MO",
+   "title": "Quality Engineer - Manufacturing / Precision Machining",
+   "dates": "Apr 2023 - Jun 2024",
+   "bullets": [
+    "Programmed and operated coordinate measuring machines. Verified precision-machined parts against GD&T specifications.",
+    "Validated dimensional tolerances against CAD models and prints to catch geometry mismatches.",
+    "Worked to ISO 9001 quality-system and Production Part Approval Process requirements. Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets."
+   ]
+  },
+  {
+   "id": "menards",
+   "org": "Menard, Inc.",
+   "location": "Manchester / Ballwin, MO",
+   "title": "Assistant Department Manager - Building Materials and Millwork",
+   "dates": "Jun 2020 - Mar 2023",
+   "bullets": [
+    "Priced and estimated large commercial material orders.",
+    "Supervised and coordinated department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline."
+   ]
+  },
+  {
+   "id": "jeff-day",
+   "org": "Jeff Day & Associates, LLC",
+   "location": "Manchester, MO",
+   "title": "CAD Drafter",
+   "dates": "2020",
+   "bullets": [
+    "Drafted architectural construction documents in AutoCAD for residential and commercial work.",
+    "Kept layers managed in the office template. Modified and organized the detail library. Audited drawings against office CAD standards before issue."
+   ]
+  },
+  {
+   "id": "heideman",
+   "org": "Heideman & Associates, Inc.",
+   "location": "Fenton, MO",
+   "title": "Revit/CAD Technician - Mechanical/Plumbing",
+   "dates": "May 2018 - Apr 2019",
+   "bullets": [
+    "Produced MEP construction documents. Built as-built models in Revit and AutoCAD.",
+    "Built automated data libraries for building-system objects. Standardized outdated details."
+   ]
+  }
+ ],
+ "education": [
+  {
+   "id": "ranken",
+   "org": "Ranken Technical College",
+   "location": "Wentzville, MO",
+   "credential": "A.A.S. in Building Systems Engineering Technology",
+   "dates": "2019",
+   "notes": [
+    "Additional coursework: Technical Spanish and Applications (Missouri S&T), Oracle Database SQL (Oracle University)."
+   ]
+  }
+ ],
+ "github": {
+  "owner": "freeParameterized",
+  "repo": "digital-twin-pro",
+  "url": "https://github.com/freeParameterized/digital-twin-pro",
+  "language": "Dart",
+  "description": "Built this Flutter 3D inventory application. Custom painter's-algorithm renderer instead of a game engine. Used SQLite persistence, Gemini photo analysis, and ARCore placement. This is a personal product under Free Parameter LLC.",
+  "fallbackStars": null,
+  "fallbackNote": "Live GitHub metadata is fetched at runtime when the network is available; this object is the offline fallback."
+ },
+ "projects": [
+  {
+   "id": "cadnat",
+   "name": "Cadnat",
+   "shortName": "Cadnat",
+   "status": "local",
+   "featured": true,
+   "owner": "Personal product under Free Parameter LLC. Not employer work.",
+   "visibility": "Private repository - walkthrough on request",
+   "version": null,
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C++17",
+    "Qt 6",
+    "Open CASCADE",
+    "CMake/CTest",
+    "Python",
+    "GitHub Actions"
+   ],
+   "honesty": "Peter wrote most of Cadnat himself; it was later refactored and optimized with AI-assisted tooling. Line counts include comments and blank lines. QA figures come from the repo's own QA documents. Licensing, pricing and release date are not final.",
+   "summary": "Cadnat is a native 2D/3D CAD and BIM application for Linux: about 80,000 lines of C++ on Qt 6 with a GPU viewport and Open CASCADE geometry. It reads and writes DXF, DWG, STEP, IGES, glTF and PDF, exposes a local NDJSON automation API with over 100 undoable commands, and ships as AppImage, Flatpak, Windows and macOS builds. A headless sweep of about 3,000 command and menu runs found 130 failures, all fixed.",
+   "bullets": [
+    "Designed and built a native 2D/3D CAD and BIM application for Linux: about 80,000 lines of C++ on Qt 6 with a GPU (RHI) viewport and Open CASCADE geometry. Later refactored and optimized it with AI-assisted tooling.",
+    "Reads and writes DXF (R2000/R2010, audit-clean), DWG, STEP AP203/214/242, IGES, glTF, and PDF/SVG plots. Converts meshes to B-rep solids, also from a headless CLI.",
+    "Exposes a token-authenticated local NDJSON API with over 100 commands, each one undoable, so scripts and AI agents can drive the application.",
+    "Wrote a headless sweep that runs every command and menu path (about 3,000 runs). It found 130 failures, including 9 crashes and 84 hangs; all were fixed. Backed by about 20 CTest suites and GitHub Actions builds for Windows and macOS.",
+    "Packaged as AppImage (smoke-tested on 10 Linux distributions), Flatpak, Windows, and macOS, with offline Ed25519-signed licensing."
+   ]
+  },
+  {
+   "id": "cadnat-generators",
+   "name": "Cadnat Generators",
+   "shortName": "Generators",
+   "status": "local",
+   "featured": true,
+   "owner": "Personal product under Free Parameter LLC. Not employer work.",
+   "visibility": "Private repository - walkthrough on request",
+   "version": null,
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "Python",
+    "ezdxf",
+    "IFC",
+    "YAML",
+    "JSON Schema"
+   ],
+   "honesty": "About 35k lines of Python by line count. Part of Cadnat.",
+   "summary": "Parametric generators that turn YAML parameters into permit-style DXF sheet sets (houses in 43 styles, kitchens, baths, decks, stairs, trusses, framing) with IFC2X3/IFC4/IFC4X3 export including TIN terrain, alignments and georeferencing.",
+   "bullets": [
+    "About 35,000 lines of Python that turn YAML parameters into permit-style DXF sheet sets: houses, kitchens, baths, decks, stairs, trusses, roof framing, and foundations.",
+    "Sheets carry real dimensions, multileaders, an xref'd title block, BIM solids, and BOM and cut-list CSVs. The house generator covers 43 architectural styles from a trait taxonomy with inheritance.",
+    "IFC2X3 / IFC4 / IFC4X3 exporter: walls, slabs, openings, stairs, TIN terrain, alignments, and georeferencing.",
+    "Each generator publishes a JSON Schema; the desktop app builds its input forms from it."
+   ]
+  },
+  {
+   "id": "cadnat-xr",
+   "name": "Cadnat XR",
+   "shortName": "XR",
+   "status": "local",
+   "featured": true,
+   "owner": "Personal product under Free Parameter LLC. Not employer work.",
+   "visibility": "Private repository - walkthrough on request",
+   "version": null,
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C++",
+    "Unreal Engine 5",
+    "C#",
+    "Unity 6",
+    "Python",
+    "TCP/UDP",
+    "Meta Quest 3"
+   ],
+   "honesty": "In development; no public build yet.",
+   "summary": "CADNET/1 is an offline LAN protocol (UDP discovery, NDJSON over TCP, HTTP assets). A Python hub serves CAD models to Meta Quest 3 clients built in Unreal Engine 5 and Unity 6 and to a desktop monitor, relaying live headset poses.",
+   "bullets": [
+    "Designed CADNET/1, an offline LAN protocol: UDP discovery, NDJSON over TCP with heartbeats and reconnect backoff, and an HTTP asset channel.",
+    "A Python hub serves CAD models to Meta Quest 3 clients (Unreal Engine 5 and Unity 6) and a desktop monitor, and relays live headset poses at 10–20 Hz.",
+    "Defined one canonical coordinate frame with documented per-client conversions. 63 automated tests, including integration tests against a running hub."
+   ]
+  },
+  {
+   "id": "omabiblia",
+   "name": "Omabiblia",
+   "shortName": "Omabiblia",
+   "status": "public",
+   "featured": true,
+   "owner": "Personal product under Free Parameter LLC. Not employer work.",
+   "visibility": "Public GitHub - Apache-2.0, prebuilt Linux releases",
+   "version": null,
+   "url": "https://github.com/freeParameterized/omabiblia",
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C++20",
+    "OpenGL 3.3",
+    "GLSL",
+    "Dear ImGui",
+    "GLFW",
+    "Wayland",
+    "miniaudio",
+    "CMake/CTest"
+   ],
+   "honesty": "Built with AI pair-programming: Peter designed and directed it, reviewed and tested it, and shipped the releases. Vendored GLFW, Dear ImGui, miniaudio and stb are third-party.",
+   "summary": "Omabiblia is an offline, open-source desktop app with five real-time OpenGL scenes, a CRT post-processing chain, a chiptune synthesizer, a small shell with pipes, and a transparent click-through Wayland pop-out mode. Apache-2.0, with prebuilt Linux releases.",
+   "bullets": [
+    "Released an offline reader with five real-time OpenGL scenes, a CRT post-processing chain (bloom, curvature, ACES tone mapping), and an embedded chiptune synthesizer.",
+    "Follows the desktop theme live. A pop-out mode floats the 3D screen on the Linux desktop as a transparent window with a click-through Wayland input region.",
+    "Includes a small shell with paths, pipes, history, and tab completion. CTest suites, a headless GPU screenshot mode, and prebuilt Linux releases on GitHub."
+   ]
+  },
+  {
+   "id": "digital-twin-pro",
+   "name": "Digital Twin Pro",
+   "shortName": "DT Pro",
+   "status": "public",
+   "featured": true,
+   "owner": "Personal product - Free Parameter LLC. Not employer work, not built at or for David Mason & Associates.",
+   "visibility": "Public GitHub - released to a Google Play beta",
+   "version": "v1.0.5+5",
+   "url": "https://github.com/freeParameterized/digital-twin-pro",
+   "sourcePath": "local repository (path withheld)",
+   "remote": "https://github.com/freeParameterized/digital-twin-pro.git",
+   "stack": [
+    "Flutter",
+    "Dart 3",
+    "SQLite",
+    "Firebase",
+    "Google Gemini API (paid)",
+    "ARCore",
+    "AppHive",
+    "AdMob",
+    "Provider"
+   ],
+   "honesty": "This is a personal product. Designed and built it for personal and business storage needs under Free Parameter LLC. It is not employer work. Went from concept to a Google Play beta in five weekends, about 10-12 days of actual work. Does not claim an LLM wrote most of the code. Photos are stored locally in the project folder. Does not claim per-user API quotas, DDoS protection, photo-moderation reporting, or immediately blocking a user: SecurityService is a stub that allows all operations, rate limiting is TODO, and Gemini harm blocks for those categories are set to none. Pays for the Google Gemini API. Does not claim download counts, revenue, ratings, or user numbers.",
+   "summary": "Built a Flutter 3D inventory product from concept to Google Play beta in five weekends. Custom painter's-algorithm renderer instead of a game engine. It features drag-and-drop totes on rack grids, including swap onto an occupied slot. Tote contents update by voice, photo, or typing from several screens. Spoken inventory is parsed to typed JSON maps. Custom QR codes encode contents and an optional photo path. Export one tote or the whole set as PNG, JPEG, or a multi-page PDF book for physical labels. Projects save, export, and import as folders. It uses Gemini photo capture, an AI Organizer that recommends like-with-like moves and previews them on the rack, QR books, and ARCore. A move log records each tote's from, to, and action. It runs on Android and Windows.",
+   "bullets": [
+    "Architected the 3D renderer. Custom Z-sorted painter's-algorithm draw queue instead of a game engine.",
+    "Built drag-and-drop tote management on configurable rack grids, including swap onto an occupied slot. Used SQLite to store the inventory state model and move audit log.",
+    "Integrated the Google Gemini API for photo analysis. It detects items and quantities.",
+    "Tote contents can be updated by voice, photo, or typing from several screens: vocal quantities parses speech through Gemini into items, the camera runs photo recognition, and Edit Tote plus the database sheet take manual edits (with mics on description and quantity fields). All paths write one typed item-to-quantity map (integers or ~ estimates) shared by the tote, SQLite, and exports.",
+    "Custom QR codes encode tote JSON with toggleable fields (contents, quantities, items, colors, rack or floor position, optional photo path). Export one tote as PNG, or the whole set as PNG, JPEG, or a multi-page PDF book (QR plus location label per page) for print-and-stick on the physical bins. Cloud photo links are the next step on the photo-path field.",
+    "Saved each warehouse as a project folder with project_config.json, a project-scoped SQLite inventory.db, and photos stored locally in the project photos folder. Save, export, and import so the current job can be written out and opened again. CSV/JSON export and import are also available. Cloud photo links are not shipped.",
+    "Per-tote body and lid colors, or Apply style to all totes for a uniform look. Independent front and isometric frames (QR, photo, text, tote, or hidden). Three rack styles (metal, wood, plastic tube). Seven UI themes. Grid customization (rows and columns), with a location naming convention (letters on rows or columns, numbering from the base or the top) that relabels every slot.",
+    "Built an AI Organizer. Gemini recommends a short JSON plan of swaps and moves to group like with like (related items in the same zone). Preview animates those moves on the rack before commit; quick organize applies them immediately. The feature is experimental.",
+    "Move history is a deep log of tote transfers (action, from, to, tote label), not a field on the Tote row. SlotState also tracks which boxes have passed through a slot for evolved labels.",
+    "Used Firebase for auth and backend services. Used AppHive to release the beta build to the Play Store.",
+    "Added ARCore plane-tap placement on Android. Included seven UI themes, X-Ray mode, and emoji particle physics.",
+    "Used Provider state management across 64+ modules. Wrote about 33,000 lines of Dart across 103 files.",
+    "Shipped an Android APK/AAB with R8 obfuscation. Also shipped a Windows desktop build. Reached a Google Play beta from concept in five weekends, about 10-12 days of actual work."
+   ]
+  },
+  {
+   "id": "oralab",
+   "name": "OraLab",
+   "shortName": "OraLab",
+   "status": "public",
+   "featured": true,
+   "owner": "Personal project under Free Parameter LLC. Not employer work.",
+   "visibility": "Public GitHub Pages - completed and live",
+   "url": "https://freeparameterized.github.io/oracle-sandbox/",
+   "sourcePath": "https://github.com/freeParameterized/oracle-sandbox",
+   "remote": "https://github.com/freeParameterized/oracle-sandbox.git",
+   "stack": [
+    "TypeScript",
+    "Next.js",
+    "Oracle SQL",
+    "Java",
+    "H2 Oracle mode",
+    "Monaco"
+   ],
+   "honesty": "This is a completed public project. GitHub Pages serves the static lab. The Oracle-mode JVM and /api/sql run locally (JDK 21+, Node 22+). It is not a licensed Oracle Database and it is not PL/SQL packages. It is not employment at Oracle Corporation. Oracle University coursework is the curriculum the lab runs.",
+   "summary": "Shipped OraLab, a public Oracle SQL training sandbox. In-heap H2 in Oracle mode runs the classic HR sample plus a sales grain. Monaco editor, tutorials, glossary, and a docked schema graph. Live at https://freeparameterized.github.io/oracle-sandbox/. Source at https://github.com/freeParameterized/oracle-sandbox.",
+   "bullets": [
+    "Shipped a completed public Oracle SQL lab: live engine, HR sample, Monaco editor, tutorials, glossary, and a docked schema graph.",
+    "Oracle-mode SQL: DUAL, NVL/DECODE, ROWNUM vs FETCH FIRST, VARCHAR2/NUMBER/DATE, sequences, HR joins, MINUS, analytic RANK / ROW_NUMBER.",
+    "Workbench rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. Explain tries local Ollama, then an in-tab model."
+   ]
+  },
+  {
+   "id": "cadnat-bridge",
+   "name": "Integration bridge between a C++ desktop app and CAD software",
+   "shortName": "CAD bridge",
+   "internalName": "CADNAT Bridge Studio 1.3",
+   "status": "local",
+   "featured": false,
+   "visibility": "Private repository - walkthrough on request",
+   "version": "1.3",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C++17",
+    "Dear ImGui",
+    "COM",
+    "CMake",
+    "LISP",
+    "C#",
+    "BRX"
+   ],
+   "honesty": "This is a local git repository with no remote. It is not a published repo. Third-party Dear ImGui and SDK headers are vendored dependencies. They are not original code.",
+   "summary": "Built a C++ desktop application. It drives AutoCAD, BricsCAD, and Civil 3D from outside the drawing editor. It sends commands and pulls drawing entities over Windows interprocess calls.",
+   "bullets": [
+    "Built an interprocess integration layer. The C++ application sends commands and geometry requests across the process boundary. It pulls drawing entities back using Windows COM.",
+    "Hosted the same command path used at work: a plugin turns a written request into a command, then C# talks to the CAD host.",
+    "Wrote a toolchain that compiles and hotloads plugins in place. It locates installed CAD SDKs at runtime.",
+    "Wrote a translator that converts between script dialects. One command set targets multiple CAD hosts.",
+    "Wrote code to read and write drawing-database entities directly.",
+    "Deployed targets for BricsCAD, Civil 3D, and AutoCAD 2018. Included C# sample automations for sheet-set generation and room drawers.",
+    "Wrote about 14,000 lines of C++ and C# across 82 source files."
+   ]
+  },
+  {
+   "id": "runoff-hydrology",
+   "name": "Stormwater runoff calculator and drainage sizing model",
+   "shortName": "Runoff",
+   "status": "professional",
+   "featured": false,
+   "visibility": "Professional work at David Mason & Associates - method described, client data withheld",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "Civil 3D",
+    "Spreadsheet schema",
+    "C# / entity metadata",
+    "Municipal stormwater standards"
+   ],
+   "honesty": "This describes the computation and the schema only. Does not publish client site names, drainage-area identifiers, elevations, or flow values. Does not store any client workbook in this repository.",
+   "summary": "Built a structured hydrologic calculator. It computes drainage areas, intensity coefficients, and runoff differential. It sizes storm structures. A CAD plugin can read and write its schema.",
+   "bullets": [
+    "Computed runoff per drainage area. Split each area into pervious, impervious, and roof-direct surfaces. Applied an intensity coefficient to get flow.",
+    "Maintained coefficient sets per design storm. Sourced these from NOAA rainfall intensities for St. Louis. One model runs every required frequency.",
+    "Produced the total pre-development flow minus total post-development flow. The municipal stormwater review cares about this differential.",
+    "Sized storm structures. Computed head, sill, and high-water elevations. Tracked treated versus untreated disturbed area for water-quality compliance.",
+    "Embedded consistency assertions. They flag when pre- and post-development total areas stop agreeing. A transcription slip fails loudly.",
+    "Structured it as a template-driven schema. C# tooling can parse it and push results back onto drawing objects as custom metadata."
+   ]
+  },
+  {
+   "id": "ctb-standards-diff",
+   "name": "Drawing-output standards comparison tool",
+   "shortName": "Standards diff",
+   "internalName": "CTB plot-style diff",
+   "status": "professional",
+   "featured": false,
+   "visibility": "Professional work (David Mason & Associates) - method described",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "Spreadsheet schema",
+    "AutoCAD CTB",
+    "Standards auditing"
+   ],
+   "honesty": "This involves plot-style configuration only. Does not publish any client drawing content.",
+   "summary": "Built a tool to compare two sets of drawing-output rules line by line. It flags every difference. It prevents settings from silently drifting between projects.",
+   "bullets": [
+    "Normalized two output-configuration tables into a common 255-row schema. This includes index, name, screening, line weight, pen assignments, and line type.",
+    "Cross-referenced both tables cell-by-cell. Raised a flag on any difference in screening, lineweight, or pen assignment.",
+    "Kept a lineweight catalog with inch-to-millimetre conversion. Can compare lineweights in either unit.",
+    "Turned a tedious manual comparison into a single review column. This made standards auditing across many drawing sets practical."
+   ]
+  },
+  {
+   "id": "backup-deduper",
+   "name": "BackupDeduper",
+   "shortName": "Deduper",
+   "status": "local",
+   "featured": false,
+   "visibility": "Local repository - no remote",
+   "version": "v1.2.4",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C++17",
+    "Dear ImGui",
+    "SHA-256",
+    "CMake",
+    "Android NDK",
+    "Windows"
+   ],
+   "honesty": "This is a local git repository with no remote.",
+   "summary": "Built a C++17 phone-to-PC backup tool. It uses SHA-256 content hashing to skip duplicates. It has an ADB bridge to Android and an HTTP sync path over the local network.",
+   "bullets": [
+    "Implemented SHA-256 content hashing. Identical payloads are never copied twice.",
+    "Wrote a backup engine to drive the copy pipeline. It has a safety layer to avoid clobbering existing files.",
+    "Built an ADB bridge to talk to Android devices directly. It includes Windows-side phone path discovery.",
+    "Implemented LAN HTTP transfer with progress reporting. Backups never leave the local network.",
+    "Wrote code to reconcile source and destination trees before transferring.",
+    "Built a Dear ImGui front end for Windows and Android. Wrote about 11,000 lines of C++ across 29 source files."
+   ]
+  },
+  {
+   "id": "offline-cad-voice",
+   "name": "Desktop app running recognition locally",
+   "shortName": "Desktop app",
+   "status": "local",
+   "featured": false,
+   "visibility": "Local - experimental, no remote",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C++",
+    "Dear ImGui",
+    "Vosk",
+    "miniaudio"
+   ],
+   "honesty": "This is an experimental iteration tree, not a shipped product. Dear ImGui, miniaudio, and Vosk are vendored dependencies. Code is the GUI, command parser, autocomplete, and audio plumbing.",
+   "summary": "Built a C++ desktop front end. It listens on the microphone and transcribes entirely on the machine. It turns input into drafting commands without a cloud service.",
+   "bullets": [
+    "Built a single C++ desktop application. It hosts the interface, the audio pipeline, and the command layer.",
+    "Wrote a command parser to turn recognized input into CAD commands. Built an autocomplete bar for live command completion.",
+    "Handled device enumeration and streaming capture using miniaudio. Built a separate audio recorder test harness.",
+    "Tried recognition with Vosk locally.",
+    "Kept it entirely offline. There is no cloud API in the path.",
+    "This is a real, working experiment kept in dated snapshots. It is not a packaged application."
+   ]
+  },
+  {
+   "id": "circle-visualizer",
+   "name": "CircleVisualizer",
+   "shortName": "Circles",
+   "status": "local",
+   "featured": false,
+   "visibility": "Local - no repository",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C++",
+    "OpenGL",
+    "GLFW",
+    "Dear ImGui",
+    "std::complex"
+   ],
+   "honesty": "This is a single-file personal math visualizer, not a product. Dear ImGui and glad are vendored dependencies.",
+   "summary": "Built an OpenGL and ImGui visualizer. It shows roots of unity and simple harmonic motion. It has a layer system to toggle and composite drawings.",
+   "bullets": [
+    "Computed fifth roots of unity with std::complex. Plotted them on the unit circle.",
+    "Traced simple harmonic motion as the projection of circular motion. Drew the geometric identity live.",
+    "Implemented a small layer model. Each construction can be shown or hidden independently.",
+    "Built immediate-mode ImGui controls over a raw OpenGL context. Wrote about 770 lines of C++."
+   ]
+  },
+  {
+   "id": "maintenance-tracker",
+   "name": "Maintenance portal prototype",
+   "shortName": "Maintenance",
+   "status": "public",
+   "featured": false,
+   "visibility": "GitHub - freeParameterized/maintenance",
+   "url": "https://github.com/freeParameterized/maintenance",
+   "sourcePath": "local repository (path withheld)",
+   "remote": "https://github.com/freeParameterized/maintenance.git",
+   "stack": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Supabase"
+   ],
+   "honesty": "This is an early React and Supabase prototype. It is not a finished portal. It exhibits no resident or property records. Wrote about 740 lines across 23 files.",
+   "summary": "Built an early React, TypeScript, and Supabase prototype. It handles owner and admin maintenance requests. It includes authentication, a typed database schema, and service-layer scaffolding.",
+   "bullets": [
+    "Built a Supabase auth flow. Generated a TypeScript schema for the database.",
+    "Implemented service-layer separation. Did not scatter queries through components.",
+    "Configured Vite, React, and TypeScript with ESLint.",
+    "This is a prototype, not a shipped portal."
+   ]
+  },
+  {
+   "id": "hatchcalc",
+   "name": "Area-and-quantity calculator for drawings",
+   "shortName": "Area calc",
+   "internalName": "HatchCalc (repo: Template)",
+   "status": "public",
+   "featured": false,
+   "visibility": "GitHub - freeParameterized/Template",
+   "url": "https://github.com/freeParameterized/Template",
+   "sourcePath": "local repository (path withheld)",
+   "remote": "https://github.com/freeParameterized/Template.git",
+   "stack": [
+    "C#",
+    "AutoCAD 2025 API",
+    "WinForms"
+   ],
+   "honesty": "This is scaffolding, not a finished tool. Wrote about 250 lines across 13 files. Calls it HatchCalc internally.",
+   "summary": "Built a tool to read filled region geometry out of a drawing. It turns the geometry into material quantities automatically. It replaces manual measurement and hand arithmetic.",
+   "bullets": [
+    "Parsed closed region geometry from a drawing. Computed the areas and material quantities.",
+    "Built it as a C# plugin against the AutoCAD 2025 API. Included a small desktop test harness.",
+    "This is a starting point rather than a released tool. The command scaffolding and geometry plumbing exist."
+   ]
+  },
+  {
+   "id": "cbp-ocr",
+   "name": "Document text-extraction utilities",
+   "shortName": "Text extract",
+   "status": "local",
+   "featured": false,
+   "visibility": "Local - no remote",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C#",
+    "WinForms",
+    "Tesseract",
+    "iTextSharp"
+   ],
+   "honesty": "These are small local WinForms utilities. They have a few hundred lines each. They are useful as lineage for the later OCR work, not as products.",
+   "summary": "Built a cluster of small C# WinForms utilities. They scan, extract, and reprocess text out of manufacturing PDFs and prints.",
+   "bullets": [
+    "Ran text extraction and scanning passes over PDFs and printed documents. Used Tesseract and iTextSharp.",
+    "Built WinForms front ends for batch document processing on the shop floor.",
+    "This work led to the plan-set auto-check pipeline at DMA."
+   ]
+  },
+  {
+   "id": "property-set",
+   "name": "Structured metadata attached to model entities",
+   "shortName": "Metadata",
+   "internalName": "PropertySetUpdater",
+   "status": "local",
+   "featured": false,
+   "visibility": "Local - no repository",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "C#",
+    "Civil 3D API"
+   ],
+   "honesty": "This is a small single-command utility. It has under 100 lines.",
+   "summary": "Built a tool to attach structured metadata records to objects in a 3D model. Each entity carries its own typed data alongside its geometry.",
+   "bullets": [
+    "Wrote typed metadata fields onto spatial objects through the Civil 3D API. An object stores what it is, not only where it is.",
+    "This is the small, focused version of the custom structured metadata schemas built at David Mason & Associates."
+   ]
+  },
+  {
+   "id": "local-llm",
+   "name": "Local inference stack",
+   "shortName": "Ollama",
+   "status": "local",
+   "featured": false,
+   "visibility": "This workstation",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "Ollama",
+    "LM Studio",
+    "Open WebUI",
+    "Windows SAPI",
+    "Docker"
+   ],
+   "honesty": "The runtimes and models are third-party. Built the deployment, model selection, and the retrieval and voice plumbing in this site's API.",
+   "summary": "Deployed offline models on this workstation. Wrote the code in this site that talks to them. This includes a model catalog, fallback chain, and corpus retrieval.",
+   "bullets": [
+    "Runs local models through Ollama, LM Studio, and Open WebUI. Ran them offline since 2023.",
+    "Containerizes inference models. Deploys them to Linux, macOS, and Windows edge devices.",
+    "Writes Bash scripts for data pipelines.",
+    "Built this site's API. It selects a local model from an installed catalog. It refuses to auto-select cloud-tagged models.",
+    "Built retrieval over a curated corpus. It uses a token-scoring pass to ground answers.",
+    "Implemented a static fallback. If Ollama is offline, the API returns JSON directly from the corpus."
+   ]
+  },
+  {
+   "id": "photogrammetry",
+   "name": "instant-ngp",
+   "shortName": "NeRF",
+   "status": "fluency",
+   "featured": false,
+   "visibility": "On-machine fluency",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "instant-ngp"
+   ],
+   "honesty": "This is a third-party tool. Did not write it. Listed as fluency only.",
+   "summary": "Ran neural rendering with instant-ngp on this workstation.",
+   "bullets": [
+    "Ran instant-ngp neural rendering on a local GPU.",
+    "This shows spatial-ML fluency. Claims no original research or published reconstructions."
+   ]
+  },
+  {
+   "id": "interactive-portfolio",
+   "name": "This interactive portfolio",
+   "shortName": "This site",
+   "status": "local",
+   "featured": false,
+   "visibility": "This repository",
+   "url": null,
+   "sourcePath": "local repository (path withheld)",
+   "remote": null,
+   "stack": [
+    "Vite",
+    "React",
+    "TypeScript",
+    "Express",
+    "Ollama",
+    "Docker"
+   ],
+   "honesty": "Written for this job search. The static build works with no backend. Chat and voice demos exist in the API but are disabled on the public site.",
+   "summary": "React and TypeScript resume site over an Express API. It builds to static files and generates a PDF from the same data.",
+   "bullets": [
+    "React and TypeScript front end. The site builds to static files and needs no server to read.",
+    "Express API with optional local Ollama chat when the backend is running.",
+    "Printable resume view and PDF generated from data/resume.json.",
+    "Light and dark themes with localStorage persistence and reduced-motion support.",
+    "Docker packaging for the optional inference stack on Linux, macOS, and Windows."
+   ]
+  }
+ ],
+ "excludedFromProjects": [
+  "Dear ImGui, miniaudio, Vosk, glad, GLFW - vendored third-party dependencies inside these repos, not this code.",
+  "Ollama, Open WebUI, LM Studio - third-party runtimes deploys and configures; no Ollama or Open WebUI source of the was found on this machine, only local model stores and a vcpkg port.",
+  "arcore_flutter_plugin - third-party Flutter plugin vendored into Digital Twin Pro.",
+  "PDFsharp.Samples-master - a cloned third-party sample repository.",
+  "tensor-demo - almost entirely a Python .venv (site-packages); no meaningful original code.",
+  "civil_arx - an empty ObjectARX project skeleton (a stub dllmain), nothing to show yet.",
+  "maintenance-site under the older Free-Parameter account - a duplicate of freeParameterized/maintenance; only one is listed."
+ ],
+ "chunks": [
+  {
+   "id": "identity",
+   "title": "Identity",
+   "tags": [
+    "profile",
+    "contact",
+    "github",
+    "free parameter"
+   ],
+   "text": "Peter A. Lilley. Software engineer. Most recently Automation Tooling Engineer (Staff Technician) at David Mason & Associates, Jul 2024 to Aug 2026. Chesterfield / St. Louis, MO. Free Parameter LLC. Email pal@cadpal.net. Public GitHub is https://github.com/freeParameterized."
+  },
+  {
+   "id": "summary",
+   "title": "Professional summary",
+   "tags": [
+    "summary",
+    "ml",
+    "cad",
+    "llm",
+    "software engineer"
+   ],
+   "text": "Software engineer with a CAD/BIM background. Builds native desktop software in C++ (Qt 6, OpenGL, Open CASCADE), production automation in C#/.NET and Python, and web and mobile apps in TypeScript and Flutter. Two years at David Mason & Associates building Civil 3D tooling that engineers use daily. Built Cadnat, a CAD/BIM desktop application of about 80,000 lines of C++, and released Omabiblia, an open-source OpenGL application. Uses AI-assisted development alongside testing, CI, packaging, and code review. At David Mason & Associates, used C#, Python, Dynamo, LISP, and VBA against Civil 3D, AutoCAD, and Revit; Dynamo automation took pipe-flow drawing from about 8 hours of clicking to minutes, and automated checks cut about 25% of drafting errors before engineer review."
+  },
+  {
+   "id": "teamwork",
+   "title": "Can work on a team? Is professional?",
+   "tags": [
+    "team",
+    "teamwork",
+    "collaborate",
+    "collaboration",
+    "professional",
+    "reliable",
+    "references",
+    "production",
+    "adopted",
+    "review",
+    "leadership",
+    "manage"
+   ],
+   "text": "Colleagues use the generation and automation tooling daily. Works across civil, mechanical, plumbing, and architectural disciplines on named capital projects, including clash detection so one discipline's change does not break another's. Quality pass reduced drafting errors by about 25% before licensed professional-engineer review. Supervised department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline. Worked to ISO 9001 quality-system requirements and Production Part Approval Process documentation in manufacturing. Does not claim to lead an engineering org or manage software engineers."
+  },
+  {
+   "id": "language-to-geometry",
+   "title": "Typed-command CAD pipeline - the headline capability",
+   "tags": [
+    "natural language",
+    "nlp",
+    "generation",
+    "language to geometry",
+    "typed command",
+    "command schema",
+    "cad bridge",
+    "automator",
+    "llm",
+    "grounding",
+    "structured output",
+    "pipeline",
+    "how does it work"
+   ],
+   "text": "Built CAD bridges and automators. A written request is turned into a command the plugins already understand, then C# talks to Civil 3D, AutoCAD, or BricsCAD. They also do construction drawing setup. Introduced this at a St. Louis civil engineering firm. It is not a general-purpose text-to-CAD product. Built an integration bridge that drives AutoCAD, BricsCAD, and Civil 3D. Built a command parser that turns transcribed speech into drafting commands. Built C# automations that construct sheet sets, walls, and room layouts."
+  },
+  {
+   "id": "ml-ability",
+   "title": "Can do machine learning?",
+   "tags": [
+    "ml",
+    "machine learning",
+    "ai",
+    "llm",
+    "ollama",
+    "gemini",
+    "ocr",
+    "whisper",
+    "capable",
+    "pytorch",
+    "tensorflow",
+    "jax",
+    "keras",
+    "hugging face",
+    "training",
+    "fine-tuning",
+    "lora",
+    "transformers",
+    "attention",
+    "backpropagation",
+    "gradients",
+    "embeddings",
+    "rag",
+    "vector database",
+    "gpu",
+    "cuda",
+    "mlops",
+    "frameworks",
+    "docker",
+    "linux",
+    "macos"
+   ],
+   "text": "Applied-engineering profile. Built a CAD automation pipeline at David Mason & Associates: a written request is turned into a command, then C# talks to Civil 3D. Under Free Parameter LLC, deploys and runs local LLMs on local hardware. Containerizes inference models. Deploys them to Linux, macOS, and Windows edge devices. Writes Bash scripts for data pipelines. Wrote the API in this site. It selects an installed model and keeps a fallback chain. It refuses cloud-tagged models. It retrieves from a curated corpus. It degrades to extractive answers when no model is running. Built Gemini API pipelines in Digital Twin Pro. They turn a photo into structured item data. Runs Tesseract OCR over messy engineering PDFs. Uses Levenshtein distance to match noisy strings. Built an experimental offline CAD GUI in C++. Writes graph processors and hydrologic calculators. Architected a custom 3D projection and painter's-algorithm depth sorting in Digital Twin Pro. Does prompt engineering in Cursor and Gemini. Wrote a visualizer for matrix transforms, complex numbers, and roots of unity. Has never trained or fine-tuned a model. Has no PyTorch, TensorFlow, JAX, Keras, or Hugging Face experience. Has not implemented an attention layer or a training loop. Has no vector database and no embedding-based retrieval. Has no CUDA programming or MLOps platform experience. Has no published ML research."
+  },
+  {
+   "id": "digital-twin-pro",
+   "title": "Digital Twin Pro - personal product",
+   "tags": [
+    "digital twin pro",
+    "flutter",
+    "dart",
+    "firebase",
+    "arcore",
+    "gemini",
+    "apphive",
+    "play store",
+    "featured",
+    "personal"
+   ],
+   "text": "Digital Twin Pro is a personal product. Built it under Free Parameter LLC for the personal and business storage needs. Did not build it at David Mason & Associates. The public repo is https://github.com/freeParameterized/digital-twin-pro. Used Flutter, Dart 3, SQLite, Firebase, Google Gemini API, ARCore, AdMob, and Provider. Went from concept to a Google Play beta in five weekends, about 10-12 days of actual work. Custom 3D renderer instead of a game engine. It features drag-and-drop totes on configurable rack grids. Drop a tote onto an occupied slot to swap both boxes. It uses an inventory state model with a move audit log in SQLite. Tote contents update by voice, photo, or typing from several screens. Spoken inventory is parsed through Gemini into JSON, then decoded as a Map and coerced onto a typed item-to-quantity map (integers or tilde estimates) before writing the tote. Photo recognition and manual edits on Edit Tote and the database sheet write the same map. Custom QR codes encode that tote JSON with toggleable fields (contents, counts, items, colors, location, optional photo path). Export one tote as PNG, or the whole set as PNG, JPEG, or a multi-page PDF book (QR plus location label per page) for print-and-stick on the physical bins. Each warehouse is a project folder with config, a project-scoped SQLite database, and photos stored locally. Save, export, and import so the job can be written out and opened again. CSV/JSON export and import are also available. Custom settings apply independently in front and isometric frames. Per-tote body and lid colors, or apply one uniform style to all totes. Three rack styles (metal, wood, plastic tube). Seven UI themes. Grid customization for rows and columns, with a location naming convention that can put letters on rows or columns and number from the base or the top. It has Gemini photo analysis for item detection. An AI Organizer recommends moves that group like with like, previews them on the rack, then commits. A move log records each tote's from, to, and action. It has ARCore plane-tap placement, seven themes, X-Ray mode, and emoji particle physics. Wrote about 33,000 lines of Dart across 103 files. Released it to a Google Play beta. Used AppHive to get the beta out. Pays for the Gemini API personally. Does not claim download counts, revenue, ratings, or user numbers."
+  },
+  {
+   "id": "digital-twin-distinction",
+   "title": "Two different digital-twin things",
+   "tags": [
+    "digital twin",
+    "xdata",
+    "property sets",
+    "dma",
+    "attribution",
+    "at work"
+   ],
+   "text": "Keep these separate. At David Mason & Associates, builds digital-twin infrastructure on CAD data. This includes custom XData schemas and Civil 3D property sets. They hold persistent spatial and historical metadata on drawing objects. Digital Twin Pro is a completely separate thing. It is a personal Flutter 3D inventory product. Built it under Free Parameter LLC. Did not build it at DMA. The CAD digital-twin metadata work is the DMA role. Digital Twin Pro is a personal product."
+  },
+  {
+   "id": "exp-dma",
+   "title": "Experience - David Mason & Associates",
+   "tags": [
+    "dma",
+    "david mason",
+    "civil 3d",
+    "xdata",
+    "ocr",
+    "msd",
+    "staff technician",
+    "plan parsing",
+    "plan sets",
+    "parsing",
+    "auto-check",
+    "layer",
+    "layers",
+    "layer names",
+    "drawings",
+    "standards",
+    "c# plugins",
+    "title block",
+    "audit"
+   ],
+   "text": "Worked at David Mason & Associates in St. Louis, MO from Jul 2024 to Aug 2026. Automation Tooling Engineer (Staff Technician). Built CAD bridges and automators. A written request is turned into a command the plugins already understand, then C# talks to Civil 3D. They also do construction drawing setup. Built software that parses and auto-checks civil plan sets from PDFs. Wrote Dynamo automation that reads Excel reports Civil 3D already generates and draws pipe flow levels and hydraulic grade lines. Other engineers verified the drop from about 8 hours of clicking to minutes. It reduced errors before PE review by about 25%. Built C# plugins with Tesseract OCR pipelines. Built C# plugins for Civil 3D. These plugins rename title blocks and layouts. They parse hundreds of text entities, audit drawings, and export traceability logs. Also built a color-coded IntelliSense-style layer and entity search GUI with autocomplete, dynamic entity pull, and a local phrase-to-command lookup so less experienced CAD users can move entities, run basic draw commands, retarget objects onto other layers, and otherwise edit uniformly across layouts in one command instead of clicking layout by layout. Minutes of sequential clicks, often hundreds, became one command that finishes in about two seconds. Found repeating bottlenecks in the firm's CAD workflow and wrote programs to remove them. These plugins update up to 40 layouts in under 1.7 seconds. This stops a 15-to-20-second manual loading delay per layout. Used C# to parse messy survey text and compass bearings into XData. Built graph lookup tables to map 3D structures to exact flow lines. Built digital-twin infrastructure on CAD data. This uses XData schemas and Civil 3D property sets. Computes watershed data, drainage areas, and differential runoff. Models pipe networks to MSD standards. Audits AutoCAD standards and revises templates. Introduced Navisworks clash detection. Creates parameterized 3D parts per MSD standards. Worked on Airport Consolidation, St. Louis Zoo Destination Discovery, Wildcare Park, Wohl Bridge Renovation, PGVA Reach, Wentzville BJC, and Ranken Technical College Campus. Does not publish client drainage values or site data."
+  },
+  {
+   "id": "runoff-method",
+   "title": "Differential runoff and storm-network sizing",
+   "tags": [
+    "runoff",
+    "hydrology",
+    "drainage",
+    "msd",
+    "noaa",
+    "storm",
+    "spreadsheet",
+    "schema"
+   ],
+   "text": "Built a structured hydrologic calculator. Splits each drainage area into pervious, impervious, and roof-direct surfaces. Converts square feet to acres. Applies an intensity coefficient to get flow. Maintains coefficient sets per design storm. Sources these from NOAA rainfall intensities for St. Louis. One model runs every required frequency. Computes the differential: total pre-development flow minus post-development flow. MSD review requires this number. Sizes storm structures. Computes head, sill, and high-water elevations. Tracks treated versus untreated disturbed area. Embeds consistency assertions. They flag when pre- and post-development total areas stop agreeing. Built it as a template-driven schema. C# tooling can parse it and push values into Civil 3D property sets and XData. Does not publish client site names, elevations, or flow values."
+  },
+  {
+   "id": "exp-cbp",
+   "title": "Experience - Component Bar Products",
+   "tags": [
+    "component bar",
+    "quality engineer",
+    "gdt",
+    "gd&t",
+    "cmm",
+    "iso 9001",
+    "ppap",
+    "metrology",
+    "manufacturing",
+    "machining"
+   ],
+   "text": "Worked at Component Bar Products in O'Fallon, MO. Quality Engineer. Programmed and operated CMM systems. Verified parts to +/-0.001 inch or tighter against GD&T specifications. Validated dimensional tolerances against company CAD models and customer prints. Machining problems appeared as geometry mismatches. Ran quality control for precision machining and incoming material. Applied hold tags to non-conforming parts. Documented corrective actions. Enforced ISO 9001 requirements and GD&T accuracy. Integrated PPAP documentation. Used manual metrology tools. These included micrometers, calipers, height gauges, indicators, and custom gage blocks. Managed the metrology equipment lifecycle. Updated inspection methods from company CAD files."
+  },
+  {
+   "id": "exp-heideman",
+   "title": "Experience - Heideman & Associates",
+   "tags": [
+    "heideman",
+    "revit",
+    "mep",
+    "autocad",
+    "standards"
+   ],
+   "text": "Worked at Heideman & Associates, Inc. in Fenton, MO. Revit/CAD Technician. Drafted MEP construction documents in Revit and AutoCAD. Built as-built models from field photos and blueprints. Implemented and audited Revit standards. Built automated data libraries for MEP objects. Standardized hundreds of outdated AutoCAD details. Embedded Excel data into Revit keynotes for schedule generation. Worked on client project sites including St. Luke's, Mercy, AT&T, and Saint Louis University."
+  },
+  {
+   "id": "edu",
+   "title": "Education and languages",
+   "tags": [
+    "missouri s&t",
+    "ranken",
+    "spanish",
+    "education",
+    "math"
+   ],
+   "text": "Attended Missouri S&T in Rolla. Took coursework toward Latin American Studies with Technical Applications from 2019 to 2020. Placed into Advanced Conversational Spanish. Has technical fluency in Spanish. Did not take C++ at S&T. C++ is self-taught. Attended Ranken Technical College in Wentzville. Earned an AAS in Building Systems Engineering Technology in 2019. Took Oracle University coursework in Oracle Database SQL (DUAL, NVL/DECODE, ROWNUM, VARCHAR2/NUMBER/DATE, sequences, HR joins, analytics) and shipped OraLab as the lab for those lessons."
+  },
+  {
+   "id": "proj-oralab",
+   "title": "Project - OraLab",
+   "tags": [
+    "oralab",
+    "oracle-sandbox",
+    "oracle sql",
+    "sql",
+    "next.js",
+    "h2",
+    "monaco",
+    "hr schema",
+    "completed"
+   ],
+   "text": "OraLab is a completed public project. Live site https://freeparameterized.github.io/oracle-sandbox/. Source https://github.com/freeParameterized/oracle-sandbox. Built an Oracle SQL training sandbox so Oracle University Database SQL lessons run against a real engine instead of slides. In-heap H2 in MODE=Oracle with the classic HR tables (REGIONS through JOB_HISTORY) plus a sales grain for normalization. Monaco editor, tutorials, glossary, and a node graph docked beside sandbox.sql. Covers DUAL, SYSDATE, TO_CHAR, NVL, DECODE, ROWNUM versus analytic RANK / ROW_NUMBER, VARCHAR2 / NUMBER / DATE, sequences, HR joins, MINUS, and sargable predicates. Ctrl+Alt rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. GitHub Pages is the static lab. The Oracle-mode JVM and /api/sql run on localhost. Not a licensed Oracle Database. Not PL/SQL packages. Not employment at Oracle Corporation."
+  },
+  {
+   "id": "proj-cadnat",
+   "title": "Project - CADNAT Bridge Studio",
+   "tags": [
+    "cadnat",
+    "c++",
+    "imgui",
+    "bricscad",
+    "autocad",
+    "civil 3d",
+    "com",
+    "hotload",
+    "local"
+   ],
+   "text": "CADNAT Bridge Studio 1.3 is a local git repository with no remote. Built a C++17 Dear ImGui host. It uses COM to bridge BricsCAD, AutoCAD, and Civil 3D. It was a personal prototype of the architecture later used on a commercial deployment. Wrote a toolchain that compiles and hotloads plugins in place. Wrote code to locate installed CAD SDKs at runtime. Wrote a translator that converts between script dialects. One command set targets multiple hosts. Wrote code to read and write drawing entities directly. Deployed targets for BricsCAD, Civil 3D, and legacy AutoCAD 2018. Included C# sample automations for sheet sets, right-click menus, and room drawing. Wrote about 14,000 lines across 82 source files. Vendored Dear ImGui and SDK headers are third-party."
+  },
+  {
+   "id": "proj-deduper",
+   "title": "Project - BackupDeduper",
+   "tags": [
+    "backupdeduper",
+    "deduper",
+    "c++",
+    "sha-256",
+    "adb",
+    "android",
+    "lan",
+    "local"
+   ],
+   "text": "BackupDeduper v1.2.4 is a local git repository with no remote. Built a C++17 phone-to-PC backup tool. Used SHA-256 content hashing so identical payloads are never copied twice. Wrote a backup engine with a copy-guard safety layer. Built an ADB bridge to Android with Windows-side phone path discovery. Implemented LAN HTTP transfer with a sync protocol and progress reporting. Backups never leave the local network. Built a Dear ImGui front end for Windows and Android. Wrote about 11,000 lines across 29 source files."
+  },
+  {
+   "id": "proj-voice",
+   "title": "Project - offline CAD voice GUI",
+   "tags": [
+    "voice",
+    "whisper",
+    "vosk",
+    "speech",
+    "cad gui",
+    "working_cad_gui",
+    "offline",
+    "imgui"
+   ],
+   "text": "Built an experimental local voice-driven CAD command GUI in C++ with Dear ImGui. Wrote a command parser that turns recognized speech into CAD commands. Built a live autocomplete bar. Wrote an audio streaming module over miniaudio. Tried speech recognition with Vosk and whisper.cpp locally. It is entirely offline. There is no cloud speech API. This is a real working experiment kept in dated snapshot directories. It is not a packaged product. Vendored ImGui, miniaudio, whisper.cpp, and Vosk are third-party."
+  },
+  {
+   "id": "proj-circles",
+   "title": "Project - CircleVisualizer",
+   "tags": [
+    "circlevisualizer",
+    "opengl",
+    "complex",
+    "roots of unity",
+    "harmonic",
+    "math",
+    "visualizer"
+   ],
+   "text": "CircleVisualizer is a local single-file C++ math visualizer. Used OpenGL and GLFW with a Dear ImGui interface. Computed fifth roots of unity with std::complex. Plotted them on the unit circle. Traced simple harmonic motion as the projection of circular motion. Managed a small layer model. Each construction can be toggled independently. Wrote about 770 lines of C++."
+  },
+  {
+   "id": "proj-small",
+   "title": "Smaller projects, prototypes, and fluency",
+   "tags": [
+    "hatchcalc",
+    "template",
+    "propertyset",
+    "maintenance",
+    "supabase",
+    "manim",
+    "instant-ngp",
+    "prototype"
+   ],
+   "text": "HatchCalc is an AutoCAD 2025 C# plugin skeleton. It has about 250 lines. PropertySetUpdater is a local sub-100-line Civil 3D command. It writes property-set values. The maintenance portal prototype is about 740 lines of React, TypeScript, Vite, and Supabase. It includes auth, a typed schema, and service-layer scaffolding. It is a prototype, not a finished portal. CBP document tooling is a cluster of small local C# WinForms utilities. Used Tesseract and iTextSharp for scanning manufacturing PDFs. Tensor visualization scenes are about 100 lines of Python and Manim. instant-ngp is a third-party tool runs on this workstation. Claims no original research."
+  },
+  {
+   "id": "resume-download",
+   "title": "Downloadable resume - the link exists, hand it over",
+   "tags": [
+    "resume",
+    "cv",
+    "pdf",
+    "download",
+    "download the pdf",
+    "send me your cv",
+    "can i get your resume",
+    "print",
+    "one page",
+    "ats"
+   ],
+   "text": "Yes, there is a downloadable resume. The PDF is served from this site at ./resume.pdf. A download saves as today's date plus resume, for example 2026.09.05_resume.pdf, with no personal name in the file. A plain-text version is at ./PeterLilley_Resume.txt. You can open a printable view at ./?resume=1. There is a 'Download my resume' link in the chat panel. There is a 'Download resume' button in the site header. I can provide a link. The resume is generated from the same curated data as this site. It is a standard document. It includes summary, skills, experience, projects, and education."
+  },
+  {
+   "id": "glossary",
+   "title": "Plain-language glossary - never answer with a bare acronym",
+   "tags": [
+    "glossary",
+    "jargon",
+    "acronym",
+    "what does that mean",
+    "xdata",
+    "gd&t",
+    "cmm",
+    "msd",
+    "takeoff",
+    "ctb",
+    "hatchcalc"
+   ],
+   "text": "I explain in plain terms first. I give the domain term second. GD&T is geometric dimensioning and tolerancing. It specifies how much a machined part can deviate. A CMM is a coordinate measuring machine. It measures a part's geometry precisely. MSD is the Metropolitan St. Louis Sewer District. It sets municipal stormwater standards. XData and property sets are custom structured metadata. They attach to CAD entities. An object stores typed data about itself. A quantity takeoff means computing material quantities from construction plans. ODS is a spreadsheet export format. A CTB is the table of drawing-output rules. It controls how a sheet prints. PPAP is the Production Part Approval Process. It qualifies a part for production. HatchCalc is an area-and-quantity calculator. It reads region geometry out of a drawing. CADNAT is an integration bridge between a C++ desktop application and CAD software."
+  },
+  {
+   "id": "third-party",
+   "title": "What is not this code",
+   "tags": [
+    "third party",
+    "clone",
+    "dependency",
+    "exclusions",
+    "vendored"
+   ],
+   "text": "Exclude these from the project list for honesty. Uses vendored third-party dependencies. These include whisper.cpp, Dear ImGui, miniaudio, Vosk, glad, GLFW, and arcore_flutter_plugin. Deploys third-party runtimes. These include Ollama, Open WebUI, and LM Studio. Did not write them. Uses cloned sample repositories. Has a tensor-demo directory that is a Python virtual environment. Has an empty ObjectARX skeleton with nothing to show."
+  },
+  {
+   "id": "this-site",
+   "title": "This interactive portfolio site",
+   "tags": [
+    "vite",
+    "three.js",
+    "express",
+    "ollama",
+    "rag",
+    "site",
+    "how does this work"
+   ],
+   "text": "This site is a resume portfolio. Built it with Vite, React, and TypeScript over an Express API. The public build is static and needs no backend. It generates a printable resume view and PDF from the same JSON data. An optional Express API can answer questions with a local Ollama model when it is running. The chat UI is currently disabled on the public site. Voice features are suspended. Containerized the optional inference stack with Docker for Linux, macOS, and Windows."
+  },
+  {
+   "id": "git-prs-cicd",
+   "title": "Git, pull requests, and CI/CD",
+   "tags": [
+    "git",
+    "github",
+    "gitflow",
+    "trunk-based",
+    "pull request",
+    "pr",
+    "code review",
+    "peer review",
+    "ci/cd",
+    "merge conflict",
+    "version control",
+    "devops"
+   ],
+   "text": "At David Mason & Associates authored and reviewed Git pull requests on Civil 3D plugins and the automation pipeline. Used GitFlow and trunk-based branching, resolved merge conflicts, and shipped through CI/CD. Peer review is the quality gate before merge."
+  },
+  {
+   "id": "prompt-engineering",
+   "title": "Prompt engineering",
+   "tags": [
+    "prompt engineering",
+    "prompt",
+    "syntax",
+    "refactor",
+    "manual edit",
+    "token",
+    "typed command",
+    "schema"
+   ],
+   "text": "Uses Claude, ChatGPT, Gemini, and Cursor. Does not call this applied ML or model training. Has not trained or fine-tuned a model."
+  },
+  {
+   "id": "hiring-unknowns",
+   "title": "Employment terms and credentials - what is on record",
+   "tags": [
+    "salary",
+    "compensation",
+    "availability",
+    "notice period",
+    "visa",
+    "work authorization",
+    "citizenship",
+    "clearance",
+    "relocation",
+    "references",
+    "promotion",
+    "headcount",
+    "certifications",
+    "gpa",
+    "hiring"
+   ],
+   "text": "Employment terms are not published here. There is no salary, hourly rate, or compensation figure. There is no start date, notice period, or job-search status. There is no statement of work authorization, citizenship, visa status, or security clearance. There is no relocation, remote, or on-site preference. Location is the Chesterfield area. Worked at David Mason & Associates from Jul 2024 to Aug 2026. Supervised department staff as an Assistant Department Manager. Earned an AAS in Building Systems Engineering Technology from Ranken Technical College. Took coursework at Missouri S&T. Did not complete a bachelor's degree. Holds no master's, no PhD, and no published GPA. Is not a licensed professional engineer. Has no certifications, awards, patents, or conference talks recorded. Spanish is the only spoken language besides English. The contact route is pal@cadpal.net."
+  },
+  {
+   "id": "proj-cadnat-app",
+   "title": "Project - Cadnat CAD/BIM application",
+   "tags": [
+    "cadnat",
+    "c++",
+    "qt",
+    "open cascade",
+    "cad",
+    "bim",
+    "dxf",
+    "dwg",
+    "step",
+    "api",
+    "testing"
+   ],
+   "text": "Cadnat is a native 2D/3D CAD and BIM application for Linux: about 80,000 lines of C++ on Qt 6 with a GPU viewport and Open CASCADE geometry. It reads and writes DXF, DWG, STEP, IGES, glTF and PDF, exposes a local NDJSON automation API with over 100 undoable commands, and ships as AppImage, Flatpak, Windows and macOS builds. A headless sweep of about 3,000 command and menu runs found 130 failures, all fixed. Peter wrote most of Cadnat himself; it was later refactored and optimized with AI-assisted tooling. Line counts include comments and blank lines. QA figures come from the repo's own QA documents. Licensing, pricing and release date are not final."
+  },
+  {
+   "id": "proj-generators",
+   "title": "Project - Cadnat Generators",
+   "tags": [
+    "python",
+    "ezdxf",
+    "ifc",
+    "generators",
+    "plan sets",
+    "bim"
+   ],
+   "text": "Parametric generators that turn YAML parameters into permit-style DXF sheet sets (houses in 43 styles, kitchens, baths, decks, stairs, trusses, framing) with IFC2X3/IFC4/IFC4X3 export including TIN terrain, alignments and georeferencing."
+  },
+  {
+   "id": "proj-xr",
+   "title": "Project - Cadnat XR and CADNET/1",
+   "tags": [
+    "xr",
+    "quest",
+    "unreal",
+    "unity",
+    "networking",
+    "protocol",
+    "tcp",
+    "udp"
+   ],
+   "text": "CADNET/1 is an offline LAN protocol (UDP discovery, NDJSON over TCP, HTTP assets). A Python hub serves CAD models to Meta Quest 3 clients built in Unreal Engine 5 and Unity 6 and to a desktop monitor, relaying live headset poses."
+  },
+  {
+   "id": "proj-omabiblia",
+   "title": "Project - Omabiblia",
+   "tags": [
+    "c++",
+    "opengl",
+    "glsl",
+    "graphics",
+    "open source",
+    "wayland",
+    "omabiblia"
+   ],
+   "text": "Omabiblia is an offline, open-source desktop app with five real-time OpenGL scenes, a CRT post-processing chain, a chiptune synthesizer, a small shell with pipes, and a transparent click-through Wayland pop-out mode. Apache-2.0, with prebuilt Linux releases. Built with AI pair-programming: Peter designed and directed it, reviewed and tested it, and shipped the releases. Vendored GLFW, Dear ImGui, miniaudio and stb are third-party."
+  }
+ ],
+ "voice": {
+  "speaker": "male-default",
+  "note": "Windows SAPI Microsoft David Desktop - a stock synthetic voice, not Peter's real or cloned voice. Future: VOICE_CLONE_PATH."
+ }
 }

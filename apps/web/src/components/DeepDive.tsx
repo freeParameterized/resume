@@ -13,14 +13,10 @@ export function DeepDive({ projects }: Props) {
   return (
     <div className="deep-dive">
       <button type="button" className="deep-toggle" onClick={() => setOpen((v) => !v)} aria-expanded={open}>
-        {open ? "Hide deep dive" : "Open deep dive"} — CAD tooling, C++ systems, prototypes, personal curiosities
+        {open ? "Hide more work" : "More work"} — CAD generators, XR networking, CAD integration
       </button>
       {open ? (
         <div className="fade-in">
-          <p className="lede">
-            Longer technical detail that does not belong up front, listed at true size — including the small prototypes
-            and the things that are experiments rather than products.
-          </p>
           <div className="project-grid">
             {projects.map((p) => (
               <details key={p.id} className="deep-card">
@@ -29,7 +25,6 @@ export function DeepDive({ projects }: Props) {
                   <span className="job-meta">{p.visibility}</span>
                 </summary>
                 <p>{p.summary}</p>
-                <div className="honesty">{p.honesty}</div>
                 <div className="stack-row">
                   {p.stack.map((s) => (
                     <span className="chip" key={s}>
@@ -47,7 +42,7 @@ export function DeepDive({ projects }: Props) {
                     Open repository
                   </a>
                 ) : (
-                  <p className="job-meta">Local repository — no remote.</p>
+                  <p className="job-meta">Walkthrough on request.</p>
                 )}
               </details>
             ))}

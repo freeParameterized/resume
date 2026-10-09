@@ -5,25 +5,25 @@
     "regenerate": "After editing, run: npm run resume:pdf"
   },
   "name": "Peter A. Lilley",
-  "role": "Automation Tooling Engineer (Staff Technician)",
-  "focus": "C#/.NET, C++17, BIM Tooling / CAD Drafting",
-  "headline": "Automation Tooling Engineer (Staff Technician) \u2014 C#/.NET, C++17, BIM Tooling / CAD Drafting",
+  "role": "Software Engineer",
+  "focus": "C++ · C#/.NET · Python · CAD/BIM and 3D graphics",
+  "headline": "Software Engineer — C++ (Qt, OpenGL), C#/.NET, Python · CAD/BIM and 3D graphics",
   "stats": [
     {
+      "value": "C++",
+      "label": "Qt · OpenGL"
+    },
+    {
       "value": "C#",
-      "label": "primary"
+      "label": ".NET · Civil 3D"
     },
     {
-      "value": "C++17",
-      "label": "systems"
+      "value": "Python",
+      "label": "generators · IFC"
     },
     {
-      "value": "CAD",
-      "label": "automation"
-    },
-    {
-      "value": "SQL",
-      "label": "OraLab"
+      "value": "CAD/BIM",
+      "label": "domain"
     }
   ],
   "contact": {
@@ -35,23 +35,27 @@
     "website": "",
     "company": "Free Parameter LLC"
   },
-  "summary": "Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Combines AI-assisted development (Claude, ChatGPT, Gemini) with strong core engineering fundamentals from scratch.",
+  "summary": "Software engineer with a CAD/BIM background. Builds native desktop software in C++ (Qt 6, OpenGL, Open CASCADE), production automation in C#/.NET and Python, and web and mobile apps in TypeScript and Flutter. Two years at David Mason & Associates building Civil 3D tooling that engineers use daily. Built Cadnat, a CAD/BIM desktop application of about 80,000 lines of C++, and released Omabiblia, an open-source OpenGL application. Uses AI-assisted development alongside testing, CI, packaging, and code review.",
   "skills": [
     {
       "label": "Languages",
-      "items": "C# / .NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, Oracle SQL, LISP, VBA"
+      "items": "C++ (17/20), C# / .NET, Python, TypeScript, JavaScript, GLSL, Dart, SQL, Oracle SQL, LISP, VBA"
+    },
+    {
+      "label": "Desktop, graphics, and geometry",
+      "items": "Qt 6 (Widgets, RHI), OpenGL 3.3 / GLSL, Dear ImGui, GLFW, Open CASCADE (B-rep, STEP, IGES), DXF/DWG, IFC2X3/IFC4/IFC4X3, glTF, Wayland, Unreal Engine 5 and Unity 6 (Meta Quest 3)"
     },
     {
       "label": "Software engineering",
-      "items": "Object-Oriented Design (OOD), REST APIs, multi-threading, CI/CD pipelines, Git (GitFlow, trunk-based, pull requests), CMake, Linux, macOS, Docker, Bash"
+      "items": "Object-oriented design, REST and NDJSON APIs, TCP/UDP protocol design, multi-threading, CMake/CTest, GitHub Actions CI/CD, Git (GitFlow, trunk-based, pull requests), AppImage/Flatpak packaging, Linux, Docker, Bash"
     },
     {
-      "label": "Databases and Data Systems",
-      "items": "Postgres, Oracle SQL, SQLite, Firebase, H2"
+      "label": "Databases and data",
+      "items": "Postgres, SQLite, Oracle SQL, Firebase, H2, Cloudflare D1"
     },
     {
-      "label": "CAD, geometry, and domain",
-      "items": "AutoCAD, Civil 3D, Revit, Navisworks, Dynamo, matrix math, 3D graphics, CAD plugins, typed metadata, GD&T, CMM, ISO 9001, TCP/IP, Cisco routing"
+      "label": "CAD and domain",
+      "items": "AutoCAD, Civil 3D, Revit, Navisworks, Dynamo, CAD plugins, typed metadata, GD&T, CMM, ISO 9001"
     }
   ],
   "experience": [
@@ -75,8 +79,7 @@
         "Engineered automated quality checks that cut an estimated 25% of drafting errors prior to engineer review.",
         "Built a generator for standard details and grading from existing survey data. Hundreds of thousands of entities; days of hand modeling became minutes.",
         "Wrote Dynamo automation that reads Civil 3D Excel reports and draws pipe flow levels and HGLs; about 8 hours of clicking fell to minutes.",
-        "Cut a common multi-layout edit from several hundred clicks to a single two-second command by unifying entity search, retargeting, and batch edit.",
-        "Built C#/.NET Civil 3D plugins, OCR ingestion of PDF plan sets, and an OpenAI pipeline with GitFlow review and CI/CD. Colleagues use the tooling daily."
+        "Built C#/.NET Civil 3D plugins, OCR ingestion of PDF plan sets, and an OpenAI pipeline, with Git pull-request review and CI/CD. Colleagues use the tooling daily."
       ]
     },
     {
@@ -90,8 +93,7 @@
         "Worked to ISO 9001 quality-system and Production Part Approval Process requirements. Enforced ISO 9001 across production lines. Managed calibration and traceability of metrology assets."
       ],
       "printBullets": [
-        "Wrote inspection tooling against CMM output; validated machined geometry to GD&T specs and flagged model-to-print mismatches.",
-        "Worked to ISO 9001 and PPAP requirements. Managed calibration and traceability of metrology assets."
+        "Programmed CMMs and validated machined geometry to GD&T specs under ISO 9001 and PPAP; managed calibration and traceability."
       ]
     },
     {
@@ -104,8 +106,7 @@
         "Supervised and coordinated department staff as an Assistant Department Manager. Handled contractor-facing sales. Turned contractor requests into material lists on a deadline."
       ],
       "printBullets": [
-        "Priced and estimated large commercial material orders.",
-        "Supervised and coordinated department staff. Handled contractor-facing sales and turned requests into material lists on a deadline."
+        "Supervised department staff, priced large commercial orders, and turned contractor requests into material lists on deadline."
       ]
     },
     {
@@ -132,15 +133,71 @@
         "Coordinated with structural and architectural disciplines. Clash detection. Kept multi-discipline file structure and Revit templates consistent."
       ],
       "printBullets": [
-        "Drafted mechanical and plumbing construction documents in Revit and AutoCAD, including St. Luke's, Mercy, AT&T, SLU, and American Water.",
-        "Produced as-builts; built object libraries; standardized outdated AutoCAD details; clash detection across disciplines."
+        "Drafted mechanical and plumbing documents in Revit and AutoCAD (St. Luke's, Mercy, AT&T, SLU, American Water); clash detection across disciplines."
       ]
     }
   ],
   "projects": [
     {
+      "name": "Cadnat — CAD/BIM desktop application",
+      "stack": "C++17 · Qt 6 · Open CASCADE · CMake/CTest · Python",
+      "meta": "Free Parameter LLC product | C++17, Qt 6, Open CASCADE, Python | private repository, walkthrough on request",
+      "bullets": [
+        "Designed and built a native 2D/3D CAD and BIM application for Linux: about 80,000 lines of C++ on Qt 6 with a GPU (RHI) viewport and Open CASCADE geometry. Later refactored and optimized it with AI-assisted tooling.",
+        "Reads and writes DXF (R2000/R2010, audit-clean), DWG, STEP AP203/214/242, IGES, glTF, and PDF/SVG plots. Converts meshes to B-rep solids, also from a headless CLI.",
+        "Exposes a token-authenticated local NDJSON API with over 100 commands, each one undoable, so scripts and AI agents can drive the application.",
+        "Wrote a headless sweep that runs every command and menu path (about 3,000 runs). It found 130 failures, including 9 crashes and 84 hangs; all were fixed. Backed by about 20 CTest suites and GitHub Actions builds for Windows and macOS.",
+        "Packaged as AppImage (smoke-tested on 10 Linux distributions), Flatpak, Windows, and macOS, with offline Ed25519-signed licensing."
+      ],
+      "printBullets": [
+        "Native 2D/3D CAD and BIM app: about 80k lines of C++ on Qt 6 and Open CASCADE. DXF/DWG, STEP, IGES, glTF, and PDF I/O; local NDJSON automation API with 100+ undoable commands.",
+        "Headless sweep of about 3,000 command and menu runs found 130 failures (9 crashes, 84 hangs), all fixed. About 20 CTest suites; GitHub Actions builds.",
+        "Packaged as AppImage (tested on 10 distros), Flatpak, Windows, and macOS, with offline Ed25519-signed licensing."
+      ]
+    },
+    {
+      "name": "Cadnat Generators — parametric drawing sets",
+      "stack": "Python · ezdxf · IFC · YAML / JSON Schema",
+      "meta": "Part of Cadnat | Python, ezdxf | private repository",
+      "bullets": [
+        "About 35,000 lines of Python that turn YAML parameters into permit-style DXF sheet sets: houses, kitchens, baths, decks, stairs, trusses, roof framing, and foundations.",
+        "Sheets carry real dimensions, multileaders, an xref'd title block, BIM solids, and BOM and cut-list CSVs. The house generator covers 43 architectural styles from a trait taxonomy with inheritance.",
+        "IFC2X3 / IFC4 / IFC4X3 exporter: walls, slabs, openings, stairs, TIN terrain, alignments, and georeferencing.",
+        "Each generator publishes a JSON Schema; the desktop app builds its input forms from it."
+      ],
+      "printBullets": [
+        "About 35k lines of Python turning YAML parameters into permit-style DXF sheet sets (houses in 43 styles, kitchens, baths, decks, stairs, trusses), with IFC2X3/IFC4/IFC4X3 export including terrain, alignments, and georeferencing."
+      ]
+    },
+    {
+      "name": "Cadnat XR — LAN protocol and headset clients",
+      "stack": "C++ (Unreal Engine 5) · C# (Unity 6) · Python · TCP/UDP",
+      "meta": "Meta Quest 3 | C++, C#, Python | private repository",
+      "bullets": [
+        "Designed CADNET/1, an offline LAN protocol: UDP discovery, NDJSON over TCP with heartbeats and reconnect backoff, and an HTTP asset channel.",
+        "A Python hub serves CAD models to Meta Quest 3 clients (Unreal Engine 5 and Unity 6) and a desktop monitor, and relays live headset poses at 10–20 Hz.",
+        "Defined one canonical coordinate frame with documented per-client conversions. 63 automated tests, including integration tests against a running hub."
+      ],
+      "printBullets": [
+        "Designed CADNET/1 (UDP discovery, NDJSON over TCP, HTTP assets): a Python hub serving CAD models to Meta Quest 3 clients in Unreal Engine 5 and Unity 6, with live pose relay and 63 automated tests."
+      ]
+    },
+    {
+      "name": "Omabiblia — open-source OpenGL application",
+      "stack": "C++20 · OpenGL 3.3 / GLSL · Dear ImGui · GLFW · Wayland",
+      "meta": "Public, Apache-2.0, built with AI pair-programming | C++20, OpenGL, Dear ImGui | github.com/freeParameterized/omabiblia",
+      "bullets": [
+        "Released an offline reader with five real-time OpenGL scenes, a CRT post-processing chain (bloom, curvature, ACES tone mapping), and an embedded chiptune synthesizer.",
+        "Follows the desktop theme live. A pop-out mode floats the 3D screen on the Linux desktop as a transparent window with a click-through Wayland input region.",
+        "Includes a small shell with paths, pipes, history, and tab completion. CTest suites, a headless GPU screenshot mode, and prebuilt Linux releases on GitHub."
+      ],
+      "printBullets": [
+        "Offline desktop app: five real-time OpenGL scenes, CRT post-processing (bloom, ACES), a chiptune synthesizer, a shell with pipes, and a click-through Wayland pop-out. CTest suites and prebuilt releases."
+      ]
+    },
+    {
       "name": "Digital Twin Pro",
-      "stack": "Flutter \u00b7 Dart 3 \u00b7 SQLite \u00b7 Firebase \u00b7 ARCore",
+      "stack": "Flutter · Dart 3 · SQLite · Firebase · ARCore",
       "meta": "Personal product, Free Parameter LLC | Flutter/Dart 3, SQLite, Firebase, Google Gemini API, ARCore | github.com/freeParameterized/digital-twin-pro",
       "bullets": [
         "Concept to Google Play beta in five weekends: a 3D inventory app with a custom renderer (Z-sorted draw queue, own projection) instead of a game engine.",
@@ -151,14 +208,12 @@
         "Per-tote colors or one uniform style. Independent front and isometric frames. Three rack styles, seven UI themes, grid customization, and slot labels that relabel every location."
       ],
       "printBullets": [
-        "3D inventory app with a hand-written renderer \u2014 Z-sorted draw queue and custom projection, no game engine.",
-        "Voice, photo, and typed input all resolve to one typed item-to-quantity map shared by storage and export.",
-        "Export a single tote's QR with selectable payload fields, or the whole set as a multi-page PDF for physical labels."
+        "Flutter 3D inventory app with a hand-written renderer (Z-sorted draw queue, custom projection); voice, photo, and typed input feed one typed data model. Google Play beta."
       ]
     },
     {
       "name": "OraLab",
-      "stack": "TypeScript \u00b7 Next.js \u00b7 Java / H2 Oracle mode \u00b7 Monaco",
+      "stack": "TypeScript · Next.js · Java / H2 Oracle mode · Monaco",
       "meta": "Completed project | TypeScript, Next.js, Java / H2 Oracle mode, Monaco | freeparameterized.github.io/oracle-sandbox | github.com/freeParameterized/oracle-sandbox",
       "bullets": [
         "Shipped a public Oracle SQL training lab: live engine, classic HR sample, Monaco editor, tutorials, glossary, and a docked schema graph.",
@@ -166,33 +221,19 @@
         "Workbench rewrites the current statement as JavaScript, TypeScript, Python, C#, or C++. Local explain path, then an in-tab model."
       ],
       "printBullets": [
-        "Shipped a public Oracle SQL training lab: live engine, classic HR sample, Monaco editor, tutorials, and a docked schema graph.",
-        "Oracle-mode SQL in-heap (DUAL, NVL/DECODE, ROWNUM, sequences, HR joins, MINUS, analytic windows). Live at freeparameterized.github.io/oracle-sandbox."
+        "Shipped a public Oracle SQL training lab: live engine, classic HR sample, Monaco editor, tutorials, and a docked schema graph."
       ]
     },
     {
       "name": "CAD integration bridge",
-      "stack": "C++17 \u00b7 Dear ImGui \u00b7 Windows COM",
+      "stack": "C++17 · Dear ImGui · Windows COM",
       "meta": "C++17, Dear ImGui, Windows COM | private repository, walkthrough on request",
       "bullets": [
         "Built a C++17 Dear ImGui host. It bridges BricsCAD, AutoCAD, and Civil 3D through Windows COM. It discovers installed SDKs at runtime and hot-loads LISP, C#, and BRX plugins.",
         "Personal prototype of the architecture later used on a commercial deployment."
       ],
       "printBullets": [
-        "Host process that bridges BricsCAD, AutoCAD, and Civil 3D over COM, discovers installed SDKs at runtime, and hot-loads LISP, C#, and native plugins.",
-        "Prototype architecture that later shipped commercially."
-      ]
-    },
-    {
-      "name": "Interactive Portfolio (this site)",
-      "stack": "React \u00b7 TypeScript \u00b7 Express",
-      "meta": "React, TypeScript, Express",
-      "bullets": [
-        "Built a React and TypeScript front end over an Express API. The site builds to static files and needs no server to read.",
-        "Generates the printable resume and PDF from the same JSON data."
-      ],
-      "printBullets": [
-        "Front end over a small API; builds to static files. The web page and the printable PDF render from the same JSON."
+        "C++17 host that drives BricsCAD, AutoCAD, and Civil 3D over COM, finds installed SDKs at runtime, and hot-loads LISP, C#, and native plugins."
       ]
     }
   ],

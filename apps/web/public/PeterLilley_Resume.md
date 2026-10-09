@@ -1,10 +1,10 @@
 # Peter A. Lilley
 
-**Automation Tooling Engineer (Staff Technician) · C#/.NET, C++17, BIM Tooling / CAD Drafting**
+**Software Engineer · C++ · C#/.NET · Python · CAD/BIM and 3D graphics**
 
 Chesterfield / St. Louis, MO | pal@cadpal.net | Available on request | github.com/freeParameterized
 
-Software engineer with a background in CAD and engineering. Builds web and mobile applications with React, Flutter, Postgres, and Firebase. Automates traditional processes with C#, C++17, and Python to simplify Civil 3D, AutoCAD, and Revit workflows. Combines AI-assisted development (Claude, ChatGPT, Gemini) with strong core engineering fundamentals from scratch.
+Software engineer with a CAD/BIM background. Builds native desktop software in C++ (Qt 6, OpenGL, Open CASCADE), production automation in C#/.NET and Python, and web and mobile apps in TypeScript and Flutter. Two years at David Mason & Associates building Civil 3D tooling that engineers use daily. Built Cadnat, a CAD/BIM desktop application of about 80,000 lines of C++, and released Omabiblia, an open-source OpenGL application. Uses AI-assisted development alongside testing, CI, packaging, and code review.
 
 ## Experience
 
@@ -15,22 +15,19 @@ Jul 2024 - Aug 2026
 - Engineered automated quality checks that cut an estimated 25% of drafting errors prior to engineer review.
 - Built a generator for standard details and grading from existing survey data. Hundreds of thousands of entities; days of hand modeling became minutes.
 - Wrote Dynamo automation that reads Civil 3D Excel reports and draws pipe flow levels and HGLs; about 8 hours of clicking fell to minutes.
-- Cut a common multi-layout edit from several hundred clicks to a single two-second command by unifying entity search, retargeting, and batch edit.
-- Built C#/.NET Civil 3D plugins, OCR ingestion of PDF plan sets, and an OpenAI pipeline with GitFlow review and CI/CD. Colleagues use the tooling daily.
+- Built C#/.NET Civil 3D plugins, OCR ingestion of PDF plan sets, and an OpenAI pipeline, with Git pull-request review and CI/CD. Colleagues use the tooling daily.
 
 ### Quality Engineer - Manufacturing / Precision Machining
 Component Bar Products — O'Fallon, MO
 Apr 2023 - Jun 2024
 
-- Wrote inspection tooling against CMM output; validated machined geometry to GD&T specs and flagged model-to-print mismatches.
-- Worked to ISO 9001 and PPAP requirements. Managed calibration and traceability of metrology assets.
+- Programmed CMMs and validated machined geometry to GD&T specs under ISO 9001 and PPAP; managed calibration and traceability.
 
 ### Assistant Department Manager - Building Materials and Millwork
 Menard, Inc. — Manchester / Ballwin, MO
 Jun 2020 - Mar 2023
 
-- Priced and estimated large commercial material orders.
-- Supervised and coordinated department staff. Handled contractor-facing sales and turned requests into material lists on a deadline.
+- Supervised department staff, priced large commercial orders, and turned contractor requests into material lists on deadline.
 
 ### CAD Drafter
 Jeff Day & Associates, LLC — Manchester, MO
@@ -42,41 +39,54 @@ Jeff Day & Associates, LLC — Manchester, MO
 Heideman & Associates, Inc. — Fenton, MO
 May 2018 - Apr 2019
 
-- Drafted mechanical and plumbing construction documents in Revit and AutoCAD, including St. Luke's, Mercy, AT&T, SLU, and American Water.
-- Produced as-builts; built object libraries; standardized outdated AutoCAD details; clash detection across disciplines.
+- Drafted mechanical and plumbing documents in Revit and AutoCAD (St. Luke's, Mercy, AT&T, SLU, American Water); clash detection across disciplines.
 
 ## Selected Projects
+
+### Cadnat — CAD/BIM desktop application
+*C++17 · Qt 6 · Open CASCADE · CMake/CTest · Python*
+
+- Native 2D/3D CAD and BIM app: about 80k lines of C++ on Qt 6 and Open CASCADE. DXF/DWG, STEP, IGES, glTF, and PDF I/O; local NDJSON automation API with 100+ undoable commands.
+- Headless sweep of about 3,000 command and menu runs found 130 failures (9 crashes, 84 hangs), all fixed. About 20 CTest suites; GitHub Actions builds.
+- Packaged as AppImage (tested on 10 distros), Flatpak, Windows, and macOS, with offline Ed25519-signed licensing.
+
+### Cadnat Generators — parametric drawing sets
+*Python · ezdxf · IFC · YAML / JSON Schema*
+
+- About 35k lines of Python turning YAML parameters into permit-style DXF sheet sets (houses in 43 styles, kitchens, baths, decks, stairs, trusses), with IFC2X3/IFC4/IFC4X3 export including terrain, alignments, and georeferencing.
+
+### Cadnat XR — LAN protocol and headset clients
+*C++ (Unreal Engine 5) · C# (Unity 6) · Python · TCP/UDP*
+
+- Designed CADNET/1 (UDP discovery, NDJSON over TCP, HTTP assets): a Python hub serving CAD models to Meta Quest 3 clients in Unreal Engine 5 and Unity 6, with live pose relay and 63 automated tests.
+
+### Omabiblia — open-source OpenGL application
+*C++20 · OpenGL 3.3 / GLSL · Dear ImGui · GLFW · Wayland*
+
+- Offline desktop app: five real-time OpenGL scenes, CRT post-processing (bloom, ACES), a chiptune synthesizer, a shell with pipes, and a click-through Wayland pop-out. CTest suites and prebuilt releases.
 
 ### Digital Twin Pro
 *Flutter · Dart 3 · SQLite · Firebase · ARCore*
 
-- 3D inventory app with a hand-written renderer — Z-sorted draw queue and custom projection, no game engine.
-- Voice, photo, and typed input all resolve to one typed item-to-quantity map shared by storage and export.
-- Export a single tote's QR with selectable payload fields, or the whole set as a multi-page PDF for physical labels.
+- Flutter 3D inventory app with a hand-written renderer (Z-sorted draw queue, custom projection); voice, photo, and typed input feed one typed data model. Google Play beta.
 
 ### OraLab
 *TypeScript · Next.js · Java / H2 Oracle mode · Monaco*
 
 - Shipped a public Oracle SQL training lab: live engine, classic HR sample, Monaco editor, tutorials, and a docked schema graph.
-- Oracle-mode SQL in-heap (DUAL, NVL/DECODE, ROWNUM, sequences, HR joins, MINUS, analytic windows). Live at freeparameterized.github.io/oracle-sandbox.
 
 ### CAD integration bridge
 *C++17 · Dear ImGui · Windows COM*
 
-- Host process that bridges BricsCAD, AutoCAD, and Civil 3D over COM, discovers installed SDKs at runtime, and hot-loads LISP, C#, and native plugins.
-- Prototype architecture that later shipped commercially.
-
-### Interactive Portfolio (this site)
-*React · TypeScript · Express*
-
-- Front end over a small API; builds to static files. The web page and the printable PDF render from the same JSON.
+- C++17 host that drives BricsCAD, AutoCAD, and Civil 3D over COM, finds installed SDKs at runtime, and hot-loads LISP, C#, and native plugins.
 
 ## Skills
 
-**Languages** C# / .NET, Python, C++17, Dart, TypeScript, JavaScript, SQL, Oracle SQL, LISP, VBA
-**Software engineering** Object-Oriented Design (OOD), REST APIs, multi-threading, CI/CD pipelines, Git (GitFlow, trunk-based, pull requests), CMake, Linux, macOS, Docker, Bash
-**Databases and Data Systems** Postgres, Oracle SQL, SQLite, Firebase, H2
-**CAD, geometry, and domain** AutoCAD, Civil 3D, Revit, Navisworks, Dynamo, matrix math, 3D graphics, CAD plugins, typed metadata, GD&T, CMM, ISO 9001, TCP/IP, Cisco routing
+**Languages** C++ (17/20), C# / .NET, Python, TypeScript, JavaScript, GLSL, Dart, SQL, Oracle SQL, LISP, VBA
+**Desktop, graphics, and geometry** Qt 6 (Widgets, RHI), OpenGL 3.3 / GLSL, Dear ImGui, GLFW, Open CASCADE (B-rep, STEP, IGES), DXF/DWG, IFC2X3/IFC4/IFC4X3, glTF, Wayland, Unreal Engine 5 and Unity 6 (Meta Quest 3)
+**Software engineering** Object-oriented design, REST and NDJSON APIs, TCP/UDP protocol design, multi-threading, CMake/CTest, GitHub Actions CI/CD, Git (GitFlow, trunk-based, pull requests), AppImage/Flatpak packaging, Linux, Docker, Bash
+**Databases and data** Postgres, SQLite, Oracle SQL, Firebase, H2, Cloudflare D1
+**CAD and domain** AutoCAD, Civil 3D, Revit, Navisworks, Dynamo, CAD plugins, typed metadata, GD&T, CMM, ISO 9001
 
 ## Education
 
